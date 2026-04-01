@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Consvltor – Operating Partner Services</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Independent Operating Partner model for PE-backed and founder-led businesses, with a flexible bench of specialist operators and SMEs.">
+  <style>
+    :root {
+      --bg: #0b0c10;
+      --bg-alt: #101219;
+      --accent: #e0b46c;
+      --text: #f5f5f5;
+      --muted: #a0a4b8;
+      --border: #1b1e2b;
+      --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font-sans);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: rgba(11, 12, 16, 0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.25rem;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .container {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 0 1.25rem 4rem;
+    }
+
+    section {
+      padding: 4rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h1, h2, h3 {
+      margin: 0 0 1rem;
+      letter-spacing: 0.04em;
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      line-height: 1.2;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1.75rem;
+    }
+
+    h3 {
+      font-size: 1.05rem;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    p {
+      margin: 0 0 1rem;
+      color: var(--muted);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.6fr);
+      gap: 3rem;
+      padding-top: 4rem;
+    }
+
+    .hero-kicker {
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 0.22em;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      max-width: 34rem;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .badge {
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      padding: 0.25rem 0.75rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      background: rgba(16, 18, 25, 0.8);
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.6rem 1.2rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text);
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #111;
+      border-color: var(--accent);
+    }
+
+    .btn-primary:hover {
+      filter: brightness(1.05);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .hero-meta {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .hero-meta strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .hero-meta-row {
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-image {
+      border-radius: 1.5rem;
+      border: 1px solid var(--border);
+      background: radial-gradient(circle at top left, #1b2135, #07080c);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .hero-image-title {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--muted);
+    }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      font-size: 0.85rem;
+    }
+
+    .metric-card {
+      border-radius: 0.9rem;
+      border: 1px solid var(--border);
+      padding: 0.9rem;
+      background: rgba(9, 10, 16, 0.9);
+    }
+
+    .metric-label {
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.7rem;
+      color: var(--muted);
+      margin-bottom: 0.25rem;
+    }
+
+    .metric-value {
+      font-size: 1rem;
+      color: var(--text);
+    }
+
+    .metric-caption {
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-top: 0.2rem;
+    }
+
+    .section-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 2fr);
+      gap: 2.5rem;
+    }
+
+    .pill-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .pill-list li {
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      padding: 0.2rem 0.75rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      border-radius: 1rem;
+      border: 1px solid var(--border);
+      padding: 1.25rem;
+      background: var(--bg-alt);
+    }
+
+    .card h3 {
+      margin-bottom: 0.65rem;
+      font-size: 0.9rem;
+    }
+
+    .card p {
+      font-size: 0.9rem;
+    }
+
+    .card ul {
+      margin: 0.3rem 0 0;
+      padding-left: 1.1rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .badge-contrast {
+      display: inline-block;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--accent);
+      margin-bottom: 0.6rem;
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+    }
+
+    .case-title {
+      font-size: 0.95rem;
+      font-weight: 500;
+      margin-bottom: 0.3rem;
+      color: var(--text);
+    }
+
+    .case-meta {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .case-list {
+      font-size: 0.85rem;
+      padding-left: 1.1rem;
+      margin: 0.4rem 0 0.6rem;
+      color: var(--muted);
+    }
+
+    .contact-block {
+      max-width: 540px;
+    }
+
+    .contact-details {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-top: 0.75rem;
+    }
+
+    .contact-details div {
+      margin-bottom: 0.35rem;
+    }
+
+    .contact-form {
+      margin-top: 1.5rem;
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .field input,
+    .field textarea {
+      border-radius: 0.6rem;
+      border: 1px solid var(--border);
+      background: #07080c;
+      color: var(--text);
+      padding: 0.5rem 0.6rem;
+      font-family: inherit;
+      font-size: 0.9rem;
+    }
+
+    .field textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .field input:focus,
+    .field textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 1.5rem 1.25rem 2rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    @media (max-width: 800px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .section-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      header {
+        position: static;
+      }
+
+      .nav {
+        padding: 0.75rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="nav">
+    <div class="logo">CONSVLTOR</div>
+    <nav class="nav-links">
+      <a href="#who">Who</a>
+      <a href="#services">Services</a>
+      <a href="#how">How</a>
+      <a href="#work">Work</a>
+      <a href="#resources">Resources</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <!-- HERO -->
+  <section id="top">
+    <div class="hero">
+      <div>
+        <div class="hero-kicker">Operating Partner model</div>
+        <h1>Independent Operating Partner for PE‑backed and founder‑led businesses.</h1>
+        <p class="hero-subtitle">
+          Consvltor acts as your ad‑hoc Operating Partner – with one accountable lead and a flexible bench of specialist operators and SMEs, brought in only when they add real value.
+        </p>
+
+        <div class="hero-badges">
+          <span class="badge">Pre‑ &amp; post‑deal support</span>
+          <span class="badge">Portfolio operations</span>
+          <span class="badge">Exit readiness</span>
+          <span class="badge">Board‑level advisory</span>
+        </div>
+
+        <div class="buttons">
+          <a href="#contact" class="btn btn-primary">Schedule a conversation</a>
+          <a href="#services" class="btn btn-ghost">View services</a>
+        </div>
+
+        <div class="hero-meta">
+          <div class="hero-meta-row"><strong>Typical clients:</strong> Mid‑market PE funds, independent sponsors, founder‑led and family businesses.</div>
+          <div class="hero-meta-row"><strong>Focus:</strong> Value‑creation plans, execution support, and pragmatic operating model change.</div>
+        </div>
+      </div>
+
+      <!-- “Image” / visual card (replace with actual image if you prefer) -->
+      <aside class="hero-image">
+        <div class="hero-image-title">Engagement snapshot</div>
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <div class="metric-label">Scope</div>
+            <div class="metric-value">Deal → Exit</div>
+            <div class="metric-caption">Support across diligence, 100‑day planning, execution, and exit prep.</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">Model</div>
+            <div class="metric-value">Lead + bench</div>
+            <div class="metric-caption">One Operating Partner, with SMEs looped in as needed.</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">Client type</div>
+            <div class="metric-value">PE &amp; founders</div>
+            <div class="metric-caption">Investors, boards and leadership teams.</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">Engagements</div>
+            <div class="metric-value">Ad‑hoc</div>
+            <div class="metric-caption">From focused sprints to ongoing portfolio support.</div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- WHO I WORK WITH -->
+  <section id="who">
+    <div class="section-grid">
+      <div>
+        <h2>Who Consvltor works with</h2>
+        <p>
+          Consvltor partners with investors, boards and leadership teams where there is a clear value‑creation agenda
+          and a need for experienced, pragmatic operating support – without adding permanent headcount.
+        </p>
+      </div>
+      <div>
+        <div class="cards">
+          <div class="card">
+            <h3>Private equity &amp; investors</h3>
+            <p>
+              Support across the deal cycle, from diligence and thesis shaping through to execution and exit.
+            </p>
+            <ul>
+              <li>Mid‑market PE and growth equity.</li>
+              <li>Independent sponsors and family offices.</li>
+              <li>Portfolio‑wide or deal‑specific support.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Founder‑led &amp; family businesses</h3>
+            <p>
+              Preparing for investment, professionalisation or sale while keeping the business running day‑to‑day.
+            </p>
+            <ul>
+              <li>Clarifying strategy and operating model.</li>
+              <li>Scaling teams, processes and governance.</li>
+              <li>Getting “exit ready” without over‑engineering.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Boards &amp; CEOs</h3>
+            <p>
+              Independent Operating Partner support to challenge, prioritise and help deliver the value‑creation agenda.
+            </p>
+            <ul>
+              <li>Board‑level viewpoints grounded in operations.</li>
+              <li>Coaching for founders and functional leaders.</li>
+              <li>Support through inflection points and change.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="section-grid">
+      <div>
+        <h2>Operating Partner services</h2>
+        <p>
+          Work is structured around a small number of practical building blocks – from deal support, through portfolio
+          operations, to exit readiness. Each engagement is tailored: we agree the agenda, then shape the mix of my
+          time and any specialist bench we bring to the table.
+        </p>
+        <ul class="pill-list">
+          <li>Deal support</li>
+          <li>Value‑creation plans</li>
+          <li>Portfolio programmes</li>
+          <li>Interim leadership</li>
+          <li>Exit readiness</li>
+        </ul>
+      </div>
+      <div>
+        <div class="cards">
+          <div class="card">
+            <h3>Deal support &amp; value‑creation plans</h3>
+            <p>
+              Commercial and operational input before and after the deal, translated into a realistic plan that
+              leadership can own.
+            </p>
+            <ul>
+              <li>Investment thesis validation and operating implications.</li>
+              <li>100‑day and 12–24 month value‑creation roadmaps.</li>
+              <li>Operating model and organisation design options.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Portfolio operations &amp; transformation</h3>
+            <p>
+              Hands‑on support in designing and delivering the few initiatives that really move the needle.
+            </p>
+            <ul>
+              <li>Margin and working‑capital improvement.</li>
+              <li>Revenue growth levers – pricing, product, channels, go‑to‑market.</li>
+              <li>Operating model simplification and process redesign.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Leadership &amp; board‑level support</h3>
+            <p>
+              An Operating Partner who can sit alongside the CEO, CFO and board, then help translate decisions into action.
+            </p>
+            <ul>
+              <li>Interim Operating Partner / fractional COO‑type roles.</li>
+              <li>Board pack design, KPIs and performance cadence.</li>
+              <li>Coaching and sparring for founders and functional leaders.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Exit preparation</h3>
+            <p>
+              Getting the business ready for sale or refinancing – story, numbers and execution posture.
+            </p>
+            <ul>
+              <li>Exit readiness diagnostics and “no‑regrets” actions.</li>
+              <li>Preparing the equity story, metrics and data for buyers.</li>
+              <li>Hand‑over support to acquirers or new ownership.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW I WORK -->
+  <section id="how">
+    <div class="section-grid">
+      <div>
+        <h2>How Consvltor works</h2>
+        <p>
+          The model is deliberately lean. You get one accountable Operating Partner as your constant point of contact,
+          and then a curated bench of specialists who can be plugged in for specific questions – from pricing or sales
+          effectiveness to working capital, technology or people and culture.
+        </p>
+      </div>
+      <div class="two-column">
+        <div>
+          <div class="badge-contrast">Independent vs in‑house</div>
+          <p>
+            In‑house Operating Partners bring a single CV to every portfolio company. Consvltor brings my own experience
+            as your day‑to‑day Operating Partner, and then assembles the right specialist capabilities around the
+            situation.
+          </p>
+          <ul class="case-list">
+            <li>One accountable lead; no “consulting pyramid”.</li>
+            <li>Specialists engaged only where they add clear value.</li>
+            <li>No permanent headcount, no bench to keep busy.</li>
+          </ul>
+        </div>
+        <div>
+          <div class="badge-contrast">Principles</div>
+          <ul class="case-list">
+            <li><strong>Embedded, not external:</strong> work alongside your teams, not around them.</li>
+            <li><strong>Evidence‑based:</strong> decisions anchored in data, unit economics and market reality.</li>
+            <li><strong>Outcome‑linked:</strong> clear objectives and simple, flexible engagement structures.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SELECTED WORK -->
+  <section id="work">
+    <div class="section-grid">
+      <div>
+        <h2>Selected work</h2>
+        <p>
+          Examples are anonymised and simplified. In each case, the work combined my role as Operating Partner with
+          targeted specialist input where needed.
+        </p>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <div class="case-title">Mid‑market PE‑backed services business</div>
+          <div class="case-meta">Deal support → 100‑day plan → execution</div>
+          <ul class="case-list">
+            <li>Co‑designed 100‑day agenda focused on pricing, sales coverage and operations.</li>
+            <li>Brought in pricing specialist for targeted work on key segments.</li>
+            <li>Established simple performance cadence and board‑ready metrics.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="case-title">Founder‑led technology company</div>
+          <div class="case-meta">Professionalisation ahead of fundraising</div>
+          <ul class="case-list">
+            <li>Clarified strategy and operating model; defined leadership gaps.</li>
+            <li>Worked with people / org design SME on leadership structure.</li>
+            <li>Result: smoother investor conversations and clearer board rhythm.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="case-title">Industrial group carve‑out</div>
+          <div class="case-meta">Post‑deal integration and performance lift</div>
+          <ul class="case-list">
+            <li>Redesigned operating model and roles post‑acquisition.</li>
+            <li>Used working‑capital specialist for inventory and cash initiatives.</li>
+            <li>Improved visibility on margin and cash, stabilised leadership team.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-grid">
+      <div>
+        <h2>About Consvltor</h2>
+        <p>
+          Consvltor is an independent Operating Partner practice led by [Your Name], working with investors, boards and
+          leadership teams across the UK and Europe. Experience spans [sectors – e.g. B2B services, technology,
+          industrials], with a focus on pragmatic value‑creation planning and execution.
+        </p>
+      </div>
+      <div class="two-column">
+        <div>
+          <h3>Profile</h3>
+          <ul class="case-list">
+            <li>[X]+ years across consulting, industry and PE‑backed environments.</li>
+            <li>Roles including [strategy / COO / transformation / portfolio operations].</li>
+            <li>Comfortable from boardroom discussion to working‑session whiteboards.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Practice focus</h3>
+          <ul class="case-list">
+            <li>Mid‑market PE and growth equity situations.</li>
+            <li>Founder‑ and family‑owned businesses in transition.</li>
+            <li>Complex, multi‑stakeholder change programmes.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESOURCES PREVIEW -->
+  <section id="resources">
+    <div class="section-grid">
+      <div>
+        <h2>Resources</h2>
+        <p>
+          Short, practical tools for investors, operating partners and leadership teams. A few examples are below – the
+          full library sits on the Resources page.
+        </p>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <h3>100‑day plan checklist</h3>
+          <p>
+            A pragmatic, non‑theoretical checklist for shaping a 100‑day agenda that leadership and investors can own together.
+          </p>
+          <p><a href="/resources.html#100-day-plan">View on Resources →</a></p>
+        </div>
+        <div class="card">
+          <h3>Board‑level operating metrics</h3>
+          <p>
+            A simple starting point for defining the metrics that really matter for operating performance and value creation.
+          </p>
+          <p><a href="/resources.html#board-metrics">View on Resources →</a></p>
+        </div>
+        <div class="card">
+          <h3>Exit readiness scan</h3>
+          <p>
+            Twenty questions to assess how ready the business is – in story, numbers and operations – for sale or refinancing.
+          </p>
+          <p><a href="/resources.html#exit-readiness">View on Resources →</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-grid">
+      <div class="contact-block">
+        <h2>Let’s talk</h2>
+        <p>
+          If you’d like to discuss a portfolio company, a potential transaction, or an upcoming change programme, please
+          get in touch.
+        </p>
+        <div class="contact-details">
+          <div>Email: <a href="mailto:hello@consvltor.net">hello@consvltor.net</a></div>
+          <!-- Optional: add phone
+          <div>Phone: +44 (0)7...</div>
+          -->
+          <!-- Optional: Calendly or scheduling link
+          <div><a href="https://calendly.com/your-link" target="_blank" rel="noopener">Book a 30‑minute call →</a></div>
+          -->
+        </div>
+      </div>
+      <div>
+        <form class="contact-form" action="mailto:hello@consvltor.net" method="post" enctype="text/plain">
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" required>
+          </div>
+          <div class="field">
+            <label for="firm">Firm / company</label>
+            <input id="firm" name="firm" type="text">
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required>
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="A sentence or two about what you’d like to discuss."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  &copy; <span id="year"></span> Consvltor. All rights reserved.
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
