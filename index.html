@@ -95,8 +95,16 @@
   p { color: var(--muted); font-size: 0.9rem; margin-bottom: 0.9rem; }
   p:last-child { margin-bottom: 0; }
 
+  .hero-banner {
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 0;
+  }
+
   .hero {
-    padding: 5rem 0 4rem;
+    padding: 3.5rem 0 4rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
@@ -404,6 +412,7 @@
   }
 
   @media (max-width: 800px) {
+    .hero-banner { height: 180px; }
     .hero { grid-template-columns: 1fr; gap: 2.5rem; }
     .section-grid { grid-template-columns: 1fr; gap: 2rem; }
     .cards { grid-template-columns: 1fr; }
@@ -434,7 +443,10 @@
 <main class="container">
 
   <!-- HERO -->
-  <section id="top" style="border-top:none;">
+  <section id="top" style="border-top:none; padding-top:0;">
+    <div class="hero-banner">
+      <img src="https://consvltor.net/assets/consvltor_cover.jpg" alt="Consvltor world map" style="width:100%;height:100%;object-fit:cover;display:block;">
+    </div>
     <div class="hero">
       <div>
         <div class="hero-kicker">Independent Operating Partner</div>
@@ -630,7 +642,9 @@
         <hr class="etym-divider">
 
         <div class="profile-block">
-          <div class="profile-avatar">EB</div>
+          <div class="profile-avatar" style="width:72px;height:72px;border-radius:50%;border:1px solid var(--rule);overflow:hidden;flex-shrink:0;">
+            <img src="https://consvltor.net/assets/EBprofile.jpg" alt="Eduardo Bayod" style="width:100%;height:100%;object-fit:cover;">
+          </div>
           <div>
             <div class="profile-name">Eduardo Bayod</div>
             <div class="profile-title">Director, C&#x0298;NSVLT&#x0298;R (est. 2018)</div>
