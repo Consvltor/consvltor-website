@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>C&#x0298;NSVLT&#x0298;R - Operating Partner Services</title>
+<title><span class="logo-mark">C&#x0298;NSVLT&#x0298;R</span> - Operating Partner Services</title>
 <meta name="description" content="Independent Operating Partner for PE-backed and founder-led businesses. Asset scouting, due diligence, value creation and board-level support across TMT and digital infrastructure.">
 <style>
   :root {
@@ -135,15 +135,30 @@
     line-height: 1.75;
   }
 
-  .hero-tags { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-bottom: 2rem; }
+  .hero-tags {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.45rem;
+    margin-bottom: 2rem;
+  }
 
   .tag {
     font-size: 0.72rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     border: 1px solid var(--rule);
-    padding: 0.2rem 0.65rem;
+    padding: 0.3rem 0.65rem;
     color: var(--muted);
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    transition: background 0.15s, color 0.15s;
+  }
+
+  a.tag:hover {
+    background: var(--parchment-alt);
+    color: var(--brown);
+    text-decoration: none;
   }
 
   .buttons { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1.75rem; }
@@ -207,7 +222,7 @@
   .card h3 {
     font-family: var(--font-serif);
     font-size: 1.05rem;
-    font-weight: normal;
+    font-weight: bold;
     color: var(--brown);
     margin-bottom: 0.55rem;
   }
@@ -246,6 +261,14 @@
     text-decoration: underline;
     text-underline-offset: 3px;
     font-style: normal;
+  }
+
+  /* Logo mark must never be italicised or in the wrong font -- the ʘ characters distort */
+  .logo-mark,
+  .callout .logo-mark,
+  em .logo-mark {
+    font-style: normal;
+    font-family: var(--font-serif);
   }
 
   .client-block { margin-bottom: 1.75rem; }
@@ -419,8 +442,51 @@
     .two-col { grid-template-columns: 1fr; gap: 1.5rem; }
     .formation-grid { grid-template-columns: 1fr; }
     .profile-block { grid-template-columns: 1fr; }
-    header { position: static; }
     h1 { font-size: 2rem; }
+
+    .nav-links {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: #fff;
+      border-bottom: 1px solid var(--rule);
+      flex-direction: column;
+      gap: 0;
+      margin-left: 0;
+      padding: 0.5rem 0;
+    }
+
+    .nav-links.open { display: flex; }
+
+    .nav-links a {
+      padding: 0.65rem 1.5rem;
+      border-bottom: 1px solid var(--parchment-alt);
+    }
+
+    .nav-links a:last-child { border-bottom: none; }
+
+    .nav-hamburger {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      background: none;
+      border: none;
+    }
+
+    .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--brown);
+    }
+  }
+
+  @media (min-width: 801px) {
+    .nav-hamburger { display: none; }
   }
 </style>
 </head>
@@ -428,14 +494,17 @@
 
 <header>
   <div class="nav">
-    <a href="#top" class="logo">C&#x0298;NSVLT&#x0298;R</a>
-    <nav class="nav-links">
-      <a href="#why">Why</a>
-      <a href="#who">Who</a>
-      <a href="#what">What</a>
-      <a href="#how">How</a>
-      <a href="#etymology">Etymology</a>
-      <a href="#contact">Contact</a>
+    <a href="#top" class="logo"><span class="logo-mark">C&#x0298;NSVLT&#x0298;R</span></a>
+    <button class="nav-hamburger" id="nav-toggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links" id="nav-links">
+      <a href="#why" onclick="closeNav()">Why</a>
+      <a href="#who" onclick="closeNav()">Who</a>
+      <a href="#what" onclick="closeNav()">What</a>
+      <a href="#how" onclick="closeNav()">How</a>
+      <a href="#etymology" onclick="closeNav()">Etymology</a>
+      <a href="#contact" onclick="closeNav()">Contact</a>
     </nav>
   </div>
 </header>
@@ -451,13 +520,14 @@
       <div>
         <div class="hero-kicker">Independent Operating Partner</div>
         <h1>Hands-on strategy and operations. M&amp;A advisory. From first look to exit.</h1>
-        <p class="hero-body">C&#x0298;NSVLT&#x0298;R provides senior, independent Operating Partner support to PE-backed and founder-led businesses across TMT, digital infrastructure, and technology-driven sectors. One accountable lead. The right specialists alongside, when the situation calls for them.</p>
+        <p class="hero-body"><span class="logo-mark">C&#x0298;NSVLT&#x0298;R</span> provides senior, independent Operating Partner support to PE-backed and founder-led businesses across TMT, digital infrastructure, and technology-driven sectors. One accountable lead. The right specialists alongside, when the situation calls for them.</p>
         <div class="hero-tags">
-          <span class="tag">Asset scouting</span>
-          <span class="tag">CDD / TDD / ODD</span>
-          <span class="tag">Value creation</span>
-          <span class="tag">Board support</span>
-          <span class="tag">Exit readiness</span>
+          <a href="#what" class="tag">Asset scouting</a>
+          <a href="#what" class="tag">CDD / TDD / ODD</a>
+          <a href="#what" class="tag">Value creation</a>
+          <a href="#what" class="tag">Transformation</a>
+          <a href="#what" class="tag">Board support</a>
+          <a href="#what" class="tag">Exit readiness</a>
         </div>
         <div class="buttons">
           <a href="#contact" class="btn btn-primary">Get in touch</a>
@@ -507,7 +577,7 @@
         <p>Most businesses interacting with a consulting firm get <strong>a partner on the pitch and juniors on the job</strong>. Most PE houses with an in-house Operating Partner get <strong>one person's CV applied to every situation</strong>, however well that CV fits the deal in front of them.</p>
         <p><em>Neither model is wrong. But neither is always right.</em></p>
         <p>There are moments in the life of a fund or a portfolio company where what is needed is not a process or a playbook. A deal about to close. A portfolio company losing altitude. A founder preparing for the conversation of their life. Those moments call for someone who is in the room <strong>because they are useful</strong>, not because they are on retainer.</p>
-        <p>C&#x0298;NSVLT&#x0298;R is built for those moments. See <a href="#what">What we do</a> and <a href="#how">How we work</a>.</p>
+        <p><span class="logo-mark">C&#x0298;NSVLT&#x0298;R</span> is built for those moments. See <a href="#what">What we do</a> and <a href="#how">How we work</a>.</p>
       </div>
     </div>
   </section>
@@ -518,7 +588,7 @@
       <div>
         <div class="section-label">Who</div>
         <p class="section-sub" style="margin-top:0.5rem;">Who we work with.</p>
-        <div class="callout">For the story of who is behind C&#x0298;NSVLT&#x0298;R and how the practice is structured, see <a href="#etymology">Etymology</a>.</div>
+        <div class="callout">For the story of who is behind <span class="logo-mark">C&#x0298;NSVLT&#x0298;R</span> and how the practice is structured, see <a href="#etymology">Etymology</a>.</div>
       </div>
       <div>
         <div class="client-block">
@@ -542,32 +612,32 @@
     <div class="section-grid">
       <div>
         <div class="section-label">What</div>
-        <p class="section-sub" style="margin-top:0.5rem;">What C&#x0298;NSVLT&#x0298;R does.</p>
+        <p class="section-sub" style="margin-top:0.5rem;">What <span class="logo-mark">C&#x0298;NSVLT&#x0298;R</span> does.</p>
         <p class="section-sub" style="margin-top:0.75rem;">Engagements are shaped around the situation, not around a standard offering or a billable-hours target.</p>
         <div class="callout">Sectors: TMT, digital infrastructure, and technology-driven sectors including defence and smart cities. Five continents, from Chile to Indonesia, Sweden to South Africa.</div>
       </div>
       <div class="cards">
-        <div class="card">
+        <div class="card" id="what-scouting">
           <h3>Asset scouting and outside-in reviews</h3>
           <p>Before the teaser, before the data room, <strong>before the formal mandate</strong>. A senior read on whether an asset is worth pursuing: market and competitive dynamics from the outside, likely red flags, regulatory considerations. <em>Fast and experience-driven</em>, useful precisely because it happens before the meter is running on a full mandate.</p>
         </div>
-        <div class="card">
+        <div class="card" id="what-dd">
           <h3>Commercial, technical and operations due diligence</h3>
           <p><strong>20-plus mandates</strong> across TMT, digital infrastructure and adjacent sectors. Buy-side and sell-side. Pre-NBO red flag reviews through to full <strong>CDD, TDD and ODD</strong>. Input that goes beyond the report and into what the findings mean for the <em>investment thesis and the operating plan that follows</em>.</p>
         </div>
-        <div class="card">
+        <div class="card" id="what-vc">
           <h3>Value creation: from plan to execution</h3>
           <p>100-day agendas and 12-24 month roadmaps that <strong>leadership can actually own</strong>. Margin improvement, revenue growth levers, operating model redesign, working capital. <em>The plan and the doing, not one without the other.</em></p>
         </div>
-        <div class="card">
+        <div class="card" id="what-transform">
           <h3>Business transformation and change</h3>
           <p>Digital transformation, go-to-market redesign, organisational change, systems implementation. Strategy themes <strong>translated into operating reality</strong>. Hands-on from the first whiteboard session to the last milestone review.</p>
         </div>
-        <div class="card">
+        <div class="card" id="what-board">
           <h3>Board-level and leadership support</h3>
           <p>As Operating Partner, fractional COO, NED or board observer. A <strong>senior, independent voice</strong> with the operational depth to back it up. <em>Coaching and sparring</em> for founders and functional leaders navigating inflection points and transitions.</p>
         </div>
-        <div class="card">
+        <div class="card" id="what-exit">
           <h3>Exit readiness</h3>
           <p>Getting <strong>the story, the numbers and the operating posture</strong> right before the conversation with buyers begins. No-regrets actions. Equity story preparation. Vendor assist and hand-over support through to close.</p>
         </div>
@@ -583,9 +653,9 @@
         <p class="section-sub" style="margin-top:0.5rem;">The model and why it is built this way.</p>
       </div>
       <div>
-        <p>C&#x0298;NSVLT&#x0298;R is <strong>deliberately lean</strong>. One accountable Operating Partner as the constant point of contact. A curated formation of specialist operators and subject-matter experts, engaged <strong>only when they add clear, specific value</strong> to the situation at hand.</p>
+        <p><span class="logo-mark">C&#x0298;NSVLT&#x0298;R</span> is <strong>deliberately lean</strong>. One accountable Operating Partner as the constant point of contact. A curated formation of specialist operators and subject-matter experts, engaged <strong>only when they add clear, specific value</strong> to the situation at hand.</p>
         <p><em>No consulting pyramid. No permanent bench to keep busy. No junior team learning on your time and your budget.</em></p>
-        <p>The difference from an in-house Operating Partner is not just structural: <strong>it is about range</strong>. An in-house OP brings one CV to every portfolio company. C&#x0298;NSVLT&#x0298;R brings focused, senior experience as the day-to-day lead, and assembles the right specialist capabilities around each situation as it demands them. A pricing question gets a pricing specialist. A working capital problem gets a working capital specialist. <em>A people and culture challenge gets exactly that.</em></p>
+        <p>The difference from an in-house Operating Partner is not just structural: <strong>it is about range</strong>. An in-house OP brings one CV to every portfolio company. <span class="logo-mark">C&#x0298;NSVLT&#x0298;R</span> brings focused, senior experience as the day-to-day lead, and assembles the right specialist capabilities around each situation as it demands them. A pricing question gets a pricing specialist. A working capital problem gets a working capital specialist. <em>A people and culture challenge gets exactly that.</em></p>
         <div class="two-col" style="margin-top:1.75rem;">
           <div>
             <div class="col-head">Principles</div>
@@ -608,7 +678,7 @@
             </ul>
           </div>
         </div>
-        <div class="callout" style="margin-top:1.75rem;">For the structure of the formation behind C&#x0298;NSVLT&#x0298;R, including the specialist bench, see <a href="#etymology">Etymology</a>.</div>
+        <div class="callout" style="margin-top:1.75rem;">For the structure of the formation behind <span class="logo-mark">C&#x0298;NSVLT&#x0298;R</span>, including the specialist bench, see <a href="#etymology">Etymology</a>.</div>
       </div>
     </div>
   </section>
@@ -621,7 +691,7 @@
         <p class="section-sub" style="margin-top:0.5rem;">On the name and what it means for who we are and how we work.</p>
       </div>
       <div>
-        <p class="etym-prose"><em>Consvltor</em> is Latin. It means <strong>one who deliberates</strong>: one who gives considered counsel. The Romans used <em>consulere</em> for the act of seeking advice, of thinking carefully before acting, of bringing <strong>judgement</strong> rather than mere opinion to bear. It is the root of <em>consul</em>, of <em>counsel</em>, of the English word <em>consult</em> -- though by the time that last word reached the modern consulting industry, <em>something of the original gravity had been lost along the way</em>.</p>
+        <p class="etym-prose"><em>Consvltor</em> is Latin. It means <strong>one who deliberates</strong>: one who gives considered counsel. The Romans used <em>consulere</em> for the act of seeking advice, of thinking carefully before acting, of bringing <strong>judgement</strong> rather than mere opinion to bear. It is the root of <em>consul</em>, of <em>counsel</em>, of the English word <em>consult</em>, though by the time that last word reached the modern consulting industry, <em>something of the original gravity had been lost along the way</em>.</p>
 
         <p class="etym-prose">The spelling (with a <strong>V</strong> rather than a U) is how the Romans wrote it. A small reminder that this is an old idea, and that old ideas sometimes outlast the fashions that replaced them.</p>
 
@@ -631,7 +701,7 @@
 
         <p class="etym-prose"><em>Freelance</em> is a younger word. It was popularised by Walter Scott in <em>Ivanhoe</em> (1820), but it describes a <strong>very old reality</strong>. A free lance was a medieval mercenary knight whose lance was <strong>free</strong>: not pledged by birth or feudal obligation to any lord, but available, for the right engagement, to whoever needed him most. The concept is well documented across medieval Europe, in the military registers of Castile, in the French <em>lance fournie</em>.</p>
 
-        <p class="etym-prose">And the lance, in those records, not only was not just a weapon -- <em>it often was not just one man</em>.</p>
+        <p class="etym-prose">And the lance, in those records, not only was not just a weapon, <em>it often was not just one man</em>.</p>
 
         <p class="etym-prose">The <strong>Castilian Lance</strong> (<em>lanza castellana</em>) was a tactical formation: a mounted knight, a squire, an archer, a page. Each with a distinct role. Each essential. <strong>The knight accountable for the outcome</strong>; the formation assembled around the specific demands of the engagement. You did not bring the full lance to a courier mission. <em>You brought everything to a siege.</em></p>
 
@@ -647,19 +717,23 @@
           </div>
           <div>
             <div class="profile-name">Eduardo Bayod</div>
-            <div class="profile-title">Director, C&#x0298;NSVLT&#x0298;R (est. 2018)</div>
+            <div class="profile-title">Director, <span class="logo-mark">C&#x0298;NSVLT&#x0298;R</span> (est. 2018)</div>
             <p class="profile-bio">Over <strong>25 years</strong> in Big 4 firms, technology change agents and strategy boutiques: PwC, Accenture, Delta Partners, Oliver Wyman, Huawei, Ericsson, Fide Partners, BDO. Hands-on strategy and operations, M&amp;A advisory, commercial, technical and operations due diligence across five continents, from Chile to Indonesia, Sweden to South Africa. <em>Now London based.</em></p>
             <p class="profile-bio">Sector specialism in <strong>TMT and digital infrastructure</strong>: telecoms, towercos, fibre, datacentres, cloud, cybersecurity, media. Two masters degrees (Software Engineering; Strategic Studies). Reserve officer. Recurve archer. <em>Always curious.</em></p>
             <a href="https://www.linkedin.com/in/bayod" target="_blank" rel="noopener" class="linkedin-link">
               <svg class="linkedin-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
               LinkedIn
             </a>
+            <a href="mailto:eduardo@consvltor.net" class="linkedin-link" style="margin-left:0.5rem;">
+              <svg class="linkedin-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              Email
+            </a>
           </div>
         </div>
 
         <hr class="etym-divider">
 
-        <p class="etym-prose" style="margin-bottom:1.1rem;"><strong>The Formation</strong> -- a small group of experienced independent specialists, each with deep expertise in their own domain. Engaged by situation, not by retinue. <em>Primus inter pares.</em></p>
+        <p class="etym-prose" style="margin-bottom:1.1rem;"><em>The Formation</em>: a small group of experienced independent specialists, each with deep expertise in their own domain. Engaged by situation, not by retainers. Formation led by a <em>Primus inter pares.</em></p>
 
         <div class="formation-grid">
           <div class="formation-card">
@@ -681,6 +755,10 @@
           <div class="formation-card">
             <div class="formation-role">Creative and communications</div>
             <div class="formation-desc">Positioning, visual identity and the craft of making complex things clear to the right audiences.</div>
+          </div>
+          <div class="formation-card">
+            <div class="formation-role">Capital markets and investor relations</div>
+            <div class="formation-desc">Fund management, institutional relationships, family office advisory and capital raising. The investor-side perspective, brought to bear where it matters.</div>
           </div>
         </div>
 
@@ -719,4 +797,21 @@
 </main>
 
 <footer>
-  <div class="f
+  <div class="footer-inner">
+    <div class="footer-logo"><span class="logo-mark">C&#x0298;NSVLT&#x0298;R</span></div>
+    <div class="footer-copy">AMDG &nbsp;&middot;&nbsp; &copy;</div>
+  </div>
+</footer>
+
+<script>
+  var toggle = document.getElementById('nav-toggle');
+  var links = document.getElementById('nav-links');
+  toggle.addEventListener('click', function() {
+    links.classList.toggle('open');
+  });
+  function closeNav() {
+    links.classList.remove('open');
+  }
+</script>
+</body>
+</html>
