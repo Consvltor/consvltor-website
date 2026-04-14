@@ -442,11 +442,49 @@
     text-transform: uppercase;
   }
 
+  .footer-privacy {
+    font-size: 0.68rem;
+    color: var(--muted);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
   .footer-copy {
     font-size: 0.68rem;
     color: var(--muted);
     letter-spacing: 0.14em;
     text-transform: uppercase;
+  }
+
+  .privacy-trigger {
+    position: relative;
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-style: dotted;
+  }
+
+  .privacy-tooltip {
+    display: none;
+    position: absolute;
+    bottom: 1.6rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 260px;
+    background: var(--parchment);
+    border: 1px solid var(--rule);
+    padding: 0.85rem 1rem;
+    font-size: 0.78rem;
+    color: var(--muted);
+    letter-spacing: 0.02em;
+    text-transform: none;
+    line-height: 1.6;
+    z-index: 100;
+  }
+
+  .privacy-trigger:hover .privacy-tooltip,
+  .privacy-trigger:focus .privacy-tooltip {
+    display: block;
   }
 
   @media (max-width: 800px) {
@@ -833,6 +871,11 @@
 <footer>
   <div class="footer-inner">
     <div class="footer-logo"><span class="logo-mark">C&#x0298;NSVLT&#x0298;R</span></div>
+    <div class="footer-privacy">
+      <span class="privacy-trigger" tabindex="0">Privacy
+        <span class="privacy-tooltip"><em>No cookies. No trackers. No small print.</em><br><br>We are not collecting your data. If you want to talk, you know where to find us.</span>
+      </span>
+    </div>
     <div class="footer-copy">AMDG &nbsp;&middot;&nbsp; &copy; MMXXVI</div>
   </div>
 </footer>
