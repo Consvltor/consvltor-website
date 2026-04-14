@@ -653,8 +653,8 @@
         <p style="font-size:0.9rem; color:var(--muted); margin-bottom:1.5rem;"><em>But no two engagements are alike.</em> The six areas above describe what <span class="logo-mark">C&#x0298;NSVLT&#x0298;R</span> does. Where a client actually needs support, and at what depth, is <em>always specific to the situation</em>. The framework below is a <em>starting point for that conversation</em>.</p>
 
         <div class="cube-hover" style="position:relative; cursor:pointer;">
-          <img src="https://consvltor.net/assets/ConsvltorCube.png" class="cube-simple" alt="Cubus Consvltoris" style="width:100%; border:1px solid var(--rule); display:block; transition: opacity 0.4s ease;">
-          <img src="https://consvltor.net/assets/ConsvltorCubeDetail.png" class="cube-detail" alt="Cubus Consvltoris -- detailed" style="width:100%; border:1px solid var(--rule); display:block; position:absolute; top:0; left:0; opacity:0; transition: opacity 0.4s ease;">
+          <img src="https://consvltor.net/assets/CuboConsvltoris.png" class="cube-simple" alt="Cubus Consvltoris" style="width:100%; border:1px solid var(--rule); display:block; transition: opacity 0.4s ease;">
+          <img src="https://consvltor.net/assets/CuboConsvltorisDetail.png" class="cube-detail" alt="Cubus Consvltoris -- detailed" style="width:100%; border:1px solid var(--rule); display:block; position:absolute; top:0; left:0; opacity:0; transition: opacity 0.4s ease;">
         </div>
         <p style="font-size:0.75rem; text-align:center; color:var(--muted); margin-top:0.5rem; letter-spacing:0.06em; font-family:var(--font-serif); font-style:italic;">Cubus Consvltoris &nbsp;&middot;&nbsp; A framework of engagement, in three dimensions &nbsp;&middot;&nbsp; <em>hover to explore</em></p>
 
@@ -745,7 +745,7 @@
               <svg class="linkedin-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
               LinkedIn
             </a>
-            <!--email_off--><a href="mailto:eduardo@consvltor.net" class="linkedin-link" style="margin-left:0.5rem;"><!--/email_off-->
+            <a href="mailto:eduardo@consvltor.net" class="linkedin-link" style="margin-left:0.5rem;">
               <svg class="linkedin-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
               Email
             </a>
@@ -794,7 +794,7 @@
         <div class="section-label">Contact</div>
         <p class="section-sub" style="margin-top:0.5rem;">Let's talk.</p>
         <div class="contact-detail">
-          <div>Email: <!--email_off--><a href="mailto:hello@consvltor.net">hello@consvltor.net</a><!--/email_off--></div>
+          <div>Email: <a href="mailto:hello@consvltor.net">hello@consvltor.net</a></div>
           <div style="margin-top:0.75rem;">
             <a href="https://www.linkedin.com/in/bayod" target="_blank" rel="noopener" class="linkedin-link">
               <svg class="linkedin-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
@@ -810,7 +810,7 @@
         <div class="field"><label>Firm / company</label><input type="text" id="contact-firm" placeholder="Your firm or company"></div>
         <div class="field"><label>Email</label><input type="email" id="contact-email" placeholder="your@email.com"></div>
         <div class="field"><label>Message</label><textarea id="contact-message" placeholder="A sentence or two about what you would like to discuss."></textarea></div>
-        <!--email_off--><a id="contact-send" href="mailto:hello@consvltor.net?subject=Enquiry via consvltor.net" class="btn btn-primary" onclick="buildMailto(event)">Send message</a><!--/email_off-->
+        <a id="contact-send" href="mailto:hello@consvltor.net?subject=Enquiry via consvltor.net" class="btn btn-primary" onclick="buildMailto(event)">Send message</a>
       </div>
     </div>
   </section>
@@ -844,7 +844,8 @@
     if (firm) body += 'Firm: ' + firm + '\n';
     if (email) body += 'Email: ' + email + '\n';
     if (message) body += '\n' + message;
-    var u='hello';var d='consvltor.net';var mailto='mailto:'+u+'@'+d+'?subject=Enquiry via consvltor.net&body='+encodeURIComponent(body);
+    var u='hello';var d='consvltor.net';
+    var mailto='mailto:'+u+'@'+d+'?subject=Enquiry via consvltor.net&body='+encodeURIComponent(body);
     document.getElementById('contact-send').href = mailto;
   }
 
@@ -854,4 +855,13 @@
     var detail = cube.querySelector('.cube-detail');
     cube.addEventListener('mouseenter', function() {
       simple.style.opacity = '0';
-      detail.sty
+      detail.style.opacity = '1';
+    });
+    cube.addEventListener('mouseleave', function() {
+      simple.style.opacity = '1';
+      detail.style.opacity = '0';
+    });
+  }
+</script>
+</body>
+</html>
