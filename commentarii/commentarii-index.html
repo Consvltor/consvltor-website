@@ -2,298 +2,597 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Commentarii · CʘNSVLTʘR</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<link rel="icon" type="image/png" href="https://consvltor.net/assets/Cfavicon.png">
+<link rel="apple-touch-icon" href="https://consvltor.net/assets/Cfavicon.png">
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-:root{
-  --bg:#F5F0E6; --ink:#1C1814; --ink-mid:#4A4540; --ink-light:#8A837A;
-  --rule:#D0C8BC; --card-bg:#EDE8DE; --accent:#7A3020;
-  --amber:#7A5A1A; --green:#2A5036; --blue:#1A3C5A;
+
+/* ═══════════════════════════════════════════════════════════
+   §1  CONSVLTOR.NET — verbatim variables, reset, base
+═══════════════════════════════════════════════════════════ */
+:root {
+  --brown:         #5c2d00;
+  --brown-mid:     #7a3d00;
+  --brown-light:   #a0601a;
+  --parchment:     #fdf8f0;
+  --parchment-alt: #f5ede0;
+  --ink:           #2a1500;
+  --muted:         #7a5c3a;
+  --rule:          #c9a87a;
+  --font-serif:    'Times New Roman', Times, serif;
+  --font-sans:     Arial, Helvetica, sans-serif;
 }
-html{scroll-behavior:smooth;}
-body{background:var(--bg);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;font-size:15px;line-height:1.75;-webkit-font-smoothing:antialiased;}
 
-/* SITE NAV */
-.site-nav{background:#fff;border-bottom:1px solid #E8E0D8;padding:14px 48px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:200;}
-.site-logo{font-family:'Times New Roman',Times,serif;font-size:14px;letter-spacing:0.16em;color:var(--ink);text-decoration:none;}
-.site-nav-links{display:flex;gap:28px;align-items:center;}
-.site-nav-links a{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-mid);text-decoration:none;}
-.site-nav-links a:hover{color:var(--ink);}
-.site-nav-links a.active{color:var(--accent);font-weight:600;}
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* MAP */
-#map{width:100%;height:420px;background:#E8E0CC;}
-.leaflet-container{font-family:'Source Serif 4',Georgia,serif;}
-
-/* LAYOUT: sidebar + main */
-.page-body{display:grid;grid-template-columns:200px 1fr;max-width:1200px;margin:0 auto;min-height:60vh;}
-
-/* SIDEBAR */
-.sidebar{border-right:1px solid var(--rule);padding:32px 20px 48px;background:var(--bg);position:sticky;top:57px;height:calc(100vh - 57px);overflow-y:auto;}
-.sidebar-label{font-size:9px;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink-light);margin-bottom:14px;padding-bottom:6px;border-bottom:1px solid var(--rule);}
-.issue-list{list-style:none;}
-.issue-item{padding:10px 0;border-bottom:1px solid var(--rule);cursor:pointer;}
-.issue-item:last-child{border-bottom:none;}
-.issue-item:hover .issue-title{color:var(--accent);}
-.issue-item.active .issue-title{color:var(--accent);font-weight:600;}
-.issue-date{font-size:10px;letter-spacing:0.08em;color:var(--ink-light);margin-bottom:3px;}
-.issue-title{font-size:12px;color:var(--ink-mid);line-height:1.4;}
-.issue-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:11px;color:var(--ink-light);}
-
-/* MAIN CONTENT */
-.main-content{padding:0;}
-
-/* ISSUE HEADER */
-.issue-header{padding:40px 48px 32px;border-bottom:1px solid var(--rule);}
-.issue-eyebrow{font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink-light);margin-bottom:16px;display:flex;gap:20px;}
-.issue-h1{font-family:'Cormorant Garamond',Georgia,serif;font-size:42px;font-weight:500;line-height:1.1;color:var(--ink);margin-bottom:16px;max-width:680px;}
-.issue-deck{font-size:15px;color:var(--ink-mid);line-height:1.7;max-width:620px;border-left:3px solid var(--accent);padding-left:18px;margin-bottom:28px;}
-
-/* SIGNAL CARDS */
-.signal-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);border-top:1px solid var(--rule);}
-.signal-card{background:var(--bg);padding:16px 14px;display:flex;flex-direction:column;justify-content:space-between;min-height:120px;}
-.sc-cat{font-size:8px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-light);margin-bottom:6px;}
-.sc-theme{font-size:11px;color:var(--ink);line-height:1.4;margin-bottom:8px;flex:1;}
-.sc-stance{display:inline-block;font-size:8px;letter-spacing:0.08em;text-transform:uppercase;font-weight:600;padding:2px 6px;border-radius:2px;align-self:flex-start;}
-.stance-cau{background:#F0DDD8;color:#7A3020;}
-.stance-ele{background:#E8D0CC;color:#6A2018;}
-.stance-opp{background:#D8EAE0;color:#2A5036;}
-.stance-mon{background:#F0E8D0;color:#7A5A1A;}
-
-/* REPORT EMBED */
-.report-embed{padding:0;}
-.report-embed iframe{width:100%;border:none;display:block;min-height:100vh;}
-
-/* READ FULL LINK */
-.read-full{display:flex;align-items:center;gap:10px;padding:16px 48px;border-bottom:1px solid var(--rule);background:var(--card-bg);}
-.read-full a{font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);text-decoration:none;font-weight:600;}
-.read-full a:hover{text-decoration:underline;}
-.read-full span{font-size:12px;color:var(--ink-light);}
-
-/* LOADING */
-.loading{padding:80px 48px;text-align:center;color:var(--ink-light);font-style:italic;font-size:14px;}
-
-/* CUSTOM MAP PIN */
-.pin-label{background:white;border:1.5px solid var(--accent);border-radius:3px;padding:3px 7px;font-size:11px;font-family:'Source Serif 4',Georgia,serif;color:var(--ink);white-space:nowrap;box-shadow:0 2px 6px rgba(0,0,0,0.15);}
-
-@media(max-width:900px){
-  .page-body{grid-template-columns:1fr;}
-  .sidebar{position:static;height:auto;border-right:none;border-bottom:1px solid var(--rule);display:flex;gap:0;padding:20px;overflow-x:auto;}
-  .sidebar-label{display:none;}
-  .issue-list{display:flex;flex-direction:row;gap:12px;white-space:nowrap;}
-  .issue-item{border-bottom:none;padding:8px 12px;background:var(--card-bg);border-radius:3px;min-width:140px;}
-  .signal-cards{grid-template-columns:1fr 1fr;}
-  .issue-header{padding:24px 20px 20px;}
-  .issue-h1{font-size:28px;}
-  .site-nav{padding:12px 20px;}
-  .site-nav-links{gap:16px;}
+body {
+  font-family: var(--font-sans);
+  background: #fff;
+  color: var(--ink);
+  font-size: 15px;
+  line-height: 1.7;
 }
+
+a { color: var(--brown); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ═══════════════════════════════════════════════════════════
+   §2  HEADER / NAV — verbatim from consvltor.net
+═══════════════════════════════════════════════════════════ */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: #fff;
+  border-bottom: 1px solid var(--rule);
+}
+
+.nav {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0.85rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-family: var(--font-serif);
+  font-size: 1.55rem;
+  font-weight: normal;
+  letter-spacing: 0.1em;
+  color: var(--brown);
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.logo:hover { text-decoration: none; }
+
+.logo-mark,
+.callout .logo-mark,
+em .logo-mark { font-style: normal; font-family: var(--font-serif); }
+
+.nav-links { display: flex; gap: 1.5rem; margin-left: 3rem; }
+
+.nav-links a {
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.nav-links a:hover { color: var(--brown); text-decoration: none; }
+.nav-links a.active { color: #7A3020; }
+
+/* ═══════════════════════════════════════════════════════════
+   §3  REPORT IFRAME
+   Reports must NOT include their own banner/nav —
+   this page's header serves that purpose.
+═══════════════════════════════════════════════════════════ */
+#reportFrame {
+  width: 100%;
+  border: none;
+  display: block;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   §4  SHARED LAYOUT
+═══════════════════════════════════════════════════════════ */
+.container { max-width: 1040px; margin: 0 auto; padding: 0 1.5rem; }
+
+section {
+  padding: 4rem 0;
+  border-top: 1px solid var(--rule);
+  scroll-margin-top: 4rem;
+}
+
+.section-grid {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 3.5rem;
+  align-items: start;
+}
+
+.section-label {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  color: var(--brown);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.section-sub { font-size: 0.85rem; color: var(--muted); line-height: 1.65; }
+
+/* ═══════════════════════════════════════════════════════════
+   §5  ARCHIVE — collapsible list
+═══════════════════════════════════════════════════════════ */
+
+/* The toggle trigger sits above the list, right-aligned */
+.archive-list-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-bottom: 0.4rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.archive-chevron {
+  font-size: 0.55rem;
+  color: var(--muted);
+  display: inline-block;
+  transition: transform 0.2s ease;
+  line-height: 1;
+}
+
+.archive-chevron.open { transform: rotate(180deg); }
+
+.archive-list {
+  list-style: none;
+  border-top: 1px solid var(--rule);
+  max-height: 2000px;
+  overflow: hidden;
+  opacity: 1;
+  transition: max-height 0.35s ease, opacity 0.25s ease;
+}
+
+.archive-list.collapsed {
+  max-height: 0;
+  opacity: 0;
+  border-top: none;
+}
+
+.archive-row {
+  display: flex;
+  align-items: baseline;
+  gap: 1.2rem;
+  padding: 0.65rem 0.75rem;
+  border-bottom: 1px solid var(--rule);
+  border-left: 3px solid transparent;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.archive-row:hover { background: var(--parchment); }
+
+.archive-row.active {
+  background: var(--parchment-alt);
+  border-left-color: #7A3020;
+}
+
+.ar-num {
+  font-family: var(--font-serif);
+  font-size: 0.85rem;
+  color: var(--brown);
+  white-space: nowrap;
+  min-width: 3.5rem;
+}
+
+.ar-date {
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.ar-title {
+  font-size: 0.85rem;
+  color: var(--ink);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   §6  CONTACT — verbatim from consvltor.net
+═══════════════════════════════════════════════════════════ */
+p { color: var(--muted); font-size: 0.9rem; margin-bottom: 0.9rem; }
+p:last-child { margin-bottom: 0; }
+
+.field { margin-bottom: 0.9rem; }
+
+.field label {
+  display: block;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.11em;
+  color: var(--muted);
+  margin-bottom: 0.3rem;
+}
+
+.field input, .field textarea {
+  width: 100%;
+  border: 1px solid var(--rule);
+  background: var(--parchment);
+  padding: 0.5rem 0.75rem;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  color: var(--ink);
+  outline: none;
+}
+
+.field input:focus, .field textarea:focus { border-color: var(--brown-light); }
+.field textarea { min-height: 90px; resize: vertical; }
+
+.contact-detail { font-size: 0.85rem; color: var(--muted); margin-top: 1.25rem; line-height: 2.2; }
+
+.btn {
+  font-size: 0.78rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  padding: 0.55rem 1.3rem;
+  border: 1px solid var(--brown);
+  background: transparent;
+  color: var(--brown);
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.15s, color 0.15s;
+}
+
+.btn-primary { background: var(--brown); color: #fff; }
+.btn:hover { background: var(--brown); color: #fff; text-decoration: none; }
+.btn-primary:hover { background: var(--brown-mid); border-color: var(--brown-mid); }
+
+.linkedin-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--brown);
+  border: 1px solid var(--rule);
+  padding: 0.25rem 0.65rem;
+  margin-top: 0.25rem;
+}
+
+.linkedin-link:hover { background: var(--parchment-alt); text-decoration: none; }
+.linkedin-icon { width: 13px; height: 13px; fill: var(--brown); flex-shrink: 0; }
+
+/* ═══════════════════════════════════════════════════════════
+   §7  FOOTER — verbatim from consvltor.net
+═══════════════════════════════════════════════════════════ */
+footer { border-top: 1px solid var(--rule); padding: 1.75rem 0; }
+
+.footer-inner {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-logo {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: normal;
+  color: var(--brown);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.footer-privacy,
+.footer-copy {
+  font-size: 0.68rem;
+  color: var(--muted);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.privacy-trigger {
+  position: relative;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-style: dotted;
+}
+
+.privacy-tooltip {
+  display: none;
+  position: absolute;
+  bottom: 1.6rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 320px;
+  background: var(--parchment);
+  border: 1px solid var(--rule);
+  padding: 0.85rem 1rem;
+  font-size: 0.78rem;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+  text-transform: none;
+  line-height: 1.6;
+  z-index: 100;
+}
+
+.privacy-trigger:hover .privacy-tooltip,
+.privacy-trigger:focus .privacy-tooltip { display: block; }
+
+/* ═══════════════════════════════════════════════════════════
+   §8  HAMBURGER — verbatim from consvltor.net
+═══════════════════════════════════════════════════════════ */
+@media (max-width: 800px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0; right: 0;
+    background: #fff;
+    border-bottom: 1px solid var(--rule);
+    flex-direction: column;
+    gap: 0;
+    margin-left: 0;
+    padding: 0.5rem 0;
+  }
+
+  .nav-links.open { display: flex; }
+
+  .nav-links a {
+    padding: 0.65rem 1.5rem;
+    border-bottom: 1px solid var(--parchment-alt);
+  }
+
+  .nav-links a:last-child { border-bottom: none; }
+
+  .nav-hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+    background: none;
+    border: none;
+  }
+
+  .nav-hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--brown);
+  }
+
+  .section-grid { grid-template-columns: 1fr; gap: 2rem; }
+}
+
+@media (min-width: 801px) {
+  .nav-hamburger { display: none; }
+}
+
 </style>
 </head>
 <body>
 
-<!-- SITE NAV -->
-<nav class="site-nav">
-  <a href="https://www.consvltor.net" class="site-logo">CʘNSVLTʘR</a>
-  <div class="site-nav-links">
-    <a href="https://www.consvltor.net/#why">Why</a>
-    <a href="https://www.consvltor.net/#who">Who</a>
-    <a href="https://www.consvltor.net/#what">What</a>
-    <a href="https://www.consvltor.net/#how">How</a>
-    <a href="https://www.consvltor.net/#etymology">Etymology</a>
-    <a href="/commentarii/" class="active">Commentarii</a>
-    <a href="https://www.consvltor.net/#contact">Contact</a>
+<!-- ══════════════════════════════════════════════════════
+     §A  NAV — verbatim from consvltor.net
+══════════════════════════════════════════════════════ -->
+<header>
+  <div class="nav">
+    <a href="https://www.consvltor.net" class="logo">
+      <span class="logo-mark">C&#x0298;NSVLT&#x0298;R</span>
+    </a>
+    <button class="nav-hamburger" id="nav-toggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links" id="nav-links">
+      <a href="https://www.consvltor.net/#why"       onclick="closeNav()">Why</a>
+      <a href="https://www.consvltor.net/#who"       onclick="closeNav()">Who</a>
+      <a href="https://www.consvltor.net/#what"      onclick="closeNav()">What</a>
+      <a href="https://www.consvltor.net/#how"       onclick="closeNav()">How</a>
+      <a href="https://www.consvltor.net/#etymology" onclick="closeNav()">Etymology</a>
+      <a href="/commentarii/" class="active"         onclick="closeNav()">Commentarii</a>
+      <a href="https://www.consvltor.net/#contact"   onclick="closeNav()">Contact</a>
+    </nav>
   </div>
-</nav>
+</header>
 
-<!-- MAP -->
-<div id="map"></div>
+<!-- ══════════════════════════════════════════════════════
+     §B  REPORT — full issue loads here as iframe
+     Reports must be generated WITHOUT their own banner.
+══════════════════════════════════════════════════════ -->
+<iframe id="reportFrame" src="" scrolling="no" title="Commentarii report"></iframe>
 
-<!-- PAGE BODY -->
-<div class="page-body">
+<!-- ══════════════════════════════════════════════════════
+     §C  ARCHIVE + CONTACT + FOOTER
+══════════════════════════════════════════════════════ -->
+<main class="container">
 
-  <!-- SIDEBAR: archive navigator -->
-  <aside class="sidebar">
-    <div class="sidebar-label">Archives</div>
-    <ul class="issue-list" id="issueList"></ul>
-  </aside>
-
-  <!-- MAIN -->
-  <main class="main-content">
-    <div id="issueHeader" class="issue-header">
-      <div class="loading">Loading current issue&hellip;</div>
+  <section id="archive">
+    <div class="section-grid">
+      <div>
+        <div class="section-label">Archive</div>
+        <p class="section-sub" style="margin-top:0.5rem;">All issues of Commentarii, most recent first.</p>
+      </div>
+      <div>
+        <!-- Collapse/expand toggle sits above the list, right-aligned -->
+        <div class="archive-list-header" id="archiveToggle">
+          <span class="archive-chevron" id="archiveChevron">&#9650;</span>
+        </div>
+        <ul class="archive-list collapsed" id="archiveList"></ul>
+      </div>
     </div>
-    <div id="signalCards" class="signal-cards" style="display:none;"></div>
-    <div id="readFull" class="read-full" style="display:none;">
-      <a id="readFullLink" href="#" target="_blank">Open standalone report</a>
-      <span>Opens in new tab &middot; shareable link</span>
-    </div>
-    <div class="report-embed">
-      <iframe id="reportFrame" src="" title="Commentarii report" scrolling="no" onload="resizeFrame(this)"></iframe>
-    </div>
-  </main>
+  </section>
 
-</div>
+  <section id="contact">
+    <div class="section-grid">
+      <div>
+        <div class="section-label">Contact</div>
+        <p class="section-sub" style="margin-top:0.5rem;">Let's talk.</p>
+        <div class="contact-detail">
+          <div>Email: <a href="mailto:hello@consvltor.net">hello@consvltor.net</a></div>
+          <div style="margin-top:0.75rem;">
+            <a href="https://www.linkedin.com/in/bayod" target="_blank" rel="noopener" class="linkedin-link">
+              <svg class="linkedin-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              LinkedIn
+            </a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p style="margin-bottom:1rem;">If you are looking at a deal, managing a portfolio company through a difficult moment, or simply want to <strong>think out loud</strong> with someone who has been in the room before, get in touch.</p>
+        <p style="margin-bottom:1.5rem;">No AI. No scoping call with a junior. No RFP before a conversation. <em>Just a direct channel.</em></p>
+        <div class="field"><label for="contact-name">Name</label><input type="text" id="contact-name" placeholder="Your name"></div>
+        <div class="field"><label for="contact-firm">Firm / company</label><input type="text" id="contact-firm" placeholder="Your firm or company"></div>
+        <div class="field"><label for="contact-email">Email</label><input type="email" id="contact-email" placeholder="your@email.com"></div>
+        <div class="field"><label for="contact-message">Message</label><textarea id="contact-message" placeholder="A sentence or two about what you would like to discuss."></textarea></div>
+        <a id="contact-send" href="mailto:hello@consvltor.net?subject=Enquiry via Commentarii" class="btn btn-primary" onclick="buildMailto(event)">Send message</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo"><span class="logo-mark">C&#x0298;NSVLT&#x0298;R</span></div>
+    <div class="footer-privacy">
+      <span class="privacy-trigger" tabindex="0">Privacy
+        <span class="privacy-tooltip"><em>No cookies. No trackers. No small print.</em><br><br>We are not collecting your data. If you want to talk, you know where to find us.</span>
+      </span>
+    </div>
+    <div class="footer-copy">AMDG &nbsp;&middot;&nbsp; &copy; MMXXVI</div>
+  </div>
+</footer>
 
 <script>
-// ─── DATA ───────────────────────────────────────────────────────────────────
-// Each issue entry:
-// - num: issue number (string, zero-padded)
-// - date: ISO date string for sorting
-// - dateDisplay: human-readable date
-// - title: report title
-// - deck: cover deck text
-// - file: path to standalone HTML report
-// - signals: array of 4 {cat, theme, stance} objects
-// - pins: array of {lat, lng, label, topic} map markers
 
+/* ── NAV — verbatim from consvltor.net ────────────────────── */
+document.getElementById('nav-toggle').addEventListener('click', function () {
+  document.getElementById('nav-links').classList.toggle('open');
+});
+function closeNav() {
+  document.getElementById('nav-links').classList.remove('open');
+}
+
+/* ── CONTACT FORM — verbatim from consvltor.net ───────────── */
+function buildMailto(e) {
+  var name    = document.getElementById('contact-name').value;
+  var firm    = document.getElementById('contact-firm').value;
+  var email   = document.getElementById('contact-email').value;
+  var message = document.getElementById('contact-message').value;
+  var body = '';
+  if (name)    body += 'Name: '  + name    + '\n';
+  if (firm)    body += 'Firm: '  + firm    + '\n';
+  if (email)   body += 'Email: ' + email   + '\n';
+  if (message) body += '\n'      + message;
+  document.getElementById('contact-send').href =
+    'mailto:hello@consvltor.net?subject=Enquiry via Commentarii&body=' +
+    encodeURIComponent(body);
+}
+
+/* ══════════════════════════════════════════════════════════
+   ISSUE REGISTRY
+   ─────────────────────────────────────────────────────────
+   WEEKLY MAINTENANCE — add ONE object here each week:
+   · Prepend it at the TOP of the array (newest first)
+   · issues[0] always loads in the iframe automatically
+   · The archive list rebuilds itself from this array
+
+   Object fields:
+     num         display label  e.g. '009' or 'A01'
+     date        ISO date       e.g. '2026-05-14'  (for sorting)
+     dateDisplay human date     e.g. '14 May 2026'
+     title       issue title
+     file        path relative to this file, inside issues/
+
+   Example for next week:
+   {
+     num:         '009',
+     date:        '2026-05-14',
+     dateDisplay: '14 May 2026',
+     title:       'Your Title Here',
+     file:        'issues/20260514-commentarii-your-title.html'
+   },
+══════════════════════════════════════════════════════════ */
 const issues = [
+
+  /* ↓↓↓  ADD NEW ISSUE HERE — then save and push to GitHub  ↓↓↓ */
+
   {
-    num: "008",
-    date: "2026-05-07",
-    dateDisplay: "7 May 2026",
-    title: "The Distillation Threshold",
-    deck: "Two chokepoints define this week. In Washington, the White House OSTP distillation warning of April 30 places direct pressure on the January H200 liberalisation. In the Persian Gulf, IRGC-linked media has explicitly mapped undersea cables and data centers as strategic pressure points, and Alcatel Submarine Networks has already issued force majeure on 2Africa Pearls.",
-    file: "/commentarii/issues/20260507-commentarii-the-distillation-threshold.html",
-    signals: [
-      { cat: "Technology Cold War", theme: "White House AI distillation warning; H200 reversal risk within 60 days; Chip Security Act advancing", stance: "Caution", stanceClass: "stance-cau" },
-      { cat: "Gulf Cable & DC Threat", theme: "IRGC maps Gulf cables as pressure points; 2Africa Pearls halted; Hormuz carries ~30% of global traffic", stance: "Elevated Risk", stanceClass: "stance-ele" },
-      { cat: "US Power Regulation", theme: "Wisconsin and North Carolina shift full grid cost to operators; Texas, Virginia, Ohio in precedent range", stance: "Elevated Risk", stanceClass: "stance-ele" },
-      { cat: "AI Deal Wave", theme: "Hut 8 $9.8B lease; Applied Digital $300M Goldman bridge; Digital Edge $880M Thailand green loan", stance: "Opportunity", stanceClass: "stance-opp" }
-    ],
-    pins: [
-      { lat: 26.0, lng: 55.0, label: "Gulf Cable Threat — Hormuz" },
-      { lat: 38.9, lng: -77.0, label: "White House OSTP Warning — Washington DC" },
-      { lat: 43.0, lng: -88.5, label: "US Power Regulation — Wisconsin" },
-      { lat: 25.2, lng: 55.3, label: "2Africa Pearls — Force Majeure (ASN)" },
-      { lat: 13.8, lng: 100.5, label: "Digital Edge $880M — Thailand" },
-      { lat: 30.3, lng: -97.7, label: "Hut 8 $9.8B Lease — Beacon Point, Texas" },
-      { lat: 47.6, lng: -100.8, label: "Applied Digital $300M — North Dakota" }
-    ]
+    num:         '008',
+    date:        '2026-05-07',
+    dateDisplay: '7 May 2026',
+    title:       'The Distillation Threshold',
+    file:        'issues/20260507-commentarii-the-distillation-threshold.html'
   }
-  // Add future issues here following the same structure
+
+  /* ↑↑↑  EXISTING ISSUES BELOW — do not reorder  ↑↑↑ */
+
 ];
+/* ══════════════════════════════════════════════════════════
+   END OF WEEKLY EDIT ZONE — nothing below needs touching
+══════════════════════════════════════════════════════════ */
 
-// ─── MAP INIT ────────────────────────────────────────────────────────────────
-const map = L.map('map', {
-  center: [25, 20],
-  zoom: 2,
-  zoomControl: true,
-  attributionControl: false,
-  minZoom: 1,
-  maxZoom: 6
-});
+/* ── IFRAME ───────────────────────────────────────────────── */
+var frame = document.getElementById('reportFrame');
 
-// Historical map tile layer
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  opacity: 0
-}).addTo(map);
-
-// Overlay the consvltor map image
-const imageBounds = [[-85, -180], [85, 180]];
-L.imageOverlay('https://consvltor.net/assets/consvltor_cover.jpg', imageBounds, {
-  opacity: 1,
-  interactive: false
-}).addTo(map);
-
-let pinLayer = L.layerGroup().addTo(map);
-
-function addPins(pins) {
-  pinLayer.clearLayers();
-  if (!pins || !pins.length) return;
-  pins.forEach(p => {
-    const icon = L.divIcon({
-      className: '',
-      html: `<div style="display:flex;flex-direction:column;align-items:center;">
-        <div style="width:14px;height:14px;background:#7A3020;border-radius:50% 50% 50% 0;transform:rotate(-45deg);border:2px solid white;box-shadow:0 2px 6px rgba(0,0,0,0.35);"></div>
-        <div class="pin-label" style="margin-top:4px;">${p.label}</div>
-      </div>`,
-      iconSize: [160, 40],
-      iconAnchor: [7, 14],
-      popupAnchor: [0, -20]
-    });
-    L.marker([p.lat, p.lng], { icon }).addTo(pinLayer);
-  });
-}
-
-// ─── SIDEBAR ─────────────────────────────────────────────────────────────────
-const issuesSorted = [...issues].sort((a, b) => b.date.localeCompare(a.date));
-const issueList = document.getElementById('issueList');
-
-issuesSorted.forEach((issue, i) => {
-  const li = document.createElement('li');
-  li.className = 'issue-item' + (i === 0 ? ' active' : '');
-  li.dataset.idx = i;
-  li.innerHTML = `
-    <div class="issue-date">${issue.dateDisplay}</div>
-    <div class="issue-title">${issue.title}</div>
-    <div class="issue-num">Issue ${issue.num}</div>
-  `;
-  li.addEventListener('click', () => loadIssue(i));
-  issueList.appendChild(li);
-});
-
-// ─── LOAD ISSUE ──────────────────────────────────────────────────────────────
-function loadIssue(idx) {
-  const issue = issuesSorted[idx];
-
-  // Update sidebar active state
-  document.querySelectorAll('.issue-item').forEach((el, i) => {
-    el.classList.toggle('active', i === idx);
-  });
-
-  // Update map pins
-  addPins(issue.pins);
-
-  // Update header
-  document.getElementById('issueHeader').innerHTML = `
-    <div class="issue-eyebrow">
-      <span>Commentarii ${issue.num}</span>
-      <span>${issue.dateDisplay}</span>
-      <span>TMT &amp; Digital Infrastructure</span>
-    </div>
-    <h1 class="issue-h1">${issue.title}</h1>
-    <p class="issue-deck">${issue.deck}</p>
-  `;
-
-  // Update signal cards
-  const cardsEl = document.getElementById('signalCards');
-  cardsEl.style.display = 'grid';
-  cardsEl.innerHTML = issue.signals.map(s => `
-    <div class="signal-card">
-      <div>
-        <div class="sc-cat">${s.cat}</div>
-        <div class="sc-theme">${s.theme}</div>
-      </div>
-      <span class="sc-stance ${s.stanceClass}">${s.stance}</span>
-    </div>
-  `).join('');
-
-  // Update standalone link
-  const readFull = document.getElementById('readFull');
-  readFull.style.display = 'flex';
-  document.getElementById('readFullLink').href = issue.file;
-
-  // Load report in iframe
-  document.getElementById('reportFrame').src = issue.file;
-}
-
-function resizeFrame(frame) {
+function resizeFrame() {
   try {
-    frame.style.height = frame.contentWindow.document.body.scrollHeight + 'px';
-  } catch(e) {
-    // Cross-origin fallback: set a generous default height
-    frame.style.height = '6000px';
-  }
+    var doc = frame.contentDocument || frame.contentWindow.document;
+    frame.style.height = doc.body.scrollHeight + 'px';
+  } catch(e) { frame.style.height = '9000px'; }
 }
 
-// Load latest issue on start
-loadIssue(0);
-</script>
+frame.addEventListener('load', function () {
+  try {
+    resizeFrame();
+    setTimeout(resizeFrame, 800);
+  } catch(e) { frame.style.height = '9000px'; }
+});
 
+function loadIssue(issue, rowEl) {
+  frame.src = issue.file;
+  document.querySelectorAll('.archive-row').forEach(function (r) {
+    r.classList.remove('active');
+  });
+  rowEl.classList.add('active');
+  frame.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+/* ── ARCHIVE LIST ─────────────────────────────────────────── */
+var list = document.getElementById('archiveList');
+
+issues.forEach(function (issue, i) {
+  var row = document.createElement('li');
+  row.className = 'archive-row' + (i === 0 ? ' active' : '');
+  row.innerHTML =
+    '<span class="ar-num">' + issue.num + '</span>' +
+    '<span class="ar-date">' + issue.dateDisplay + '</span>' +
+    '<span class="ar-title">' + issue.title + '</span>';
+  row.addEventListener('click', function () { loadIssue(issue, row); });
+  list.appendChild(row);
+});
+
+/* ── ARCHIVE TOGGLE ───────────────────────────────────────── */
+var chevron = document.getElementById('archiveChevron');
+document.getElementById('archiveToggle').addEventListener('click', function () {
+  list.classList.toggle('collapsed');
+  chevron.classList.toggle('open');
+});
+
+/* ── LOAD LATEST ISSUE ON START ───────────────────────────── */
+frame.src = issues[0].file;
+
+</script>
 </body>
 </html>
