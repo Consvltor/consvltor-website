@@ -8,19 +8,22 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 :root{
-  --bg:#F5F0E6; --ink:#1C1814; --ink-mid:#4A4540; --ink-light:#8A837A;
-  --rule:#D0C8BC; --card-bg:#EDE8DE; --accent:#7A3020;
-  --amber:#7A5A1A; --green:#2A5036; --blue:#1A3C5A;
+  --bg:#F5F0E6;--ink:#1C1814;--ink-mid:#4A4540;--ink-light:#8A837A;
+  --rule:#D0C8BC;--card-bg:#EDE8DE;--accent:#7A3020;
+  --amber:#7A5A1A;--green:#2A5036;--blue:#1A3C5A;
 }
 html{scroll-behavior:smooth;}
 body{background:var(--bg);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;font-size:15px;line-height:1.75;-webkit-font-smoothing:antialiased;}
 
-/* §1 BANNER */
-.banner{background:var(--ink);padding:11px 48px;display:flex;align-items:center;justify-content:space-between;}
-.banner-logo{font-family:'Times New Roman',Times,serif;font-size:13px;letter-spacing:0.16em;color:var(--bg);text-decoration:none;}
-.banner-right{display:flex;align-items:center;gap:20px;}
-.banner-pub{font-family:'Cormorant Garamond',Georgia,serif;font-size:13px;font-style:italic;color:#C8C0B4;}
-.banner-tag{font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#8A837A;}
+/* ELEMENT A */
+.preamble-image{width:100%;line-height:0;overflow:hidden;}
+.preamble-image img{width:100%;height:320px;object-fit:cover;object-position:center;display:block;}
+
+/* ELEMENT B — fonts match consvltor.net: Times New Roman + Arial */
+.preamble-intro{max-width:860px;margin:0 auto;padding:32px 48px;display:grid;grid-template-columns:1fr 1fr;gap:40px;border-bottom:1px solid var(--rule);}
+.preamble-intro .col-left{font-family:'Times New Roman',Times,serif;font-style:italic;font-size:15px;color:var(--ink-mid);line-height:1.7;}
+.preamble-intro .col-left .pub-title{font-size:17px;font-weight:normal;display:block;margin-bottom:8px;color:var(--ink);}
+.preamble-intro .col-right{font-family:Arial,Helvetica,sans-serif;font-size:13px;color:var(--ink-mid);line-height:1.75;}
 
 /* §2 HEADER */
 .report-header{max-width:860px;margin:0 auto;padding:64px 48px 44px;}
@@ -29,12 +32,11 @@ body{background:var(--bg);color:var(--ink);font-family:'Source Serif 4',Georgia,
 .report-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:46px;font-weight:500;line-height:1.08;color:var(--ink);margin-bottom:16px;max-width:640px;}
 .report-deck{font-size:15px;color:var(--ink-mid);line-height:1.7;max-width:580px;border-left:3px solid var(--accent);padding-left:18px;margin-bottom:36px;}
 
-/* §3 SIGNAL CARDS GRID */
+/* §3 SIGNAL CARDS */
 .cover-grid{max-width:680px;margin:0 auto;border:1px solid var(--rule);}
 .cg-row{display:grid;gap:1px;background:var(--rule);}
 .cg-row-top{grid-template-columns:repeat(4,1fr);}
 .cg-row-bot{grid-template-columns:repeat(4,1fr);border-top:1px solid var(--rule);}
-
 .cg-card{background:var(--bg);padding:16px 14px;display:flex;flex-direction:column;justify-content:space-between;min-height:160px;text-decoration:none;color:inherit;transition:background 0.15s;border-bottom:1px solid var(--rule);}
 .cg-card:hover{background:var(--card-bg);}
 .cg-card-fixed{background:var(--card-bg);padding:16px 14px;min-height:160px;display:flex;flex-direction:column;justify-content:space-between;text-decoration:none;color:inherit;transition:background 0.15s;border-bottom:1px solid var(--rule);}
@@ -45,13 +47,12 @@ body{background:var(--bg);color:var(--ink);font-family:'Source Serif 4',Georgia,
 .stance-cau{background:#F0DDD8;color:#7A3020;}
 .stance-ele{background:#E8D0CC;color:#6A2018;}
 .stance-opp{background:#D8EAE0;color:#2A5036;}
-.stance-mon{background:#F0E8D0;color:#7A5A1A;}
 .cg-label{font-size:8px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-light);margin-bottom:5px;}
 .cg-big{font-family:'Cormorant Garamond',Georgia,serif;font-size:24px;font-weight:600;color:var(--ink);line-height:1;margin-bottom:5px;}
 .cg-sub{font-size:10px;color:var(--ink-mid);line-height:1.55;}
 .cg-stances-grid{display:grid;grid-template-columns:1fr 1fr;gap:3px 6px;margin-top:6px;}
-.cg-st{font-size:8.5px;font-weight:600;line-height:1.4;}
-.cst-ow{color:#2A5036;} .cst-sel{color:#7A5A1A;} .cst-neu{color:#8A837A;} .cst-wtch{color:#1A3C5A;} .cst-ele{color:#6A2018;}
+.cg-st{font-size:8.5px;font-weight:600;line-height:1.4;font-variant-emoji:text;}
+.cst-ow{color:#2A5036;}.cst-sel{color:#7A5A1A;}.cst-neu{color:#8A837A;}.cst-wtch{color:#1A3C5A;}
 .cg-subgrid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:1px;background:var(--rule);min-height:110px;border-bottom:1px solid var(--rule);}
 .cg-sub-card{background:var(--card-bg);padding:10px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;text-decoration:none;color:inherit;transition:background 0.15s;}
 .cg-sub-card:hover{background:#E4DDD3;}
@@ -64,11 +65,11 @@ body{background:var(--bg);color:var(--ink);font-family:'Source Serif 4',Georgia,
 .section-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:13px;letter-spacing:0.06em;color:var(--ink-light);min-width:22px;}
 .section h2{font-family:'Cormorant Garamond',Georgia,serif;font-size:26px;font-weight:500;color:var(--ink);line-height:1.2;}
 .section-tag{margin-left:auto;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-light);border:1px solid var(--rule);padding:3px 9px;border-radius:2px;white-space:nowrap;}
-p{margin-bottom:1em;} p:last-child{margin-bottom:0;} strong{font-weight:600;}
+p{margin-bottom:1em;}p:last-child{margin-bottom:0;}strong{font-weight:600;}
 
 /* DATA CARDS */
 .data-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);margin:22px 0;}
-.data-card{background:var(--bg);padding:13px 13px;}
+.data-card{background:var(--bg);padding:13px;}
 .dc-label{font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-light);margin-bottom:4px;}
 .dc-value{font-family:'Cormorant Garamond',Georgia,serif;font-size:25px;font-weight:600;color:var(--ink);line-height:1;margin-bottom:4px;}
 .dc-note{font-size:12px;color:var(--ink-mid);line-height:1.5;}
@@ -76,13 +77,10 @@ p{margin-bottom:1em;} p:last-child{margin-bottom:0;} strong{font-weight:600;}
 /* PULL QUOTE */
 .pull-quote{font-family:'Cormorant Garamond',Georgia,serif;font-size:18px;font-style:italic;font-weight:500;color:var(--ink-mid);border-left:3px solid var(--accent);padding:9px 17px;margin:22px 0;line-height:1.45;}
 
-/* SUBSECTION */
-.subsec{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;font-weight:600;color:var(--ink);border-bottom:1px solid var(--rule);padding-bottom:5px;margin:26px 0 13px;}
-
 /* TABLES */
 .std-table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13px;}
 .std-table th{font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-light);border-bottom:1.5px solid var(--ink);padding:6px 10px 8px;text-align:left;}
-.std-table td{border-bottom:1px solid var(--rule);padding:10px 10px;vertical-align:top;line-height:1.55;color:var(--ink-mid);}
+.std-table td{border-bottom:1px solid var(--rule);padding:10px;vertical-align:top;line-height:1.55;color:var(--ink-mid);}
 .std-table tr:last-child td{border-bottom:none;}
 .td-strong{font-weight:600;color:var(--ink);}
 .td-accent{font-family:'Cormorant Garamond',Georgia,serif;font-size:16px;font-weight:600;color:var(--accent);white-space:nowrap;}
@@ -90,16 +88,16 @@ p{margin-bottom:1em;} p:last-child{margin-bottom:0;} strong{font-weight:600;}
 
 /* BADGES */
 .badge{display:inline-block;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;padding:2px 7px;border-radius:2px;}
-.b-high{background:#F0DDD8;color:#7A3020;} .b-elev{background:#F5E8D8;color:#7A4A10;}
-.b-med{background:#F0E8D0;color:#7A5A1A;} .b-new{background:#E8D0CC;color:#6A2018;}
-.b-ow{background:#D8EAE0;color:#2A5036;} .b-sel{background:#F0E8D0;color:#7A5A1A;}
-.b-neu{background:#EAE4DA;color:#6A5A4A;} .b-wtch{background:#DAE4EE;color:#1A3C5A;}
+.b-high{background:#F0DDD8;color:#7A3020;}.b-elev{background:#F5E8D8;color:#7A4A10;}
+.b-med{background:#F0E8D0;color:#7A5A1A;}.b-new{background:#E8D0CC;color:#6A2018;}
+.b-ow{background:#D8EAE0;color:#2A5036;}.b-sel{background:#F0E8D0;color:#7A5A1A;}
+.b-neu{background:#EAE4DA;color:#6A5A4A;}.b-wtch{background:#DAE4EE;color:#1A3C5A;}
 
 /* HEATMAP */
 .hm-bar-wrap{background:#E8E2D6;border-radius:2px;height:7px;width:100%;overflow:hidden;margin-top:4px;}
 .hm-bar{height:7px;border-radius:2px;}
 .hm-score{font-family:'Cormorant Garamond',Georgia,serif;font-size:16px;font-weight:600;color:var(--ink);}
-.delta-up{color:var(--accent);font-size:10px;font-weight:600;} .delta-flat{color:var(--ink-light);font-size:10px;}
+.delta-up{color:var(--accent);font-size:10px;font-weight:600;}.delta-flat{color:var(--ink-light);font-size:10px;}
 
 /* LISTS */
 .dq-cat{font-size:10px;letter-spacing:0.14em;text-transform:uppercase;font-weight:600;color:var(--ink-light);border-bottom:1px solid var(--rule);padding-bottom:5px;margin:22px 0 9px;}
@@ -116,9 +114,7 @@ p{margin-bottom:1em;} p:last-child{margin-bottom:0;} strong{font-weight:600;}
 
 /* SOURCES */
 .sources-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);margin:14px 0;}
-.source-tile{background:var(--bg);padding:12px 12px;}
-.source-tile.wide{grid-column:span 3;background:var(--card-bg);}
-.source-tile.span2{grid-column:span 3;background:var(--bg);}
+.source-tile{background:var(--bg);padding:12px;}
 .source-tile-cat{font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-light);font-weight:600;border-bottom:1px solid var(--rule);padding-bottom:5px;margin-bottom:8px;}
 .source-link-list{list-style:none;}
 .source-link-item{padding:4px 0;border-bottom:1px solid var(--rule);font-size:12px;}
@@ -126,13 +122,11 @@ p{margin-bottom:1em;} p:last-child{margin-bottom:0;} strong{font-weight:600;}
 .source-link-item a{color:var(--accent);text-decoration:none;font-weight:500;}
 .source-link-item a:hover{text-decoration:underline;}
 .source-link-date{font-size:10px;color:var(--ink-light);font-style:italic;margin-left:4px;}
-
 .fn-ref{color:var(--accent);text-decoration:none;font-size:10px;vertical-align:super;line-height:0;font-weight:600;font-variant-emoji:text;}
 .fn-ref:hover{text-decoration:underline;}
 .fn-back{color:var(--ink-light);text-decoration:none;font-size:10px;margin-left:5px;font-variant-emoji:text;}
 .fn-back:hover{color:var(--accent);}
 .src-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:13px;font-weight:600;color:var(--ink-light);margin-right:5px;}
-.cg-st{font-variant-emoji:text;}
 
 /* DISCLAIMER */
 .disclaimer{max-width:860px;margin:0 auto;padding:36px 48px 52px;border-top:1px solid var(--rule);}
@@ -143,7 +137,8 @@ p{margin-bottom:1em;} p:last-child{margin-bottom:0;} strong{font-weight:600;}
 .disclaimer a:hover{text-decoration:underline;}
 
 @media(max-width:760px){
-  .banner,.report-header,.section,.disclaimer{padding-left:20px;padding-right:20px;}
+  .preamble-intro{grid-template-columns:1fr;padding:24px 20px;}
+  .report-header,.section,.disclaimer{padding-left:20px;padding-right:20px;}
   .report-title{font-size:32px;}
   .cg-row-top,.cg-row-bot{grid-template-columns:1fr 1fr;}
   .data-cards,.sources-grid{grid-template-columns:1fr;}
@@ -156,21 +151,24 @@ p{margin-bottom:1em;} p:last-child{margin-bottom:0;} strong{font-weight:600;}
 </head>
 <body>
 
+<!-- ELEMENT A: Issue image — full width, 320px.
+     Default: consvltor_cover.jpg. To swap, change src to any
+     file hosted at https://consvltor.net/assets/ -->
+<div class="preamble-image">
+  <img src="https://consvltor.net/assets/consvltor_cover.jpg" alt="Commentarii">
+</div>
 
-<!-- §1 BANNER -->
-<div class="banner">
-  <a class="banner-logo" href="https://www.consvltor.net" target="_blank">CʘNSVLTʘR</a>
-  <div class="banner-right">
-    <span class="banner-pub">Commentarii</span>
-    <span class="banner-tag">Issue 008 &middot; 7 May 2026</span>
+<!-- ELEMENT B: Two-column intro — fixed copy, never changes.
+     Fonts: Times New Roman (left, italic) + Arial (right), matching consvltor.net -->
+<div class="preamble-intro">
+  <div class="col-left">
+    <span class="pub-title">Commentarii</span>
+    Field notes from infrastructure, markets, and the geopolitics of connectivity. Written after dark.
+  </div>
+  <div class="col-right">
+    Each entry is anchored to a place and a period. Some are retrospective &mdash; written now, from the distance of outcome. Others are current, drafted close to the events they describe. The standard of evidence is the same throughout: what the data and the experience actually support, no more.
   </div>
 </div>
-
-<!-- COVER MAP -->
-<div style="width:100%;line-height:0;overflow:hidden;max-height:320px;">
-  <img src="https://consvltor.net/assets/consvltor_cover.jpg" alt="CʘNSVLTʘR" style="width:100%;height:320px;object-fit:cover;object-position:center;display:block;">
-</div>
-
 
 <!-- §2 HEADER -->
 <div class="report-header">
@@ -183,55 +181,19 @@ p{margin-bottom:1em;} p:last-child{margin-bottom:0;} strong{font-weight:600;}
   <p class="report-deck">Two chokepoints define this week. In Washington, the White House OSTP distillation warning of April 30 places direct pressure on the January H200 liberalisation - a reversal within 60 days is a credible base case. In the Persian Gulf, IRGC-linked media has explicitly mapped undersea cables and data centers as strategic pressure points, and Alcatel Submarine Networks has already issued force majeure on 2Africa Pearls. Domestically, US state-level power regulation and a record week of AI data center deal flow complete the investor picture.</p>
 </div>
 
-
 <!-- §3 SIGNAL CARDS -->
 <div class="cover-grid">
   <div class="cg-row cg-row-top">
-    <a class="cg-card" href="#topic1">
-      <div><div class="cg-cat">Technology Cold War</div><div class="cg-theme">White House AI distillation warning; H200 reversal risk within 60 days; Chip Security Act advancing in committee</div></div>
-      <span class="cg-stance stance-cau">Caution</span>
-    </a>
-    <a class="cg-card" href="#topic2">
-      <div><div class="cg-cat">Gulf Cable &amp; DC Threat</div><div class="cg-theme">IRGC maps Gulf cables as pressure points; 2Africa Pearls halted; Hormuz carries an estimated 30% of global traffic</div></div>
-      <span class="cg-stance stance-ele">Elevated Risk</span>
-    </a>
-    <a class="cg-card" href="#topic3">
-      <div><div class="cg-cat">US Power Regulation</div><div class="cg-theme">Wisconsin and North Carolina shift full grid cost to operators; Texas, Virginia, Ohio in precedent range</div></div>
-      <span class="cg-stance stance-ele">Elevated Risk</span>
-    </a>
-    <a class="cg-card" href="#topic4">
-      <div><div class="cg-cat">AI Deal Wave</div><div class="cg-theme">Hut 8 $9.8B lease; Applied Digital $300M Goldman bridge; Digital Edge $880M Thailand green loan</div></div>
-      <span class="cg-stance stance-opp">Opportunity</span>
-    </a>
+    <a class="cg-card" href="#topic1"><div><div class="cg-cat">Technology Cold War</div><div class="cg-theme">White House AI distillation warning; H200 reversal risk within 60 days; Chip Security Act advancing in committee</div></div><span class="cg-stance stance-cau">Caution</span></a>
+    <a class="cg-card" href="#topic2"><div><div class="cg-cat">Gulf Cable &amp; DC Threat</div><div class="cg-theme">IRGC maps Gulf cables as pressure points; 2Africa Pearls halted; Hormuz carries an estimated 30% of global traffic</div></div><span class="cg-stance stance-ele">Elevated Risk</span></a>
+    <a class="cg-card" href="#topic3"><div><div class="cg-cat">US Power Regulation</div><div class="cg-theme">Wisconsin and North Carolina shift full grid cost to operators; Texas, Virginia, Ohio in precedent range</div></div><span class="cg-stance stance-ele">Elevated Risk</span></a>
+    <a class="cg-card" href="#topic4"><div><div class="cg-cat">AI Deal Wave</div><div class="cg-theme">Hut 8 $9.8B lease; Applied Digital $300M Goldman bridge; Digital Edge $880M Thailand green loan</div></div><span class="cg-stance stance-opp">Opportunity</span></a>
   </div>
   <div class="cg-row cg-row-bot">
-    <a class="cg-card-fixed" href="#dealflow">
-      <div class="cg-label">Deal Flow</div>
-      <div class="cg-big">5 Transactions</div>
-      <div class="cg-sub">Hut 8 &middot; Applied Digital &middot; Digital Edge / B.Grimm &middot; EdgeCore &middot; I Squared / Elea</div>
-    </a>
-    <a class="cg-card-fixed" href="#riskmatrix">
-      <div class="cg-label">PE Risk Matrix</div>
-      <div class="cg-big">6 Active Vectors</div>
-      <div class="cg-sub">Gulf cable threat &middot; AI export reversal &middot; Energy shock &middot; CFIUS &middot; BIS 50% Rule &middot; Power costs</div>
-    </a>
-    <a class="cg-card-fixed" href="#stances">
-      <div class="cg-label">Asset Class Stances</div>
-      <div class="cg-stances-grid">
-        <span class="cg-st cst-sel">&#x25B6;&#xFE0E; Data Centres: Selective</span>
-        <span class="cg-st cst-wtch">&#x21C5;&#xFE0E; Subsea Cable: Active Watch</span>
-        <span class="cg-st cst-sel">&#x25B6;&#xFE0E; Fibre / Backbone: Selective</span>
-        <span class="cg-st cst-neu">&#x25BA;&#xFE0E; Towers / RAN: Neutral</span>
-        <span class="cg-st cst-wtch">&#x25BC;&#xFE0E; Satellite / LEO: Watch</span>
-        <span class="cg-st cst-ow">&#x25B2;&#xFE0E; Power for Digital: Overweight</span>
-      </div>
-    </a>
-    <div class="cg-subgrid">
-      <a class="cg-sub-card" href="#underwriting"><div class="cg-sub-count">8</div><div class="cg-sub-name">Underwriting Variables</div></a>
-      <a class="cg-sub-card" href="#diligence"><div class="cg-sub-count">10</div><div class="cg-sub-name">Diligence Questions</div></a>
-      <a class="cg-sub-card" href="#strategy"><div class="cg-sub-count">6</div><div class="cg-sub-name">Strategy Actions</div></a>
-      <a class="cg-sub-card" href="#watchlist"><div class="cg-sub-count">5</div><div class="cg-sub-name">Watch List Items</div></a>
-    </div>
+    <a class="cg-card-fixed" href="#dealflow"><div class="cg-label">Deal Flow</div><div class="cg-big">5 Transactions</div><div class="cg-sub">Hut 8 &middot; Applied Digital &middot; Digital Edge / B.Grimm &middot; EdgeCore &middot; I Squared / Elea</div></a>
+    <a class="cg-card-fixed" href="#riskmatrix"><div class="cg-label">PE Risk Matrix</div><div class="cg-big">6 Active Vectors</div><div class="cg-sub">Gulf cable threat &middot; AI export reversal &middot; Energy shock &middot; CFIUS &middot; BIS 50% Rule &middot; Power costs</div></a>
+    <a class="cg-card-fixed" href="#stances"><div class="cg-label">Asset Class Stances</div><div class="cg-stances-grid"><span class="cg-st cst-sel">&#x25B6;&#xFE0E; Data Centres: Selective</span><span class="cg-st cst-wtch">&#x21C5;&#xFE0E; Subsea Cable: Active Watch</span><span class="cg-st cst-sel">&#x25B6;&#xFE0E; Fibre / Backbone: Selective</span><span class="cg-st cst-neu">&#x25BA;&#xFE0E; Towers / RAN: Neutral</span><span class="cg-st cst-wtch">&#x25BC;&#xFE0E; Satellite / LEO: Watch</span><span class="cg-st cst-ow">&#x25B2;&#xFE0E; Power for Digital: Overweight</span></div></a>
+    <div class="cg-subgrid"><a class="cg-sub-card" href="#underwriting"><div class="cg-sub-count">8</div><div class="cg-sub-name">Underwriting Variables</div></a><a class="cg-sub-card" href="#diligence"><div class="cg-sub-count">10</div><div class="cg-sub-name">Diligence Questions</div></a><a class="cg-sub-card" href="#strategy"><div class="cg-sub-count">6</div><div class="cg-sub-name">Strategy Actions</div></a><a class="cg-sub-card" href="#watchlist"><div class="cg-sub-count">5</div><div class="cg-sub-name">Watch List Items</div></a></div>
   </div>
 </div>
 <div style="max-width:680px;margin:0 auto;padding:6px 2px 0;display:flex;gap:12px;flex-wrap:wrap;">
@@ -242,8 +204,7 @@ p{margin-bottom:1em;} p:last-child{margin-bottom:0;} strong{font-weight:600;}
   <span style="font-size:8px;color:#1A3C5A;font-weight:600;font-variant-emoji:text;">&#x21C5;&#xFE0E; Active Watch</span>
 </div>
 
-
-<!-- §4 MACRO AND GEOPOLITICAL LANDSCAPE -->
+<!-- §4 MACRO -->
 <div class="section" id="macro">
   <div class="section-header"><span class="section-num">&sect;4</span><h2>Macro and Geopolitical Landscape</h2></div>
   <div class="pull-quote">The Iran war is not macro background for digital infrastructure investors. It is a direct variable in power costs, cable route availability, and Gulf asset security - simultaneously.</div>
@@ -256,8 +217,7 @@ p{margin-bottom:1em;} p:last-child{margin-bottom:0;} strong{font-weight:600;}
   </div>
 </div>
 
-
-<!-- §5 CURRENT TOPIC 1: TECHNOLOGY COLD WAR -->
+<!-- §5 TECHNOLOGY COLD WAR -->
 <div class="section" id="topic1">
   <div class="section-header"><span class="section-num">&sect;5</span><h2>Technology Cold War</h2></div>
   <div class="pull-quote">The White House issued a distillation warning on April 30. The policy it appears to undermine - the January H200 liberalisation - remains in effect.</div>
@@ -265,8 +225,7 @@ p{margin-bottom:1em;} p:last-child{margin-bottom:0;} strong{font-weight:600;}
   <p>The investor implication worth flagging: AI-grade data center positions with Chinese customer revenue chains dependent on H200 procurement under the current framework may carry reversal risk within 30-60 days. Deal teams with that exposure may want this visible at deal committee level rather than in background materials.</p>
 </div>
 
-
-<!-- §6 CURRENT TOPIC 2: GULF CABLE AND DC THREAT -->
+<!-- §6 GULF CABLE AND DC THREAT -->
 <div class="section" id="topic2">
   <div class="section-header"><span class="section-num">&sect;6</span><h2>Gulf Cable and Data Centre Threat</h2></div>
   <div class="pull-quote">IRGC-linked Tasnim published a detailed map of Gulf undersea cables and data center hubs on April 22. This was not a technical explainer.</div>
@@ -279,8 +238,7 @@ p{margin-bottom:1em;} p:last-child{margin-bottom:0;} strong{font-weight:600;}
   </div>
 </div>
 
-
-<!-- §7 CURRENT TOPIC 3: US DATA CENTRE POWER REGULATION -->
+<!-- §7 US POWER REGULATION -->
 <div class="section" id="topic3">
   <div class="section-header"><span class="section-num">&sect;7</span><h2>US Data Centre Power Regulation</h2></div>
   <div class="pull-quote">Wisconsin and North Carolina have shifted who pays for grid infrastructure. The question for PE investors is which state moves next.</div>
@@ -288,8 +246,7 @@ p{margin-bottom:1em;} p:last-child{margin-bottom:0;} strong{font-weight:600;}
   <p>Separately, the Box Elder County Commission in Utah was set to vote this week on the MIDA / Kevin O'Leary Stratos Project - a 40,000-acre hyperscale and energy campus partly overlapping Department of Defense land. The outcome may indicate regulatory appetite for military-proximate, sovereign-adjacent data center development more broadly.<a href="#src-9" id="cite-9a" class="fn-ref"><sup>9</sup></a></p>
 </div>
 
-
-<!-- §8 CURRENT TOPIC 4: AI INFRASTRUCTURE DEAL WAVE -->
+<!-- §8 AI DEAL WAVE -->
 <div class="section" id="topic4">
   <div class="section-header"><span class="section-num">&sect;8</span><h2>AI Infrastructure Deal Wave</h2></div>
   <div class="pull-quote">Brent is up an estimated 42%. Gulf cables are under threat. Three AI data center transactions closed or financed in the past 72 hours anyway.</div>
@@ -297,222 +254,91 @@ p{margin-bottom:1em;} p:last-child{margin-bottom:0;} strong{font-weight:600;}
   <p>A common thread across all three: anchor tenant commitment or sovereign mandate as the underwriting foundation, with power supply - captive or contracted - appearing to distinguish assets that are closing from those that are not.</p>
 </div>
 
-
 <!-- §9 DEAL FLOW -->
 <div class="section" id="dealflow">
   <div class="section-header"><span class="section-num">&sect;9</span><h2>Deal Flow</h2></div>
   <table class="std-table">
-    <thead>
-      <tr><th style="width:185px">Parties</th><th style="width:82px">Value</th><th style="width:78px">Date</th><th>Description &amp; Source</th></tr>
-    </thead>
+    <thead><tr><th style="width:185px">Parties</th><th style="width:82px">Value</th><th style="width:78px">Date</th><th>Description &amp; Source</th></tr></thead>
     <tbody>
-      <tr>
-        <td class="td-strong">Hut 8 / Investment-grade tenant<br><span style="font-weight:400;font-size:12px;color:var(--ink-light)">Beacon Point, Texas</span></td>
-        <td class="td-accent">$9.8bn</td><td class="td-light">6 May 2026</td>
-        <td>15-year AI data center lease, 352MW, Nvidia DSX architecture. Options to $25.1bn. Former bitcoin mining campus repositioned; total contracted AI capacity 597MW, $16.8bn aggregate base-term value. <em>CoinDesk.</em><a href="#src-10" class="fn-ref"><sup>10</sup></a></td>
-      </tr>
-      <tr>
-        <td class="td-strong">Applied Digital / Goldman Sachs<br><span style="font-weight:400;font-size:12px;color:var(--ink-light)">Polaris Forge 1, North Dakota</span></td>
-        <td class="td-accent">$300m</td><td class="td-light">4 May 2026</td>
-        <td>Senior secured bridge, 364-day, SOFR + 275bps. Funds construction of third AI data center. Development-stage risk; further financing required to complete. Current market reference for AI DC bridge debt terms. <em>Applied Digital.</em><a href="#src-11" class="fn-ref"><sup>11</sup></a></td>
-      </tr>
-      <tr>
-        <td class="td-strong">Digital Edge / B.Grimm Power<br><span style="font-weight:400;font-size:12px;color:var(--ink-light)">BKK Campus, Chonburi, Thailand</span></td>
-        <td class="td-accent">$880m</td><td class="td-light">6 May 2026</td>
-        <td>Green loan - Thailand's largest DC financing - for 100MW campus in Eastern Economic Corridor. Stonepeak-backed Digital Edge's third consecutive national record green loan in APAC. Nine-bank consortium. BKK1 ready Q4 2026. <em>PRNewswire.</em><a href="#src-12" class="fn-ref"><sup>12</sup></a></td>
-      </tr>
-      <tr>
-        <td class="td-strong">EdgeCore Digital Infrastructure<br><span style="font-weight:400;font-size:12px;color:var(--ink-light)">Northern Virginia</span></td>
-        <td class="td-accent">$1.5bn</td><td class="td-light">May 2026</td>
-        <td>Two financing transactions for two single-tenant hyperscale data centers in Northern Virginia. Confirms lender appetite for pre-committed hyperscale development in the US's highest-concentration market. <em>Data Center Dynamics.</em><a href="#src-8" class="fn-ref"><sup>8</sup></a></td>
-      </tr>
-      <tr>
-        <td class="td-strong">I Squared Capital / Elea Data Centers<br><span style="font-weight:400;font-size:12px;color:var(--ink-light)">Seller: Piemonte Holding, Brazil</span></td>
-        <td class="td-accent">N/D</td><td class="td-light">1 May 2026</td>
-        <td>I Squared acquired Elea from Piemonte Holding. Elea founder cited AI and colocation demand outpacing supply in Brazilian metros. Provides comparables benchmark for Brazilian data center M&amp;A multiples. <em>The Middle Market.</em><a href="#src-13" id="cite-13a" class="fn-ref"><sup>13</sup></a></td>
-      </tr>
+      <tr><td class="td-strong">Hut 8 / Investment-grade tenant<br><span style="font-weight:400;font-size:12px;color:var(--ink-light)">Beacon Point, Texas</span></td><td class="td-accent">$9.8bn</td><td class="td-light">6 May 2026</td><td>15-year AI data center lease, 352MW, Nvidia DSX architecture. Options to $25.1bn. Former bitcoin mining campus repositioned; total contracted AI capacity 597MW, $16.8bn aggregate base-term value. <em>CoinDesk.</em><a href="#src-10" class="fn-ref"><sup>10</sup></a></td></tr>
+      <tr><td class="td-strong">Applied Digital / Goldman Sachs<br><span style="font-weight:400;font-size:12px;color:var(--ink-light)">Polaris Forge 1, North Dakota</span></td><td class="td-accent">$300m</td><td class="td-light">4 May 2026</td><td>Senior secured bridge, 364-day, SOFR + 275bps. Funds construction of third AI data center. Development-stage risk; further financing required to complete. Current market reference for AI DC bridge debt terms. <em>Applied Digital.</em><a href="#src-11" class="fn-ref"><sup>11</sup></a></td></tr>
+      <tr><td class="td-strong">Digital Edge / B.Grimm Power<br><span style="font-weight:400;font-size:12px;color:var(--ink-light)">BKK Campus, Chonburi, Thailand</span></td><td class="td-accent">$880m</td><td class="td-light">6 May 2026</td><td>Green loan - Thailand's largest DC financing - for 100MW campus in Eastern Economic Corridor. Stonepeak-backed Digital Edge's third consecutive national record green loan in APAC. Nine-bank consortium. BKK1 ready Q4 2026. <em>PRNewswire.</em><a href="#src-12" class="fn-ref"><sup>12</sup></a></td></tr>
+      <tr><td class="td-strong">EdgeCore Digital Infrastructure<br><span style="font-weight:400;font-size:12px;color:var(--ink-light)">Northern Virginia</span></td><td class="td-accent">$1.5bn</td><td class="td-light">May 2026</td><td>Two financing transactions for two single-tenant hyperscale data centers in Northern Virginia. Confirms lender appetite for pre-committed hyperscale development in the US's highest-concentration market. <em>Data Center Dynamics.</em><a href="#src-8" class="fn-ref"><sup>8</sup></a></td></tr>
+      <tr><td class="td-strong">I Squared Capital / Elea Data Centers<br><span style="font-weight:400;font-size:12px;color:var(--ink-light)">Seller: Piemonte Holding, Brazil</span></td><td class="td-accent">N/D</td><td class="td-light">1 May 2026</td><td>I Squared acquired Elea from Piemonte Holding. Elea founder cited AI and colocation demand outpacing supply in Brazilian metros. Provides comparables benchmark for Brazilian data center M&amp;A multiples. <em>The Middle Market.</em><a href="#src-13" id="cite-13a" class="fn-ref"><sup>13</sup></a></td></tr>
     </tbody>
   </table>
 </div>
-
 
 <!-- §10 PE RISK MATRIX -->
 <div class="section" id="riskmatrix">
   <div class="section-header"><span class="section-num">&sect;10</span><h2>PE Risk Matrix</h2></div>
   <table class="std-table">
-    <thead>
-      <tr><th style="width:180px">Risk Vector</th><th style="width:75px">Level</th><th>Investor Implication</th><th style="width:90px">Status</th></tr>
-    </thead>
+    <thead><tr><th style="width:180px">Risk Vector</th><th style="width:75px">Level</th><th>Investor Implication</th><th style="width:90px">Status</th></tr></thead>
     <tbody>
-      <tr>
-        <td class="td-strong">Gulf Cable &amp; DC Threat</td><td><span class="badge b-high">High</span></td>
-        <td>IRGC has explicitly framed Gulf cable landing stations and data centers as pressure points. 2Africa force majeure is already in effect. Portfolio exposure to Gulf DC or cable assets requires immediate scenario planning for physical disruption.</td>
-        <td><span class="badge b-new">New</span></td>
-      </tr>
-      <tr>
-        <td class="td-strong">AI Export Control Reversal</td><td><span class="badge b-high">High</span></td>
-        <td>White House OSTP distillation warning (April 30) creates direct pressure on January BIS H200 liberalisation. Bipartisan Congressional pressure active. Positions with Chinese customer AI chip procurement chains face reversal risk within 30-60 days.</td>
-        <td><span class="badge b-new">Moved up</span></td>
-      </tr>
-      <tr>
-        <td class="td-strong">Iran War Energy Shock</td><td><span class="badge b-elev">Elevated</span></td>
-        <td>Brent +42%, EU gas +57%. Data center power costs are the direct transmission mechanism. Assets with fixed-price PPAs are insulated; market-rate power exposure is not. Models priced before February 28 need revision.</td>
-        <td><span class="badge b-new">New</span></td>
-      </tr>
-      <tr>
-        <td class="td-strong">CFIUS / FDI Review Risk</td><td><span class="badge b-elev">Elevated</span></td>
-        <td>Gulf sovereign capital relationships now intersect with Iran conflict geopolitics. Structures that passed CFIUS review in Q4 2025 should be re-assessed against the current environment.</td>
-        <td>Stable elevated</td>
-      </tr>
-      <tr>
-        <td class="td-strong">BIS 50% Rule Compliance</td><td><span class="badge b-med">Medium</span></td>
-        <td>Enforcement November 10, 2026. Six months remain. Operators with PRC-adjacent supply chains or counterparties need compliance programmes in place before Q3 2026.</td>
-        <td>Deadline tracking</td>
-      </tr>
-      <tr>
-        <td class="td-strong">US Data Centre Power Costs</td><td><span class="badge b-elev">Elevated</span></td>
-        <td>Wisconsin and North Carolina have shifted full grid infrastructure costs to operators. Replicable in Texas, Virginia, Ohio. Any underwriting model assuming current power pricing in these states needs a full-cost scenario before close.</td>
-        <td>Stable elevated</td>
-      </tr>
+      <tr><td class="td-strong">Gulf Cable &amp; DC Threat</td><td><span class="badge b-high">High</span></td><td>IRGC has explicitly framed Gulf cable landing stations and data centers as pressure points. 2Africa force majeure is already in effect. Portfolio exposure to Gulf DC or cable assets requires immediate scenario planning for physical disruption.</td><td><span class="badge b-new">New</span></td></tr>
+      <tr><td class="td-strong">AI Export Control Reversal</td><td><span class="badge b-high">High</span></td><td>White House OSTP distillation warning (April 30) creates direct pressure on January BIS H200 liberalisation. Bipartisan Congressional pressure active. Positions with Chinese customer AI chip procurement chains face reversal risk within 30-60 days.</td><td><span class="badge b-new">Moved up</span></td></tr>
+      <tr><td class="td-strong">Iran War Energy Shock</td><td><span class="badge b-elev">Elevated</span></td><td>Brent +42%, EU gas +57%. Data center power costs are the direct transmission mechanism. Assets with fixed-price PPAs are insulated; market-rate power exposure is not. Models priced before February 28 need revision.</td><td><span class="badge b-new">New</span></td></tr>
+      <tr><td class="td-strong">CFIUS / FDI Review Risk</td><td><span class="badge b-elev">Elevated</span></td><td>Gulf sovereign capital relationships now intersect with Iran conflict geopolitics. Structures that passed CFIUS review in Q4 2025 should be re-assessed against the current environment.</td><td>Stable elevated</td></tr>
+      <tr><td class="td-strong">BIS 50% Rule Compliance</td><td><span class="badge b-med">Medium</span></td><td>Enforcement November 10, 2026. Six months remain. Operators with PRC-adjacent supply chains or counterparties need compliance programmes in place before Q3 2026.</td><td>Deadline tracking</td></tr>
+      <tr><td class="td-strong">US Data Centre Power Costs</td><td><span class="badge b-elev">Elevated</span></td><td>Wisconsin and North Carolina have shifted full grid infrastructure costs to operators. Replicable in Texas, Virginia, Ohio. Any underwriting model assuming current power pricing in these states needs a full-cost scenario before close.</td><td>Stable elevated</td></tr>
     </tbody>
   </table>
 </div>
-
 
 <!-- §11 ASSET CLASS STANCES -->
 <div class="section" id="stances">
   <div class="section-header"><span class="section-num">&sect;11</span><h2>Asset Class Stances</h2></div>
   <table class="std-table">
-    <thead>
-      <tr><th style="width:165px">Asset Class</th><th style="width:75px">Direction</th><th style="width:140px">Key Variable</th><th>Read-Through</th><th style="width:80px">Stance</th></tr>
-    </thead>
+    <thead><tr><th style="width:165px">Asset Class</th><th style="width:75px">Direction</th><th style="width:140px">Key Variable</th><th>Read-Through</th><th style="width:80px">Stance</th></tr></thead>
     <tbody>
-      <tr>
-        <td class="td-strong">Data Centres (Hyperscale / AI)</td>
-        <td style="color:#2A5036;font-weight:600;">Strengthening</td><td>Power cost structure</td>
-        <td>Deal flow this week suggests structural demand remains intact. Power cost structuring - fixed PPA vs. grid exposure - appears to be an increasingly important underwriting differentiator, particularly in light of the Wisconsin and North Carolina developments.</td>
-        <td><span class="badge b-sel">Selective</span></td>
-      </tr>
-      <tr>
-        <td class="td-strong">Subsea Cable</td>
-        <td style="color:#6A2018;font-weight:600;">Weakening</td><td>Gulf / Hormuz conflict</td>
-        <td>IRGC threat mapping and 2Africa force majeure have materially changed the risk profile for Gulf and Red Sea corridor assets. Baltic corridor assets are on a separate trajectory. Active Watch - conditions are deteriorating but a distressed entry thesis may form for investors with long hold periods, pending conflict resolution.</td>
-        <td><span class="badge b-wtch">⇅ Active Watch</span></td>
-      </tr>
-      <tr>
-        <td class="td-strong">Fibre / Backbone</td>
-        <td style="color:#7A5A1A;font-weight:600;">Mixed</td><td>US consolidation vs. UK overbuild</td>
-        <td>US backbone consolidation (Zayo / Crown Castle closing) is active and investable at platform scale. UK altnet market structurally impaired by overbuild. Differentiate by geography and capacity profile.</td>
-        <td><span class="badge b-sel">Selective</span></td>
-      </tr>
-      <tr>
-        <td class="td-strong">Towers / RAN</td>
-        <td style="color:#8A837A;font-weight:600;">No change</td><td>Carrier spend</td>
-        <td>No new catalyst this week. Hold existing portfolios; do not underwrite new tower development on near-term densification assumptions.</td>
-        <td><span class="badge b-neu">Neutral</span></td>
-      </tr>
-      <tr>
-        <td class="td-strong">Satellite / LEO</td>
-        <td style="color:#7A5A1A;font-weight:600;">Mixed</td><td>Gulf conflict demand signal</td>
-        <td>Cable disruption creates a short-term LEO demand signal, but licensing constraints and capacity limits apply. Regulatory pathway in target markets must be clear before any commitment.</td>
-        <td><span class="badge b-wtch">Watch</span></td>
-      </tr>
-      <tr>
-        <td class="td-strong">Power for Digital</td>
-        <td style="color:#2A5036;font-weight:600;">Strengthening</td><td>Energy shock + state regulation</td>
-        <td>Iran war energy shock compounds the US state-level power cost shift. The gap between captive-generation assets and grid-dependent assets appears to be widening. Among the asset classes covered this week, this may offer the most defensible capacity investment rationale.</td>
-        <td><span class="badge b-ow">Overweight</span></td>
-      </tr>
+      <tr><td class="td-strong">Data Centres (Hyperscale / AI)</td><td style="color:#2A5036;font-weight:600;">Strengthening</td><td>Power cost structure</td><td>Deal flow this week suggests structural demand remains intact. Power cost structuring - fixed PPA vs. grid exposure - appears to be an increasingly important underwriting differentiator, particularly in light of the Wisconsin and North Carolina developments.</td><td><span class="badge b-sel">Selective</span></td></tr>
+      <tr><td class="td-strong">Subsea Cable</td><td style="color:#6A2018;font-weight:600;">Weakening</td><td>Gulf / Hormuz conflict</td><td>IRGC threat mapping and 2Africa force majeure have materially changed the risk profile for Gulf and Red Sea corridor assets. Baltic corridor assets are on a separate trajectory. Active Watch - conditions are deteriorating but a distressed entry thesis may form for investors with long hold periods, pending conflict resolution.</td><td><span class="badge b-wtch">&#x21C5; Active Watch</span></td></tr>
+      <tr><td class="td-strong">Fibre / Backbone</td><td style="color:#7A5A1A;font-weight:600;">Mixed</td><td>US consolidation vs. UK overbuild</td><td>US backbone consolidation (Zayo / Crown Castle closing) is active and investable at platform scale. UK altnet market structurally impaired by overbuild. Differentiate by geography and capacity profile.</td><td><span class="badge b-sel">Selective</span></td></tr>
+      <tr><td class="td-strong">Towers / RAN</td><td style="color:#8A837A;font-weight:600;">No change</td><td>Carrier spend</td><td>No new catalyst this week. Hold existing portfolios; do not underwrite new tower development on near-term densification assumptions.</td><td><span class="badge b-neu">Neutral</span></td></tr>
+      <tr><td class="td-strong">Satellite / LEO</td><td style="color:#7A5A1A;font-weight:600;">Mixed</td><td>Gulf conflict demand signal</td><td>Cable disruption creates a short-term LEO demand signal, but licensing constraints and capacity limits apply. Regulatory pathway in target markets must be clear before any commitment.</td><td><span class="badge b-wtch">Watch</span></td></tr>
+      <tr><td class="td-strong">Power for Digital</td><td style="color:#2A5036;font-weight:600;">Strengthening</td><td>Energy shock + state regulation</td><td>Iran war energy shock compounds the US state-level power cost shift. The gap between captive-generation assets and grid-dependent assets appears to be widening. Among the asset classes covered this week, this may offer the most defensible capacity investment rationale.</td><td><span class="badge b-ow">Overweight</span></td></tr>
     </tbody>
   </table>
 </div>
-
 
 <!-- §12 UNDERWRITING VARIABLES -->
 <div class="section" id="underwriting">
   <div class="section-header"><span class="section-num">&sect;12</span><h2>Underwriting Variables</h2><span class="section-tag">0-100 &middot; higher = greater risk</span></div>
   <table class="std-table">
-    <thead>
-      <tr><th style="width:230px">Variable</th><th style="width:50px">Score</th><th style="width:120px">Level</th><th style="width:58px">Change</th><th>Driver this week</th></tr>
-    </thead>
+    <thead><tr><th style="width:230px">Variable</th><th style="width:50px">Score</th><th style="width:120px">Level</th><th style="width:58px">Change</th><th>Driver this week</th></tr></thead>
     <tbody>
-      <tr>
-        <td class="td-strong">Power Access &amp; Energy Security</td><td><span class="hm-score">85</span></td>
-        <td><div class="hm-bar-wrap"><div class="hm-bar" style="width:85%;background:#7A3020;"></div></div><span style="font-size:10px;color:var(--ink-light);">High</span></td>
-        <td><span class="delta-up">+15</span></td>
-        <td style="font-size:13px;color:var(--ink-mid);">Iran war energy shock (Brent +42%, gas +57%) compounds US state power tariff reform. Fixed PPA coverage is a binary underwriting requirement.</td>
-      </tr>
-      <tr>
-        <td class="td-strong">Route &amp; Corridor Resilience</td><td><span class="hm-score">82</span></td>
-        <td><div class="hm-bar-wrap"><div class="hm-bar" style="width:82%;background:#7A3020;"></div></div><span style="font-size:10px;color:var(--ink-light);">High</span></td>
-        <td><span class="delta-up">+18</span></td>
-        <td style="font-size:13px;color:var(--ink-mid);">IRGC threat mapping + 2Africa force majeure. Red Sea and Hormuz both active risk zones. Largest single-week movement in this heatmap.</td>
-      </tr>
-      <tr>
-        <td class="td-strong">Sovereign &amp; Security Compliance</td><td><span class="hm-score">76</span></td>
-        <td><div class="hm-bar-wrap"><div class="hm-bar" style="width:76%;background:#8A4030;"></div></div><span style="font-size:10px;color:var(--ink-light);">High</span></td>
-        <td><span class="delta-up">+9</span></td>
-        <td style="font-size:13px;color:var(--ink-mid);">White House OSTP distillation warning (April 30). Chinese capital relationships and Chinese customer revenue chains are higher compliance risk this week than last.</td>
-      </tr>
-      <tr>
-        <td class="td-strong">Cyber Posture vs. State-Linked Threats</td><td><span class="hm-score">74</span></td>
-        <td><div class="hm-bar-wrap"><div class="hm-bar" style="width:74%;background:#8A4030;"></div></div><span style="font-size:10px;color:var(--ink-light);">Elevated</span></td>
-        <td><span class="delta-up">+8</span></td>
-        <td style="font-size:13px;color:var(--ink-mid);">OSTP distillation warning + 53+ pro-Iran cyber groups activated against Gulf digital infrastructure (ABHS, April 2026). Two independent escalation vectors.</td>
-      </tr>
-      <tr>
-        <td class="td-strong">CFIUS &amp; Foreign Investment Review</td><td><span class="hm-score">70</span></td>
-        <td><div class="hm-bar-wrap"><div class="hm-bar" style="width:70%;background:#8A5030;"></div></div><span style="font-size:10px;color:var(--ink-light);">Elevated</span></td>
-        <td><span class="delta-flat">&mdash;</span></td>
-        <td style="font-size:13px;color:var(--ink-mid);">Stable elevated. Gulf sovereign capital relationships now intersect with Iran conflict geopolitics in ways that complicate prior CFIUS assumptions.</td>
-      </tr>
-      <tr>
-        <td class="td-strong">Hardware Supply-Chain Optionality</td><td><span class="hm-score">68</span></td>
-        <td><div class="hm-bar-wrap"><div class="hm-bar" style="width:68%;background:#9A5030;"></div></div><span style="font-size:10px;color:var(--ink-light);">Elevated</span></td>
-        <td><span class="delta-flat">&mdash;</span></td>
-        <td style="font-size:13px;color:var(--ink-mid);">BIS H200 case-by-case review unchanged, but OSTP distillation warning materially increases the probability of reversion. Directional risk is up.</td>
-      </tr>
-      <tr>
-        <td class="td-strong">Permitting &amp; Regulatory Timeline</td><td><span class="hm-score">62</span></td>
-        <td><div class="hm-bar-wrap"><div class="hm-bar" style="width:62%;background:#9A6030;"></div></div><span style="font-size:10px;color:var(--ink-light);">Elevated</span></td>
-        <td><span class="delta-flat">&mdash;</span></td>
-        <td style="font-size:13px;color:var(--ink-mid);">Maine moratorium veto positive. Box Elder County / Stratos Project vote imminent (Salt Lake Tribune, May 4). Wisconsin / NC grid cost reform the offsetting negative.</td>
-      </tr>
-      <tr>
-        <td class="td-strong">Exit Narrative Under Geopolitical Scrutiny</td><td><span class="hm-score">70</span></td>
-        <td><div class="hm-bar-wrap"><div class="hm-bar" style="width:70%;background:#8A5030;"></div></div><span style="font-size:10px;color:var(--ink-light);">Elevated</span></td>
-        <td><span class="delta-flat">&mdash;</span></td>
-        <td style="font-size:13px;color:var(--ink-mid);">Chinese strategic exit effectively closed. Gulf sovereign exits now complicated by conflict exposure. Allied capital remains the viable buyer universe.</td>
-      </tr>
+      <tr><td class="td-strong">Power Access &amp; Energy Security</td><td><span class="hm-score">85</span></td><td><div class="hm-bar-wrap"><div class="hm-bar" style="width:85%;background:#7A3020;"></div></div><span style="font-size:10px;color:var(--ink-light);">High</span></td><td><span class="delta-up">+15</span></td><td style="font-size:13px;color:var(--ink-mid);">Iran war energy shock (Brent +42%, gas +57%) compounds US state power tariff reform. Fixed PPA coverage is a binary underwriting requirement.</td></tr>
+      <tr><td class="td-strong">Route &amp; Corridor Resilience</td><td><span class="hm-score">82</span></td><td><div class="hm-bar-wrap"><div class="hm-bar" style="width:82%;background:#7A3020;"></div></div><span style="font-size:10px;color:var(--ink-light);">High</span></td><td><span class="delta-up">+18</span></td><td style="font-size:13px;color:var(--ink-mid);">IRGC threat mapping + 2Africa force majeure. Red Sea and Hormuz both active risk zones. Largest single-week movement in this heatmap.</td></tr>
+      <tr><td class="td-strong">Sovereign &amp; Security Compliance</td><td><span class="hm-score">76</span></td><td><div class="hm-bar-wrap"><div class="hm-bar" style="width:76%;background:#8A4030;"></div></div><span style="font-size:10px;color:var(--ink-light);">High</span></td><td><span class="delta-up">+9</span></td><td style="font-size:13px;color:var(--ink-mid);">White House OSTP distillation warning (April 30). Chinese capital relationships and Chinese customer revenue chains are higher compliance risk this week than last.</td></tr>
+      <tr><td class="td-strong">Cyber Posture vs. State-Linked Threats</td><td><span class="hm-score">74</span></td><td><div class="hm-bar-wrap"><div class="hm-bar" style="width:74%;background:#8A4030;"></div></div><span style="font-size:10px;color:var(--ink-light);">Elevated</span></td><td><span class="delta-up">+8</span></td><td style="font-size:13px;color:var(--ink-mid);">OSTP distillation warning + 53+ pro-Iran cyber groups activated against Gulf digital infrastructure (ABHS, April 2026). Two independent escalation vectors.</td></tr>
+      <tr><td class="td-strong">CFIUS &amp; Foreign Investment Review</td><td><span class="hm-score">70</span></td><td><div class="hm-bar-wrap"><div class="hm-bar" style="width:70%;background:#8A5030;"></div></div><span style="font-size:10px;color:var(--ink-light);">Elevated</span></td><td><span class="delta-flat">&mdash;</span></td><td style="font-size:13px;color:var(--ink-mid);">Stable elevated. Gulf sovereign capital relationships now intersect with Iran conflict geopolitics in ways that complicate prior CFIUS assumptions.</td></tr>
+      <tr><td class="td-strong">Hardware Supply-Chain Optionality</td><td><span class="hm-score">68</span></td><td><div class="hm-bar-wrap"><div class="hm-bar" style="width:68%;background:#9A5030;"></div></div><span style="font-size:10px;color:var(--ink-light);">Elevated</span></td><td><span class="delta-flat">&mdash;</span></td><td style="font-size:13px;color:var(--ink-mid);">BIS H200 case-by-case review unchanged, but OSTP distillation warning materially increases the probability of reversion. Directional risk is up.</td></tr>
+      <tr><td class="td-strong">Permitting &amp; Regulatory Timeline</td><td><span class="hm-score">62</span></td><td><div class="hm-bar-wrap"><div class="hm-bar" style="width:62%;background:#9A6030;"></div></div><span style="font-size:10px;color:var(--ink-light);">Elevated</span></td><td><span class="delta-flat">&mdash;</span></td><td style="font-size:13px;color:var(--ink-mid);">Maine moratorium veto positive. Box Elder County / Stratos Project vote imminent (Salt Lake Tribune, May 4). Wisconsin / NC grid cost reform the offsetting negative.</td></tr>
+      <tr><td class="td-strong">Exit Narrative Under Geopolitical Scrutiny</td><td><span class="hm-score">70</span></td><td><div class="hm-bar-wrap"><div class="hm-bar" style="width:70%;background:#8A5030;"></div></div><span style="font-size:10px;color:var(--ink-light);">Elevated</span></td><td><span class="delta-flat">&mdash;</span></td><td style="font-size:13px;color:var(--ink-mid);">Chinese strategic exit effectively closed. Gulf sovereign exits now complicated by conflict exposure. Allied capital remains the viable buyer universe.</td></tr>
     </tbody>
   </table>
 </div>
 
-
 <!-- §13 DILIGENCE QUESTIONS -->
 <div class="section" id="diligence">
   <div class="section-header"><span class="section-num">&sect;13</span><h2>Diligence Questions</h2><span class="section-tag">10 questions</span></div>
-
   <div class="dq-cat">Commercial</div>
   <ul class="dq-list">
     <li class="dq-item"><span class="dq-num">01</span><div>What proportion of the asset's revenue depends on customers whose operations rely on Gulf or Red Sea cable corridors? Does the SLA specify a force majeure carve-out, and has the insurer confirmed coverage under current conflict conditions?<div class="dq-trace">IRGC cable threat; 2Africa force majeure - Iran International, April 22 / Submarine Networks, March 2026</div></div></li>
     <li class="dq-item"><span class="dq-num">02</span><div>For AI data center assets: what proportion of revenue depends on customers whose H200 chip procurement is under BIS case-by-case review? What is the revenue impact if the January liberalisation reverts within 60 days?<div class="dq-trace">White House OSTP distillation warning - Nextgov/FCW, April 30, 2026</div></div></li>
     <li class="dq-item"><span class="dq-num">03</span><div>For Brazil data center assets: how does the implied EV/MW in the I Squared / Elea transaction compare to this asset, and does the "demand outpacing supply" framing hold in the specific metro market in question?<div class="dq-trace">I Squared / Elea acquisition - The Middle Market, May 1, 2026</div></div></li>
   </ul>
-
   <div class="dq-cat">Operational</div>
   <ul class="dq-list">
     <li class="dq-item"><span class="dq-num">04</span><div>For all data center assets: has the underwriting model been updated for Brent +42% and EU gas +57% since February 28? What is the IRR impact across the hold period at current energy pricing?<div class="dq-trace">Iran war energy shock - Submarine Networks, March 2026</div></div></li>
     <li class="dq-item"><span class="dq-num">05</span><div>For AI data center development assets seeking bridge financing: is SOFR + 275bps on a 364-day term achievable for this asset, and what does the lender's position on the power cost scenario risk look like at those terms?<div class="dq-trace">Applied Digital $300M bridge - Applied Digital press release, May 4, 2026</div></div></li>
     <li class="dq-item"><span class="dq-num">06</span><div>For Gulf-region assets: has physical security at cable landing stations and data centers been independently assessed since February 28? What does the operator's security protocol require under a force majeure declaration?<div class="dq-trace">IRGC threat mapping; Iranian drone strikes on Gulf DCs - Stimson Center, April 2026</div></div></li>
   </ul>
-
   <div class="dq-cat">Regulatory</div>
   <ul class="dq-list">
     <li class="dq-item"><span class="dq-num">07</span><div>Does the ownership chain include any entity within scope of the BIS 50% Rule effective November 10, 2026? Has external export compliance counsel been engaged to map the full structure?<div class="dq-trace">BIS 50% Rule postponement to November 2026</div></div></li>
     <li class="dq-item"><span class="dq-num">08</span><div>For US data center assets in Wisconsin, North Carolina, Texas, Virginia, or Ohio: has the full cost of grid infrastructure contribution been modelled? What is the IRR impact of a full-cost-of-service tariff equivalent to the Wisconsin We Energies precedent?<div class="dq-trace">US state power tariff reform - Data Center Dynamics, May 2026</div></div></li>
   </ul>
-
   <div class="dq-cat">Capital</div>
   <ul class="dq-list">
     <li class="dq-item"><span class="dq-num">09</span><div>For fund structures with Gulf sovereign co-investors in AI-adjacent assets: has a CFIUS voluntary notice been filed or considered in light of the Iran conflict's reordering of US-Gulf tech partnerships?<div class="dq-trace">Iran conflict / Gulf digital infrastructure; CFIUS elevated risk</div></div></li>
@@ -520,68 +346,40 @@ p{margin-bottom:1em;} p:last-child{margin-bottom:0;} strong{font-weight:600;}
   </ul>
 </div>
 
-
 <!-- §14 STRATEGY ACTIONS -->
 <div class="section" id="strategy">
   <div class="section-header"><span class="section-num">&sect;14</span><h2>Strategy Actions</h2></div>
-
   <div class="horizon-label">Immediate &middot; 0 to 90 days</div>
   <ul class="action-list">
     <li class="action-item"><div class="action-dot"></div><div><strong>Audit Gulf and Red Sea cable corridor exposure across the portfolio.</strong> IRGC threat mapping and 2Africa force majeure are among this week's more actionable signals. Any asset dependent on Hormuz or Red Sea routes for connectivity SLAs may benefit from a contingency assessment before the next deal committee.</div></li>
     <li class="action-item"><div class="action-dot"></div><div><strong>Map H200 dependency across AI-grade data center positions and pipeline.</strong> The April 30 OSTP distillation warning may indicate a 30-60 day window before the January BIS framework comes under renewed pressure. Documenting which customer contracts rely on H200 case-by-case review would allow deal teams to respond quickly if the policy shifts.</div></li>
     <li class="action-item"><div class="action-dot"></div><div><strong>Update power cost assumptions for any asset underwritten before February 28.</strong> Brent up an estimated 42%, EU gas up approximately 57% since the Iran conflict began. DC models using pre-conflict energy prices may not adequately reflect the current environment ahead of the next valuation or financing event.</div></li>
   </ul>
-
   <div class="horizon-label">Platform &middot; 3 to 12 months</div>
   <ul class="action-list">
     <li class="action-item"><div class="action-dot"></div><div><strong>For Gulf sovereign co-investors in AI-adjacent fund structures, consider initiating a CFIUS posture review.</strong> The Iran conflict has altered the US-Gulf tech partnership landscape in ways that may affect prior assumptions. A preventive review would allow fund teams to get ahead of any renewed scrutiny rather than respond to it.</div></li>
     <li class="action-item"><div class="action-dot"></div><div><strong>Commission BIS 50% Rule compliance mapping before Q3 2026.</strong> November 10 is six months away. Operators with indirect PRC-linked counterparties would benefit from external counsel engaged well before the deadline, given the complexity of the ownership-chain mapping required.</div></li>
   </ul>
-
   <div class="horizon-label">Portfolio &middot; 12 to 24 months</div>
   <ul class="action-list">
     <li class="action-item"><div class="action-dot"></div><div><strong>Develop captive power strategies for data center holdings in states where grid cost reallocation appears likely.</strong> Wisconsin and North Carolina are the current cases; Texas, Virginia, and Ohio may follow. Assets with dedicated generation or fixed PPAs appear likely to command a more durable exit multiple premium over grid-dependent peers as this regulatory direction becomes clearer.</div></li>
   </ul>
 </div>
 
-
 <!-- §15 WATCH LIST -->
 <div class="section" id="watchlist">
   <div class="section-header"><span class="section-num">&sect;15</span><h2>Watch List</h2></div>
   <table class="std-table">
-    <thead>
-      <tr><th style="width:190px">Item</th><th style="width:90px">Window</th><th>Signal to watch</th></tr>
-    </thead>
+    <thead><tr><th style="width:190px">Item</th><th style="width:90px">Window</th><th>Signal to watch</th></tr></thead>
     <tbody>
-      <tr>
-        <td class="td-strong">Iran / Hormuz cable escalation</td>
-        <td style="color:var(--accent);font-size:12px;font-weight:600;">Ongoing</td>
-        <td>No deliberate cable attack to date. Watch for: confirmed cable damage in Persian Gulf waters; Iranian naval activity near Omani waters where all Hormuz cables are routed; additional force majeure declarations beyond 2Africa Pearls. Iran International and Submarine Networks are the primary sources to track.</td>
-      </tr>
-      <tr>
-        <td class="td-strong">H200 export framework reversal</td>
-        <td style="color:var(--accent);font-size:12px;font-weight:600;">0-60 days</td>
-        <td>April 30 OSTP distillation warning is the trigger. Watch Senate Intelligence (Warner) and House Foreign Affairs (Mast) for Chip Security Act committee progress. Reversion to "presumption of denial" is the binary outcome to model.</td>
-      </tr>
-      <tr>
-        <td class="td-strong">Box Elder County / Stratos Project vote</td>
-        <td style="color:var(--accent);font-size:12px;font-weight:600;">This week</td>
-        <td>County commissioners vote on MIDA / Kevin O'Leary's 40,000-acre hyperscale and energy campus on DoD-proximate land in Utah. Signals regulatory appetite for military-adjacent sovereign data center development (Salt Lake Tribune, May 4, 2026).</td>
-      </tr>
-      <tr>
-        <td class="td-strong">BIS 50% Rule enforcement</td>
-        <td style="color:var(--accent);font-size:12px;font-weight:600;">10 Nov 2026</td>
-        <td>Six months to compliance readiness. Watch for BIS guidance on the expanded restricted party definition. Any digital infrastructure operator with PRC-adjacent counterparties needs counsel engaged before Q3 2026.</td>
-      </tr>
-      <tr>
-        <td class="td-strong">US state power tariff replication</td>
-        <td style="color:var(--accent);font-size:12px;font-weight:600;">Q2-Q3 2026</td>
-        <td>Wisconsin and North Carolina are the legislative templates. Watch Texas PUC, Virginia SCC, and Ohio PUC for equivalent proceedings. A FERC statement would be the federal-level signal that changes the national underwriting calculus.</td>
-      </tr>
+      <tr><td class="td-strong">Iran / Hormuz cable escalation</td><td style="color:var(--accent);font-size:12px;font-weight:600;">Ongoing</td><td>No deliberate cable attack to date. Watch for: confirmed cable damage in Persian Gulf waters; Iranian naval activity near Omani waters where all Hormuz cables are routed; additional force majeure declarations beyond 2Africa Pearls. Iran International and Submarine Networks are the primary sources to track.</td></tr>
+      <tr><td class="td-strong">H200 export framework reversal</td><td style="color:var(--accent);font-size:12px;font-weight:600;">0-60 days</td><td>April 30 OSTP distillation warning is the trigger. Watch Senate Intelligence (Warner) and House Foreign Affairs (Mast) for Chip Security Act committee progress. Reversion to "presumption of denial" is the binary outcome to model.</td></tr>
+      <tr><td class="td-strong">Box Elder County / Stratos Project vote</td><td style="color:var(--accent);font-size:12px;font-weight:600;">This week</td><td>County commissioners vote on MIDA / Kevin O'Leary's 40,000-acre hyperscale and energy campus on DoD-proximate land in Utah. Signals regulatory appetite for military-adjacent sovereign data center development (Salt Lake Tribune, May 4, 2026).</td></tr>
+      <tr><td class="td-strong">BIS 50% Rule enforcement</td><td style="color:var(--accent);font-size:12px;font-weight:600;">10 Nov 2026</td><td>Six months to compliance readiness. Watch for BIS guidance on the expanded restricted party definition. Any digital infrastructure operator with PRC-adjacent counterparties needs counsel engaged before Q3 2026.</td></tr>
+      <tr><td class="td-strong">US state power tariff replication</td><td style="color:var(--accent);font-size:12px;font-weight:600;">Q2-Q3 2026</td><td>Wisconsin and North Carolina are the legislative templates. Watch Texas PUC, Virginia SCC, and Ohio PUC for equivalent proceedings. A FERC statement would be the federal-level signal that changes the national underwriting calculus.</td></tr>
     </tbody>
   </table>
 </div>
-
 
 <!-- §16 SOURCES -->
 <div class="section" id="sources">
@@ -590,52 +388,47 @@ p{margin-bottom:1em;} p:last-child{margin-bottom:0;} strong{font-weight:600;}
     <div class="source-tile">
       <div class="source-tile-cat">Financial Press</div>
       <ul class="source-link-list">
-        <li class="source-link-item" id="src-10"><span class="src-num">10</span><a href="https://www.coindesk.com/business/2026/05/06/hut-8-shares-jump-nearly-30-on-news-of-usd9-8-billion-ai-data-center-lease" target="_blank">CoinDesk - Hut 8 $9.8B lease</a><span class="source-link-date">&middot; 6 May 2026</span><a href="#cite-10a" class="fn-back">&#x21A9;#x21A9;&#x21A9;#xFE0E;</a></li>
-        <li class="source-link-item" id="src-3"><span class="src-num">3</span><a href="https://restofworld.org/2026/us-iran-war-gulf-ai-submarine-cables/" target="_blank">Rest of World - Iran war / Gulf AI infrastructure</a><span class="source-link-date">&middot; Mar 2026</span><a href="#cite-3a" class="fn-back">&#x21A9;#x21A9;&#x21A9;#xFE0E;</a></li>
+        <li class="source-link-item" id="src-10"><span class="src-num">10</span><a href="https://www.coindesk.com/business/2026/05/06/hut-8-shares-jump-nearly-30-on-news-of-usd9-8-billion-ai-data-center-lease" target="_blank">CoinDesk - Hut 8 $9.8B lease</a><span class="source-link-date">&middot; 6 May 2026</span><a href="#cite-10a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item" id="src-3"><span class="src-num">3</span><a href="https://restofworld.org/2026/us-iran-war-gulf-ai-submarine-cables/" target="_blank">Rest of World - Iran war / Gulf AI infrastructure</a><span class="source-link-date">&middot; Mar 2026</span><a href="#cite-3a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
       </ul>
     </div>
     <div class="source-tile">
       <div class="source-tile-cat">Industry &amp; Market Data</div>
       <ul class="source-link-list">
-        <li class="source-link-item" id="src-8"><span class="src-num">8</span><a href="https://www.datacenterknowledge.com/data-center-construction/new-data-center-developments-may-2026" target="_blank">Data Center Dynamics - May 2026 developments</a><span class="source-link-date">&middot; May 2026</span><a href="#cite-8a" class="fn-back">&#x21A9;#x21A9;&#x21A9;#xFE0E;</a></li>
-        <li class="source-link-item" id="src-13"><span class="src-num">13</span><a href="https://www.themiddlemarket.com" target="_blank">The Middle Market - I Squared / Elea</a><span class="source-link-date">&middot; 1 May 2026</span><a href="#cite-13a" class="fn-back">&#x21A9;#x21A9;&#x21A9;#xFE0E;</a></li>
-        <li class="source-link-item" id="src-12"><span class="src-num">12</span><a href="https://www.manilatimes.net/2026/05/06/tmt-newswire/pr-newswire/digital-edge-and-bgrimm-power-secures-thailands-largest-data-center-loan" target="_blank">PRNewswire - Digital Edge / B.Grimm $880M</a><span class="source-link-date">&middot; 6 May 2026</span><a href="#cite-12a" class="fn-back">&#x21A9;#x21A9;&#x21A9;#xFE0E;</a></li>
-        <li class="source-link-item" id="src-9"><span class="src-num">9</span><a href="https://www.sltrib.com/news/2026/05/04/hyperscale-data-center-project/" target="_blank">Salt Lake Tribune - Stratos Project vote</a><span class="source-link-date">&middot; 4 May 2026</span><a href="#cite-9a" class="fn-back">&#x21A9;#x21A9;&#x21A9;#xFE0E;</a></li>
-        <li class="source-link-item" id="src-1"><span class="src-num">1</span><a href="https://www.submarinenetworks.com/en/nv/insights/war-in-the-gulf-severs-the-world-s-digital-arteries" target="_blank">Submarine Networks - 2Africa force majeure</a><span class="source-link-date">&middot; Mar 2026</span><a href="#cite-1a" class="fn-back">&#x21A9;#x21A9;&#x21A9;#xFE0E;</a></li>
+        <li class="source-link-item" id="src-8"><span class="src-num">8</span><a href="https://www.datacenterknowledge.com/data-center-construction/new-data-center-developments-may-2026" target="_blank">Data Center Dynamics - May 2026 developments</a><span class="source-link-date">&middot; May 2026</span><a href="#cite-8a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item" id="src-13"><span class="src-num">13</span><a href="https://www.themiddlemarket.com" target="_blank">The Middle Market - I Squared / Elea</a><span class="source-link-date">&middot; 1 May 2026</span><a href="#cite-13a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item" id="src-12"><span class="src-num">12</span><a href="https://www.manilatimes.net/2026/05/06/tmt-newswire/pr-newswire/digital-edge-and-bgrimm-power-secures-thailands-largest-data-center-loan" target="_blank">PRNewswire - Digital Edge / B.Grimm $880M</a><span class="source-link-date">&middot; 6 May 2026</span><a href="#cite-12a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item" id="src-9"><span class="src-num">9</span><a href="https://www.sltrib.com/news/2026/05/04/hyperscale-data-center-project/" target="_blank">Salt Lake Tribune - Stratos Project vote</a><span class="source-link-date">&middot; 4 May 2026</span><a href="#cite-9a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item" id="src-1"><span class="src-num">1</span><a href="https://www.submarinenetworks.com/en/nv/insights/war-in-the-gulf-severs-the-world-s-digital-arteries" target="_blank">Submarine Networks - 2Africa force majeure</a><span class="source-link-date">&middot; Mar 2026</span><a href="#cite-1a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
       </ul>
     </div>
     <div class="source-tile">
       <div class="source-tile-cat">Regulatory &amp; Official</div>
       <ul class="source-link-list">
-        <li class="source-link-item" id="src-4"><span class="src-num">4</span><a href="https://www.nextgov.com/artificial-intelligence/2026/04/experts-call-halt-ai-chip-exports-china-after-white-house-distillation-warning/413132/" target="_blank">Nextgov/FCW - White House OSTP distillation warning</a><span class="source-link-date">&middot; 30 Apr 2026</span><a href="#cite-4a" class="fn-back">&#x21A9;#x21A9;&#x21A9;#xFE0E;</a></li>
-        <li class="source-link-item" id="src-14"><span class="src-num">14</span><a href="https://bis.doc.gov" target="_blank">BIS - H200 case-by-case review framework</a><span class="source-link-date">&middot; Jan 2026</span><a href="#cite-14a" class="fn-back">&#x21A9;#x21A9;&#x21A9;#xFE0E;</a></li>
-        <li class="source-link-item" id="src-11"><span class="src-num">11</span><a href="https://ir.applieddigital.com/news-events/press-releases/detail/150/applied-digital-announces-300-million-senior-secured" target="_blank">Applied Digital - $300M bridge facility</a><span class="source-link-date">&middot; 4 May 2026</span><a href="#cite-11a" class="fn-back">&#x21A9;#x21A9;&#x21A9;#xFE0E;</a></li>
+        <li class="source-link-item" id="src-4"><span class="src-num">4</span><a href="https://www.nextgov.com/artificial-intelligence/2026/04/experts-call-halt-ai-chip-exports-china-after-white-house-distillation-warning/413132/" target="_blank">Nextgov/FCW - OSTP distillation warning</a><span class="source-link-date">&middot; 30 Apr 2026</span><a href="#cite-4a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item" id="src-14"><span class="src-num">14</span><a href="https://bis.doc.gov" target="_blank">BIS - H200 case-by-case review framework</a><span class="source-link-date">&middot; Jan 2026</span><a href="#cite-14a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item" id="src-11"><span class="src-num">11</span><a href="https://ir.applieddigital.com/news-events/press-releases/detail/150/applied-digital-announces-300-million-senior-secured" target="_blank">Applied Digital - $300M bridge facility</a><span class="source-link-date">&middot; 4 May 2026</span><a href="#cite-11a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
       </ul>
     </div>
     <div class="source-tile">
       <div class="source-tile-cat">Geopolitics &amp; OSINT</div>
       <ul class="source-link-list">
-        <li class="source-link-item" id="src-2"><span class="src-num">2</span><a href="https://www.iranintl.com/en/202604225913" target="_blank">Iran International - IRGC cable threat mapping</a><span class="source-link-date">&middot; 22 Apr 2026</span><a href="#cite-2a" class="fn-back">&#x21A9;#x21A9;&#x21A9;#xFE0E;</a></li>
-        <li class="source-link-item" id="src-6"><span class="src-num">6</span><a href="https://www.stimson.org/2026/beneath-the-strait-iran-could-threaten-gulf-data-centers-undersea-cables/" target="_blank">Stimson Center - Iran Gulf DC &amp; cable threat</a><span class="source-link-date">&middot; Apr 2026</span><a href="#cite-6a" class="fn-back">&#x21A9;#x21A9;&#x21A9;#xFE0E;</a></li>
-        <li class="source-link-item" id="src-5"><span class="src-num">5</span><a href="https://www.weforum.org/stories/2026/03/war-middle-east-vulnerability-global-choke-points/" target="_blank">World Economic Forum - Iran war &amp; chokepoints</a><span class="source-link-date">&middot; Mar 2026</span><a href="#cite-5a" class="fn-back">&#x21A9;#x21A9;&#x21A9;#xFE0E;</a></li>
-        <li class="source-link-item" id="src-7"><span class="src-num">7</span><a href="https://www.abhs.in/blog/undersea-cables-middle-east-conflict-internet-infrastructure-risk-2026" target="_blank">ABHS - Hormuz cables &amp; traffic share</a><span class="source-link-date">&middot; Apr 2026</span><a href="#cite-7a" class="fn-back">&#x21A9;#x21A9;&#x21A9;#xFE0E;</a></li>
+        <li class="source-link-item" id="src-2"><span class="src-num">2</span><a href="https://www.iranintl.com/en/202604225913" target="_blank">Iran International - IRGC cable threat mapping</a><span class="source-link-date">&middot; 22 Apr 2026</span><a href="#cite-2a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item" id="src-6"><span class="src-num">6</span><a href="https://www.stimson.org/2026/beneath-the-strait-iran-could-threaten-gulf-data-centers-undersea-cables/" target="_blank">Stimson Center - Iran Gulf DC &amp; cable threat</a><span class="source-link-date">&middot; Apr 2026</span><a href="#cite-6a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item" id="src-5"><span class="src-num">5</span><a href="https://www.weforum.org/stories/2026/03/war-middle-east-vulnerability-global-choke-points/" target="_blank">World Economic Forum - Iran war &amp; chokepoints</a><span class="source-link-date">&middot; Mar 2026</span><a href="#cite-5a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item" id="src-7"><span class="src-num">7</span><a href="https://www.abhs.in/blog/undersea-cables-middle-east-conflict-internet-infrastructure-risk-2026" target="_blank">ABHS - Hormuz cables &amp; traffic share</a><span class="source-link-date">&middot; Apr 2026</span><a href="#cite-7a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
       </ul>
     </div>
     <div class="source-tile">
       <div class="source-tile-cat">PE &amp; Deal Intelligence</div>
-      <ul class="source-link-list">
-        <li class="source-link-item" style="color:var(--ink-light);font-style:italic;">No direct citations this issue</li>
-      </ul>
+      <ul class="source-link-list"><li class="source-link-item" style="color:var(--ink-light);font-style:italic;">No direct citations this issue</li></ul>
     </div>
     <div class="source-tile">
       <div class="source-tile-cat">Market Data &amp; Signals</div>
-      <ul class="source-link-list">
-        <li class="source-link-item" style="color:var(--ink-light);font-style:italic;">No direct citations this issue</li>
-      </ul>
+      <ul class="source-link-list"><li class="source-link-item" style="color:var(--ink-light);font-style:italic;">No direct citations this issue</li></ul>
     </div>
   </div>
 </div>
-
 
 <!-- §17 DISCLAIMER -->
 <div class="disclaimer">
@@ -644,7 +437,6 @@ p{margin-bottom:1em;} p:last-child{margin-bottom:0;} strong{font-weight:600;}
   <p>The analysis is intended for professional investors. It does not constitute investment advice. Views are those of the author and subject to change. <a href="https://www.consvltor.net" target="_blank">consvltor.net</a></p>
   <p>Enquiries: <a href="mailto:hello@consvltor.net">hello@consvltor.net</a></p>
 </div>
-
 
 </body>
 </html>
