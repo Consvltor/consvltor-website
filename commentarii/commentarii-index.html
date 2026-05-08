@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Commentarii · CʘNSVLTʘR</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --bg:#F5F0E6; --ink:#1C1814; --ink-mid:#4A4540; --ink-light:#8A837A;
+  --rule:#D0C8BC; --card-bg:#EDE8DE; --accent:#7A3020;
+  --amber:#7A5A1A; --green:#2A5036; --blue:#1A3C5A;
+}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;font-size:15px;line-height:1.75;-webkit-font-smoothing:antialiased;}
+
+/* SITE NAV */
+.site-nav{background:#fff;border-bottom:1px solid #E8E0D8;padding:14px 48px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:200;}
+.site-logo{font-family:'Times New Roman',Times,serif;font-size:14px;letter-spacing:0.16em;color:var(--ink);text-decoration:none;}
+.site-nav-links{display:flex;gap:28px;align-items:center;}
+.site-nav-links a{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-mid);text-decoration:none;}
+.site-nav-links a:hover{color:var(--ink);}
+.site-nav-links a.active{color:var(--accent);font-weight:600;}
+
+/* MAP */
+#map{width:100%;height:420px;background:#E8E0CC;}
+.leaflet-container{font-family:'Source Serif 4',Georgia,serif;}
+
+/* LAYOUT: sidebar + main */
+.page-body{display:grid;grid-template-columns:200px 1fr;max-width:1200px;margin:0 auto;min-height:60vh;}
+
+/* SIDEBAR */
+.sidebar{border-right:1px solid var(--rule);padding:32px 20px 48px;background:var(--bg);position:sticky;top:57px;height:calc(100vh - 57px);overflow-y:auto;}
+.sidebar-label{font-size:9px;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink-light);margin-bottom:14px;padding-bottom:6px;border-bottom:1px solid var(--rule);}
+.issue-list{list-style:none;}
+.issue-item{padding:10px 0;border-bottom:1px solid var(--rule);cursor:pointer;}
+.issue-item:last-child{border-bottom:none;}
+.issue-item:hover .issue-title{color:var(--accent);}
+.issue-item.active .issue-title{color:var(--accent);font-weight:600;}
+.issue-date{font-size:10px;letter-spacing:0.08em;color:var(--ink-light);margin-bottom:3px;}
+.issue-title{font-size:12px;color:var(--ink-mid);line-height:1.4;}
+.issue-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:11px;color:var(--ink-light);}
+
+/* MAIN CONTENT */
+.main-content{padding:0;}
+
+/* ISSUE HEADER */
+.issue-header{padding:40px 48px 32px;border-bottom:1px solid var(--rule);}
+.issue-eyebrow{font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink-light);margin-bottom:16px;display:flex;gap:20px;}
+.issue-h1{font-family:'Cormorant Garamond',Georgia,serif;font-size:42px;font-weight:500;line-height:1.1;color:var(--ink);margin-bottom:16px;max-width:680px;}
+.issue-deck{font-size:15px;color:var(--ink-mid);line-height:1.7;max-width:620px;border-left:3px solid var(--accent);padding-left:18px;margin-bottom:28px;}
+
+/* SIGNAL CARDS */
+.signal-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);border-top:1px solid var(--rule);}
+.signal-card{background:var(--bg);padding:16px 14px;display:flex;flex-direction:column;justify-content:space-between;min-height:120px;}
+.sc-cat{font-size:8px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-light);margin-bottom:6px;}
+.sc-theme{font-size:11px;color:var(--ink);line-height:1.4;margin-bottom:8px;flex:1;}
+.sc-stance{display:inline-block;font-size:8px;letter-spacing:0.08em;text-transform:uppercase;font-weight:600;padding:2px 6px;border-radius:2px;align-self:flex-start;}
+.stance-cau{background:#F0DDD8;color:#7A3020;}
+.stance-ele{background:#E8D0CC;color:#6A2018;}
+.stance-opp{background:#D8EAE0;color:#2A5036;}
+.stance-mon{background:#F0E8D0;color:#7A5A1A;}
+
+/* REPORT EMBED */
+.report-embed{padding:0;}
+.report-embed iframe{width:100%;border:none;display:block;min-height:100vh;}
+
+/* READ FULL LINK */
+.read-full{display:flex;align-items:center;gap:10px;padding:16px 48px;border-bottom:1px solid var(--rule);background:var(--card-bg);}
+.read-full a{font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);text-decoration:none;font-weight:600;}
+.read-full a:hover{text-decoration:underline;}
+.read-full span{font-size:12px;color:var(--ink-light);}
+
+/* LOADING */
+.loading{padding:80px 48px;text-align:center;color:var(--ink-light);font-style:italic;font-size:14px;}
+
+/* CUSTOM MAP PIN */
+.pin-label{background:white;border:1.5px solid var(--accent);border-radius:3px;padding:3px 7px;font-size:11px;font-family:'Source Serif 4',Georgia,serif;color:var(--ink);white-space:nowrap;box-shadow:0 2px 6px rgba(0,0,0,0.15);}
+
+@media(max-width:900px){
+  .page-body{grid-template-columns:1fr;}
+  .sidebar{position:static;height:auto;border-right:none;border-bottom:1px solid var(--rule);display:flex;gap:0;padding:20px;overflow-x:auto;}
+  .sidebar-label{display:none;}
+  .issue-list{display:flex;flex-direction:row;gap:12px;white-space:nowrap;}
+  .issue-item{border-bottom:none;padding:8px 12px;background:var(--card-bg);border-radius:3px;min-width:140px;}
+  .signal-cards{grid-template-columns:1fr 1fr;}
+  .issue-header{padding:24px 20px 20px;}
+  .issue-h1{font-size:28px;}
+  .site-nav{padding:12px 20px;}
+  .site-nav-links{gap:16px;}
+}
+</style>
+</head>
+<body>
+
+<!-- SITE NAV -->
+<nav class="site-nav">
+  <a href="https://www.consvltor.net" class="site-logo">CʘNSVLTʘR</a>
+  <div class="site-nav-links">
+    <a href="https://www.consvltor.net/#why">Why</a>
+    <a href="https://www.consvltor.net/#who">Who</a>
+    <a href="https://www.consvltor.net/#what">What</a>
+    <a href="https://www.consvltor.net/#how">How</a>
+    <a href="https://www.consvltor.net/#etymology">Etymology</a>
+    <a href="/commentarii/" class="active">Commentarii</a>
+    <a href="https://www.consvltor.net/#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- MAP -->
+<div id="map"></div>
+
+<!-- PAGE BODY -->
+<div class="page-body">
+
+  <!-- SIDEBAR: archive navigator -->
+  <aside class="sidebar">
+    <div class="sidebar-label">Archives</div>
+    <ul class="issue-list" id="issueList"></ul>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main-content">
+    <div id="issueHeader" class="issue-header">
+      <div class="loading">Loading current issue&hellip;</div>
+    </div>
+    <div id="signalCards" class="signal-cards" style="display:none;"></div>
+    <div id="readFull" class="read-full" style="display:none;">
+      <a id="readFullLink" href="#" target="_blank">Open standalone report</a>
+      <span>Opens in new tab &middot; shareable link</span>
+    </div>
+    <div class="report-embed">
+      <iframe id="reportFrame" src="" title="Commentarii report" scrolling="no" onload="resizeFrame(this)"></iframe>
+    </div>
+  </main>
+
+</div>
+
+<script>
+// ─── DATA ───────────────────────────────────────────────────────────────────
+// Each issue entry:
+// - num: issue number (string, zero-padded)
+// - date: ISO date string for sorting
+// - dateDisplay: human-readable date
+// - title: report title
+// - deck: cover deck text
+// - file: path to standalone HTML report
+// - signals: array of 4 {cat, theme, stance} objects
+// - pins: array of {lat, lng, label, topic} map markers
+
+const issues = [
+  {
+    num: "008",
+    date: "2026-05-07",
+    dateDisplay: "7 May 2026",
+    title: "The Distillation Threshold",
+    deck: "Two chokepoints define this week. In Washington, the White House OSTP distillation warning of April 30 places direct pressure on the January H200 liberalisation. In the Persian Gulf, IRGC-linked media has explicitly mapped undersea cables and data centers as strategic pressure points, and Alcatel Submarine Networks has already issued force majeure on 2Africa Pearls.",
+    file: "/commentarii/issues/20260507-commentarii-the-distillation-threshold.html",
+    signals: [
+      { cat: "Technology Cold War", theme: "White House AI distillation warning; H200 reversal risk within 60 days; Chip Security Act advancing", stance: "Caution", stanceClass: "stance-cau" },
+      { cat: "Gulf Cable & DC Threat", theme: "IRGC maps Gulf cables as pressure points; 2Africa Pearls halted; Hormuz carries ~30% of global traffic", stance: "Elevated Risk", stanceClass: "stance-ele" },
+      { cat: "US Power Regulation", theme: "Wisconsin and North Carolina shift full grid cost to operators; Texas, Virginia, Ohio in precedent range", stance: "Elevated Risk", stanceClass: "stance-ele" },
+      { cat: "AI Deal Wave", theme: "Hut 8 $9.8B lease; Applied Digital $300M Goldman bridge; Digital Edge $880M Thailand green loan", stance: "Opportunity", stanceClass: "stance-opp" }
+    ],
+    pins: [
+      { lat: 26.0, lng: 55.0, label: "Gulf Cable Threat — Hormuz" },
+      { lat: 38.9, lng: -77.0, label: "White House OSTP Warning — Washington DC" },
+      { lat: 43.0, lng: -88.5, label: "US Power Regulation — Wisconsin" },
+      { lat: 25.2, lng: 55.3, label: "2Africa Pearls — Force Majeure (ASN)" },
+      { lat: 13.8, lng: 100.5, label: "Digital Edge $880M — Thailand" },
+      { lat: 30.3, lng: -97.7, label: "Hut 8 $9.8B Lease — Beacon Point, Texas" },
+      { lat: 47.6, lng: -100.8, label: "Applied Digital $300M — North Dakota" }
+    ]
+  }
+  // Add future issues here following the same structure
+];
+
+// ─── MAP INIT ────────────────────────────────────────────────────────────────
+const map = L.map('map', {
+  center: [25, 20],
+  zoom: 2,
+  zoomControl: true,
+  attributionControl: false,
+  minZoom: 1,
+  maxZoom: 6
+});
+
+// Historical map tile layer
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  opacity: 0
+}).addTo(map);
+
+// Overlay the consvltor map image
+const imageBounds = [[-85, -180], [85, 180]];
+L.imageOverlay('https://consvltor.net/assets/consvltor_cover.jpg', imageBounds, {
+  opacity: 1,
+  interactive: false
+}).addTo(map);
+
+let pinLayer = L.layerGroup().addTo(map);
+
+function addPins(pins) {
+  pinLayer.clearLayers();
+  if (!pins || !pins.length) return;
+  pins.forEach(p => {
+    const icon = L.divIcon({
+      className: '',
+      html: `<div style="display:flex;flex-direction:column;align-items:center;">
+        <div style="width:14px;height:14px;background:#7A3020;border-radius:50% 50% 50% 0;transform:rotate(-45deg);border:2px solid white;box-shadow:0 2px 6px rgba(0,0,0,0.35);"></div>
+        <div class="pin-label" style="margin-top:4px;">${p.label}</div>
+      </div>`,
+      iconSize: [160, 40],
+      iconAnchor: [7, 14],
+      popupAnchor: [0, -20]
+    });
+    L.marker([p.lat, p.lng], { icon }).addTo(pinLayer);
+  });
+}
+
+// ─── SIDEBAR ─────────────────────────────────────────────────────────────────
+const issuesSorted = [...issues].sort((a, b) => b.date.localeCompare(a.date));
+const issueList = document.getElementById('issueList');
+
+issuesSorted.forEach((issue, i) => {
+  const li = document.createElement('li');
+  li.className = 'issue-item' + (i === 0 ? ' active' : '');
+  li.dataset.idx = i;
+  li.innerHTML = `
+    <div class="issue-date">${issue.dateDisplay}</div>
+    <div class="issue-title">${issue.title}</div>
+    <div class="issue-num">Issue ${issue.num}</div>
+  `;
+  li.addEventListener('click', () => loadIssue(i));
+  issueList.appendChild(li);
+});
+
+// ─── LOAD ISSUE ──────────────────────────────────────────────────────────────
+function loadIssue(idx) {
+  const issue = issuesSorted[idx];
+
+  // Update sidebar active state
+  document.querySelectorAll('.issue-item').forEach((el, i) => {
+    el.classList.toggle('active', i === idx);
+  });
+
+  // Update map pins
+  addPins(issue.pins);
+
+  // Update header
+  document.getElementById('issueHeader').innerHTML = `
+    <div class="issue-eyebrow">
+      <span>Commentarii ${issue.num}</span>
+      <span>${issue.dateDisplay}</span>
+      <span>TMT &amp; Digital Infrastructure</span>
+    </div>
+    <h1 class="issue-h1">${issue.title}</h1>
+    <p class="issue-deck">${issue.deck}</p>
+  `;
+
+  // Update signal cards
+  const cardsEl = document.getElementById('signalCards');
+  cardsEl.style.display = 'grid';
+  cardsEl.innerHTML = issue.signals.map(s => `
+    <div class="signal-card">
+      <div>
+        <div class="sc-cat">${s.cat}</div>
+        <div class="sc-theme">${s.theme}</div>
+      </div>
+      <span class="sc-stance ${s.stanceClass}">${s.stance}</span>
+    </div>
+  `).join('');
+
+  // Update standalone link
+  const readFull = document.getElementById('readFull');
+  readFull.style.display = 'flex';
+  document.getElementById('readFullLink').href = issue.file;
+
+  // Load report in iframe
+  document.getElementById('reportFrame').src = issue.file;
+}
+
+function resizeFrame(frame) {
+  try {
+    frame.style.height = frame.contentWindow.document.body.scrollHeight + 'px';
+  } catch(e) {
+    // Cross-origin fallback: set a generous default height
+    frame.style.height = '6000px';
+  }
+}
+
+// Load latest issue on start
+loadIssue(0);
+</script>
+
+</body>
+</html>
