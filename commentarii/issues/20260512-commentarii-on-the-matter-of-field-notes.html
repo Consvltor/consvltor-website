@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Commentarii 001 · On the matter of field notes · 52 BC</title>
+  <style>
+    :root {
+      --brown:       #5c2d00;
+      --brownLight:  #a0601a;
+      --muted:       #7a5c3a;
+      --rule:        #c9a87a;
+      --parchment:   #fdf8f0;
+      --parchmentAlt:#f5ede0;
+      --ink:         #2a1500;
+      --sans:        Arial, Helvetica, sans-serif;
+      --serif:       'Times New Roman', Times, serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--sans);
+      background: #fff;
+      color: var(--ink);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 2rem 5rem;
+    }
+
+    /* ── SECTION INTRO ─────────────────────────────────────── */
+    /* Mirrors the site's own section-grid pattern exactly:
+       two-column label / body, separated by a rule             */
+
+    .section-intro {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 2.5rem;
+      align-items: start;
+      padding: 3rem 0 2.5rem;
+      border-bottom: 1px solid var(--rule);
+      margin-bottom: 3rem;
+    }
+
+    .section-label-col h2 {
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      font-weight: normal;
+      color: var(--brown);
+      margin-bottom: 0.4rem;
+    }
+
+    .section-label-col p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.65;
+      font-style: italic;
+    }
+
+    .section-body-col p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 0.9rem;
+    }
+
+    .section-body-col p:last-child { margin-bottom: 0; }
+
+    /* ── ENTRY HEADER ─────────────────────────────────────── */
+    .entry-meta {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--brownLight);
+      margin-bottom: 0.5rem;
+    }
+
+    .entry-title {
+      font-family: var(--serif);
+      font-size: 1.65rem;
+      font-weight: normal;
+      font-style: italic;
+      color: var(--brown);
+      line-height: 1.25;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    /* ── MAP ──────────────────────────────────────────────── */
+    .map-figure {
+      margin: 0 0 2.25rem 0;
+      border: 1px solid var(--rule);
+      overflow: hidden;
+      background: var(--parchment);
+    }
+
+    .map-figure img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      object-position: center 28%;
+      display: block;
+    }
+
+    .map-figure img.error { display: none; }
+
+    .map-fallback {
+      display: none;
+      padding: 1.25rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      background: var(--parchmentAlt);
+      line-height: 1.6;
+    }
+
+    .map-figure img.error + .map-fallback { display: block; }
+
+    .map-caption {
+      padding: 0.45rem 0.75rem;
+      border-top: 1px solid var(--rule);
+      font-size: 0.7rem;
+      font-family: var(--sans);
+      color: var(--muted);
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      background: var(--parchment);
+    }
+
+    .map-caption em {
+      font-style: italic;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+
+    /* ── PROSE ────────────────────────────────────────────── */
+    .prose {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: var(--ink);
+    }
+
+    .prose p { margin-bottom: 1.25rem; }
+    .prose p.kicker { color: var(--brown); }
+
+    /* ── FOOTER ───────────────────────────────────────────── */
+    .entry-footer {
+      margin-top: 3.5rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--rule);
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      opacity: 0.65;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- ── SECTION INTRO ── -->
+  <!-- This block appears once, above every entry.
+       It mirrors the site's section-grid layout exactly. -->
+  <div class="section-intro">
+
+    <div class="section-label-col">
+      <h2>Commentarii</h2>
+      <p>Field notes from infrastructure, markets, and the geopolitics of connectivity. Written after dark.</p>
+    </div>
+
+    <div class="section-body-col">
+      <p>Each entry is anchored to a place and a period. Some are retrospective, written now from the distance of outcome. Others are current, drafted close to the events they describe. The standard of evidence is the same throughout: what the data and the experience actually support, no more.</p>
+    </div>
+
+  </div>
+
+  <!-- ── ENTRY: Gallia · 52 BC ── -->
+  <div class="entry-meta">Gallia &nbsp;·&nbsp; 52 BC</div>
+  <h1 class="entry-title">On the matter of field notes</h1>
+
+  <!-- Ortelius, Gallia Vetus Ad Iulij Caesaris Commentaria, 1590 - BnF/Gallica, public domain -->
+  <!-- If image fails: download from gallica.bnf.fr/ark:/12148/btv1b531440935 -->
+  <!-- save as gallia-vetus.jpg alongside this file and update src below -->
+  <figure class="map-figure">
+    <img
+      src="https://gallica.bnf.fr/ark:/12148/btv1b531440935/f1.highres"
+      alt="Gallia Vetus, Ad Iulij Caesaris Commentaria, Abraham Ortelius, 1590"
+      onerror="this.classList.add('error')"
+    >
+    <div class="map-fallback">
+      Map unavailable via direct link. Download from
+      <strong>gallica.bnf.fr/ark:/12148/btv1b531440935</strong>,
+      save as <code>gallia-vetus.jpg</code> in this folder, and update the img src.
+    </div>
+    <figcaption class="map-caption">
+      Abraham Ortelius &nbsp;·&nbsp;
+      <em>Gallia Vetus, Ad Iulij Caesaris Commentaria</em>
+      &nbsp;·&nbsp; 1590 &nbsp;·&nbsp; BnF / Gallica
+    </figcaption>
+  </figure>
+
+  <!-- Prose -->
+  <div class="prose">
+
+    <p>The Acta Diurna were Caesar's invention, and they were everything these are not: official, public, posted at dawn in the Forum for citizens to read. State proceedings. Announcements. The administrative record of a republic that was, quietly, becoming an empire.</p>
+
+    <p>What actually survived was the Commentarii. Field notes. Written from camp in Gaul, after the day's engagements, after the councils, after the decisions had been made and their consequences were already in motion. Caesar wrote about himself in the third person, which was either extraordinary discipline or extraordinary vanity, and probably both. He called them working notes. His enemies in Rome read them as propaganda. Both were correct.</p>
+
+    <p class="kicker">I am going to use first person, and I am going to be honest about what I can and cannot claim.</p>
+
+    <p>These entries come from a career spent at the intersection of TMT, digital infrastructure, and capital: strategy work, commercial due diligence, market entry, growth advisory. Some of it is recent. Some of it happened twenty years ago and is written here with the benefit of knowing what actually happened next. The Pakistan entry is dated 2013-2014. The Mediterranean piece is from early 2026. This entry is dated 52 BC, which should tell you something about the tone.</p>
+
+    <p>The format is consistent: a place, a period, an analytical question, and whatever the data and the experience actually support, no more, no less. Some entries are retrospective, written now from the distance of outcome. Others are current, drafted close to the events they describe. The weekly geopolitical notes will be more provisional. The archive entries have the advantage of knowing how the story ended.</p>
+
+    <p>One recurring thread across the earlier work is the relationship between infrastructure and economic velocity, anchored specifically by the finding from Rohman and Bohlin's 2012 Chalmers University study that doubling actual broadband speed contributes roughly 0.3% GDP growth in OECD economies, and substantially more in emerging markets. I was applying that framework in Pakistan before the 4G auction. I used it again in Oman. It appears in the CityFibre due diligence. Frameworks that travel across contexts are worth naming.</p>
+
+    <p>Caesar's Acta Diurna were posted at dawn. These are written after dark, which is when the day's information has settled and the analysis becomes possible.</p>
+
+    <p class="kicker">He called them Commentarii. So will I.</p>
+
+  </div>
+
+  <div class="entry-footer">
+    <span>Commentarii &nbsp;·&nbsp; C&#x0298;NSVLT&#x0298;R</span>
+    <span>consvltor.net/commentarii</span>
+  </div>
+
+</div>
+</body>
+</html>
