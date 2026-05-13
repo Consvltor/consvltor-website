@@ -32,11 +32,12 @@
       padding: 0 2rem 5rem;
     }
 
-    /* ── SECTION INTRO ─────────────────────────────────────── */
-    /* Mirrors the site's own section-grid pattern exactly:
-       two-column label / body, separated by a rule             */
+    /* ── PREAMBLE INTRO ────────────────────────────────────── */
+    /* Two-column block above every entry. Matches issue 008 convention:
+       col-left = Times New Roman italic (pub-title + tagline)
+       col-right = Arial (platform description)                */
 
-    .section-intro {
+    .preamble-intro {
       display: grid;
       grid-template-columns: 200px 1fr;
       gap: 2.5rem;
@@ -46,29 +47,30 @@
       margin-bottom: 3rem;
     }
 
-    .section-label-col h2 {
+    .preamble-intro .col-left {
       font-family: var(--serif);
-      font-size: 1.25rem;
-      font-weight: normal;
-      color: var(--brown);
-      margin-bottom: 0.4rem;
-    }
-
-    .section-label-col p {
+      font-style: italic;
       font-size: 0.85rem;
       color: var(--muted);
       line-height: 1.65;
-      font-style: italic;
     }
 
-    .section-body-col p {
+    .preamble-intro .col-left .pub-title {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 1.25rem;
+      font-weight: normal;
+      color: var(--brown);
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+
+    .preamble-intro .col-right {
+      font-family: var(--sans);
       font-size: 0.9rem;
       color: var(--muted);
       line-height: 1.8;
-      margin-bottom: 0.9rem;
     }
-
-    .section-body-col p:last-child { margin-bottom: 0; }
 
     /* ── ENTRY HEADER ─────────────────────────────────────── */
     .entry-meta {
@@ -166,18 +168,19 @@
 <body>
 <div class="container">
 
-  <!-- ── SECTION INTRO ── -->
-  <!-- This block appears once, above every entry.
-       It mirrors the site's section-grid layout exactly. -->
-  <div class="section-intro">
+  <!-- ── PREAMBLE INTRO ── -->
+  <!-- Two-column block above every entry. Matches issue 008 convention:
+       col-left = Times New Roman italic (pub-title + tagline)
+       col-right = Arial (platform description)                -->
+  <div class="preamble-intro">
 
-    <div class="section-label-col">
-      <h2>Commentarii</h2>
-      <p>Field notes from infrastructure, markets, and the geopolitics of connectivity. Written after dark.</p>
+    <div class="col-left">
+      <span class="pub-title">Commentarii</span>
+      Field notes from infrastructure, markets, and the geopolitics of connectivity. Written after dark.
     </div>
 
-    <div class="section-body-col">
-      <p>Each entry is anchored to a place and a period. Some are retrospective, written now from the distance of outcome. Others are current, drafted close to the events they describe. The standard of evidence is the same throughout: what the data and the experience actually support, no more.</p>
+    <div class="col-right">
+      Each entry is anchored to a place and a period. Some are retrospective, written now from the distance of outcome. Others are current, drafted close to the events they describe. The standard of evidence is the same throughout: what the data and the experience actually support, no more.
     </div>
 
   </div>
@@ -210,19 +213,17 @@
   <!-- Prose -->
   <div class="prose">
 
-    <p>The Acta Diurna (among the first "newspapers", one may even say "blogs") were Caesar's invention, and they were official, public, posted at dawn in the Forum for citizens to read. State proceedings. Announcements. The administrative record of a republic that was, quietly, becoming an empire.</p>
+    <p>The Acta Diurna were Caesar's invention, and they were everything these are not: official, public, posted at dawn in the Forum for citizens to read. State proceedings. Announcements. The administrative record of a republic that was, quietly, becoming an empire.</p>
 
-    <p>What actually survived better from Caesar's publications were quite different: the Commentarii. Field notes. Written from camp in Gaul, after the day's engagements, after the councils, after the decisions had been made and their consequences were already in motion. Caesar wrote about himself in the third person, which was either extraordinary discipline or extraordinary vanity, and probably both. He called them working notes. His enemies in Rome read them as propaganda. Both were probably correct.</p>
-
-    <p>Consvltor's Commentarii are also Field notes. Written from wherever, after the day's engagements, sometimes about <bold>geopolitics</bold>, sometimes reflections on <bold>past engagements</bold>. </p>
+    <p>What actually survived was the Commentarii. Field notes. Written from camp in Gaul, after the day's engagements, after the councils, after the decisions had been made and their consequences were already in motion. Caesar wrote about himself in the third person, which was either extraordinary discipline or extraordinary vanity, and probably both. He called them working notes. His enemies in Rome read them as propaganda. Both were correct.</p>
 
     <p class="kicker">I am going to use first person, and I am going to be honest about what I can and cannot claim.</p>
 
-    <p>These entries come from a career spent at the intersection of TMT, digital infrastructure, and capital: strategy work, commercial due diligence, market entry, growth advisory. Some of it is recent. Some of it happened twenty years ago and is written here with the benefit of knowing what actually happened next. The (still in production) Pakistan entry is dated 2013-2014. The Mediterranean piece is from early 2026. This entry is dated 52 BC, which should tell you something about the tone.</p>
+    <p>These entries come from a career spent at the intersection of TMT, digital infrastructure, and capital: strategy work, commercial due diligence, market entry, growth advisory. Some of it is recent. Some of it happened twenty years ago and is written here with the benefit of knowing what actually happened next. The Pakistan entry is dated 2013-2014. The Mediterranean piece is from early 2026. This entry is dated 52 BC, which should tell you something about the tone.</p>
 
-    <p>The format of Commentarii is -hopefully- consistent: a place, a period, an analytical question, and whatever the data and the experience actually support, no more, no less. Some entries are retrospective, written now from the distance of outcome. Others are current, drafted close to the events they describe. The weekly geopolitical notes will be more provisional. The archive entries have the advantage of knowing how the story ended.</p>
+    <p>The format is consistent: a place, a period, an analytical question, and whatever the data and the experience actually support, no more, no less. Some entries are retrospective, written now from the distance of outcome. Others are current, drafted close to the events they describe. The weekly geopolitical notes will be more provisional. The archive entries have the advantage of knowing how the story ended.</p>
 
-    <p>One recurring thread across the earlier work is the relationship between infrastructure and economic velocity, anchored specifically by the finding from Rohman and Bohlin's 2012 Chalmers University study that doubling actual broadband speed contributes roughly 0.3% GDP growth in OECD economies, and substantially more in emerging markets. I was applying that framework in Pakistan before the 4G auction. I had used it again in Oman. It appears again closer to home too, like in the CityFibre due diligence. Frameworks that travel across contexts are worth naming.</p>
+    <p>One recurring thread across the earlier work is the relationship between infrastructure and economic velocity, anchored specifically by the finding from Rohman and Bohlin's 2012 Chalmers University study that doubling actual broadband speed contributes roughly 0.3% GDP growth in OECD economies, and substantially more in emerging markets. I was applying that framework in Pakistan before the 4G auction. I used it again in Oman. It appears in the CityFibre due diligence. Frameworks that travel across contexts are worth naming.</p>
 
     <p>Caesar's Acta Diurna were posted at dawn. These are written after dark, which is when the day's information has settled and the analysis becomes possible.</p>
 
