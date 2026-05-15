@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Commentarii 009 · The Beijing Test · 13 May 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --bg:#F5F0E6;--ink:#1C1814;--ink-mid:#4A4540;--ink-light:#8A837A;
+  --rule:#D0C8BC;--card-bg:#EDE8DE;--accent:#7A3020;
+  --amber:#7A5A1A;--green:#2A5036;--blue:#1A3C5A;
+}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;font-size:15px;line-height:1.75;-webkit-font-smoothing:antialiased;}
+
+.preamble-image{width:100%;line-height:0;overflow:hidden;}
+.preamble-image img{width:100%;height:320px;object-fit:cover;object-position:center;display:block;}
+
+.preamble-intro{max-width:860px;margin:0 auto;padding:32px 48px;display:grid;grid-template-columns:1fr 1fr;gap:40px;border-bottom:1px solid var(--rule);}
+.preamble-intro .col-left{font-family:'Times New Roman',Times,serif;font-style:italic;font-size:15px;color:var(--ink-mid);line-height:1.7;}
+.preamble-intro .col-left .pub-title{font-size:17px;font-weight:normal;display:block;margin-bottom:8px;color:var(--ink);}
+.preamble-intro .col-right{font-family:Arial,Helvetica,sans-serif;font-size:13px;color:var(--ink-mid);line-height:1.75;}
+
+.report-header{max-width:860px;margin:0 auto;padding:64px 48px 44px;}
+.header-meta{font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-light);margin-bottom:22px;display:flex;gap:28px;flex-wrap:wrap;}
+.rule-thick{border:none;border-top:2px solid var(--ink);margin-bottom:26px;}
+.report-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:46px;font-weight:500;line-height:1.08;color:var(--ink);margin-bottom:16px;max-width:640px;}
+.report-deck{font-size:15px;color:var(--ink-mid);line-height:1.7;max-width:580px;border-left:3px solid var(--accent);padding-left:18px;margin-bottom:36px;}
+
+.cover-grid{max-width:680px;margin:0 auto;border:1px solid var(--rule);}
+.cg-row{display:grid;gap:1px;background:var(--rule);}
+.cg-row-top{grid-template-columns:repeat(4,1fr);}
+.cg-row-bot{grid-template-columns:repeat(4,1fr);border-top:1px solid var(--rule);}
+.cg-card{background:var(--bg);padding:16px 14px;display:flex;flex-direction:column;justify-content:space-between;min-height:160px;text-decoration:none;color:inherit;transition:background 0.15s;border-bottom:1px solid var(--rule);}
+.cg-card:hover{background:var(--card-bg);}
+.cg-card-fixed{background:var(--card-bg);padding:16px 14px;min-height:160px;display:flex;flex-direction:column;justify-content:space-between;text-decoration:none;color:inherit;transition:background 0.15s;border-bottom:1px solid var(--rule);}
+.cg-card-fixed:hover{background:#E4DDD3;}
+.cg-cat{font-size:8px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-light);margin-bottom:6px;}
+.cg-theme{font-size:11px;color:var(--ink);line-height:1.4;margin-bottom:8px;flex:1;}
+.cg-stance{display:inline-block;font-size:8px;letter-spacing:0.08em;text-transform:uppercase;font-weight:600;padding:2px 6px;border-radius:2px;align-self:flex-start;}
+.stance-cau{background:#F0DDD8;color:#7A3020;}
+.stance-ele{background:#E8D0CC;color:#6A2018;}
+.stance-opp{background:#D8EAE0;color:#2A5036;}
+.cg-label{font-size:8px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-light);margin-bottom:5px;}
+.cg-big{font-family:'Cormorant Garamond',Georgia,serif;font-size:24px;font-weight:600;color:var(--ink);line-height:1;margin-bottom:5px;}
+.cg-sub{font-size:10px;color:var(--ink-mid);line-height:1.55;}
+.cg-stances-grid{display:grid;grid-template-columns:1fr 1fr;gap:3px 6px;margin-top:6px;}
+.cg-st{font-size:8.5px;font-weight:600;line-height:1.4;font-variant-emoji:text;}
+.cst-ow{color:#2A5036;}.cst-sel{color:#7A5A1A;}.cst-neu{color:#8A837A;}.cst-wtch{color:#1A3C5A;}
+.cg-subgrid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:1px;background:var(--rule);min-height:110px;border-bottom:1px solid var(--rule);}
+.cg-sub-card{background:var(--card-bg);padding:10px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;text-decoration:none;color:inherit;transition:background 0.15s;}
+.cg-sub-card:hover{background:#E4DDD3;}
+.cg-sub-name{font-size:8px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-mid);line-height:1.5;margin-top:4px;}
+.cg-sub-count{font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;font-weight:600;color:var(--ink);line-height:1;}
+
+/* SINCE LAST WEEK */
+.since-last{max-width:680px;margin:28px auto 0;padding:18px 20px;border-left:3px solid var(--rule);font-family:'Source Serif 4',Georgia,serif;font-size:13px;color:var(--ink-mid);line-height:1.75;}
+.since-last a{color:var(--accent);text-decoration:none;font-style:italic;}
+.since-last a:hover{text-decoration:underline;}
+
+.section{max-width:860px;margin:0 auto;padding:46px 48px;border-bottom:1px solid var(--rule);}
+.section-header{display:flex;align-items:baseline;gap:16px;margin-bottom:20px;}
+.section-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:13px;letter-spacing:0.06em;color:var(--ink-light);min-width:22px;}
+.section h2{font-family:'Cormorant Garamond',Georgia,serif;font-size:26px;font-weight:500;color:var(--ink);line-height:1.2;}
+.section-tag{margin-left:auto;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-light);border:1px solid var(--rule);padding:3px 9px;border-radius:2px;white-space:nowrap;}
+p{margin-bottom:1em;}p:last-child{margin-bottom:0;}strong{font-weight:600;}
+
+.data-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);margin:22px 0;}
+.data-card{background:var(--bg);padding:13px;}
+.dc-label{font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-light);margin-bottom:4px;}
+.dc-value{font-family:'Cormorant Garamond',Georgia,serif;font-size:25px;font-weight:600;color:var(--ink);line-height:1;margin-bottom:4px;}
+.dc-note{font-size:12px;color:var(--ink-mid);line-height:1.5;}
+
+.pull-quote{font-family:'Cormorant Garamond',Georgia,serif;font-size:18px;font-style:italic;font-weight:500;color:var(--ink-mid);border-left:3px solid var(--accent);padding:9px 17px;margin:22px 0;line-height:1.45;}
+
+.std-table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13px;}
+.std-table th{font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-light);border-bottom:1.5px solid var(--ink);padding:6px 10px 8px;text-align:left;}
+.std-table td{border-bottom:1px solid var(--rule);padding:10px;vertical-align:top;line-height:1.55;color:var(--ink-mid);}
+.std-table tr:last-child td{border-bottom:none;}
+.td-strong{font-weight:600;color:var(--ink);}
+.td-accent{font-family:'Cormorant Garamond',Georgia,serif;font-size:16px;font-weight:600;color:var(--accent);white-space:nowrap;}
+.td-light{color:var(--ink-light);font-size:12px;white-space:nowrap;}
+
+.badge{display:inline-block;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;padding:2px 7px;border-radius:2px;}
+.b-high{background:#F0DDD8;color:#7A3020;}.b-elev{background:#F5E8D8;color:#7A4A10;}
+.b-med{background:#F0E8D0;color:#7A5A1A;}.b-new{background:#E8D0CC;color:#6A2018;}
+.b-ow{background:#D8EAE0;color:#2A5036;}.b-sel{background:#F0E8D0;color:#7A5A1A;}
+.b-neu{background:#EAE4DA;color:#6A5A4A;}.b-wtch{background:#DAE4EE;color:#1A3C5A;}
+.b-imp{background:#E8D0CC;color:#6A2018;}
+
+.hm-bar-wrap{background:#E8E2D6;border-radius:2px;height:7px;width:100%;overflow:hidden;margin-top:4px;}
+.hm-bar{height:7px;border-radius:2px;}
+.hm-score{font-family:'Cormorant Garamond',Georgia,serif;font-size:16px;font-weight:600;color:var(--ink);}
+.delta-up{color:var(--accent);font-size:10px;font-weight:600;}.delta-dn{color:#2A5036;font-size:10px;font-weight:600;}.delta-flat{color:var(--ink-light);font-size:10px;}
+
+.dq-cat{font-size:10px;letter-spacing:0.14em;text-transform:uppercase;font-weight:600;color:var(--ink-light);border-bottom:1px solid var(--rule);padding-bottom:5px;margin:22px 0 9px;}
+.dq-list{list-style:none;}
+.dq-item{padding:8px 0;border-bottom:1px solid var(--rule);font-size:14px;color:var(--ink-mid);line-height:1.6;display:flex;gap:12px;}
+.dq-item:last-child{border-bottom:none;}
+.dq-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:15px;font-weight:600;color:var(--ink-light);min-width:20px;padding-top:1px;}
+.dq-trace{font-size:11px;color:var(--ink-light);font-style:italic;margin-top:2px;}
+.horizon-label{font-size:10px;letter-spacing:0.16em;text-transform:uppercase;font-weight:600;color:var(--ink-light);border-bottom:1px solid var(--rule);padding-bottom:5px;margin:22px 0 10px;}
+.action-list{list-style:none;}
+.action-item{padding:8px 0;border-bottom:1px solid var(--rule);font-size:14px;color:var(--ink-mid);line-height:1.6;display:flex;gap:12px;}
+.action-item:last-child{border-bottom:none;}
+.action-dot{width:5px;height:5px;min-width:5px;border-radius:50%;background:var(--accent);margin-top:9px;}
+
+.sources-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);margin:14px 0;}
+.source-tile{background:var(--bg);padding:12px;}
+.source-tile-cat{font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-light);font-weight:600;border-bottom:1px solid var(--rule);padding-bottom:5px;margin-bottom:8px;}
+.source-link-list{list-style:none;}
+.source-link-item{padding:4px 0;border-bottom:1px solid var(--rule);font-size:12px;}
+.source-link-item:last-child{border-bottom:none;}
+.source-link-item a{color:var(--accent);text-decoration:none;font-weight:500;}
+.source-link-item a:hover{text-decoration:underline;}
+.source-link-date{font-size:10px;color:var(--ink-light);font-style:italic;margin-left:4px;}
+.fn-ref{color:var(--accent);text-decoration:none;font-size:10px;vertical-align:super;line-height:0;font-weight:600;font-variant-emoji:text;}
+.fn-ref:hover{text-decoration:underline;}
+.fn-back{color:var(--ink-light);text-decoration:none;font-size:10px;margin-left:5px;font-variant-emoji:text;}
+.fn-back:hover{color:var(--accent);}
+.src-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:13px;font-weight:600;color:var(--ink-light);margin-right:5px;}
+
+.disclaimer{max-width:860px;margin:0 auto;padding:36px 48px 52px;border-top:1px solid var(--rule);}
+.disclaimer h3{font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;font-weight:500;color:var(--ink);margin-bottom:16px;}
+.disclaimer p{font-size:14px;color:var(--ink-mid);line-height:1.7;margin-bottom:1em;}
+.disclaimer p:last-child{margin-bottom:0;}
+.disclaimer a{color:var(--accent);text-decoration:none;}
+.disclaimer a:hover{text-decoration:underline;}
+
+@media(max-width:760px){
+  .preamble-intro{grid-template-columns:1fr;padding:24px 20px;}
+  .report-header,.section,.disclaimer{padding-left:20px;padding-right:20px;}
+  .report-title{font-size:32px;}
+  .cg-row-top,.cg-row-bot{grid-template-columns:1fr 1fr;}
+  .data-cards,.sources-grid{grid-template-columns:1fr;}
+  .std-table th:nth-child(3),.std-table td:nth-child(3){display:none;}
+  .std-table{font-size:12px;}
+  .std-table td,.std-table th{padding:8px 6px;}
+  .td-accent{font-size:14px;}
+}
+</style>
+</head>
+<body>
+
+<!-- ELEMENT A -->
+<div class="preamble-image">
+  <img src="https://consvltor.net/assets/consvltor_cover.jpg" alt="Commentarii">
+</div>
+
+<!-- ELEMENT B -->
+<div class="preamble-intro">
+  <div class="col-left">
+    <span class="pub-title">Commentarii</span>
+    Field notes from infrastructure, markets, and the geopolitics of connectivity. Written after dark.
+  </div>
+  <div class="col-right">
+    Each entry is anchored to a place and a period. Some are retrospective: written now, from the distance of outcome. Others are current, drafted close to the events they describe. The standard of evidence is the same throughout: what the data and the experience actually support, no more.
+  </div>
+</div>
+
+<!-- §2 HEADER -->
+<div class="report-header">
+  <div class="header-meta">
+    <span>Commentarii</span><span>Issue 009</span><span>13 May 2026</span>
+    <span>TMT &amp; Digital Infrastructure</span>
+  </div>
+  <hr class="rule-thick">
+  <h1 class="report-title">The Beijing Test</h1>
+  <p class="report-deck">The Trump–Xi summit in Beijing (14–15 May) is the near-term hinge point for AI chip policy, placing export controls and Hormuz shipping on the same bilateral agenda for the first time. The Iran ceasefire remains on "massive life support" as of 12 May; Trump has flagged the option of resumed combat, with mines still present in the strait. This week's structural story is the US transformer supply chain: Presidential Determination 2026-10 invoked the Defense Production Act on 20 April after finding domestic grid infrastructure "dangerously limited" - transformer lead times have stretched to five years, imports from China have doubled since 2020, and an estimated 40% of planned US AI data center capacity faces construction delays tied to power equipment.</p>
+</div>
+
+<!-- §3 SIGNAL TILES -->
+<div class="cover-grid">
+  <div class="cg-row cg-row-top">
+    <a class="cg-card" href="#topic1"><div><div class="cg-cat">Beijing Summit</div><div class="cg-theme">Trump–Xi 14–15 May; AI chip deal unlikely (Rubio red line); AI safety dialogue channel likely; Jensen Huang guest list disputed between same-day sources</div></div><span class="cg-stance stance-cau">Caution</span></a>
+    <a class="cg-card" href="#topic2"><div><div class="cg-cat">Hormuz: Ceasefire Watch</div><div class="cg-theme">Ceasefire on "massive life support" (Trump, 12 May); mines still in strait; Operation Project Freedom paused 6 May; combat resumption explicitly flagged</div></div><span class="cg-stance stance-ele">Elevated Risk</span></a>
+    <a class="cg-card" href="#topic3"><div><div class="cg-cat">Transformer Crisis: The Data</div><div class="cg-theme">CPA analysis (this week) quantifies DPA gap: $35.4bn imports, 5-year lead times, 40% of US DC capacity at risk; DPA invoked 20 April but scale only now visible</div></div><span class="cg-stance stance-ele">Elevated Risk</span></a>
+    <a class="cg-card" href="#topic4"><div><div class="cg-cat">Circular Investment</div><div class="cg-theme">Nvidia $40B+ equity portfolio; $2.1B IREN right; GPU debt treadmill; demand signal authenticity question at exit</div></div><span class="cg-stance stance-cau">Caution</span></a>
+  </div>
+  <div class="cg-row cg-row-bot">
+    <a class="cg-card-fixed" href="#dealflow"><div class="cg-label">Deal Flow</div><div class="cg-big">3 Transactions</div><div class="cg-sub">Nscale $790M Norway &middot; Nvidia $2.1B IREN right &middot; Nvidia $3.2B Corning</div></a>
+    <a class="cg-card-fixed" href="#riskmatrix"><div class="cg-label">PE Risk Matrix</div><div class="cg-big">7 Active Vectors</div><div class="cg-sub">Transformer crisis &middot; Hormuz ceasefire &middot; AI export reversal &middot; Energy shock &middot; CFIUS &middot; BIS 50% &middot; Circular demand</div></a>
+    <a class="cg-card-fixed" href="#stances"><div class="cg-label">Asset Class Stances</div><div class="cg-stances-grid"><span class="cg-st cst-sel">&#x25B6;&#xFE0E; Data Centres: Selective</span><span class="cg-st cst-wtch">&#x21C5;&#xFE0E; Subsea Cable: Active Watch</span><span class="cg-st cst-sel">&#x25B6;&#xFE0E; Fibre / Backbone: Selective</span><span class="cg-st cst-neu">&#x25BA;&#xFE0E; Towers / RAN: Neutral</span><span class="cg-st cst-wtch">&#x25BC;&#xFE0E; Satellite / LEO: Watch</span><span class="cg-st cst-ow">&#x25B2;&#xFE0E; Power for Digital: Overweight</span></div></a>
+    <div class="cg-subgrid"><a class="cg-sub-card" href="#underwriting"><div class="cg-sub-count">8</div><div class="cg-sub-name">Underwriting Variables</div></a><a class="cg-sub-card" href="#diligence"><div class="cg-sub-count">7</div><div class="cg-sub-name">Diligence Questions</div></a><a class="cg-sub-card" href="#strategy"><div class="cg-sub-count">6</div><div class="cg-sub-name">Strategy Actions</div></a><a class="cg-sub-card" href="#watchlist"><div class="cg-sub-count">5</div><div class="cg-sub-name">Watch List Items</div></a></div>
+  </div>
+</div>
+<div style="max-width:680px;margin:0 auto;padding:6px 2px 0;display:flex;gap:12px;flex-wrap:wrap;">
+  <span style="font-size:8px;color:#2A5036;font-weight:600;font-variant-emoji:text;">&#x25B2;&#xFE0E; Overweight</span>
+  <span style="font-size:8px;color:#7A5A1A;font-weight:600;font-variant-emoji:text;">&#x25B6;&#xFE0E; Selective</span>
+  <span style="font-size:8px;color:#8A837A;font-weight:600;font-variant-emoji:text;">&#x25BA;&#xFE0E; Neutral</span>
+  <span style="font-size:8px;color:#1A3C5A;font-weight:600;font-variant-emoji:text;">&#x25BC;&#xFE0E; Watch</span>
+  <span style="font-size:8px;color:#1A3C5A;font-weight:600;font-variant-emoji:text;">&#x21C5;&#xFE0E; Active Watch</span>
+</div>
+
+<!-- SINCE LAST WEEK -->
+<div class="since-last">
+  Since last week's <a href="20260507-commentarii-the-distillation-threshold.html" target="_blank">The Distillation Threshold</a> - one thread moved in a better direction: Route &amp; Corridor Resilience is the only heatmap variable down this week (−6), as Operation Project Freedom and the Beijing summit's Hormuz sub-agenda introduce a de-escalation vector that was absent last week. Two stories are entirely new: the Trump–Xi summit as a live policy event (§5) and Nvidia's circular investment question (§8). The transformer supply chain analysis (§7) surfaces a structural risk not previously covered in this series. Nothing was resolved. The H200 framework, the Hormuz ceasefire, and the BIS 50% Rule deadline are all unchanged; the first two now have a concrete summit event attached to them.
+</div>
+
+<!-- §4 MACRO -->
+<div class="section" id="macro">
+  <div class="section-header"><span class="section-num">&sect;4</span><h2>Macro and Geopolitical Landscape</h2></div>
+  <div class="pull-quote">This week, the bilateral meeting most capable of reshaping the digital infrastructure investment landscape in both the energy and technology domains is happening in Beijing. Its outcomes are unknown at time of publication.</div>
+  <p>The week is defined by two simultaneous geopolitical events. Trump meets Xi in Beijing on 14–15 May, the first US presidential visit to China in nearly a decade, while ceasefire negotiations with Iran continue under acute strain. On 12 May, Trump described the ceasefire framework as on "massive life support" and flagged the option of resuming combat operations.<a href="#src-1" id="cite-1a" class="fn-ref"><sup>1</sup></a> The Strait of Hormuz remains constrained: mines laid during the conflict are still present (reports indicate Iran has lost track of some of them) and Operation Project Freedom (the US Navy escort mission launched 4 May) was suspended on 6 May after Trump cited "great progress" in diplomatic discussions.<a href="#src-2" id="cite-2a" class="fn-ref"><sup>2</sup></a> No formal reopening of the strait has been declared.</p>
+  <p>Brent crude is running at approximately $100 per barrel, sustained well above pre-conflict levels, and the energy price transmission into data center operating costs is now compounded by the transformer supply chain structural gap covered in §7. The AI chip policy backdrop ahead of the summit remains shaped by the April 30 OSTP distillation warning noted in Issue 008: the range of outcomes from Beijing widens the policy uncertainty around H200 export controls rather than narrowing it.</p>
+  <div class="data-cards">
+    <div class="data-card"><div class="dc-label">Brent crude (approx.)</div><div class="dc-value">~$100</div><div class="dc-note">Sustained well above pre-conflict levels. Direct input to data center power costs. <a href="#src-2" class="fn-ref"><sup>2</sup></a></div></div>
+    <div class="data-card"><div class="dc-label">Transformer lead time</div><div class="dc-value">Up to 5 yrs</div><div class="dc-note">Pre-2020 baseline was 24–30 months. DPA invoked 20 April. <a href="#src-7" class="fn-ref"><sup>7</sup></a></div></div>
+    <div class="data-card"><div class="dc-label">Planned US DC capacity at risk</div><div class="dc-value">~40%</div><div class="dc-note">Estimated share facing construction delays tied to power equipment. <a href="#src-7" class="fn-ref"><sup>7</sup></a></div></div>
+  </div>
+</div>
+
+<!-- §5 BEIJING SUMMIT -->
+<div class="section" id="topic1">
+  <div class="section-header"><span class="section-num">&sect;5</span><h2>The Beijing Summit</h2></div>
+  <div class="pull-quote">Jensen Huang's presence in Beijing is disputed between two same-day reports. The ambiguity itself reflects the administration's unresolved tension around Nvidia's China exposure.</div>
+  <p>Trump travels to Beijing for a summit with Xi Jinping on 14–15 May, accompanied by a delegation that includes Elon Musk, Apple CEO Tim Cook, BlackRock CEO Larry Fink, and Blackstone CEO Stephen Schwarzman.<a href="#src-3" id="cite-3a" class="fn-ref"><sup>3</sup></a> The guest list signals that AI infrastructure financing and technology-sector investment are at the centre of the US delegation's commercial interests. There are conflicting reports as to whether Nvidia CEO Jensen Huang is attending: Euronews cited an Nvidia spokesperson confirming his attendance at the invitation of the President; The Hill, citing a separate source, described his absence as "notable."<a href="#src-5" id="cite-5a" class="fn-ref"><sup>5</sup></a><a href="#src-6" id="cite-6a" class="fn-ref"><sup>6</sup></a></p>
+  <p>The substantive technology agenda, as reported ahead of the summit, includes AI chip export policy, the creation of a bilateral AI safety communications channel, rare earth supply chains, and the Hormuz situation. A chip-specific agreement appears unlikely: Secretary of State Rubio has described AI chips as a "red line." China itself has been discouraging adoption of H200 chips by its own AI labs, directing demand toward domestic hardware (Huawei Ascend), limiting the commercial case for a framework reversal even from the Chinese side.<a href="#src-4" id="cite-4a" class="fn-ref"><sup>4</sup></a> Chatham House notes that both Washington and Beijing have a shared interest in reopening the Strait of Hormuz; if Beijing can facilitate Iranian concessions, this summit becomes a relevant variable for cable route risk as well as chip policy.<a href="#src-12" id="cite-12a" class="fn-ref"><sup>12</sup></a></p>
+  <p>The investor implication: deal teams with AI data center positions dependent on H200 procurement under the current BIS framework should treat this summit as a policy risk event rather than a positive catalyst. A bilateral AI safety agreement would be a positive signal for the sector broadly; a harder chip stance (if the distillation warning narrative prevails) would compress the exit buyer universe for positions with Chinese customer revenue chains.</p>
+</div>
+
+<!-- §6 HORMUZ UPDATE -->
+<div class="section" id="topic2">
+  <div class="section-header"><span class="section-num">&sect;6</span><h2>Hormuz: Ceasefire Watch</h2></div>
+  <div class="pull-quote">Operation Project Freedom launched and paused within two days. The ceasefire is fragile; mines remain in the strait; no formal reopening has been declared.</div>
+  <p>The Hormuz ceasefire framework, declared 8 April following the February 28 US-Israel strikes against Iran, remains under severe strain. Trump described it on 12 May as on "massive life support," having grown impatient with Iran's continued closure of the strait and what his administration characterises as division in Iranian leadership preventing substantive nuclear concessions.<a href="#src-1" class="fn-ref"><sup>1</sup></a> Both parties have fired on each other since the ceasefire declaration. Iran has reportedly lost track of some of the mines it laid in the strait, complicating mine-clearing operations and raising the baseline risk even under a technical ceasefire.</p>
+  <p>Operation Project Freedom, the US Navy mine-clearing and commercial escort mission launched 4 May, was suspended on 6 May following what Trump described as "great progress" in diplomatic discussions; Iran's military warned the mission constituted a ceasefire violation.<a href="#src-2" class="fn-ref"><sup>2</sup></a> The structural risk picture from Issue 008 is unchanged: 17 cables through or near the strait, 2Africa Pearls force majeure in effect, 63 cable repair ships globally with two to four in the Middle East, stationary repair not viable in a mine-contaminated environment. The directional signal this week is marginally less negative: active negotiations, US Navy presence, and the Beijing summit's Hormuz sub-agenda all point toward eventual resolution. Active Watch is maintained.</p>
+  <div class="data-cards">
+    <div class="data-card"><div class="dc-label">Ceasefire status (12 May)</div><div class="dc-value">Fragile</div><div class="dc-note">Trump: "massive life support." Both sides have fired since declaration. Mines still present. <a href="#src-1" class="fn-ref"><sup>1</sup></a></div></div>
+    <div class="data-card"><div class="dc-label">Op Project Freedom</div><div class="dc-value">Paused</div><div class="dc-note">Launched 4 May, suspended 6 May. Iran warned of ceasefire violation. Mine clearance incomplete. <a href="#src-2" class="fn-ref"><sup>2</sup></a></div></div>
+    <div class="data-card"><div class="dc-label">2Africa Pearls status</div><div class="dc-value">Halted</div><div class="dc-note">ASN force majeure remains in effect. No change from Issue 008.</div></div>
+  </div>
+</div>
+
+<!-- §7 TRANSFORMER SUPPLY CHAIN -->
+<div class="section" id="topic3">
+  <div class="section-header"><span class="section-num">&sect;7</span><h2>The Transformer Crisis: The Data Arrives</h2></div>
+  <div class="pull-quote">The Defense Production Act was invoked on 20 April. This week, the Coalition for a Prosperous America published the first detailed quantification of what that determination was responding to. The numbers change the investor calculus.</div>
+  <p>The context: on 20 April 2026, the White House issued Presidential Determination 2026-10 under Section 303 of the Defense Production Act, formally finding that US grid infrastructure (including transformers, substations, high-voltage circuit breakers, and electrical core steel) is "essential to national defense" and that "domestic industry cannot reasonably be expected to provide these capabilities in a timely manner."<a href="#src-8" id="cite-8a" class="fn-ref"><sup>8</sup></a> The determination activated DOE financial tools (purchases, purchase commitments, loans, and loan guarantees) to support domestic production capacity expansion. What it did not do was quantify the problem it was responding to.</p>
+  <p>This week, the Coalition for a Prosperous America published that quantification - and the numbers are the investor-relevant development.<a href="#src-7" id="cite-7a" class="fn-ref"><sup>7</sup></a> Before 2020, large power transformers carried 24-30 month delivery lead times. That has stretched to as long as five years. US transformer imports have doubled from $16.1 billion to $35.4 billion between 2020 and 2025. More than 8,000 high-power transformers were imported from China through October 2025, up from fewer than 1,500 in all of 2022. A group of US utility executives visiting a Chinese transformer factory in January 2026 found approximately half the production floor destined for the US market. Crusoe Energy, building the OpenAI 1.2 GW campus in Abilene, Texas, has resorted to refurbishing transformers from shuttered power plants as a stopgap. Citrini Research notes that GE Vernova's Q1 2026 electrification backlog net additions were nearly as large as all annual additions from 2022 to 2025 combined; the backlog is accelerating, not abating.<a href="#src-9" id="cite-9a" class="fn-ref"><sup>9</sup></a></p>
+  <p>The CPA analysis also puts a number on the policy response gap: approximately $323 million remains available in the DPA Fund for FY2026, modest against a supply chain importing $35 billion annually and carrying five-year lead times.<a href="#src-10" id="cite-10a" class="fn-ref"><sup>10</sup></a> The marginal supplier of large power transformers to the US grid is currently Korean; allied-market diversification is the medium-term strategy, not a near-term solution. The DPA invocation told the market a problem existed. This week's analysis tells it how large the problem is. For AI data center development assets, transformer and switchgear procurement status is now a critical path item that can be quantified - not merely flagged.</p>
+  <div class="data-cards">
+    <div class="data-card"><div class="dc-label">US transformer imports 2025</div><div class="dc-value">$35.4bn</div><div class="dc-note">Up from $16.1bn in 2020. Over 8,000 units imported from China through Oct 2025. <a href="#src-7" class="fn-ref"><sup>7</sup></a></div></div>
+    <div class="data-card"><div class="dc-label">Large transformer lead time</div><div class="dc-value">Up to 5 yrs</div><div class="dc-note">Pre-2020 baseline: 24–30 months. DPA determination issued 20 April 2026. <a href="#src-8" class="fn-ref"><sup>8</sup></a></div></div>
+    <div class="data-card"><div class="dc-label">DPA Fund available FY2026</div><div class="dc-value">~$323m</div><div class="dc-note">Against a supply chain importing $35bn annually. Modest against the acknowledged gap. <a href="#src-10" class="fn-ref"><sup>10</sup></a></div></div>
+  </div>
+</div>
+
+<!-- §8 CIRCULAR INVESTMENT -->
+<div class="section" id="topic4">
+  <div class="section-header"><span class="section-num">&sect;8</span><h2>Circular Investment and the AI Deal Wave</h2></div>
+  <div class="pull-quote">Nvidia's equity portfolio has crossed $40 billion. The Mizuho observation ("it smells like you are pre-funding the purchase of your own GPUs") is a question deal committees should have modelled before close.</div>
+  <p>Two transactions this week. Nscale secured $790 million in additional financing for its Narvik, Norway AI data center on 11 May, in a five-bank consortium comprising ABN AMRO, DNB, Eksfin (Export Finance Norway), Nordea, and SEB, the largest AI infrastructure investment in Norway.<a href="#src-11" id="cite-11a" class="fn-ref"><sup>11</sup></a> This follows Nscale's $2 billion Series C in March 2026 and a $1.4 billion delayed-draw term loan in February. Sovereign export credit participation, Norway's hydroelectric grid, and a location entirely outside Gulf and Red Sea conflict risk zones make this a data point worth tracking for European institutional investors seeking alternatives to US-concentrated AI infrastructure.</p>
+  <p>Nvidia announced on 9 May a right to invest up to $2.1 billion in data center operator IREN alongside a 5 GW DSX infrastructure commitment, and a separate $3.2 billion investment in Corning for three US optical fiber production facilities. Both are consistent with Nvidia's strategy (now totalling more than $40 billion in equity commitments, including $30 billion in OpenAI) of taking positions across the AI infrastructure stack as a commercial flywheel.<a href="#src-12b" id="cite-12ba" class="fn-ref"><sup>12b</sup></a> Mizuho analyst Jordan Klein's note on the neocloud deals captures the underwriting question precisely: "it smells like you are pre-funding the purchase of your own GPUs." When a chip vendor holds meaningful equity stakes in its own anchor customers, the demand signal from those customer commitments is no longer fully independent of the vendor's balance sheet.</p>
+  <p>For context on where the GPU-backed debt market is heading: CoreWeave's $8.5 billion investment-grade GPU-backed ABS (the first of its kind, closed in April) introduces a structural question that will recur across the sector: how does a GPU lifecycle of approximately seven years interact with a data centre lifecycle of 20-plus years in long-dated securitisation structures? JPMorgan projects $30–40 billion in annual data center ABS/CMBS issuance in 2026 and 2027; whether that market can absorb mega-AI structures at scale is being tested in real time.</p>
+</div>
+
+<!-- §9 DEAL FLOW -->
+<div class="section" id="dealflow">
+  <div class="section-header"><span class="section-num">&sect;9</span><h2>Deal Flow</h2></div>
+  <table class="std-table">
+    <thead><tr><th style="width:185px">Parties</th><th style="width:82px">Value</th><th style="width:78px">Date</th><th>Description &amp; Source</th></tr></thead>
+    <tbody>
+      <tr><td class="td-strong">Nscale / 5-bank consortium<br><span style="font-weight:400;font-size:12px;color:var(--ink-light)">Narvik, Norway</span></td><td class="td-accent">$790m</td><td class="td-light">11 May 2026</td><td>Additional financing for Narvik AI data center, Norway's largest AI infrastructure investment. Consortium: ABN AMRO, DNB, Eksfin, Nordea, SEB. Includes $790m uncommitted accordion for further 115MW expansion. Follows $2bn Series C (March 2026) and $1.4bn delayed-draw term loan (February 2026). Sovereign export credit backing; hydroelectric power grid. <em>Nscale press release.</em><a href="#src-11" class="fn-ref"><sup>11</sup></a></td></tr>
+      <tr><td class="td-strong">Nvidia / IREN<br><span style="font-weight:400;font-size:12px;color:var(--ink-light)">Global (DSX 5GW commitment)</span></td><td class="td-accent">$2.1bn</td><td class="td-light">9 May 2026</td><td>Nvidia secures right to invest up to $2.1bn in IREN alongside commitment to deploy 5GW of DSX-branded AI infrastructure. Part of Nvidia's $40B+ equity investment programme across the AI stack. Raises circular demand signal question for IREN contracted capacity. <em>CNBC.</em><a href="#src-12b" class="fn-ref"><sup>12b</sup></a></td></tr>
+      <tr><td class="td-strong">Nvidia / Corning<br><span style="font-weight:400;font-size:12px;color:var(--ink-light)">United States (three new facilities)</span></td><td class="td-accent">$3.2bn</td><td class="td-light">9 May 2026</td><td>Nvidia invests $3.2bn in Corning for three US facilities dedicated to optical technologies for fiber-optic cabling. Supports transition from copper to fiber-optic interconnect for rack-scale AI systems. Signals next-generation connectivity infrastructure as a strategic investment theme distinct from silicon and power. <em>CNBC.</em><a href="#src-12b" class="fn-ref"><sup>12b</sup></a></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- §10 PE RISK MATRIX -->
+<div class="section" id="riskmatrix">
+  <div class="section-header"><span class="section-num">&sect;10</span><h2>PE Risk Matrix</h2></div>
+  <table class="std-table">
+    <thead><tr><th style="width:180px">Risk Vector</th><th style="width:75px">Level</th><th>Investor Implication</th><th style="width:90px">Status</th></tr></thead>
+    <tbody>
+      <tr><td class="td-strong">AI Export Control Reversal</td><td><span class="badge b-high">High</span></td><td>Trump–Xi summit (14–15 May) is the policy event. A chip deal is unlikely given Rubio's red line and China's preference for domestic hardware; a harder distillation-warning posture is the downside scenario. The 30-60 day window from Issue 008 now has a concrete event attached to it.</td><td><span class="badge b-imp">Active event</span></td></tr>
+      <tr><td class="td-strong">Transformer &amp; Power Supply Chain</td><td><span class="badge b-elev">Elevated</span></td><td>DPA Section 303 invoked 20 April: government has formally acknowledged the gap. Five-year lead times and $35.4bn import dependency on China create a critical path risk for development assets. Assets without confirmed transformer purchase orders are carrying unquantified construction schedule risk.</td><td><span class="badge b-new">New</span></td></tr>
+      <tr><td class="td-strong">Gulf Cable &amp; DC Threat</td><td><span class="badge b-elev">Elevated</span></td><td>Down from High (Issue 008). Ceasefire active but fragile; Operation Project Freedom paused; mines still present. Beijing summit introduces a de-escalation vector via China's interest in stable energy markets. Active Watch maintained. 2Africa Pearls force majeure unchanged.</td><td>Improved from High</td></tr>
+      <tr><td class="td-strong">Iran War Energy Shock</td><td><span class="badge b-elev">Elevated</span></td><td>Brent approximately $100, sustained elevated. Transformer import dependency on China adds a second energy-adjacent supply chain risk. Models using pre-conflict energy prices need revision; models ignoring transformer lead time risk need a second look.</td><td>Stable elevated</td></tr>
+      <tr><td class="td-strong">CFIUS &amp; Foreign Investment Review</td><td><span class="badge b-elev">Elevated</span></td><td>Summit may produce new US-China investment frameworks. Gulf sovereign capital relationships remain complicated by Iran conflict geopolitics. Structures cleared in Q4 2025 should be reassessed against the current environment.</td><td>Stable elevated</td></tr>
+      <tr><td class="td-strong">BIS 50% Rule Compliance</td><td><span class="badge b-med">Medium</span></td><td>Enforcement 10 November 2026. Five months and four weeks remain. Operators with PRC-adjacent supply chains need compliance counsel engaged before Q3 2026.</td><td>Deadline tracking</td></tr>
+      <tr><td class="td-strong">Circular Investment Risk</td><td><span class="badge b-med">Medium</span></td><td>Nvidia $40B+ equity portfolio includes positions in its own anchor customers. Exit buyers will assess whether contracted capacity reflects independent demand or vendor-supported commitments. Deal teams should validate demand signals at source before close.</td><td><span class="badge b-new">New</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- §11 ASSET CLASS STANCES -->
+<div class="section" id="stances">
+  <div class="section-header"><span class="section-num">&sect;11</span><h2>Asset Class Stances</h2></div>
+  <table class="std-table">
+    <thead><tr><th style="width:165px">Asset Class</th><th style="width:75px">Direction</th><th style="width:140px">Key Variable</th><th>Read-Through</th><th style="width:80px">Stance</th></tr></thead>
+    <tbody>
+      <tr><td class="td-strong">Data Centres (Hyperscale / AI)</td><td style="color:#2A5036;font-weight:600;">Strengthening</td><td>Power equipment procurement</td><td>Structural demand intact; deal flow active. The differentiator this week is not just fixed-PPA vs. grid exposure but confirmed transformer procurement vs. unconfirmed. Assets with captive or on-site generation that bypass the grid interconnection bottleneck entirely are in a materially stronger position.</td><td><span class="badge b-sel">Selective</span></td></tr>
+      <tr><td class="td-strong">Subsea Cable</td><td style="color:#6A2018;font-weight:600;">Stabilising</td><td>Hormuz ceasefire trajectory</td><td>Marginally less negative than Issue 008. Operation Project Freedom, the Beijing summit's Hormuz sub-agenda, and active US-Iran negotiation all point toward eventual resolution. The trendline has shifted; the risk profile has not. Baltic corridor assets on a separate, improving trajectory. Active Watch maintained.</td><td><span class="badge b-wtch">&#x21C5; Active Watch</span></td></tr>
+      <tr><td class="td-strong">Fibre / Backbone</td><td style="color:#7A5A1A;font-weight:600;">Mixed</td><td>Photonics transition</td><td>Nvidia's $3.2B Corning investment signals the shift from copper to fiber-optic interconnect at the rack scale, reinforcing the long-term demand case for backbone fibre. UK altnet overbuild remains structurally impaired; US consolidation active. Differentiate by geography and capacity profile.</td><td><span class="badge b-sel">Selective</span></td></tr>
+      <tr><td class="td-strong">Towers / RAN</td><td style="color:#8A837A;font-weight:600;">No change</td><td>Carrier spend</td><td>No new catalyst this week. Hold existing portfolios; do not underwrite new tower development on near-term densification assumptions.</td><td><span class="badge b-neu">Neutral</span></td></tr>
+      <tr><td class="td-strong">Satellite / LEO</td><td style="color:#7A5A1A;font-weight:600;">Mixed</td><td>Hormuz cable disruption</td><td>Short-term demand signal from cable disruption persists. Licensing constraints and capacity limits apply. Watch for any Hormuz reopening that reduces the urgency of the LEO demand signal.</td><td><span class="badge b-wtch">Watch</span></td></tr>
+      <tr><td class="td-strong">Power for Digital</td><td style="color:#2A5036;font-weight:600;">Strengthening</td><td>DPA + transformer crisis</td><td>The DPA invocation and transformer supply chain constraint further strengthen the captive generation thesis. The gap between assets with confirmed independent power and those dependent on grid interconnection now has an official government acknowledgement of structural severity. Among the asset classes covered this week, this remains the most defensible capacity investment rationale.</td><td><span class="badge b-ow">Overweight</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- §12 UNDERWRITING VARIABLES -->
+<div class="section" id="underwriting">
+  <div class="section-header"><span class="section-num">&sect;12</span><h2>Underwriting Variables</h2><span class="section-tag">0-100 &middot; higher = greater risk</span></div>
+  <table class="std-table">
+    <thead><tr><th style="width:230px">Variable</th><th style="width:50px">Score</th><th style="width:120px">Level</th><th style="width:58px">Change</th><th>Driver this week</th></tr></thead>
+    <tbody>
+      <tr><td class="td-strong">Power Access &amp; Energy Security</td><td><span class="hm-score">87</span></td><td><div class="hm-bar-wrap"><div class="hm-bar" style="width:87%;background:#7A3020;"></div></div><span style="font-size:10px;color:var(--ink-light);">High</span></td><td><span class="delta-up">+2</span></td><td style="font-size:13px;color:var(--ink-mid);">Transformer supply chain now in scope. DPA invocation = government-acknowledged critical risk. Five-year lead times compound the Iran war energy shock. Fixed PPA plus confirmed transformer procurement is the binary underwriting requirement this week.</td></tr>
+      <tr><td class="td-strong">Hardware Supply-Chain Optionality</td><td><span class="hm-score">75</span></td><td><div class="hm-bar-wrap"><div class="hm-bar" style="width:75%;background:#8A4030;"></div></div><span style="font-size:10px;color:var(--ink-light);">Elevated</span></td><td><span class="delta-up">+7</span></td><td style="font-size:13px;color:var(--ink-mid);">Largest single-week movement this issue. Transformer and switchgear dependency on China formally acknowledged via DPA. AI chip policy simultaneously in play via the Beijing summit.</td></tr>
+      <tr><td class="td-strong">Sovereign &amp; Security Compliance</td><td><span class="hm-score">80</span></td><td><div class="hm-bar-wrap"><div class="hm-bar" style="width:80%;background:#8A4030;"></div></div><span style="font-size:10px;color:var(--ink-light);">High</span></td><td><span class="delta-up">+4</span></td><td style="font-size:13px;color:var(--ink-mid);">Trump–Xi summit creates acute policy uncertainty. OSTP distillation warning (30 April) remains in effect; summit outcome determines whether H200 framework tightens or stabilises. Chinese customer revenue chains carry elevated compliance risk until the outcome is known.</td></tr>
+      <tr><td class="td-strong">Exit Narrative Under Geopolitical Scrutiny</td><td><span class="hm-score">72</span></td><td><div class="hm-bar-wrap"><div class="hm-bar" style="width:72%;background:#8A5030;"></div></div><span style="font-size:10px;color:var(--ink-light);">Elevated</span></td><td><span class="delta-up">+2</span></td><td style="font-size:13px;color:var(--ink-mid);">Circular investment concern adds a new dimension: buyer discount for vendor-supported vs. independent demand. Chinese strategic exit effectively closed. Gulf sovereign exits complicated by conflict. Allied capital remains the viable buyer universe.</td></tr>
+      <tr><td class="td-strong">Route &amp; Corridor Resilience</td><td><span class="hm-score">76</span></td><td><div class="hm-bar-wrap"><div class="hm-bar" style="width:76%;background:#8A4030;"></div></div><span style="font-size:10px;color:var(--ink-light);">Elevated</span></td><td><span class="delta-dn">-6</span></td><td style="font-size:13px;color:var(--ink-mid);">Down from 82 (Issue 008): the only variable to improve this week. Operation Project Freedom, active negotiations, and the Beijing summit's Hormuz sub-agenda all point toward eventual resolution. Mines still present; formal reopening not yet declared.</td></tr>
+      <tr><td class="td-strong">CFIUS &amp; Foreign Investment Review</td><td><span class="hm-score">70</span></td><td><div class="hm-bar-wrap"><div class="hm-bar" style="width:70%;background:#8A5030;"></div></div><span style="font-size:10px;color:var(--ink-light);">Elevated</span></td><td><span class="delta-flat">&mdash;</span></td><td style="font-size:13px;color:var(--ink-mid);">Stable. Summit may produce new investment frameworks; monitor for direct investment or joint venture announcements from the Beijing delegation. Gulf sovereign structures remain in CFIUS elevated territory.</td></tr>
+      <tr><td class="td-strong">Cyber Posture vs. State-Linked Threats</td><td><span class="hm-score">72</span></td><td><div class="hm-bar-wrap"><div class="hm-bar" style="width:72%;background:#8A5030;"></div></div><span style="font-size:10px;color:var(--ink-light);">Elevated</span></td><td><span class="delta-dn">-2</span></td><td style="font-size:13px;color:var(--ink-mid);">Slight improvement. AI safety dialogue at the summit is a positive signal for bilateral cyber risk management. IRGC-linked threat mapping of Gulf digital infrastructure continues; ceasefire fragility keeps this elevated.</td></tr>
+      <tr><td class="td-strong">Permitting &amp; Regulatory Timeline</td><td><span class="hm-score">62</span></td><td><div class="hm-bar-wrap"><div class="hm-bar" style="width:62%;background:#9A6030;"></div></div><span style="font-size:10px;color:var(--ink-light);">Elevated</span></td><td><span class="delta-flat">&mdash;</span></td><td style="font-size:13px;color:var(--ink-mid);">Stable. Wisconsin and North Carolina grid cost reform continues to set the legislative template. DPA authority may partially offset permitting delays for priority grid projects; DOE implementation guidance is awaited.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- §13 DILIGENCE QUESTIONS -->
+<div class="section" id="diligence">
+  <div class="section-header"><span class="section-num">&sect;13</span><h2>Diligence Questions</h2><span class="section-tag">7 questions</span></div>
+  <div class="dq-cat">Commercial</div>
+  <ul class="dq-list">
+    <li class="dq-item"><span class="dq-num">01</span><div>For AI data center assets dependent on H200 procurement under the current BIS case-by-case framework: what is the revenue impact of a reversion to "presumption of denial" following the Trump–Xi summit? Does the offtake agreement contain a material adverse change or force majeure clause triggered by a US export control policy change?<div class="dq-trace">Trump–Xi summit AI chip agenda — Fox Business, 12 May 2026; The Hill, 13 May 2026</div></div></li>
+    <li class="dq-item"><span class="dq-num">02</span><div>For any asset with Gulf or Red Sea cable corridor dependency: does the current SLA include a force majeure carve-out covering an active ceasefire with contested mine clearance in the Strait of Hormuz? Has the insurer confirmed their current position following Operation Project Freedom's suspension?<div class="dq-trace">Iran ceasefire "massive life support" — CNN, 12 May 2026; 2026 Strait of Hormuz crisis — Wikipedia, updated 13 May 2026</div></div></li>
+    <li class="dq-item"><span class="dq-num">03</span><div>For US data center development assets: has transformer procurement been confirmed with a purchase order and specific delivery commitment? What is the construction schedule impact of a 36–60 month delay in transformer delivery, and has the IRR been re-run under that scenario?<div class="dq-trace">Coalition for a Prosperous America — transformer supply chain, c. 6 May 2026; White House DPA determination, 20 April 2026</div></div></li>
+  </ul>
+  <div class="dq-cat">Operational</div>
+  <ul class="dq-list">
+    <li class="dq-item"><span class="dq-num">04</span><div>For US data center development assets: does the power solution include on-site or captive generation that bypasses the grid interconnection and transformer bottleneck entirely? If the asset is grid-dependent, has the local utility confirmed transformer availability and energisation timeline against the construction schedule?<div class="dq-trace">DPA determination 2026-10, 20 April 2026; Utility Dive — DPA transformer impact, 23 April 2026</div></div></li>
+    <li class="dq-item"><span class="dq-num">05</span><div>For assets with Nvidia as a significant supply-chain or equity partner: what proportion of contracted capacity depends on commitments from Nvidia-equity-backed customer entities versus independently contracted end-customer demand? Has the deal team mapped the demand signal to contracts without Nvidia balance sheet involvement?<div class="dq-trace">CNBC — Nvidia $40B+ equity bets, 9 May 2026</div></div></li>
+  </ul>
+  <div class="dq-cat">Regulatory</div>
+  <ul class="dq-list">
+    <li class="dq-item"><span class="dq-num">06</span><div>For US data center development assets: does Presidential Determination 2026-10 (DPA Section 303, 20 April 2026) create federal procurement preference obligations affecting the asset's transformer or switchgear supply chain? Has external counsel assessed whether existing procurement contracts with Chinese manufacturers are affected by any activated DPA authority?<div class="dq-trace">White House Presidential Determination 2026-10, 20 April 2026; Burr &amp; Forman DPA analysis, 8 May 2026</div></div></li>
+  </ul>
+  <div class="dq-cat">Capital</div>
+  <ul class="dq-list">
+    <li class="dq-item"><span class="dq-num">07</span><div>For Nordic or European data center assets seeking institutional debt: does the Nscale $790M, five-bank consortium (ABN AMRO, DNB, Eksfin, Nordea, SEB) set applicable pricing benchmarks for this asset? What PUE target and green certification criterion enabled Norwegian sovereign export credit (Eksfin) participation?<div class="dq-trace">Nscale press release — $790M Narvik financing, 11 May 2026</div></div></li>
+  </ul>
+</div>
+
+<!-- §14 STRATEGY ACTIONS -->
+<div class="section" id="strategy">
+  <div class="section-header"><span class="section-num">&sect;14</span><h2>Strategy Actions</h2></div>
+  <div class="horizon-label">Immediate &middot; 0 to 90 days</div>
+  <ul class="action-list">
+    <li class="action-item"><div class="action-dot"></div><div><strong>Track Trump–Xi summit outcomes for AI chip and Hormuz read-throughs.</strong> The 14–15 May Beijing summit is the single most consequential near-term policy event for AI data center investors. Document what the summit produces (or fails to produce) on H200 export policy, AI safety dialogue, and any Iran/Hormuz framing. The range of outcomes is wide; the 30-60 day window from Issue 008 now has a named event attached to it.</div></li>
+    <li class="action-item"><div class="action-dot"></div><div><strong>Commission transformer procurement audit across the US data center development portfolio.</strong> Presidential Determination 2026-10 means this is no longer a background operational item; it is a government-acknowledged critical path risk. Any development asset without a confirmed transformer purchase order and delivery date is carrying an unquantified construction schedule gap that may not be visible in current underwriting models.</div></li>
+    <li class="action-item"><div class="action-dot"></div><div><strong>Validate demand signal independence for AI data center positions where Nvidia holds equity in the anchor customer.</strong> The circular investment concern does not require a thesis change, but it does require documentation: what proportion of contracted capacity is supported by commitments from entities in which Nvidia holds equity? The exit buyer will ask; the deal committee should have the answer before close.</div></li>
+  </ul>
+  <div class="horizon-label">Platform &middot; 3 to 12 months</div>
+  <ul class="action-list">
+    <li class="action-item"><div class="action-dot"></div><div><strong>Develop Nordic and Baltic corridor data center exposure as a structural hedge.</strong> Nscale's $790M Narvik financing demonstrates that sovereign export credit participation, green power credentials, and geographic separation from Gulf and Hormuz risk zones are becoming investable at institutional scale. This is not a niche geography; it is an emerging institutional framework for non-Gulf European AI infrastructure.</div></li>
+    <li class="action-item"><div class="action-dot"></div><div><strong>Map transformer and switchgear supply chain exposure to China across the full US portfolio and engage alternative supplier relationships now.</strong> The DPA invocation acknowledges a structural gap that cannot be resolved quickly; the $323M available DPA Fund is modest against $35B annual import dependency. Operators identifying allied-market alternatives (Korean, European, or emerging domestic suppliers) before the supply constraint tightens further will have a demonstrable advantage in capital raises and offtake negotiations.</div></li>
+  </ul>
+  <div class="horizon-label">Portfolio &middot; 12 to 24 months</div>
+  <ul class="action-list">
+    <li class="action-item"><div class="action-dot"></div><div><strong>Build exit narratives that address the circular investment discount.</strong> As Nvidia's equity position in the AI infrastructure stack becomes better understood by the financial sponsor community, exit buyers will apply a discount to contracted capacity that cannot be validated as independent end-customer demand. Assets that can demonstrate organic, non-vendor-supported demand at scale will command a premium. Develop the evidence base before the exit process begins, not during it.</div></li>
+  </ul>
+</div>
+
+<!-- §15 WATCH LIST -->
+<div class="section" id="watchlist">
+  <div class="section-header"><span class="section-num">&sect;15</span><h2>Watch List</h2></div>
+  <table class="std-table">
+    <thead><tr><th style="width:190px">Item</th><th style="width:90px">Window</th><th>Signal to watch</th></tr></thead>
+    <tbody>
+      <tr><td class="td-strong">Trump–Xi summit outcomes</td><td style="color:var(--accent);font-size:12px;font-weight:600;">14–15 May 2026</td><td>Watch for: any formal AI chip policy statement (deal, tightening, or explicit deferral); announcement of a bilateral AI safety communications channel; rare earth supply commitments from China; any joint statement referencing Hormuz or Iran ceasefire support. Fox Business and Rest of World are the primary sources to track in real time.</td></tr>
+      <tr><td class="td-strong">Iran ceasefire status</td><td style="color:var(--accent);font-size:12px;font-weight:600;">Ongoing</td><td>Trump called the ceasefire "massive life support" on 12 May. Watch for: formal combat resumption announcement; confirmed mine clearance progress; formal Hormuz reopening declaration; Iranian nuclear concession on enriched uranium. CNN and Iran International are the primary tracking sources.</td></tr>
+      <tr><td class="td-strong">DPA grid infrastructure implementation</td><td style="color:var(--accent);font-size:12px;font-weight:600;">Q2–Q3 2026</td><td>DPA Section 303 determination issued 20 April. Watch for: DOE deployment of financial tools for domestic transformer manufacturing; executive orders directing federal procurement away from Chinese-sourced power equipment; allied-market supply chain agreements. Note: approximately $323M DPA Fund available for FY2026; the scale of commitment will determine whether this is a signal or a solution.</td></tr>
+      <tr><td class="td-strong">BIS 50% Rule enforcement</td><td style="color:var(--accent);font-size:12px;font-weight:600;">10 Nov 2026</td><td>Five months and four weeks to enforcement. Unchanged from Issue 008. Watch for BIS guidance on the expanded restricted party definition. Operators with indirect PRC-adjacent counterparties need counsel engaged before Q3 2026.</td></tr>
+      <tr><td class="td-strong">GPU-backed securitisation supply</td><td style="color:var(--accent);font-size:12px;font-weight:600;">H2 2026</td><td>CoreWeave's $8.5B investment-grade GPU ABS (April 2026) is the first of its kind. JPMorgan projects $30–40B annual data center ABS/CMBS in 2026–2027. Watch for: whether lender appetite at scale materialises, or whether GPU lifecycle and upgrade risk creates investor capacity limits. Morgan Stanley's $20B leveraged finance projection for 2026 AI deals is the secondary benchmark.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- §16 SOURCES -->
+<div class="section" id="sources">
+  <div class="section-header"><span class="section-num">&sect;16</span><h2>Sources</h2></div>
+  <div class="sources-grid">
+    <div class="source-tile">
+      <div class="source-tile-cat">Geopolitics &amp; OSINT</div>
+      <ul class="source-link-list">
+        <li class="source-link-item" id="src-1"><span class="src-num">1</span><a href="https://www.cnn.com/2026/05/11/world/live-news/iran-war-proposal-trump" target="_blank">CNN — Iran ceasefire "massive life support"</a><span class="source-link-date">&middot; 12 May 2026</span><a href="#cite-1a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item" id="src-2"><span class="src-num">2</span><a href="https://en.wikipedia.org/wiki/2026_Strait_of_Hormuz_crisis" target="_blank">Wikipedia — 2026 Strait of Hormuz crisis</a><span class="source-link-date">&middot; Updated 13 May 2026</span><a href="#cite-2a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item" id="src-12"><span class="src-num">12</span><a href="https://www.chathamhouse.org/2026/05/trump-xi-summit-can-progress-be-made-iran" target="_blank">Chatham House — Trump–Xi summit: Hormuz and AI</a><span class="source-link-date">&middot; 12 May 2026</span><a href="#cite-12a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+      </ul>
+    </div>
+    <div class="source-tile">
+      <div class="source-tile-cat">Technology &amp; Policy</div>
+      <ul class="source-link-list">
+        <li class="source-link-item" id="src-3"><span class="src-num">3</span><a href="https://www.foxbusiness.com/economy/trump-readies-beijing-summit-xi-ai-chip-sales-farm-goods-top-agenda" target="_blank">Fox Business — Trump–Xi summit, chip agenda</a><span class="source-link-date">&middot; 12 May 2026</span><a href="#cite-3a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item" id="src-4"><span class="src-num">4</span><a href="https://restofworld.org/2026/trump-xi-meeting-tech/" target="_blank">Rest of World — Trump–Xi tech agenda</a><span class="source-link-date">&middot; 13 May 2026</span><a href="#cite-4a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item" id="src-5"><span class="src-num">5</span><a href="https://thehill.com/business/5874569-trump-xi-ai-talks/" target="_blank">The Hill — AI talks at Beijing summit</a><span class="source-link-date">&middot; 13 May 2026</span><a href="#cite-5a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item" id="src-6"><span class="src-num">6</span><a href="https://www.euronews.com/next/2026/05/13/trump-xi-summit-chips-may-be-off-the-table-but-ai-warfare-will-likely-feature-in-china" target="_blank">Euronews — Trump–Xi: chips, Jensen attendance</a><span class="source-link-date">&middot; 13 May 2026</span><a href="#cite-6a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+      </ul>
+    </div>
+    <div class="source-tile">
+      <div class="source-tile-cat">Regulatory &amp; Official</div>
+      <ul class="source-link-list">
+        <li class="source-link-item" id="src-8"><span class="src-num">8</span><a href="https://www.whitehouse.gov/presidential-actions/2026/04/presidential-determination-pursuant-to-section-303-of-the-defense-production-act-of-1950-as-amended-on-grid-infrastructure-equipment-and-supply-chain-capacity/" target="_blank">White House — DPA Section 303 determination 2026-10</a><span class="source-link-date">&middot; 20 April 2026</span><a href="#cite-8a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item" id="src-10"><span class="src-num">10</span><a href="https://www.utilitydive.com/news/what-does-trumps-wartime-powers-flex-mean-for-the-transformer-shortage/818159/" target="_blank">Utility Dive — DPA transformer impact; $323M fund</a><span class="source-link-date">&middot; 23 April 2026</span><a href="#cite-10a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+      </ul>
+    </div>
+    <div class="source-tile">
+      <div class="source-tile-cat">Industry &amp; Market Data</div>
+      <ul class="source-link-list">
+        <li class="source-link-item" id="src-7"><span class="src-num">7</span><a href="https://prosperousamerica.org/americas-ai-boom-has-a-trade-policy-blind-spot/" target="_blank">Coalition for a Prosperous America — transformer crisis</a><span class="source-link-date">&middot; c. 6 May 2026</span><a href="#cite-8a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item" id="src-9"><span class="src-num">9</span><a href="https://www.citriniresearch.com/p/flash-note-defense-production-act" target="_blank">Citrini Research — DPA flash note; GE Vernova backlog</a><span class="source-link-date">&middot; c. 28 April 2026</span><a href="#cite-9a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item" id="src-11"><span class="src-num">11</span><a href="https://www.nscale.com/press-releases/nscale-secures-790-million-norway" target="_blank">Nscale — $790M Narvik financing</a><span class="source-link-date">&middot; 11 May 2026</span><a href="#cite-11a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+      </ul>
+    </div>
+    <div class="source-tile">
+      <div class="source-tile-cat">Financial Press</div>
+      <ul class="source-link-list">
+        <li class="source-link-item" id="src-12b"><span class="src-num">12b</span><a href="https://www.cnbc.com/2026/05/09/nvidia-embraces-ai-investor-topping-40-billion-in-equity-bets-2026.html" target="_blank">CNBC — Nvidia $40B+ equity bets; IREN deal</a><span class="source-link-date">&middot; 9 May 2026</span><a href="#cite-12ba" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item" id="src-13"><span class="src-num">13</span><a href="https://www.cnbc.com/2026/04/06/ai-data-centers-financing-insurance-deals-gpu-debt.html" target="_blank">CNBC — GPU debt treadmill; CoreWeave ABS context</a><span class="source-link-date">&middot; 6 April 2026</span></li>
+      </ul>
+    </div>
+    <div class="source-tile">
+      <div class="source-tile-cat">PE &amp; Deal Intelligence</div>
+      <ul class="source-link-list">
+        <li class="source-link-item" style="color:var(--ink-light);font-style:italic;">No direct citations this issue</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- §17 DISCLAIMER -->
+<div class="disclaimer">
+  <h3>About Commentarii</h3>
+  <p><em>Commentarii</em> is a weekly intelligence publication from CʘNSVLTʘR, providing senior-level geopolitical and market analysis for private equity investors active in TMT and digital infrastructure. Each issue draws on open-source intelligence from financial press, industry data providers, and geopolitical monitoring platforms, synthesised through an operating partner lens.</p>
+  <p>The analysis is intended for professional investors. It does not constitute investment advice. Views are those of the author and subject to change. <a href="https://www.consvltor.net" target="_blank">consvltor.net</a></p>
+  <p>Enquiries: <a href="mailto:hello@consvltor.net">hello@consvltor.net</a></p>
+</div>
+
+</body>
+</html>
