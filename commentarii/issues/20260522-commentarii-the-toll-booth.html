@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Commentarii 010 · The Toll Booth · 21 May 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --bg:#F5F0E6;--ink:#1C1814;--ink-mid:#4A4540;--ink-light:#8A837A;
+  --rule:#D0C8BC;--card-bg:#EDE8DE;--accent:#7A3020;
+  --amber:#7A5A1A;--green:#2A5036;--blue:#1A3C5A;
+}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;font-size:15px;line-height:1.75;-webkit-font-smoothing:antialiased;}
+
+.preamble-image{width:100%;line-height:0;overflow:hidden;}
+.preamble-image img{width:100%;height:320px;object-fit:cover;object-position:center;display:block;}
+
+.preamble-intro{max-width:860px;margin:0 auto;padding:32px 48px;display:grid;grid-template-columns:1fr 1fr;gap:40px;border-bottom:1px solid var(--rule);}
+.preamble-intro .col-left{font-family:'Times New Roman',Times,serif;font-style:italic;font-size:15px;color:var(--ink-mid);line-height:1.7;}
+.preamble-intro .col-left .pub-title{font-size:17px;font-weight:normal;display:block;margin-bottom:8px;color:var(--ink);}
+.preamble-intro .col-right{font-family:Arial,Helvetica,sans-serif;font-size:13px;color:var(--ink-mid);line-height:1.75;}
+
+.report-header{max-width:860px;margin:0 auto;padding:64px 48px 44px;}
+.header-meta{font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-light);margin-bottom:22px;display:flex;gap:28px;flex-wrap:wrap;}
+.rule-thick{border:none;border-top:2px solid var(--ink);margin-bottom:26px;}
+.report-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:46px;font-weight:500;line-height:1.08;color:var(--ink);margin-bottom:16px;max-width:640px;}
+.report-deck{font-size:15px;color:var(--ink-mid);line-height:1.7;max-width:580px;border-left:3px solid var(--accent);padding-left:18px;margin-bottom:36px;}
+
+.cover-grid{max-width:680px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);}
+.cg-card{background:var(--bg);padding:16px 14px;display:flex;flex-direction:column;justify-content:space-between;min-height:160px;text-decoration:none;color:inherit;transition:background 0.15s;}
+.cg-card:hover{background:var(--card-bg);}
+.cg-card-fixed{background:var(--card-bg);padding:16px 14px;min-height:160px;display:flex;flex-direction:column;justify-content:space-between;text-decoration:none;color:inherit;transition:background 0.15s;}
+.cg-card-fixed:hover{background:#E4DDD3;}
+.cg-cat{font-size:8px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-light);margin-bottom:6px;}
+.cg-theme{font-size:11px;color:var(--ink);line-height:1.4;margin-bottom:8px;flex:1;}
+.cg-stance{display:inline-block;font-size:8px;letter-spacing:0.08em;text-transform:uppercase;font-weight:600;padding:2px 6px;border-radius:2px;align-self:flex-start;}
+.stance-cau{background:#F0DDD8;color:#7A3020;}
+.stance-ele{background:#E8D0CC;color:#6A2018;}
+.stance-opp{background:#D8EAE0;color:#2A5036;}
+.cg-label{font-size:8px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-light);margin-bottom:5px;}
+.cg-big{font-family:'Cormorant Garamond',Georgia,serif;font-size:24px;font-weight:600;color:var(--ink);line-height:1;margin-bottom:5px;}
+.cg-sub{font-size:10px;color:var(--ink-mid);line-height:1.55;}
+.cg-stances-grid{display:grid;grid-template-columns:1fr 1fr;gap:3px 6px;margin-top:6px;}
+.cg-st{font-size:8.5px;font-weight:600;line-height:1.4;font-variant-emoji:text;}
+.cst-ow{color:#2A5036;}.cst-sel{color:#7A5A1A;}.cst-neu{color:#8A837A;}.cst-wtch{color:#1A3C5A;}
+.cg-subgrid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:1px;background:var(--rule);min-height:110px;border-bottom:1px solid var(--rule);}
+.cg-sub-card{background:var(--card-bg);padding:10px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;text-decoration:none;color:inherit;transition:background 0.15s;}
+.cg-sub-card:hover{background:#E4DDD3;}
+.cg-sub-name{font-size:8px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-mid);line-height:1.5;margin-top:4px;}
+.cg-sub-count{font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;font-weight:600;color:var(--ink);line-height:1;}
+
+.since-block{max-width:680px;margin:12px auto 0;padding:0 0 0;}
+.since-inner{border-left:3px solid var(--rule);padding:11px 14px;font-family:Arial,Helvetica,sans-serif;font-size:12px;color:var(--ink-mid);line-height:1.7;}
+.since-inner a{color:var(--accent);text-decoration:none;font-weight:500;}
+.since-inner a:hover{text-decoration:underline;}
+
+.section{max-width:860px;margin:0 auto;padding:46px 48px;border-bottom:1px solid var(--rule);}
+.section-header{display:flex;align-items:baseline;gap:16px;margin-bottom:20px;}
+.section-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:13px;letter-spacing:0.06em;color:var(--ink-light);min-width:22px;}
+.section h2{font-family:'Cormorant Garamond',Georgia,serif;font-size:26px;font-weight:500;color:var(--ink);line-height:1.2;}
+.section-tag{margin-left:auto;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-light);border:1px solid var(--rule);padding:3px 9px;border-radius:2px;white-space:nowrap;}
+p{margin-bottom:1em;}p:last-child{margin-bottom:0;}strong{font-weight:600;}
+
+.data-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);margin:22px 0;}
+.data-card{background:var(--bg);padding:13px;}
+.dc-label{font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-light);margin-bottom:4px;}
+.dc-value{font-family:'Cormorant Garamond',Georgia,serif;font-size:25px;font-weight:600;color:var(--ink);line-height:1;margin-bottom:4px;}
+.dc-note{font-size:12px;color:var(--ink-mid);line-height:1.5;}
+
+.pull-quote{font-family:'Cormorant Garamond',Georgia,serif;font-size:18px;font-style:italic;font-weight:500;color:var(--ink-mid);border-left:3px solid var(--accent);padding:9px 17px;margin:22px 0;line-height:1.45;}
+
+.std-table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13px;}
+.std-table th{font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-light);border-bottom:1.5px solid var(--ink);padding:6px 10px 8px;text-align:left;}
+.std-table td{border-bottom:1px solid var(--rule);padding:10px;vertical-align:top;line-height:1.55;color:var(--ink-mid);}
+.std-table tr:last-child td{border-bottom:none;}
+.td-strong{font-weight:600;color:var(--ink);}
+.td-accent{font-family:'Cormorant Garamond',Georgia,serif;font-size:16px;font-weight:600;color:var(--accent);white-space:nowrap;}
+.td-light{color:var(--ink-light);font-size:12px;white-space:nowrap;}
+
+.badge{display:inline-block;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;padding:2px 7px;border-radius:2px;}
+.b-high{background:#F0DDD8;color:#7A3020;}.b-elev{background:#F5E8D8;color:#7A4A10;}
+.b-med{background:#F0E8D0;color:#7A5A1A;}.b-new{background:#E8D0CC;color:#6A2018;}
+.b-ow{background:#D8EAE0;color:#2A5036;}.b-sel{background:#F0E8D0;color:#7A5A1A;}
+.b-neu{background:#EAE4DA;color:#6A5A4A;}.b-wtch{background:#DAE4EE;color:#1A3C5A;}
+
+.hm-bar-wrap{background:#E8E2D6;border-radius:2px;height:7px;width:100%;overflow:hidden;margin-top:4px;}
+.hm-bar{height:7px;border-radius:2px;}
+.hm-score{font-family:'Cormorant Garamond',Georgia,serif;font-size:16px;font-weight:600;color:var(--ink);}
+.delta-up{color:var(--accent);font-size:10px;font-weight:600;}
+.delta-dn{color:#2A5036;font-size:10px;font-weight:600;}
+.delta-flat{color:var(--ink-light);font-size:10px;}
+
+.dq-cat{font-size:10px;letter-spacing:0.14em;text-transform:uppercase;font-weight:600;color:var(--ink-light);border-bottom:1px solid var(--rule);padding-bottom:5px;margin:22px 0 9px;}
+.dq-list{list-style:none;}
+.dq-item{padding:8px 0;border-bottom:1px solid var(--rule);font-size:14px;color:var(--ink-mid);line-height:1.6;display:flex;gap:12px;}
+.dq-item:last-child{border-bottom:none;}
+.dq-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:15px;font-weight:600;color:var(--ink-light);min-width:20px;padding-top:1px;}
+.dq-trace{font-size:11px;color:var(--ink-light);font-style:italic;margin-top:2px;}
+.horizon-label{font-size:10px;letter-spacing:0.16em;text-transform:uppercase;font-weight:600;color:var(--ink-light);border-bottom:1px solid var(--rule);padding-bottom:5px;margin:22px 0 10px;}
+.action-list{list-style:none;}
+.action-item{padding:8px 0;border-bottom:1px solid var(--rule);font-size:14px;color:var(--ink-mid);line-height:1.6;display:flex;gap:12px;}
+.action-item:last-child{border-bottom:none;}
+.action-dot{width:5px;height:5px;min-width:5px;border-radius:50%;background:var(--accent);margin-top:9px;}
+
+.sources-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);margin:14px 0;}
+.source-tile{background:var(--bg);padding:12px;}
+.source-tile-cat{font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-light);font-weight:600;border-bottom:1px solid var(--rule);padding-bottom:5px;margin-bottom:8px;}
+.source-link-list{list-style:none;}
+.source-link-item{padding:4px 0;border-bottom:1px solid var(--rule);font-size:12px;}
+.source-link-item:last-child{border-bottom:none;}
+.source-link-item a{color:var(--accent);text-decoration:none;font-weight:500;}
+.source-link-item a:hover{text-decoration:underline;}
+.source-link-date{font-size:10px;color:var(--ink-light);font-style:italic;margin-left:4px;}
+.fn-ref{color:var(--accent);text-decoration:none;font-size:10px;vertical-align:super;line-height:0;font-weight:600;font-variant-emoji:text;}
+.fn-ref:hover{text-decoration:underline;}
+.fn-back{color:var(--ink-light);text-decoration:none;font-size:10px;margin-left:5px;font-variant-emoji:text;}
+.fn-back:hover{color:var(--accent);}
+.src-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:13px;font-weight:600;color:var(--ink-light);margin-right:5px;}
+
+.disclaimer{max-width:860px;margin:0 auto;padding:36px 48px 52px;}
+.disclaimer h3{font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;font-weight:500;color:var(--ink);margin-bottom:16px;}
+.disclaimer p{font-size:14px;color:var(--ink-mid);line-height:1.7;margin-bottom:1em;}
+.disclaimer p:last-child{margin-bottom:0;}
+.disclaimer a{color:var(--accent);text-decoration:none;}
+.disclaimer a:hover{text-decoration:underline;}
+
+@media(max-width:760px){
+  .preamble-intro{grid-template-columns:1fr;padding:24px 20px;}
+  .report-header,.section,.disclaimer{padding-left:20px;padding-right:20px;}
+  .report-title{font-size:32px;}
+  .cg-row-top,.cg-row-bot{grid-template-columns:1fr 1fr;}
+  .data-cards,.sources-grid{grid-template-columns:1fr;}
+  .std-table th:nth-child(3),.std-table td:nth-child(3){display:none;}
+  .std-table{font-size:12px;}
+  .std-table td,.std-table th{padding:8px 6px;}
+  .td-accent{font-size:14px;}
+}
+</style>
+</head>
+<body>
+
+<!-- ELEMENT A -->
+<div class="preamble-image">
+  <img src="https://consvltor.net/assets/consvltor_cover.jpg" alt="Commentarii">
+</div>
+
+<!-- ELEMENT B — fixed copy, never changes -->
+<div class="preamble-intro">
+  <div class="col-left">
+    <span class="pub-title">Commentarii</span>
+    Field notes from infrastructure, markets, and the geopolitics of connectivity. Written after dark.
+  </div>
+  <div class="col-right">
+    Each entry is anchored to a place and a period. Some are retrospective: written now, from the distance of outcome. Others are current, drafted close to the events they describe. The standard of evidence is the same throughout: what the data and the experience actually support, no more.
+  </div>
+</div>
+
+<!-- §2 HEADER -->
+<div class="report-header">
+  <div class="header-meta">
+    <span>Commentarii</span><span>Issue 010</span><span>21 May 2026</span>
+    <span>TMT &amp; Digital Infrastructure</span>
+  </div>
+  <hr class="rule-thick">
+  <h1 class="report-title">The Toll Booth</h1>
+  <p class="report-deck">Two toll booths opened this week, from entirely different directions. In the Strait of Hormuz, Iran formalised its cable levy on 16 May with the launch of the Persian Gulf Strait Authority, a named regulatory body now issuing transit permits and collecting fees of up to $2 million per vessel in Chinese yuan. In Virginia, Governor Spanberger signed data centre energy cost legislation on 15 May; three days later NextEra Energy announced a $67 billion acquisition of Dominion Energy, the largest regulated utility deal since Exxon-Mobil in 1998. In Beijing, the Trump-Xi summit closed on 15 May with H200 licences issued but not taken up; China appears to be choosing its own hardware stack. The free ride on shared infrastructure costs, from Persian Gulf seabed to Virginia substations, appears to be ending.</p>
+</div>
+
+<!-- §3 SIGNAL CARDS -->
+<div class="cover-grid">
+  <a class="cg-card" href="#topic1">
+      <div>
+        <div class="cg-cat">Hormuz Toll Booth</div>
+        <div class="cg-theme">PGSA launched 18 May with active permit process; vessels paying up to $2m per transit in yuan; Alcatel regional repair operations suspended</div>
+      </div>
+      <span class="cg-stance stance-ele">Elevated Risk</span>
+    </a>
+    <a class="cg-card" href="#topic2">
+      <div>
+        <div class="cg-cat">Pax Silica Under Fire</div>
+        <div class="cg-theme">Iran names Google, Meta, Microsoft, Amazon, Oracle, Nvidia and Palantir as targets; Amazon Dubai DC struck March; over $100bn in Gulf AI commitments exposed to physical threat</div>
+      </div>
+      <span class="cg-stance stance-ele">Elevated Risk</span>
+    </a>
+    <a class="cg-card" href="#topic3">
+      <div>
+        <div class="cg-cat">Power for Digital</div>
+        <div class="cg-theme">NextEra acquires Dominion for $67bn, largest utility deal since Exxon-Mobil 1998; Virginia SCC directed to assign data centre costs; capacity market costs up 11x since 2023</div>
+      </div>
+      <span class="cg-stance stance-opp">Overweight Confirmed</span>
+    </a>
+    <a class="cg-card" href="#topic4">
+      <div>
+        <div class="cg-cat">The Beijing Framework</div>
+        <div class="cg-theme">H200 licences cleared but China chose not to take them up; Huawei Ascend mandate in force; Xi to visit Washington September 2026; no AI governance framework signed</div>
+      </div>
+      <span class="cg-stance stance-cau">Caution</span>
+    </a>
+  <a class="cg-card-fixed" href="#dealflow">
+      <div class="cg-label">Deal Flow</div>
+      <div class="cg-big">3 Transactions</div>
+      <div class="cg-sub">NextEra / Dominion &middot; Blackstone BXDC IPO &middot; BlackRock / MGX / Allied</div>
+    </a>
+    <a class="cg-card-fixed" href="#riskmatrix">
+      <div class="cg-label">PE Risk Matrix</div>
+      <div class="cg-big">6 Active Vectors</div>
+      <div class="cg-sub">PGSA cable levy &middot; Gulf AI exposure &middot; Virginia power costs &middot; Tech bifurcation &middot; CFIUS &middot; BIS 50% Rule</div>
+    </a>
+    <a class="cg-card-fixed" href="#stances">
+      <div class="cg-label">Asset Class Stances</div>
+      <div class="cg-stances-grid">
+        <span class="cg-st cst-sel">&#x25B6;&#xFE0E; Data Centres: Selective</span>
+        <span class="cg-st cst-wtch">&#x21C5;&#xFE0E; Subsea Cable: Active Watch</span>
+        <span class="cg-st cst-sel">&#x25B6;&#xFE0E; Fibre / Backbone: Selective</span>
+        <span class="cg-st cst-neu">&#x25BA;&#xFE0E; Towers / RAN: Neutral</span>
+        <span class="cg-st cst-wtch">&#x25BC;&#xFE0E; Satellite / LEO: Watch</span>
+        <span class="cg-st cst-ow">&#x25B2;&#xFE0E; Power for Digital: Overweight</span>
+      </div>
+    </a>
+    <div class="cg-subgrid">
+      <a class="cg-sub-card" href="#underwriting"><div class="cg-sub-count">8</div><div class="cg-sub-name">Underwriting Variables</div></a>
+      <a class="cg-sub-card" href="#diligence"><div class="cg-sub-count">9</div><div class="cg-sub-name">Diligence Questions</div></a>
+      <a class="cg-sub-card" href="#strategy"><div class="cg-sub-count">6</div><div class="cg-sub-name">Strategy Actions</div></a>
+      <a class="cg-sub-card" href="#watchlist"><div class="cg-sub-count">5</div><div class="cg-sub-name">Watch List Items</div></a>
+    </div>
+</div>
+<div style="max-width:680px;margin:0 auto;padding:6px 2px 0;display:flex;gap:12px;flex-wrap:wrap;">
+  <span style="font-size:8px;color:#2A5036;font-weight:600;font-variant-emoji:text;">&#x25B2;&#xFE0E; Overweight</span>
+  <span style="font-size:8px;color:#7A5A1A;font-weight:600;font-variant-emoji:text;">&#x25B6;&#xFE0E; Selective</span>
+  <span style="font-size:8px;color:#8A837A;font-weight:600;font-variant-emoji:text;">&#x25BA;&#xFE0E; Neutral</span>
+  <span style="font-size:8px;color:#1A3C5A;font-weight:600;font-variant-emoji:text;">&#x25BC;&#xFE0E; Watch</span>
+  <span style="font-size:8px;color:#1A3C5A;font-weight:600;font-variant-emoji:text;">&#x21C5;&#xFE0E; Active Watch</span>
+</div>
+
+<!-- SINCE LAST WEEK — after stance legend, before §4 -->
+<div class="since-block">
+  <div class="since-inner">
+    Since last week's <a href="https://consvltor.net/commentarii/issues/20260515-commentarii-the-beijing-test.html" target="_blank">The Beijing Test</a>: three threads resolved materially. The Trump-Xi summit closed 15 May with headline trade stabilisation (tariffs held at 30%, Xi to Washington 24 September) but no AI governance framework and no H200 chip deliveries. The Hormuz cable declaration of 9 May became a functioning regulatory institution on 16-18 May with the PGSA launch. Virginia's data centre energy legislation received signature on 15 May, and the NextEra-Dominion merger followed on 18 May confirming the Power for Digital thesis at scale. Route &amp; Corridor Resilience is the only heatmap variable that does not worsen this week; the PGSA institutionalisation is a negative, but the absence of a confirmed cable cut holds the score from its ceiling.
+  </div>
+</div>
+
+<!-- §4 MACRO -->
+<div class="section" id="macro">
+  <div class="section-header"><span class="section-num">&sect;4</span><h2>Macro and Geopolitical Landscape</h2></div>
+  <div class="pull-quote">This week two entirely different political actors (Tehran and Richmond) reached the same conclusion from opposite directions: that digital infrastructure has been a free rider on shared cost systems, and that the arrangement appears to be ending.</div>
+  <p>The ceasefire of 8 April remains formally in place but functionally fragile. Trump this week described its survival probability as "one percent."<a href="#src-1" id="cite-1a" class="fn-ref"><sup>1</sup></a> Tehran's response has been to accelerate institutional consolidation of the Strait of Hormuz as a commercial and digital chokepoint rather than pursue settlement terms. The Persian Gulf Strait Authority, which went live on 18 May with an active X account and a published permit process, represents the operational formalisation of that strategy.<a href="#src-2" id="cite-2a" class="fn-ref"><sup>2</sup></a> Iran has also explicitly named the US hyperscalers (Google, Meta, Microsoft, Amazon, Oracle, Nvidia and Palantir) as targets, a designation that appears to place the Gulf AI infrastructure built under Trump's May 2025 tour under direct physical threat.<a href="#src-3" id="cite-3a" class="fn-ref"><sup>3</sup></a></p>
+  <p>The Trump-Xi Beijing summit concluded on 15 May with more headline warmth than structural progress on technology. H200 licences were cleared for approximately ten Chinese firms during the summit, but Trump confirmed on Air Force One that China "chose not to" approve the purchases because "they want to develop their own."<a href="#src-4" id="cite-4a" class="fn-ref"><sup>4</sup></a> CSIS noted post-summit that the meeting revealed little progress on the most consequential dimensions: AI, cyber operations, export controls, and digital sovereignty.<a href="#src-5" id="cite-5a" class="fn-ref"><sup>5</sup></a> The energy side of the story moved more decisively: NextEra's $67 billion acquisition of Dominion Energy, announced 18 May, is the week's most consequential transaction for long-term PE infrastructure positioning.<a href="#src-6" id="cite-6a" class="fn-ref"><sup>6</sup></a></p>
+  <div class="data-cards">
+    <div class="data-card">
+      <div class="dc-label">NextEra / Dominion deal value</div>
+      <div class="dc-value">$67bn</div>
+      <div class="dc-note">Largest regulated utility deal since Exxon-Mobil 1998. Creates the world's largest regulated utility. <a href="#src-6" class="fn-ref"><sup>6</sup></a></div>
+    </div>
+    <div class="data-card">
+      <div class="dc-label">Virginia capacity market cost 2023 vs 2025</div>
+      <div class="dc-value">$28 → $329</div>
+      <div class="dc-note">Per MWh, PJM Interconnection. Direct transmission mechanism to data centre operating costs. <a href="#src-7" class="fn-ref"><sup>7</sup></a></div>
+    </div>
+    <div class="data-card">
+      <div class="dc-label">PGSA vessel transit fee</div>
+      <div class="dc-value">Up to $2m</div>
+      <div class="dc-note">Per transit, payable in Chinese yuan. Parallel cable permit regime declared; full tariff not yet published. <a href="#src-2" class="fn-ref"><sup>2</sup></a></div>
+    </div>
+  </div>
+</div>
+
+<!-- §5 HORMUZ TOLL BOOTH -->
+<div class="section" id="topic1">
+  <div class="section-header"><span class="section-num">&sect;5</span><h2>The Hormuz Toll Booth</h2></div>
+  <div class="pull-quote">The May 9 declaration was a threat. The May 18 PGSA X account is an institution. For submarine cable operators and their insurers, the distinction appears material.</div>
+  <p>On 16 May, the chairman of Iran's Parliament National Security and Foreign Policy Committee confirmed that Tehran would "unveil soon" the full details of a new Hormuz transit mechanism. Two days later the Persian Gulf Strait Authority launched its official X account and published its permit process: vessels must submit ownership, insurance, crew manifest and cargo details before a transit permit is issued and a fee collected.<a href="#src-2" id="cite-2b" class="fn-ref"><sup>2</sup></a> Reports indicate some commercial vessels have already paid fees of up to $2 million per transit, denominated in Chinese yuan. For submarine cables, the parallel regime, declared by Iran's military spokesman on 9 May, requires operators including Google, Meta, Microsoft and Amazon to obtain Iranian permits, pay transit charges, and cede maintenance rights to Iranian firms exclusively.<a href="#src-8" id="cite-8a" class="fn-ref"><sup>8</sup></a> Alcatel Submarine Networks suspended all Hormuz regional repair operations following the 9 May declaration, according to maritime intelligence provider Windward.<a href="#src-9" id="cite-9a" class="fn-ref"><sup>9</sup></a></p>
+  <p>A calibration worth noting: the International Cable Protection Committee has stated that Hormuz accounts for less than one percent of global international bandwidth, meaning the global internet exposure is more limited than some reporting suggests.<a href="#src-8" class="fn-ref"><sup>8</sup></a> The concentrated exposure is in regional Gulf connectivity, financial messaging systems including SWIFT, and cloud synchronisation for the Gulf hyperscaler infrastructure committed under Pax Silica. For PE portfolios with Gulf data centre or cable assets, the repair suspension may be more immediately material than the bandwidth figure implies; a cable fault cannot currently be remediated under any credible timeline.</p>
+  <div class="data-cards">
+    <div class="data-card">
+      <div class="dc-label">Cable systems through Hormuz</div>
+      <div class="dc-value">7</div>
+      <div class="dc-note">Including FALCON (Tata), Gulf Bridge International, TGN-Gulf. Iran's territorial sea covers the entire strait width. <a href="#src-8" class="fn-ref"><sup>8</sup></a></div>
+    </div>
+    <div class="data-card">
+      <div class="dc-label">Alcatel repair status</div>
+      <div class="dc-value">Suspended</div>
+      <div class="dc-note">All Hormuz regional repair operations paused. Alcatel is one of the world's largest cable installers. <a href="#src-9" class="fn-ref"><sup>9</sup></a></div>
+    </div>
+    <div class="data-card">
+      <div class="dc-label">Hormuz share of global internet bandwidth</div>
+      <div class="dc-value">&lt;1%</div>
+      <div class="dc-note">Per ICPC / TeleGeography. Regional and financial system exposure is more concentrated than this figure implies. <a href="#src-8" class="fn-ref"><sup>8</sup></a></div>
+    </div>
+  </div>
+</div>
+
+<!-- §6 PAX SILICA UNDER FIRE -->
+<div class="section" id="topic2">
+  <div class="section-header"><span class="section-num">&sect;6</span><h2>Pax Silica Under Fire</h2></div>
+  <div class="pull-quote">Trump's May 2025 Gulf tour committed over $100 billion to Gulf AI infrastructure. Iran has since named seven of the companies involved as targets. The Amazon data centre in Dubai was struck in March.</div>
+  <p>Trump's May 2025 state visit to Saudi Arabia, Qatar and the UAE produced a series of AI infrastructure commitments that repositioned the Gulf as a global AI hub: Stargate UAE (5GW capacity in Abu Dhabi), Microsoft's $15.2 billion UAE investment, Amazon Web Services's $5.3 billion Saudi commitment, Google Cloud's $10 billion Saudi joint venture with PIF, and Saudi Arabia's Humain initiative backed by Nvidia GB300 chips.<a href="#src-3" id="cite-3b" class="fn-ref"><sup>3</sup></a> The conflict that began on 28 February has placed that architecture under physical threat. An Iranian strike damaged an Amazon data centre in Dubai in early March 2026.<a href="#src-3" class="fn-ref"><sup>3</sup></a> IRGC-affiliated media have since named Google, Meta, Microsoft, Amazon, Oracle, Nvidia and Palantir explicitly as entities whose Gulf infrastructure may face targeting.</p>
+  <p>The Pax Silica commitments were underwritten against a security framework that assumed US deterrence would be sufficient. The Iran conflict and its aftermath appear to have altered that calculus. For PE investors with exposure to Gulf co-location, hyperscaler tenancy, or sovereign AI development partnerships, the physical security of the underlying assets (not just the cable connectivity) appears to warrant reassessment against the current environment.</p>
+</div>
+
+<!-- §7 POWER FOR DIGITAL: CRYSTALLISATION -->
+<div class="section" id="topic3">
+  <div class="section-header"><span class="section-num">&sect;7</span><h2>Power for Digital: Crystallisation</h2></div>
+  <div class="pull-quote">Three days after Virginia directed its regulator to price data centres properly, NextEra paid $67 billion for the utility that has connected more data centres than any other company in the world. The overweight thesis appears to have moved from investment rationale to corporate strategy.</div>
+  <p>On 15 May, Governor Spanberger signed legislation directing Virginia's State Corporation Commission to take "all steps necessary" to ensure data centres pay their fair share of electricity costs, ending a period in which capacity market costs, which rose from approximately $28 per megawatt-hour in 2023 to $329 in 2025, had been partly socialised across the residential customer base.<a href="#src-7" id="cite-7a" class="fn-ref"><sup>7</sup></a> The legislation as enacted uses SCC discretion rather than an explicit cost-shift mechanism; the quantum remains uncertain, but the directional signal to the market appears unambiguous. Virginia's $1.6 billion annual data centre tax exemption also remains unresolved in the budget standoff between the Senate (seeking elimination) and the House (seeking environmental compliance tie-in).</p>
+  <p>On 18 May, NextEra Energy announced an all-stock acquisition of Dominion Energy for $67 billion, a 21% premium to Dominion's prior-Friday close, creating the world's largest regulated utility and combining two of the largest nuclear fleets in the United States.<a href="#src-6" id="cite-6b" class="fn-ref"><sup>6</sup></a> Dominion's CEO noted that the company had connected more data centres than any other US utility. The NextEra-Dominion combination positions the merged entity to serve over 30 active data centre hubs by year-end. Regulatory approval is expected to require 12 to 18 months, with Virginia rate proceedings likely to intensify during that window. The Wisconsin and North Carolina tariff reforms from Issue 008 now have a Virginia companion and a utility-scale M&amp;A confirmation; assets with captive generation or fixed PPAs appear increasingly well positioned relative to grid-dependent peers.</p>
+  <div class="data-cards">
+    <div class="data-card">
+      <div class="dc-label">NextEra / Dominion deal value</div>
+      <div class="dc-value">$67bn</div>
+      <div class="dc-note">All-stock, 21% premium. Largest regulated utility deal since Exxon-Mobil 1998. 12-18 month regulatory timeline. <a href="#src-6" class="fn-ref"><sup>6</sup></a></div>
+    </div>
+    <div class="data-card">
+      <div class="dc-label">Combined nuclear position</div>
+      <div class="dc-value">#2 US</div>
+      <div class="dc-note">NextEra and Dominion nuclear fleets combined create the second-largest nuclear operator in the United States. <a href="#src-6" class="fn-ref"><sup>6</sup></a></div>
+    </div>
+    <div class="data-card">
+      <div class="dc-label">Virginia DC tax exemption</div>
+      <div class="dc-value">$1.6bn/yr</div>
+      <div class="dc-note">Annual value. Budget standoff: Senate seeks elimination, House wants environmental compliance tie-in. Unresolved. <a href="#src-7" class="fn-ref"><sup>7</sup></a></div>
+    </div>
+  </div>
+</div>
+
+<!-- §8 THE BEIJING FRAMEWORK -->
+<div class="section" id="topic4">
+  <div class="section-header"><span class="section-num">&sect;8</span><h2>The Beijing Framework</h2></div>
+  <div class="pull-quote">The H200 licences were issued during the summit. Not one chip appears to have been delivered. China may be choosing its own hardware stack, which is a different kind of bifurcation from the one Issues 008 and 009 were tracking.</div>
+  <p>The Trump-Xi summit in Beijing on 14-15 May produced headline trade stabilisation (tariffs held at 30% following the May 12 truce, a US-China Trade Council and Investment Council announced, Xi invited to Washington for 24 September) alongside notable gaps on the technology dimensions that most directly affect digital infrastructure investors.<a href="#src-10" id="cite-10a" class="fn-ref"><sup>10</sup></a> Reuters reported on 14 May, citing three people familiar with the matter, that the US Commerce Department had cleared roughly ten Chinese firms including Alibaba, Tencent, ByteDance, JD.com and Lenovo to purchase Nvidia H200 chips, with a 75,000-unit cap per customer; Lenovo publicly confirmed the approval.<a href="#src-4" id="cite-4a" class="fn-ref"><sup>4</sup></a> Trump confirmed on Air Force One, according to Bloomberg, that China "chose not to" approve the purchases because "they want to develop their own."<a href="#src-12" id="cite-12a" class="fn-ref"><sup>12</sup></a> Tencent's chief strategy officer stated Chinese GPU supply would increase progressively through 2026; an Alibaba executive noted that its T-Head proprietary GPUs had reached scaled mass production. Chinese AI platforms appear to be operating under a domestic mandate to build on Huawei's Ascend compute stack rather than Nvidia hardware.</p>
+  <p>The investor implication is distinct from the reversal risk this publication tracked in Issues 008 and 009. The prior concern was that US export controls would tighten again, blocking Nvidia access to China. The emerging concern is that even where licences exist, the Chinese market for US AI hardware may be closing by domestic policy choice. For investors underwriting AI data centre positions whose revenue model assumes Chinese customer demand for US-standard GPU compute, the Beijing framework appears to warrant a structural review rather than a policy-monitoring posture.</p>
+</div>
+
+<!-- §9 DEAL FLOW -->
+<div class="section" id="dealflow">
+  <div class="section-header"><span class="section-num">&sect;9</span><h2>Deal Flow</h2></div>
+  <table class="std-table">
+    <thead>
+      <tr><th style="width:185px">Parties</th><th style="width:82px">Value</th><th style="width:78px">Date</th><th>Description &amp; Source</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="td-strong">NextEra Energy / Dominion Energy<br><span style="font-weight:400;font-size:12px;color:var(--ink-light)">Virginia, North Carolina, South Carolina, Florida</span></td>
+        <td class="td-accent">$67bn</td>
+        <td class="td-light">18 May 2026</td>
+        <td>All-stock acquisition at $76 per Dominion share, 21% premium. Creates the world's largest regulated utility and second-largest nuclear operator in the US. Dominion has connected more data centres than any other US utility; combined entity to serve 30+ active data centre hubs by year-end. Regulatory approval expected over 12-18 months. <em>CNBC / SEC Form 425.</em><a href="#src-6" class="fn-ref"><sup>6</sup></a></td>
+      </tr>
+      <tr>
+        <td class="td-strong">Blackstone Digital Infrastructure Trust (BXDC)<br><span style="font-weight:400;font-size:12px;color:var(--ink-light)">IPO, NYSE, digital infrastructure REIT</span></td>
+        <td class="td-accent">$2bn</td>
+        <td class="td-light">15 May 2026</td>
+        <td>Blackstone priced 87.5 million shares at $20.00, with NYSE trading commencing 14 May and the offering closing 15 May. The geopolitical read-through is direct: Blackstone is creating a listed allied-capital exit vehicle for US digital infrastructure at the exact moment Chinese strategic exits are closed and Gulf sovereign exits are complicated by the conflict. The timing appears deliberate. <em>Blackstone press release.</em><a href="#src-13" id="cite-13a" class="fn-ref"><sup>13</sup></a></td>
+      </tr>
+      <tr>
+        <td class="td-strong">BlackRock / MGX / Allied Data Centers<br><span style="font-weight:400;font-size:12px;color:var(--ink-light)">Acquisition, pending regulatory completion</span></td>
+        <td class="td-accent">$40bn</td>
+        <td class="td-light">Expected end H1 2026</td>
+        <td>BlackRock and MGX, the UAE sovereign technology investment vehicle, are acquiring Allied Data Centers in what would be the largest transaction in the digital infrastructure space. Expected to close by end of H1 2026 subject to regulatory completion. The CFIUS dimension is the investor read-through: UAE sovereign capital acquiring the largest US data centre platform, running directly through the heightened Gulf co-investment scrutiny covered in §10. <em>Fierce Network / Bloomberg.</em><a href="#src-14" id="cite-14a" class="fn-ref"><sup>14</sup></a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- §10 PE RISK MATRIX -->
+<div class="section" id="riskmatrix">
+  <div class="section-header"><span class="section-num">&sect;10</span><h2>PE Risk Matrix</h2></div>
+  <table class="std-table">
+    <thead>
+      <tr><th style="width:180px">Risk Vector</th><th style="width:75px">Level</th><th>Investor Implication</th><th style="width:90px">Status</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="td-strong">PGSA Cable Levy and Repair Suspension</td>
+        <td><span class="badge b-high">High</span></td>
+        <td>The PGSA is now an operational institution, not a declared intention. Alcatel's repair suspension means that a cable fault in or near Hormuz cannot be remediated under current conditions. Gulf and Red Sea corridor assets require scenario planning for extended outages rather than the standard repair-within-weeks assumption.</td>
+        <td><span class="badge b-new">Escalated</span></td>
+      </tr>
+      <tr>
+        <td class="td-strong">Gulf AI Infrastructure Exposure</td>
+        <td><span class="badge b-high">High</span></td>
+        <td>Iran has explicitly named major US hyperscalers as targets. The Amazon Dubai DC strike in March appears to have been an early indicator. Pax Silica commitments (Stargate UAE, Saudi Humain, hyperscaler Gulf investments) appear to be operating in a different security environment than their deal structures anticipated.</td>
+        <td><span class="badge b-new">New</span></td>
+      </tr>
+      <tr>
+        <td class="td-strong">Virginia and US Power Cost Reform</td>
+        <td><span class="badge b-elev">Elevated</span></td>
+        <td>Virginia has joined Wisconsin and North Carolina in shifting electricity cost burden toward data centres. The NextEra-Dominion merger introduces a further regulatory variable over 12-18 months of approval proceedings. Any underwriting model using pre-2026 Virginia power pricing assumptions may need revision.</td>
+        <td><span class="badge b-new">Moved up</span></td>
+      </tr>
+      <tr>
+        <td class="td-strong">US-China Tech Bifurcation</td>
+        <td><span class="badge b-elev">Elevated</span></td>
+        <td>The Beijing summit appears to have confirmed bifurcation by a different route than previously anticipated. The risk is no longer primarily US export controls blocking access; Chinese domestic policy appears to be steering platforms toward Huawei Ascend regardless of licence availability. AI DC revenue models dependent on Chinese GPU compute demand appear to warrant structural review.</td>
+        <td><span class="badge b-new">Reframed</span></td>
+      </tr>
+      <tr>
+        <td class="td-strong">CFIUS / FDI Review Risk</td>
+        <td><span class="badge b-elev">Elevated</span></td>
+        <td>Gulf sovereign capital relationships continue to intersect with Iran conflict geopolitics. The Pax Silica commitments involve Gulf sovereign co-investors in US-backed AI infrastructure. Structures reviewed in 2025 may warrant reassessment against the current security environment.</td>
+        <td>Stable elevated</td>
+      </tr>
+      <tr>
+        <td class="td-strong">BIS 50% Rule Compliance</td>
+        <td><span class="badge b-med">Medium</span></td>
+        <td>Enforcement 10 November 2026. The Beijing summit produced no relaxation of this deadline or the underlying framework. Operators with PRC-adjacent counterparties or supply chains need compliance programmes in place before Q3 2026.</td>
+        <td>Deadline tracking</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- §11 ASSET CLASS STANCES -->
+<div class="section" id="stances">
+  <div class="section-header"><span class="section-num">&sect;11</span><h2>Asset Class Stances</h2></div>
+  <table class="std-table">
+    <thead>
+      <tr><th style="width:165px">Asset Class</th><th style="width:75px">Direction</th><th style="width:140px">Key Variable</th><th>Read-Through</th><th style="width:80px">Stance</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="td-strong">Data Centres (Hyperscale / AI)</td>
+        <td style="color:#7A5A1A;font-weight:600;">Mixed</td>
+        <td>Geography and power structure</td>
+        <td>Gulf-exposed assets appear materially more complex than twelve months ago. US domestic assets with fixed PPAs remain the cleaner story; the NextEra-Dominion combination may further concentrate regulated power supply to data centre hubs. Geographic bifurcation is now a core diligence variable, not a background consideration.</td>
+        <td><span class="badge b-sel">Selective</span></td>
+      </tr>
+      <tr>
+        <td class="td-strong">Subsea Cable</td>
+        <td style="color:#6A2018;font-weight:600;">Weakening</td>
+        <td>PGSA institutionalisation</td>
+        <td>The PGSA launch converts Hormuz cable risk from theoretical to operational. Alcatel's repair suspension removes the standard recovery assumption for cable faults in the region. Baltic corridor and trans-Pacific assets are on a separate trajectory. Active Watch: a distressed entry thesis may be forming for investors with long hold periods and conflict-resolution optionality.</td>
+        <td><span class="badge b-wtch">&#x21C5; Active Watch</span></td>
+      </tr>
+      <tr>
+        <td class="td-strong">Fibre / Backbone</td>
+        <td style="color:#7A5A1A;font-weight:600;">Mixed</td>
+        <td>US consolidation vs UK overbuild</td>
+        <td>No new catalyst this week beyond the Nvidia-Corning transaction signalling the photonics transition at rack scale. US backbone consolidation remains investable. UK altnet structurally impaired by overbuild. Differentiate by geography and capacity profile.</td>
+        <td><span class="badge b-sel">Selective</span></td>
+      </tr>
+      <tr>
+        <td class="td-strong">Towers / RAN</td>
+        <td style="color:#8A837A;font-weight:600;">No change</td>
+        <td>Carrier spend</td>
+        <td>No new catalyst this week. Hold existing portfolios; do not underwrite new tower development on near-term densification assumptions.</td>
+        <td><span class="badge b-neu">Neutral</span></td>
+      </tr>
+      <tr>
+        <td class="td-strong">Satellite / LEO</td>
+        <td style="color:#7A5A1A;font-weight:600;">Mixed</td>
+        <td>Hormuz / Gulf demand signal</td>
+        <td>PGSA cable disruption risk creates a demand signal for LEO alternatives in Gulf connectivity, but licensing constraints and capacity limits apply. Regulatory pathway in target markets must be confirmed before any commitment.</td>
+        <td><span class="badge b-wtch">Watch</span></td>
+      </tr>
+      <tr>
+        <td class="td-strong">Power for Digital</td>
+        <td style="color:#2A5036;font-weight:600;">Strengthening</td>
+        <td>Utility consolidation + state regulation</td>
+        <td>The NextEra-Dominion transaction appears to validate the structural thesis at the scale of a $67 billion deal. Virginia SCC legislation reinforces the directional cost shift. The gap between captive-generation assets and grid-dependent peers appears to be widening across multiple states simultaneously, with utility-scale regulated access now a distinct differentiator.</td>
+        <td><span class="badge b-ow">Overweight</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- §12 UNDERWRITING VARIABLES -->
+<div class="section" id="underwriting">
+  <div class="section-header"><span class="section-num">&sect;12</span><h2>Underwriting Variables</h2><span class="section-tag">0-100 &middot; higher = greater risk</span></div>
+  <table class="std-table">
+    <thead>
+      <tr><th style="width:230px">Variable</th><th style="width:50px">Score</th><th style="width:120px">Level</th><th style="width:58px">Change</th><th>Driver this week</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="td-strong">Route &amp; Corridor Resilience</td>
+        <td><span class="hm-score">88</span></td>
+        <td><div class="hm-bar-wrap"><div class="hm-bar" style="width:88%;background:#7A3020;"></div></div><span style="font-size:10px;color:var(--ink-light);">High</span></td>
+        <td><span class="delta-up">+6</span></td>
+        <td style="font-size:13px;color:var(--ink-mid);">PGSA institutionalisation converts cable risk from declared to operational. Alcatel repair suspension removes standard recovery assumption. Largest single-week movement in this variable.</td>
+      </tr>
+      <tr>
+        <td class="td-strong">Physical Asset Security (Gulf)</td>
+        <td><span class="hm-score">80</span></td>
+        <td><div class="hm-bar-wrap"><div class="hm-bar" style="width:80%;background:#8A3020;"></div></div><span style="font-size:10px;color:var(--ink-light);">High</span></td>
+        <td><span class="delta-up">+8</span></td>
+        <td style="font-size:13px;color:var(--ink-mid);">New variable this issue. Iran's explicit naming of US hyperscalers as targets, combined with the March Amazon Dubai DC strike, indicates Gulf AI infrastructure is operating in a materially changed security environment.</td>
+      </tr>
+      <tr>
+        <td class="td-strong">Power Access &amp; Energy Security</td>
+        <td><span class="hm-score">84</span></td>
+        <td><div class="hm-bar-wrap"><div class="hm-bar" style="width:84%;background:#7A3020;"></div></div><span style="font-size:10px;color:var(--ink-light);">High</span></td>
+        <td><span class="delta-flat">&mdash;</span></td>
+        <td style="font-size:13px;color:var(--ink-mid);">Virginia SCC legislation signed and NextEra-Dominion merger announced. Score held: legislation is directionally positive for long-term cost clarity but the 12-18 month merger approval window introduces transition-period uncertainty.</td>
+      </tr>
+      <tr>
+        <td class="td-strong">Hardware Supply-Chain Optionality</td>
+        <td><span class="hm-score">72</span></td>
+        <td><div class="hm-bar-wrap"><div class="hm-bar" style="width:72%;background:#8A4030;"></div></div><span style="font-size:10px;color:var(--ink-light);">Elevated</span></td>
+        <td><span class="delta-up">+4</span></td>
+        <td style="font-size:13px;color:var(--ink-mid);">Huawei Ascend mandate emerging as a structural factor. Revenue models for AI DC positions dependent on Chinese GPU demand appear to warrant structural review rather than policy-monitoring.</td>
+      </tr>
+      <tr>
+        <td class="td-strong">Sovereign &amp; Security Compliance</td>
+        <td><span class="hm-score">73</span></td>
+        <td><div class="hm-bar-wrap"><div class="hm-bar" style="width:73%;background:#8A4030;"></div></div><span style="font-size:10px;color:var(--ink-light);">Elevated</span></td>
+        <td><span class="delta-dn">-3</span></td>
+        <td style="font-size:13px;color:var(--ink-mid);">Beijing summit produced headline stability and a Xi Washington visit date (24 September). Minor improvement to the compliance environment; no substantive change to AI governance or export control frameworks.</td>
+      </tr>
+      <tr>
+        <td class="td-strong">CFIUS &amp; Foreign Investment Review</td>
+        <td><span class="hm-score">70</span></td>
+        <td><div class="hm-bar-wrap"><div class="hm-bar" style="width:70%;background:#8A5030;"></div></div><span style="font-size:10px;color:var(--ink-light);">Elevated</span></td>
+        <td><span class="delta-flat">&mdash;</span></td>
+        <td style="font-size:13px;color:var(--ink-mid);">Stable elevated. Gulf sovereign capital relationships remain intersected with Iran conflict geopolitics. No new resolution this week.</td>
+      </tr>
+      <tr>
+        <td class="td-strong">Permitting &amp; Regulatory Timeline</td>
+        <td><span class="hm-score">65</span></td>
+        <td><div class="hm-bar-wrap"><div class="hm-bar" style="width:65%;background:#9A5030;"></div></div><span style="font-size:10px;color:var(--ink-light);">Elevated</span></td>
+        <td><span class="delta-up">+3</span></td>
+        <td style="font-size:13px;color:var(--ink-mid);">Virginia data centre tax exemption ($1.6bn/yr) remains unresolved in budget standoff. NextEra-Dominion merger introduces a 12-18 month regulatory overlay for Virginia and adjacent markets.</td>
+      </tr>
+      <tr>
+        <td class="td-strong">Exit Narrative Under Geopolitical Scrutiny</td>
+        <td><span class="hm-score">68</span></td>
+        <td><div class="hm-bar-wrap"><div class="hm-bar" style="width:68%;background:#9A5030;"></div></div><span style="font-size:10px;color:var(--ink-light);">Elevated</span></td>
+        <td><span class="delta-dn">-2</span></td>
+        <td style="font-size:13px;color:var(--ink-mid);">Xi Washington visit (September 2026) and trade council establishment marginally improve the allied capital exit environment. Gulf sovereign exits remain complicated by conflict exposure. Chinese strategic exits effectively closed.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- §13 DILIGENCE QUESTIONS -->
+<div class="section" id="diligence">
+  <div class="section-header"><span class="section-num">&sect;13</span><h2>Diligence Questions</h2><span class="section-tag">9 questions</span></div>
+
+  <div class="dq-cat">Gulf and Hormuz Exposure</div>
+  <ul class="dq-list">
+    <li class="dq-item"><span class="dq-num">01</span><div>For assets with Gulf data centre or cable exposure: has physical security been independently assessed since the Amazon Dubai DC strike in March? Does the operator's insurance confirm coverage for intentional state-linked physical attack under current conflict conditions?<div class="dq-trace">Iran naming of hyperscalers; Amazon Dubai DC strike — CNN Business, 31 Mar 2026</div></div></li>
+    <li class="dq-item"><span class="dq-num">02</span><div>For assets dependent on Hormuz or Red Sea cable connectivity: does the SLA contain a force majeure carve-out that applies to the PGSA permit regime? Has legal counsel confirmed whether the PGSA declarations constitute a trigger under the contract's applicable law?<div class="dq-trace">PGSA institutionalisation — Windward / Al Bawaba, 18 May 2026</div></div></li>
+    <li class="dq-item"><span class="dq-num">03</span><div>For Gulf AI infrastructure positions with sovereign co-investors: have the original Pax Silica deal structures been reviewed against the current conflict security environment? Does the co-investment agreement address physical asset loss or operational suspension in an active conflict zone?<div class="dq-trace">Pax Silica commitments; Iran threats to hyperscalers — Digitimes, 23 Mar 2026</div></div></li>
+  </ul>
+
+  <div class="dq-cat">Power and Regulatory</div>
+  <ul class="dq-list">
+    <li class="dq-item"><span class="dq-num">04</span><div>For Virginia data centre assets: has the underwriting model been updated for the Virginia SCC legislation signed 15 May? The $329/MWh capacity market cost trajectory appears to be the variable most likely to move further as the SCC exercises its new discretion.<div class="dq-trace">Virginia Mercury / Inside Climate News, 15-18 May 2026</div></div></li>
+    <li class="dq-item"><span class="dq-num">05</span><div>For US data centre assets in Virginia specifically: does the deal model account for the NextEra-Dominion merger approval proceedings over the next 12-18 months? Virginia rate politics are active and the SCC proceedings during this window may produce cost outcomes that diverge from current assumptions.<div class="dq-trace">NextEra / Dominion announcement — CNBC / SEC Form 425, 18 May 2026</div></div></li>
+  </ul>
+
+  <div class="dq-cat">Technology and Hardware</div>
+  <ul class="dq-list">
+    <li class="dq-item"><span class="dq-num">06</span><div>For AI data centre positions with Chinese customer revenue: does the revenue model assume Chinese customers will continue to procure US-standard GPU compute as the primary training and inference hardware? If so, has the Huawei Ascend domestic mandate been modelled as a base-case scenario rather than a downside?<div class="dq-trace">H200 licences issued but not taken up; Huawei Ascend mandate — AI News, 19 May 2026</div></div></li>
+    <li class="dq-item"><span class="dq-num">07</span><div>For infrastructure positions where Nvidia holds equity in the anchor customer: has the deal team validated what proportion of contracted capacity is supported by demand from entities in which Nvidia holds equity versus independently contracted end-customer demand? Exit buyers appear likely to apply a discount to the former.<div class="dq-trace">Nvidia equity positions — CNBC, 21 May 2026</div></div></li>
+  </ul>
+
+  <div class="dq-cat">Capital and Compliance</div>
+  <ul class="dq-list">
+    <li class="dq-item"><span class="dq-num">08</span><div>For fund structures with Gulf sovereign co-investors in AI-adjacent assets: has a CFIUS posture review been initiated in light of the Pax Silica security environment deterioration? A preventive review appears likely to require less remediation than a reactive one.<div class="dq-trace">Gulf sovereign co-investment; CFIUS elevated risk</div></div></li>
+    <li class="dq-item"><span class="dq-num">09</span><div>Does the ownership chain include any entity within scope of the BIS 50% Rule effective 10 November 2026? Five and a half months remain. Has external export compliance counsel been engaged to map the full structure? The Beijing summit produced no signal of deadline relaxation.<div class="dq-trace">BIS 50% Rule; Beijing summit technology outcomes — CSIS, 21 May 2026</div></div></li>
+  </ul>
+</div>
+
+<!-- §14 STRATEGY ACTIONS -->
+<div class="section" id="strategy">
+  <div class="section-header"><span class="section-num">&sect;14</span><h2>Strategy Actions</h2></div>
+
+  <div class="horizon-label">Immediate &middot; 0 to 90 days</div>
+  <ul class="action-list">
+    <li class="action-item"><div class="action-dot"></div><div><strong>Conduct a physical security review of Gulf data centre and cable landing station assets.</strong> The PGSA permit regime and Iran's explicit naming of US hyperscalers indicate a materially changed threat environment. For PE portfolios with direct Gulf exposure, an independent physical security assessment before the next deal committee appears prudent; the Amazon Dubai DC strike in March suggests the threat is not purely declaratory.</div></li>
+    <li class="action-item"><div class="action-dot"></div><div><strong>Reassess Virginia and adjacent US market power cost models.</strong> The SCC legislation signed 15 May, the NextEra-Dominion regulatory overlay, and the unresolved $1.6 billion annual tax exemption standoff may each affect cost assumptions independently. Models underwritten before May 2026 may not reflect the current Virginia regulatory trajectory.</div></li>
+    <li class="action-item"><div class="action-dot"></div><div><strong>Review AI data centre revenue models that assume Chinese GPU demand for US-standard hardware.</strong> The Beijing framework appears to indicate that Chinese platforms are adopting a domestic hardware mandate regardless of licence availability. This appears to be a structural revenue risk for positions dependent on Chinese enterprise or hyperscaler tenancy, not a policy-monitoring item.</div></li>
+  </ul>
+
+  <div class="horizon-label">Platform &middot; 3 to 12 months</div>
+  <ul class="action-list">
+    <li class="action-item"><div class="action-dot"></div><div><strong>Develop captive power and fixed PPA strategies for data centre holdings across Wisconsin, North Carolina, and Virginia.</strong> Three states have now moved in the same direction on data centre power cost allocation. The NextEra-Dominion transaction suggests that utility-scale regulated power access may become a distinct underwriting differentiator. Assets with dedicated generation appear likely to command a durable multiple premium over grid-dependent peers as this pattern continues to spread.</div></li>
+    <li class="action-item"><div class="action-dot"></div><div><strong>Develop exit narratives that address the Nvidia circular investment discount.</strong> As Nvidia's equity position in the AI infrastructure stack becomes better understood by the financial sponsor community, exit buyers may apply a discount to contracted capacity that cannot be validated as independent end-customer demand. Building the evidence base before the exit process begins, not during it, appears to be the lower-risk approach.</div></li>
+  </ul>
+
+  <div class="horizon-label">Portfolio &middot; 12 to 24 months</div>
+  <ul class="action-list">
+    <li class="action-item"><div class="action-dot"></div><div><strong>Commission BIS 50% Rule compliance mapping before Q3 2026.</strong> 10 November is five and a half months away. The Beijing summit produced no relaxation of the deadline or framework. Operators with indirect PRC-linked counterparties would benefit from external counsel engaged well in advance, given the complexity of ownership-chain mapping required.</div></li>
+  </ul>
+</div>
+
+<!-- §15 WATCH LIST -->
+<div class="section" id="watchlist">
+  <div class="section-header"><span class="section-num">&sect;15</span><h2>Watch List</h2></div>
+  <table class="std-table">
+    <thead>
+      <tr><th style="width:190px">Item</th><th style="width:90px">Window</th><th>Signal to watch</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="td-strong">PGSA cable permit operationalisation</td>
+        <td style="color:var(--accent);font-size:12px;font-weight:600;">Ongoing</td>
+        <td>The vessel permit regime is live; the cable-specific tariff has been declared but not fully codified. Watch for: formal publication of cable permit fees; any cable operator confirming compliance or refusal; further Alcatel or competitor statements on repair suspension. Windward and The National are the primary sources to track.</td>
+      </tr>
+      <tr>
+        <td class="td-strong">Gulf AI infrastructure incident reporting</td>
+        <td style="color:var(--accent);font-size:12px;font-weight:600;">Ongoing</td>
+        <td>The Amazon Dubai DC strike in March was not widely reported at the time. Monitor for further confirmed strikes or disruptions to Stargate UAE, Saudi Humain, or other Pax Silica infrastructure. Iran International and Rest of World are the most reliable first-report sources for Gulf digital infrastructure incidents.</td>
+      </tr>
+      <tr>
+        <td class="td-strong">NextEra / Dominion regulatory proceedings</td>
+        <td style="color:var(--accent);font-size:12px;font-weight:600;">12-18 months</td>
+        <td>Multi-state commission approvals required: Virginia SCC, North Carolina, South Carolina, Florida PSC, and FERC. Virginia rate politics are already active. Any SCC statement on data centre cost allocation during the merger review window would be a direct signal for the broader US power cost story.</td>
+      </tr>
+      <tr>
+        <td class="td-strong">Huawei Ascend adoption trajectory</td>
+        <td style="color:var(--accent);font-size:12px;font-weight:600;">Q2-Q3 2026</td>
+        <td>Watch for public confirmation of Ascend deployment commitments from Alibaba, Tencent or ByteDance; any revision to H200 licence terms or volume caps; Nvidia FY2027 China revenue guidance. The distinction between "licences exist" and "chips are deployed" is the key tracking variable.</td>
+      </tr>
+      <tr>
+        <td class="td-strong">BIS 50% Rule enforcement</td>
+        <td style="color:var(--accent);font-size:12px;font-weight:600;">10 Nov 2026</td>
+        <td>Five and a half months to compliance readiness. The Beijing summit produced no signal of deadline extension. Watch for BIS guidance on the expanded restricted party definition. Any digital infrastructure operator with PRC-adjacent counterparties should have external counsel engaged before Q3 2026.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- §16 SOURCES -->
+<div class="section" id="sources">
+  <div class="section-header"><span class="section-num">&sect;16</span><h2>Sources</h2></div>
+  <div class="sources-grid">
+
+    <div class="source-tile">
+      <div class="source-tile-cat">Financial Press</div>
+      <ul class="source-link-list">
+        <li class="source-link-item" id="src-6"><span class="src-num">6</span><a href="https://247wallst.com/investing/2026/05/21/ai-data-centers-are-about-to-break-the-grid-one-company-just-spent-67-billion-to-fix-it/" target="_blank">24/7 Wall St — NextEra / Dominion $67bn</a><span class="source-link-date">&middot; 21 May 2026</span><a href="#cite-6a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item" id="src-4"><span class="src-num">4</span><a href="https://www.cnbc.com/2026/05/14/us-clears-h200-chip-sales-to-10-china-firms-as-nvidia-ceo-looks-for-breakthrough.html" target="_blank">CNBC / Reuters — US clears H200 sales to 10 Chinese firms</a><span class="source-link-date">&middot; 14 May 2026</span><a href="#cite-4a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item" id="src-12"><span class="src-num">12</span><a href="https://www.tomshardware.com/tech-industry/trump-says-china-is-blocking-h200-purchases" target="_blank">Tom's Hardware / Bloomberg — Trump Air Force One quote on H200</a><span class="source-link-date">&middot; 15 May 2026</span><a href="#cite-12a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item" id="src-13"><span class="src-num">13</span><a href="https://www.blackstone.com/news/press/blackstone-digital-infrastructure-trust-announces-pricing-of-up-to-2-billion-initial-public-offering/" target="_blank">Blackstone — BXDC IPO pricing announcement</a><span class="source-link-date">&middot; 13 May 2026</span><a href="#cite-13a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item" id="src-14"><span class="src-num">14</span><a href="https://www.fierce-network.com/broadband/2026-ma-tracker" target="_blank">Fierce Network — BlackRock / MGX / Allied Data Centers</a><span class="source-link-date">&middot; 2026</span><a href="#cite-14a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+      </ul>
+    </div>
+
+    <div class="source-tile">
+      <div class="source-tile-cat">Industry &amp; Market Data</div>
+      <ul class="source-link-list">
+        <li class="source-link-item" id="src-7"><span class="src-num">7</span><a href="https://virginiamercury.com/2026/05/18/virginia-governor-signs-dominion-backed-bills-all-eyes-on-regulators-now/" target="_blank">Virginia Mercury — Spanberger signs legislation</a><span class="source-link-date">&middot; 18 May 2026</span><a href="#cite-7a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item"><span class="src-num">7b</span><a href="https://insideclimatenews.org/news/15052026/virginia-governor-signs-dominion-bills/" target="_blank">Inside Climate News — Virginia data centre energy bills</a><span class="source-link-date">&middot; 15 May 2026</span></li>
+      </ul>
+    </div>
+
+    <div class="source-tile">
+      <div class="source-tile-cat">Regulatory &amp; Official</div>
+      <ul class="source-link-list">
+        <li class="source-link-item" id="src-10"><span class="src-num">10</span><a href="https://www.whitehouse.gov/fact-sheets/2026/05/fact-sheet-president-donald-j-trump-secures-historic-deals-with-china-delivering-for-american-workers-farmers-and-industry/" target="_blank">White House — Beijing summit fact sheet</a><span class="source-link-date">&middot; 17 May 2026</span><a href="#cite-10a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item"><span class="src-num">6b</span><a href="https://www.sec.gov/Archives/edgar/data/0000715957/000119312526231034/d13338d425.htm" target="_blank">SEC Form 425 — NextEra / Dominion CNBC transcript</a><span class="source-link-date">&middot; 18 May 2026</span></li>
+      </ul>
+    </div>
+
+    <div class="source-tile">
+      <div class="source-tile-cat">Geopolitics &amp; OSINT</div>
+      <ul class="source-link-list">
+        <li class="source-link-item" id="src-1"><span class="src-num">1</span><a href="https://www.cnn.com/politics/live-news/trump-china-visit-xi-meeting-hnk" target="_blank">CNN Politics — Trump-Xi Beijing summit; ceasefire "one percent"</a><span class="source-link-date">&middot; 14-15 May 2026</span><a href="#cite-1a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item" id="src-2"><span class="src-num">2</span><a href="https://windward.ai/blog/irans-hormuz-transit-toll-mechanism-and-what-it-means/" target="_blank">Windward — PGSA transit toll mechanism</a><span class="source-link-date">&middot; 18 May 2026</span><a href="#cite-2a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item" id="src-8"><span class="src-num">8</span><a href="https://www.euronews.com/2026/05/15/iran-eyes-fees-on-hormuz-internet-cables-as-new-lever-against-the-west" target="_blank">Euronews — Iran Hormuz cable fees; ICPC bandwidth figure</a><span class="source-link-date">&middot; 15 May 2026</span><a href="#cite-8a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item" id="src-9"><span class="src-num">9</span><a href="https://www.thenationalnews.com/future/technology/2026/05/18/strait-of-hormuz-news-internet-cables/" target="_blank">The National — Alcatel repair suspension</a><span class="source-link-date">&middot; 18 May 2026</span><a href="#cite-9a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item" id="src-3"><span class="src-num">3</span><a href="https://www.digitimes.com/news/a20260323PD213/data-center-donald-trump-investment-saudi-arabia-uae.html" target="_blank">Digitimes — Pax Silica under threat; Amazon Dubai DC strike</a><span class="source-link-date">&middot; 23 Mar 2026</span><a href="#cite-3a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item" id="src-5"><span class="src-num">5</span><a href="https://www.csis.org/analysis/what-trump-xi-summit-revealed-and-left-unsaid-about-us-china-tech-competition" target="_blank">CSIS — What the Beijing summit revealed on tech competition</a><span class="source-link-date">&middot; 21 May 2026</span><a href="#cite-5a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+      </ul>
+    </div>
+
+    <div class="source-tile">
+      <div class="source-tile-cat">PE &amp; Deal Intelligence</div>
+      <ul class="source-link-list">
+        <li class="source-link-item" style="color:var(--ink-light);font-style:italic;">No direct citations this issue</li>
+      </ul>
+    </div>
+
+    <div class="source-tile">
+      <div class="source-tile-cat">Market Data &amp; Signals</div>
+      <ul class="source-link-list">
+        <li class="source-link-item" style="color:var(--ink-light);font-style:italic;">No direct citations this issue</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<!-- §17 DISCLAIMER — never changes -->
+<div class="disclaimer">
+  <h3>About Commentarii</h3>
+  <p><em>Commentarii</em> is a weekly intelligence publication from C&#x0298;NSVLT&#x0298;R, providing senior-level geopolitical and market analysis for private equity investors active in TMT and digital infrastructure. Each issue draws on open-source intelligence from financial press, industry data providers, and geopolitical monitoring platforms, synthesised through an operating partner lens.</p>
+  <p>The analysis is intended for professional investors. It does not constitute investment advice. Views are those of the author and subject to change. <a href="https://www.consvltor.net" target="_blank">consvltor.net</a></p>
+  <p>Enquiries: <a href="mailto:hello@consvltor.net">hello@consvltor.net</a></p>
+</div>
+
+</body>
+</html>
