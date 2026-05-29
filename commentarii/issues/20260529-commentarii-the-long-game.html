@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Commentarii 011 · The Long Game · 29 May 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --bg:#F5F0E6;--ink:#1C1814;--ink-mid:#4A4540;--ink-light:#8A837A;
+  --rule:#D0C8BC;--card-bg:#EDE8DE;--accent:#7A3020;
+  --amber:#7A5A1A;--green:#2A5036;--blue:#1A3C5A;
+}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;font-size:15px;line-height:1.75;-webkit-font-smoothing:antialiased;}
+
+.preamble-image{width:100%;line-height:0;overflow:hidden;}
+.preamble-image img{width:100%;height:320px;object-fit:cover;object-position:center;display:block;}
+
+.preamble-intro{max-width:860px;margin:0 auto;padding:32px 48px;display:grid;grid-template-columns:1fr 1fr;gap:40px;border-bottom:1px solid var(--rule);}
+.preamble-intro .col-left{font-family:'Times New Roman',Times,serif;font-style:italic;font-size:15px;color:var(--ink-mid);line-height:1.7;}
+.preamble-intro .col-left .pub-title{font-size:17px;font-weight:normal;display:block;margin-bottom:8px;color:var(--ink);}
+.preamble-intro .col-right{font-family:Arial,Helvetica,sans-serif;font-size:13px;color:var(--ink-mid);line-height:1.75;}
+
+.report-header{max-width:860px;margin:0 auto;padding:64px 48px 44px;}
+.header-meta{font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-light);margin-bottom:22px;display:flex;gap:28px;flex-wrap:wrap;}
+.rule-thick{border:none;border-top:2px solid var(--ink);margin-bottom:26px;}
+.report-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:46px;font-weight:500;line-height:1.08;color:var(--ink);margin-bottom:16px;max-width:640px;}
+.report-deck{font-size:15px;color:var(--ink-mid);line-height:1.7;max-width:580px;border-left:3px solid var(--accent);padding-left:18px;margin-bottom:36px;}
+
+.cover-grid{max-width:680px;margin:0 auto;border:1px solid var(--rule);}
+.cg-row{display:grid;gap:1px;background:var(--rule);}
+.cg-row-top{grid-template-columns:repeat(4,1fr);}
+.cg-row-bot{grid-template-columns:repeat(4,1fr);border-top:1px solid var(--rule);}
+.cg-card{background:var(--bg);padding:16px 14px;display:flex;flex-direction:column;justify-content:space-between;min-height:160px;text-decoration:none;color:inherit;transition:background 0.15s;border-bottom:1px solid var(--rule);}
+.cg-card:hover{background:var(--card-bg);}
+.cg-card-fixed{background:var(--card-bg);padding:16px 14px;min-height:160px;display:flex;flex-direction:column;justify-content:space-between;text-decoration:none;color:inherit;transition:background 0.15s;border-bottom:1px solid var(--rule);}
+.cg-card-fixed:hover{background:#E4DDD3;}
+.cg-cat{font-size:8px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-light);margin-bottom:6px;}
+.cg-theme{font-size:11px;color:var(--ink);line-height:1.4;margin-bottom:8px;flex:1;}
+.cg-stance{display:inline-block;font-size:8px;letter-spacing:0.08em;text-transform:uppercase;font-weight:600;padding:2px 6px;border-radius:2px;align-self:flex-start;}
+.stance-cau{background:#F0DDD8;color:#7A3020;}
+.stance-ele{background:#E8D0CC;color:#6A2018;}
+.stance-opp{background:#D8EAE0;color:#2A5036;}
+.cg-label{font-size:8px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-light);margin-bottom:5px;}
+.cg-big{font-family:'Cormorant Garamond',Georgia,serif;font-size:24px;font-weight:600;color:var(--ink);line-height:1;margin-bottom:5px;}
+.cg-sub{font-size:10px;color:var(--ink-mid);line-height:1.55;}
+.cg-stances-grid{display:grid;grid-template-columns:1fr 1fr;gap:3px 6px;margin-top:6px;}
+.cg-st{font-size:8.5px;font-weight:600;line-height:1.4;font-variant-emoji:text;}
+.cst-ow{color:#2A5036;}.cst-sel{color:#7A5A1A;}.cst-neu{color:#8A837A;}.cst-wtch{color:#1A3C5A;}
+.cg-subgrid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:1px;background:var(--rule);min-height:110px;border-bottom:1px solid var(--rule);}
+.cg-sub-card{background:var(--card-bg);padding:10px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;text-decoration:none;color:inherit;transition:background 0.15s;}
+.cg-sub-card:hover{background:#E4DDD3;}
+.cg-sub-name{font-size:8px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-mid);line-height:1.5;margin-top:4px;}
+.cg-sub-count{font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;font-weight:600;color:var(--ink);line-height:1;}
+
+.section{max-width:860px;margin:0 auto;padding:46px 48px;border-bottom:1px solid var(--rule);}
+.section-header{display:flex;align-items:baseline;gap:16px;margin-bottom:20px;}
+.section-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:13px;letter-spacing:0.06em;color:var(--ink-light);min-width:22px;}
+.section h2{font-family:'Cormorant Garamond',Georgia,serif;font-size:26px;font-weight:500;color:var(--ink);line-height:1.2;}
+.section-tag{margin-left:auto;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-light);border:1px solid var(--rule);padding:3px 9px;border-radius:2px;white-space:nowrap;}
+p{margin-bottom:1em;}p:last-child{margin-bottom:0;}strong{font-weight:600;}
+
+.data-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);margin:22px 0;}
+.data-card{background:var(--bg);padding:13px;}
+.dc-label{font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-light);margin-bottom:4px;}
+.dc-value{font-family:'Cormorant Garamond',Georgia,serif;font-size:25px;font-weight:600;color:var(--ink);line-height:1;margin-bottom:4px;}
+.dc-note{font-size:12px;color:var(--ink-mid);line-height:1.5;}
+
+.pull-quote{font-family:'Cormorant Garamond',Georgia,serif;font-size:18px;font-style:italic;font-weight:500;color:var(--ink-mid);border-left:3px solid var(--accent);padding:9px 17px;margin:22px 0;line-height:1.45;}
+
+.std-table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13px;}
+.std-table th{font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-light);border-bottom:1.5px solid var(--ink);padding:6px 10px 8px;text-align:left;}
+.std-table td{border-bottom:1px solid var(--rule);padding:10px;vertical-align:top;line-height:1.55;color:var(--ink-mid);}
+.std-table tr:last-child td{border-bottom:none;}
+.td-strong{font-weight:600;color:var(--ink);}
+.td-accent{font-family:'Cormorant Garamond',Georgia,serif;font-size:16px;font-weight:600;color:var(--accent);white-space:nowrap;}
+.td-light{color:var(--ink-light);font-size:12px;white-space:nowrap;}
+
+.badge{display:inline-block;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;padding:2px 7px;border-radius:2px;}
+.b-high{background:#F0DDD8;color:#7A3020;}.b-elev{background:#F5E8D8;color:#7A4A10;}
+.b-med{background:#F0E8D0;color:#7A5A1A;}.b-new{background:#E8D0CC;color:#6A2018;}
+.b-ow{background:#D8EAE0;color:#2A5036;}.b-sel{background:#F0E8D0;color:#7A5A1A;}
+.b-neu{background:#EAE4DA;color:#6A5A4A;}.b-wtch{background:#DAE4EE;color:#1A3C5A;}
+
+.hm-bar-wrap{background:#E8E2D6;border-radius:2px;height:7px;width:100%;overflow:hidden;margin-top:4px;}
+.hm-bar{height:7px;border-radius:2px;}
+.hm-score{font-family:'Cormorant Garamond',Georgia,serif;font-size:16px;font-weight:600;color:var(--ink);}
+.delta-up{color:var(--accent);font-size:10px;font-weight:600;}.delta-flat{color:var(--ink-light);font-size:10px;}.delta-dn{color:#2A5036;font-size:10px;font-weight:600;}
+
+.dq-cat{font-size:10px;letter-spacing:0.14em;text-transform:uppercase;font-weight:600;color:var(--ink-light);border-bottom:1px solid var(--rule);padding-bottom:5px;margin:22px 0 9px;}
+.dq-list{list-style:none;}
+.dq-item{padding:8px 0;border-bottom:1px solid var(--rule);font-size:14px;color:var(--ink-mid);line-height:1.6;display:flex;gap:12px;}
+.dq-item:last-child{border-bottom:none;}
+.dq-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:15px;font-weight:600;color:var(--ink-light);min-width:20px;padding-top:1px;}
+.dq-trace{font-size:11px;color:var(--ink-light);font-style:italic;margin-top:2px;}
+.horizon-label{font-size:10px;letter-spacing:0.16em;text-transform:uppercase;font-weight:600;color:var(--ink-light);border-bottom:1px solid var(--rule);padding-bottom:5px;margin:22px 0 10px;}
+.action-list{list-style:none;}
+.action-item{padding:8px 0;border-bottom:1px solid var(--rule);font-size:14px;color:var(--ink-mid);line-height:1.6;display:flex;gap:12px;}
+.action-item:last-child{border-bottom:none;}
+.action-dot{width:5px;height:5px;min-width:5px;border-radius:50%;background:var(--accent);margin-top:9px;}
+
+.sources-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);margin:14px 0;}
+.source-tile{background:var(--bg);padding:12px;}
+.source-tile-cat{font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-light);font-weight:600;border-bottom:1px solid var(--rule);padding-bottom:5px;margin-bottom:8px;}
+.source-link-list{list-style:none;}
+.source-link-item{padding:4px 0;border-bottom:1px solid var(--rule);font-size:12px;}
+.source-link-item:last-child{border-bottom:none;}
+.source-link-item a{color:var(--accent);text-decoration:none;font-weight:500;}
+.source-link-item a:hover{text-decoration:underline;}
+.source-link-date{font-size:10px;color:var(--ink-light);font-style:italic;margin-left:4px;}
+.fn-ref{color:var(--accent);text-decoration:none;font-size:10px;vertical-align:super;line-height:0;font-weight:600;font-variant-emoji:text;}
+.fn-ref:hover{text-decoration:underline;}
+.fn-back{color:var(--ink-light);text-decoration:none;font-size:10px;margin-left:5px;font-variant-emoji:text;}
+.fn-back:hover{color:var(--accent);}
+.src-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:13px;font-weight:600;color:var(--ink-light);margin-right:5px;}
+
+.since-block{border-left:3px solid var(--rule);padding:10px 16px;margin:20px 0;font-size:13px;color:var(--ink-mid);line-height:1.65;}
+.since-label{font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-light);font-weight:600;margin-bottom:6px;}
+
+.disclaimer{max-width:860px;margin:0 auto;padding:36px 48px 52px;border-top:1px solid var(--rule);}
+.disclaimer h3{font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;font-weight:500;color:var(--ink);margin-bottom:16px;}
+.disclaimer p{font-size:14px;color:var(--ink-mid);line-height:1.7;margin-bottom:1em;}
+.disclaimer p:last-child{margin-bottom:0;}
+.disclaimer a{color:var(--accent);text-decoration:none;}
+.disclaimer a:hover{text-decoration:underline;}
+
+@media(max-width:760px){
+  .preamble-intro{grid-template-columns:1fr;padding:24px 20px;}
+  .report-header,.section,.disclaimer{padding-left:20px;padding-right:20px;}
+  .report-title{font-size:32px;}
+  .cg-row-top,.cg-row-bot{grid-template-columns:1fr 1fr;}
+  .data-cards,.sources-grid{grid-template-columns:1fr;}
+  .std-table th:nth-child(3),.std-table td:nth-child(3){display:none;}
+  .std-table{font-size:12px;}
+  .std-table td,.std-table th{padding:8px 6px;}
+  .td-accent{font-size:14px;}
+}
+</style>
+</head>
+<body>
+
+<div class="preamble-image">
+  <img src="https://consvltor.net/assets/consvltor_cover.jpg" alt="Commentarii">
+</div>
+
+<div class="preamble-intro">
+  <div class="col-left">
+    <span class="pub-title">Commentarii</span>
+    Field notes from infrastructure, markets, and the geopolitics of connectivity. Written after dark.
+  </div>
+  <div class="col-right">
+    Each entry is anchored to a place and a period. Some are retrospective: written now, from the distance of outcome. Others are current, drafted close to the events they describe. The standard of evidence is the same throughout: what the data and the experience actually support, no more.
+  </div>
+</div>
+
+<!-- §2 HEADER -->
+<div class="report-header">
+  <div class="header-meta">
+    <span>Commentarii</span><span>Issue 011</span><span>29 May 2026</span>
+    <span>TMT &amp; Digital Infrastructure</span>
+  </div>
+  <hr class="rule-thick">
+  <h1 class="report-title">The Long Game</h1>
+  <p class="report-deck">This week's four stories share a structural property: none of them resolves on a quarterly horizon. Huawei's Tau Scaling Law is a claim about 2031. Iran's cable sovereignty doctrine is being built into a legal framework, not just deployed as rhetoric. The DOE nuclear pilot programme has 36 days to its first criticality deadline. And I Squared's $1 billion data centre platform commitment is a multi-year build. The immediate investor question is not which of these stories will matter this week. It is whether the underwriting models that govern current positions are built for this kind of duration.</p>
+</div>
+
+<!-- §3 SIGNAL CARDS -->
+<div class="cover-grid">
+  <div class="cg-row cg-row-top">
+    <a class="cg-card" href="#topic1"><div><div class="cg-cat">Technology Cold War</div><div class="cg-theme">Huawei Tau Scaling Law: architectural bypass of ASML chokepoint targets 1.4nm-equivalent transistor density by 2031; Nvidia "likely most concerned"</div></div><span class="cg-stance stance-cau">Caution</span></a>
+    <a class="cg-card" href="#topic2"><div><div class="cg-cat">Gulf Cable Sovereignty</div><div class="cg-theme">Iran's cable toll demand has hardened into a declared sovereignty doctrine; legal/sovereign risk layer now sits alongside kinetic risk for Gulf corridor assets</div></div><span class="cg-stance stance-ele">Elevated Risk</span></a>
+    <a class="cg-card" href="#topic3"><div><div class="cg-cat">Nuclear Power Milestone</div><div class="cg-theme">DOE reactor pilot: three designs hold Final Documented Safety Analysis; July 4 criticality deadline 36 days out; AI data centers designated critical defense facilities</div></div><span class="cg-stance stance-opp">Opportunity</span></a>
+    <a class="cg-card" href="#topic4"><div><div class="cg-cat">Gulf Sovereign AI</div><div class="cg-theme">AWS UAE / Bahrain drone strikes; Oracle Dubai hit; Pure Data Center Group paused Gulf investment; G42 and Humain pressing ahead: sovereign platforms proceeding, commercial operators pausing</div></div><span class="cg-stance stance-ele">Elevated Risk</span></a>
+  </div>
+  <div class="cg-row cg-row-bot">
+    <a class="cg-card-fixed" href="#dealflow"><div class="cg-label">Deal Flow</div><div class="cg-big">1 Transaction</div><div class="cg-sub">I Squared Capital &middot; Cogent Fiber &middot; 10 US data centers &middot; $225M / $1B platform commitment</div></a>
+    <a class="cg-card-fixed" href="#riskmatrix"><div class="cg-label">PE Risk Matrix</div><div class="cg-big">6 Active Vectors</div><div class="cg-sub">Huawei Tau Law &middot; Gulf cable sovereignty &middot; Gulf AI under stress &middot; Iran energy shock &middot; CFIUS &middot; BIS 50% Rule</div></a>
+    <a class="cg-card-fixed" href="#stances"><div class="cg-label">Asset Class Stances</div><div class="cg-stances-grid"><span class="cg-st cst-sel">&#x25B6;&#xFE0E; Data Centres: Selective</span><span class="cg-st cst-wtch">&#x21C5;&#xFE0E; Subsea Cable: Active Watch</span><span class="cg-st cst-sel">&#x25B6;&#xFE0E; Fibre / Backbone: Selective</span><span class="cg-st cst-neu">&#x25BA;&#xFE0E; Towers / RAN: Neutral</span><span class="cg-st cst-wtch">&#x25BC;&#xFE0E; Satellite / LEO: Watch</span><span class="cg-st cst-ow">&#x25B2;&#xFE0E; Power for Digital: Overweight</span></div></a>
+    <div class="cg-subgrid"><a class="cg-sub-card" href="#underwriting"><div class="cg-sub-count">8</div><div class="cg-sub-name">Underwriting Variables</div></a><a class="cg-sub-card" href="#diligence"><div class="cg-sub-count">10</div><div class="cg-sub-name">Diligence Questions</div></a><a class="cg-sub-card" href="#strategy"><div class="cg-sub-count">6</div><div class="cg-sub-name">Strategy Actions</div></a><a class="cg-sub-card" href="#watchlist"><div class="cg-sub-count">5</div><div class="cg-sub-name">Watch List Items</div></a></div>
+  </div>
+</div>
+<div style="max-width:680px;margin:0 auto;padding:6px 2px 0;display:flex;gap:12px;flex-wrap:wrap;">
+  <span style="font-size:8px;color:#2A5036;font-weight:600;font-variant-emoji:text;">&#x25B2;&#xFE0E; Overweight</span>
+  <span style="font-size:8px;color:#7A5A1A;font-weight:600;font-variant-emoji:text;">&#x25B6;&#xFE0E; Selective</span>
+  <span style="font-size:8px;color:#8A837A;font-weight:600;font-variant-emoji:text;">&#x25BA;&#xFE0E; Neutral</span>
+  <span style="font-size:8px;color:#1A3C5A;font-weight:600;font-variant-emoji:text;">&#x25BC;&#xFE0E; Watch</span>
+  <span style="font-size:8px;color:#1A3C5A;font-weight:600;font-variant-emoji:text;">&#x21C5;&#xFE0E; Active Watch</span>
+</div>
+
+<!-- §4 MACRO -->
+<div class="section" id="macro">
+  <div class="section-header"><span class="section-num">&sect;4</span><h2>Macro and Geopolitical Landscape</h2></div>
+  <div class="pull-quote">The Trump-Xi summit produced no AI framework. The week after produced Huawei's most consequential chip announcement in years. The two facts are connected.</div>
+  <p>The CSIS post-summit assessment published on 20 May reached a pointed conclusion: the Beijing talks "revealed how little progress has been made on the most consequential dimensions of US-China competition: AI, cyber operations, export controls, and digital sovereignty."<a href="#src-1" id="cite-1a" class="fn-ref"><sup>1</sup></a> The trade headlines dominated; the structural contest did not resolve. Huawei's Tau Scaling Law announcement, published five days after Trump departed Beijing, was not a coincidence of timing. Beijing has framed semiconductor self-sufficiency as a national strategic objective, and the Tau announcement lands as a signal that the architectural path to that objective is now publicly declared.</p>
+  <p>The Iran ceasefire remains formally in place. Tehran's posture since the April 8 agreement has been one of sustained pressure through non-kinetic means: the cable sovereignty doctrine, continued Hormuz signalling, and what CNN described as an escalating effort to demonstrate that Iran possesses powerful levers beyond military force.<a href="#src-2" id="cite-2a" class="fn-ref"><sup>2</sup></a> Energy pricing reflects this: Brent crude remains elevated from pre-conflict levels, and European gas prices have not normalised. Digital infrastructure underwriting models priced before February 28 still carry energy assumptions that do not reflect the current environment.</p>
+  <div class="data-cards">
+    <div class="data-card"><div class="dc-label">Huawei Tau Law target year</div><div class="dc-value">2031</div><div class="dc-note">Target transistor density equivalent to 1.4nm process, bypassing ASML EUV dependency. <a href="#src-3" class="fn-ref"><sup>3</sup></a></div></div>
+    <div class="data-card"><div class="dc-label">DOE nuclear pilot: days to deadline</div><div class="dc-value">36</div><div class="dc-note">July 4, 2026 target criticality date for at least three advanced test reactor designs. <a href="#src-4" class="fn-ref"><sup>4</sup></a></div></div>
+    <div class="data-card"><div class="dc-label">I Squared / Cogent platform commitment</div><div class="dc-value">$1bn</div><div class="dc-note">Committed to build AI inference and edge colocation platform from 10 seed assets. <a href="#src-5" class="fn-ref"><sup>5</sup></a></div></div>
+  </div>
+</div>
+
+<!-- §5 TECHNOLOGY COLD WAR -->
+<div class="section" id="topic1">
+  <div class="section-header"><span class="section-num">&sect;5</span><h2>Technology Cold War</h2></div>
+  <div class="pull-quote">The premise that US export controls provide a durable, structural AI advantage over China rests on a chip manufacturing bottleneck. Huawei has now published a direct architectural challenge to that bottleneck.</div>
+  <p>On 26 May, Huawei unveiled the Tau (&#964;) Scaling Law, a proposed architectural framework for achieving transistor density equivalent to a 1.4-nanometre chip process by 2031, without access to ASML's extreme ultraviolet lithography equipment.<a href="#src-3" id="cite-3a" class="fn-ref"><sup>3</sup></a> The South China Morning Post reported the announcement as "another DeepSeek moment" among analysts, noting that Nvidia is "likely the most concerned" of the major chip vendors.<a href="#src-6" id="cite-6a" class="fn-ref"><sup>6</sup></a> If the Tau Law produces results at commercial scale, it would represent a partial bypass of the ASML chokepoint that has underpinned the export control rationale since 2022.</p>
+  <p>The immediate caveat is distance between claim and delivery. Natixis analysts noted the law "still needs to be tested in practice."<a href="#src-6" id="cite-6b" class="fn-ref"><sup>6</sup></a> China's current best domestically available AI processor, the Huawei Ascend 950, trails Nvidia's Blackwell-class hardware by a substantial margin on compute performance, though the magnitude varies considerably by benchmark methodology: single-chip comparisons, cluster-level efficiency metrics, and pre-commercial-release estimates produce meaningfully different figures across analyst sources. The directional gap is not in dispute; its size is. The 1.4nm-equivalent target is five years out on Huawei's own stated timeline, and advanced chip production at scale involves manufacturing discipline well beyond architectural law. The announcement is a signal, not a delivery.</p>
+  <p>The investor implication worth flagging is about hold periods rather than current positions. AI data center assets valued on a 5-7 year horizon implicitly carry an assumption about the durability of US chip leadership. The Tau announcement does not change the near-term picture; it does change what a responsible scenario analysis looks like for positions with that duration.</p>
+</div>
+
+<!-- §6 GULF CABLE SOVEREIGNTY -->
+<div class="section" id="topic2">
+  <div class="section-header"><span class="section-num">&sect;6</span><h2>Gulf Cable Sovereignty</h2></div>
+  <div class="since-block">
+    <div class="since-label">Since last issue</div>
+    Iran's cable threat has shifted in character. Issue 010 documented the formal toll declaration of 9 May as an extortion-style demand. The framing this week has moved toward legal doctrine: Iranian Armed Forces Spokesman Zolfaghari's statement is now being articulated as a sovereign rights assertion over cables traversing Iranian-adjacent waters, not merely a financial demand. No cable has been physically severed.
+  </div>
+  <div class="pull-quote">A kinetic threat and a sovereignty doctrine require different risk frameworks. Gulf cable assets need both.</div>
+  <p>The Iranian Armed Forces operational command's stated intent to charge transit fees for undersea cables passing through the Strait of Hormuz is being developed into a legal-strategic posture distinct from the kinetic threat. CNN reported on 17 May that Iran is "increasingly signalling that it has powerful tools at its disposal beyond military force" and that the cable framing is part of a deliberate effort to demonstrate non-kinetic leverage, particularly as fears of conflict resumption have grown since Trump's return from Beijing.<a href="#src-2" id="cite-2b" class="fn-ref"><sup>2</sup></a></p>
+  <p>The practical implications are layered. Seventeen subsea systems pass through or near the Strait of Hormuz. The FALCON, Gulf Bridge International, and SEA-ME-WE 5 systems carry the bulk of India-to-Europe and intra-Gulf traffic. An Iranian sovereignty claim would, if pursued legally, create contested jurisdiction over cable operations, maintenance access, and repair windows, entirely independently of any physical threat to the cable itself. Alcatel Submarine Networks' force majeure on 2Africa Pearls remains in effect.<a href="#src-7" class="fn-ref"><sup>7</sup></a></p>
+  <p>The risk assessment for Gulf cable corridor assets now needs two parallel tracks: the established kinetic disruption scenario, and a legal/sovereignty scenario in which Iranian regulatory demands become a cost and compliance variable for cable operators. The two scenarios are independent; either can materialise without the other.</p>
+  <div class="data-cards">
+    <div class="data-card"><div class="dc-label">Cables at or near Hormuz</div><div class="dc-value">17</div><div class="dc-note">Subsea systems subject to potential Iranian transit fee claim. FALCON, Gulf Bridge International, SEA-ME-WE 5 among the most traffic-critical. <a href="#src-8" class="fn-ref"><sup>8</sup></a></div></div>
+    <div class="data-card"><div class="dc-label">2Africa Pearls status</div><div class="dc-value">Halted</div><div class="dc-note">ASN force majeure remains in effect. No cable cut confirmed as of 29 May 2026. <a href="#src-7" class="fn-ref"><sup>7</sup></a></div></div>
+    <div class="data-card"><div class="dc-label">Iran ceasefire status</div><div class="dc-value">Holding</div><div class="dc-note">April 8 ceasefire formally in place. No US-Iran settlement reached. Tehran pursuing non-kinetic pressure. <a href="#src-2" class="fn-ref"><sup>2</sup></a></div></div>
+  </div>
+</div>
+
+<!-- §7 NUCLEAR POWER MILESTONE -->
+<div class="section" id="topic3">
+  <div class="section-header"><span class="section-num">&sect;7</span><h2>Nuclear Power Milestone</h2></div>
+  <div class="pull-quote">The DOE's July 4 reactor criticality deadline is 36 days away. Three designs have their safety analysis approved. This is not a planning horizon anymore.</div>
+  <p>The US Department of Energy published its one-year review of the Trump nuclear executive orders on 23 May, confirming that three of the eleven projects selected for the Reactor Pilot Programme have secured a Final Documented Safety Analysis as of May 2026.<a href="#src-4" id="cite-4a" class="fn-ref"><sup>4</sup></a> The programme, established under EO 14301, directs DOE to authorise at least three advanced nuclear test reactors to achieve criticality by July 4, 2026, using DOE authority under the Atomic Energy Act rather than Nuclear Regulatory Commission licensing. DOE Secretary Wright has acknowledged that "one or two" designs are most likely to meet the July 4 date.</p>
+  <p>Aalo Atomics and Antares Nuclear are the most advanced publicly documented participants. Aalo Atomics is constructing its Aalo-X reactor at Idaho National Laboratory with a target of zero-power criticality by July 4, and has described plans to site an experimental data center adjacent to the reactor as a first-of-kind demonstration of DOE-authorized nuclear power for AI infrastructure.<a href="#src-9" id="cite-9a" class="fn-ref"><sup>9</sup></a></p>
+  <p>Two features of the programme are material for PE investors in digital infrastructure. First, the EO explicitly designates AI data centers as critical defense facilities, directing DOE to use all available legal authority to site, approve, and authorize advanced reactors to power them. Second, the DOE authorization pathway bypasses NRC licensing, compressing timelines in ways that change the commercial calculus for captive nuclear power as an investment thesis. The gap between a test reactor achieving criticality in July and a commercially operational captive power asset for a specific data center campus remains large. The point is that the institutional and regulatory architecture for closing that gap is now being built in real time.</p>
+</div>
+
+<!-- §8 GULF SOVEREIGN AI UNDER STRESS -->
+<div class="section" id="topic4">
+  <div class="section-header"><span class="section-num">&sect;8</span><h2>Gulf Sovereign AI Under Stress</h2></div>
+  <div class="pull-quote">Sovereign platforms are pressing ahead. Commercial operators are pausing. That bifurcation is the investor-relevant signal, not the conflict itself.</div>
+  <p>CNBC's 24 May analysis of the Gulf AI buildout under war conditions confirmed what several signals had been pointing toward for months: the Iran conflict has produced a visible split between sovereign-backed platforms and commercially operated data center investors in the region.<a href="#src-15" id="cite-15a" class="fn-ref"><sup>15</sup></a> Before the war began in February, the UAE, Saudi Arabia, and Qatar had positioned themselves at the centre of the US AI expansion, leveraging cheap energy, sovereign capital, and strategic geography to attract hyperscaler commitments running into the hundreds of billions of dollars.</p>
+  <p>The conflict changed the proposition. Two AWS data centers in the UAE were struck by drones early in the war; a third in Bahrain was damaged by a nearby blast. Iran's IRGC struck Oracle's Dubai facility on 3 April, claiming the sites were supporting "the enemy's military and intelligence activities." The framing matters: commercial cloud hubs are being described in Iranian state media as legitimate wartime targets.<a href="#src-15" class="fn-ref"><sup>15</sup></a> Pure Data Center Group CEO Gary Wojtaszek told CNBC the company had temporarily paused investment decisions in the Middle East. BCLP partner Mark Richards described decisions as "taking longer because of the nature of the risks."</p>
+  <p>The sovereign platforms are not pausing. G42 told CNBC its "direction remains unchanged" and its "conviction has only deepened." Amazon's CEO described the company's long-term excitement about Gulf investment as "just as strong as it's ever been." MEI's analysis published 24 May notes that Gulf missile and drone defence systems intercepted approximately 94-95% of Iranian strikes through early May, and concludes that physical defence of AI data centers is "eminently feasible at present," though the analysis notes the existing defensive architecture was not designed with gigawatt-scale AI clusters as a primary protected asset class.<a href="#src-16" id="cite-16a" class="fn-ref"><sup>16</sup></a></p>
+  <p>The CFIUS read-through is direct. Fund structures with Gulf sovereign co-investors in US AI-adjacent assets now carry a compounded question: the same sovereign entities pressing ahead with Gulf AI investment despite active conflict are simultaneously deploying capital into US infrastructure. A CFIUS reviewer looking at MGX, Mubadala, or PIF co-investment in a US AI data center platform this week is reviewing those relationships in a materially different geopolitical context than existed in Q4 2025. The sovereign/commercial split does not resolve that question; it intensifies it.</p>
+  <div class="data-cards">
+    <div class="data-card"><div class="dc-label">AWS / Oracle Gulf facilities struck</div><div class="dc-value">3+</div><div class="dc-note">Two AWS UAE sites hit by drones; third in Bahrain damaged. Oracle Dubai struck 3 April. IRGC claimed responsibility. <a href="#src-15" class="fn-ref"><sup>15</sup></a></div></div>
+    <div class="data-card"><div class="dc-label">Iranian strike interception rate</div><div class="dc-value">~95%</div><div class="dc-note">MEI analysis through early May 2026. Defence architecture not originally designed for gigawatt-scale AI cluster protection. <a href="#src-16" class="fn-ref"><sup>16</sup></a></div></div>
+    <div class="data-card"><div class="dc-label">Gulf DC market forecast</div><div class="dc-value">$9.5bn</div><div class="dc-note">GCC data center market 2030 forecast (pre-conflict: $0.05/kWh energy assumption). 2024 baseline was $3.5bn. Forecast under revision. <a href="#src-15" class="fn-ref"><sup>15</sup></a></div></div>
+  </div>
+</div>
+
+<!-- §9 DEAL FLOW -->
+<div class="section" id="dealflow">
+  <div class="section-header"><span class="section-num">&sect;9</span><h2>Deal Flow</h2></div>
+  <table class="std-table">
+    <thead><tr><th style="width:185px">Parties</th><th style="width:82px">Value</th><th style="width:78px">Date</th><th>Description &amp; Source</th></tr></thead>
+    <tbody>
+      <tr><td class="td-strong">I Squared Capital / Cogent Fiber<br><span style="font-weight:400;font-size:12px;color:var(--ink-light)">Nine US markets, including Chicago, Atlanta, Phoenix, Los Angeles</span></td><td class="td-accent">$225m / $1bn</td><td class="td-light">25 May 2026</td><td>Acquisition of 10 data center facilities from Cogent Communications subsidiary. 53MW installed power, 259,000 sq ft colocation across nine markets. Platform seeded for AI inference and edge colocation, liquid-cooled high-density enabled. $1bn total platform commitment. Close expected Q3 2026 subject to HSR. Former Sprint wireline sites converted by Cogent; entry multiple approximately $4.2m per MW before conversion capex. <em>I Squared / BusinessWire.</em><a href="#src-5" class="fn-ref"><sup>5</sup></a></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- §10 PE RISK MATRIX -->
+<div class="section" id="riskmatrix">
+  <div class="section-header"><span class="section-num">&sect;10</span><h2>PE Risk Matrix</h2></div>
+  <table class="std-table">
+    <thead><tr><th style="width:180px">Risk Vector</th><th style="width:75px">Level</th><th>Investor Implication</th><th style="width:90px">Status</th></tr></thead>
+    <tbody>
+      <tr><td class="td-strong">Huawei Tau Law</td><td><span class="badge b-med">Medium</span></td><td>Huawei's architectural claim to reach 1.4nm-equivalent chip density by 2031 directly challenges the assumption that export controls provide a durable US AI chip advantage. Near-term: limited impact. For positions with 5-7 year hold periods in AI infrastructure with China-adjacent revenue: this belongs in the scenario analysis, not the footnotes.</td><td><span class="badge b-new">New</span></td></tr>
+      <tr><td class="td-strong">Gulf Cable Sovereignty Doctrine</td><td><span class="badge b-high">High</span></td><td>Iran's cable toll demand has evolved into a declared sovereign rights framework. Gulf and Red Sea corridor cable assets now carry both a kinetic risk (physical disruption) and a legal/sovereign risk (contested jurisdiction, compliance costs) that require separate assessment tracks. Neither has materialised kinetically. Both are active.</td><td><span class="badge b-new">Escalated</span></td></tr>
+      <tr><td class="td-strong">Iran War Energy Shock</td><td><span class="badge b-elev">Elevated</span></td><td>Brent crude and EU gas remain elevated from pre-conflict levels. No energy price normalisation following the April 8 ceasefire. DC models underwritten before February 28 carry stale energy assumptions. PPAs remain the binary underwriting requirement.</td><td>Stable elevated</td></tr>
+      <tr><td class="td-strong">CFIUS &amp; Foreign Investment Review</td><td><span class="badge b-elev">Elevated</span></td><td>Gulf sovereign co-investment in US AI assets carries a new compounding factor this week. The sovereign platforms most active in US AI deal flow (MGX, Mubadala, PIF/Humain) are simultaneously the ones pressing ahead with Gulf AI buildout under active conflict conditions. A CFIUS reviewer considering those structures this week is doing so in a materially different geopolitical context than Q4 2025. Structures already approved should be reassessed against this environment.</td><td><span class="badge b-new">Escalated</span></td></tr>
+      <tr><td class="td-strong">BIS 50% Rule Compliance</td><td><span class="badge b-med">Medium</span></td><td>Enforcement November 10, 2026. Five months remain. Operators with PRC-adjacent supply chains or counterparties need external counsel engaged before Q3 2026 to complete ownership-chain mapping at the complexity the rule requires.</td><td>Deadline tracking</td></tr>
+      <tr><td class="td-strong">US Data Centre Power Costs</td><td><span class="badge b-elev">Elevated</span></td><td>Wisconsin and North Carolina grid cost precedents remain live. Texas PUC, Virginia SCC, and Ohio PUC are the markets to watch for equivalent proceedings. The nuclear pilot programme provides a new captive power pathway; it does not resolve near-term grid exposure for assets already operating on market-rate power.</td><td>Stable elevated</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- §11 ASSET CLASS STANCES -->
+<div class="section" id="stances">
+  <div class="section-header"><span class="section-num">&sect;11</span><h2>Asset Class Stances</h2></div>
+  <table class="std-table">
+    <thead><tr><th style="width:165px">Asset Class</th><th style="width:75px">Direction</th><th style="width:140px">Key Variable</th><th>Read-Through</th><th style="width:80px">Stance</th></tr></thead>
+    <tbody>
+      <tr><td class="td-strong">Data Centres (Hyperscale / AI)</td><td style="color:#2A5036;font-weight:600;">Strengthening</td><td>Power structure and hold period</td><td>Structural demand intact. The Huawei Tau Law introduces a new scenario dimension for positions with 5-7 year holds that implicitly assume US chip dominance persists. Power cost structuring remains the near-term underwriting differentiator. Captive power assets are widening their premium over grid-dependent peers.</td><td><span class="badge b-sel">Selective</span></td></tr>
+      <tr><td class="td-strong">Subsea Cable</td><td style="color:#6A2018;font-weight:600;">Weakening</td><td>Gulf sovereignty doctrine</td><td>The risk profile for Gulf and Red Sea corridor assets has added a legal/sovereign dimension this week that sits alongside the established kinetic risk. Baltic corridor assets remain on a separate trajectory. Active Watch stance carried forward from prior issues; conditions continue to deteriorate without yet producing a kinetic event.</td><td><span class="badge b-wtch">&#x21C5; Active Watch</span></td></tr>
+      <tr><td class="td-strong">Fibre / Backbone</td><td style="color:#7A5A1A;font-weight:600;">Mixed</td><td>US consolidation vs UK overbuild</td><td>US backbone consolidation remains active and investable at platform scale. UK altnet market remains structurally impaired by overbuild. I Squared's Cogent acquisition provides a new mid-market reference for legacy-telecom-infrastructure repositioning at AI-era specifications. Differentiate by geography and asset provenance.</td><td><span class="badge b-sel">Selective</span></td></tr>
+      <tr><td class="td-strong">Towers / RAN</td><td style="color:#8A837A;font-weight:600;">No change</td><td>Carrier spend</td><td>No new catalyst this week. Hold existing portfolios; do not underwrite new tower development on near-term densification assumptions.</td><td><span class="badge b-neu">Neutral</span></td></tr>
+      <tr><td class="td-strong">Satellite / LEO</td><td style="color:#7A5A1A;font-weight:600;">Mixed</td><td>Gulf disruption demand signal</td><td>Iran's cable sovereignty doctrine strengthens the demand signal for LEO as a backup connectivity layer in the Gulf. Licensing constraints and capacity limits apply before any investment commitment. Regulatory pathway in target markets must be clear.</td><td><span class="badge b-wtch">Watch</span></td></tr>
+      <tr><td class="td-strong">Power for Digital</td><td style="color:#2A5036;font-weight:600;">Strengthening</td><td>Nuclear pilot milestone</td><td>The DOE reactor pilot programme's July 4 criticality deadline and the formal designation of AI data centers as critical defense facilities strengthen the captive power investment rationale. The gap between pilot criticality and commercial offtake remains substantial; the institutional architecture for closing it is now being built. The most defensible asset class in this week's coverage remains the one that removes grid dependency from the equation.</td><td><span class="badge b-ow">Overweight</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- §12 UNDERWRITING VARIABLES -->
+<div class="section" id="underwriting">
+  <div class="section-header"><span class="section-num">&sect;12</span><h2>Underwriting Variables</h2><span class="section-tag">0-100 &middot; higher = greater risk</span></div>
+  <table class="std-table">
+    <thead><tr><th style="width:230px">Variable</th><th style="width:50px">Score</th><th style="width:120px">Level</th><th style="width:58px">Change</th><th>Driver this week</th></tr></thead>
+    <tbody>
+      <tr><td class="td-strong">Power Access &amp; Energy Security</td><td><span class="hm-score">85</span></td><td><div class="hm-bar-wrap"><div class="hm-bar" style="width:85%;background:#7A3020;"></div></div><span style="font-size:10px;color:var(--ink-light);">High</span></td><td><span class="delta-flat">&mdash;</span></td><td style="font-size:13px;color:var(--ink-mid);">Energy prices remain elevated post-Iran conflict. Nuclear pilot milestone is directionally positive for captive power thesis but does not reduce near-term grid exposure risk for existing assets.</td></tr>
+      <tr><td class="td-strong">Route &amp; Corridor Resilience</td><td><span class="hm-score">85</span></td><td><div class="hm-bar-wrap"><div class="hm-bar" style="width:85%;background:#7A3020;"></div></div><span style="font-size:10px;color:var(--ink-light);">High</span></td><td><span class="delta-flat">&mdash;</span></td><td style="font-size:13px;color:var(--ink-mid);">Iran sovereignty doctrine escalating in framing without kinetic action. No cable severed. Score held flat: the legal/sovereign risk layer is new in character but the kinetic risk that drove prior increases remains the primary driver.</td></tr>
+      <tr><td class="td-strong">Sovereign &amp; Security Compliance</td><td><span class="hm-score">80</span></td><td><div class="hm-bar-wrap"><div class="hm-bar" style="width:80%;background:#7A3020;"></div></div><span style="font-size:10px;color:var(--ink-light);">High</span></td><td><span class="delta-up">+4</span></td><td style="font-size:13px;color:var(--ink-mid);">Huawei Tau Law changes the medium-term export control picture. Positions with China-adjacent AI customer chains now carry a longer-horizon compliance scenario that was not previously required.</td></tr>
+      <tr><td class="td-strong">Cyber Posture vs State-Linked Threats</td><td><span class="hm-score">74</span></td><td><div class="hm-bar-wrap"><div class="hm-bar" style="width:74%;background:#8A4030;"></div></div><span style="font-size:10px;color:var(--ink-light);">Elevated</span></td><td><span class="delta-flat">&mdash;</span></td><td style="font-size:13px;color:var(--ink-mid);">CSIS summit analysis confirmed cyber parity language from Trump at Beijing was a notable concession. China-attributed AI-enabled cyber operations (Anthropic November 2025 disclosure) remain a background risk. No new catalyst this week.</td></tr>
+      <tr><td class="td-strong">CFIUS &amp; Foreign Investment Review</td><td><span class="hm-score">70</span></td><td><div class="hm-bar-wrap"><div class="hm-bar" style="width:70%;background:#8A5030;"></div></div><span style="font-size:10px;color:var(--ink-light);">Elevated</span></td><td><span class="delta-flat">&mdash;</span></td><td style="font-size:13px;color:var(--ink-mid);">Stable elevated. Gulf sovereign relationships intersect with Iran conflict and now with post-summit US-China uncertainty. No specific new trigger this week.</td></tr>
+      <tr><td class="td-strong">Hardware Supply-Chain Optionality</td><td><span class="hm-score">68</span></td><td><div class="hm-bar-wrap"><div class="hm-bar" style="width:68%;background:#9A5030;"></div></div><span style="font-size:10px;color:var(--ink-light);">Elevated</span></td><td><span class="delta-up">+3</span></td><td style="font-size:13px;color:var(--ink-mid);">Huawei Tau Law introduces a medium-term scenario in which Nvidia's chip performance advantage narrows materially. Near-term optionality unchanged: Ascend 950 remains substantially below Blackwell-class performance. Score reflects the new planning horizon risk, not the current supply picture.</td></tr>
+      <tr><td class="td-strong">Permitting &amp; Regulatory Timeline</td><td><span class="hm-score">59</span></td><td><div class="hm-bar-wrap"><div class="hm-bar" style="width:59%;background:#9A6030;"></div></div><span style="font-size:10px;color:var(--ink-light);">Elevated</span></td><td><span class="delta-dn">-3</span></td><td style="font-size:13px;color:var(--ink-mid);">DOE nuclear pilot Final Documented Safety Analysis confirmations and the July 4 deadline provide a concrete positive signal on the captive power regulatory pathway. The DOE authorization route bypassing NRC licensing is a structural timeline improvement for power-for-digital assets with captive nuclear ambitions.</td></tr>
+      <tr><td class="td-strong">Exit Narrative Under Geopolitical Scrutiny</td><td><span class="hm-score">70</span></td><td><div class="hm-bar-wrap"><div class="hm-bar" style="width:70%;background:#8A5030;"></div></div><span style="font-size:10px;color:var(--ink-light);">Elevated</span></td><td><span class="delta-flat">&mdash;</span></td><td style="font-size:13px;color:var(--ink-mid);">Chinese strategic exit remains effectively closed. Gulf sovereign exits complicated by conflict exposure. The Huawei Tau Law adds a further question about exit narrative for AI data center assets reliant on US chip supply advantages. Allied capital remains the viable buyer universe.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- §13 DILIGENCE QUESTIONS -->
+<div class="section" id="diligence">
+  <div class="section-header"><span class="section-num">&sect;13</span><h2>Diligence Questions</h2><span class="section-tag">10 questions</span></div>
+  <div class="dq-cat">Commercial</div>
+  <ul class="dq-list">
+    <li class="dq-item"><span class="dq-num">01</span><div>For AI data center assets with holds exceeding five years: has the underwriting model been stress-tested against a scenario in which Huawei's Tau Scaling Law delivers commercially viable near-parity chip performance by 2030-31, and what is the revenue impact if Chinese customers migrate from US-chip-dependent infrastructure to domestically supplied equivalents?<div class="dq-trace">Huawei Tau Scaling Law announcement, SCMP, 27 May 2026</div></div></li>
+    <li class="dq-item"><span class="dq-num">02</span><div>For Gulf and Red Sea cable corridor assets: has a legal assessment been obtained on the standing of Iran's claimed transit fee jurisdiction under UNCLOS and existing cable landing agreements? Is there a force majeure position that covers not just physical disruption but legally contested access?<div class="dq-trace">Iran cable sovereignty doctrine, CNN, 17 May 2026; Bearingdrift analysis, 27 May 2026</div></div></li>
+    <li class="dq-item"><span class="dq-num">03</span><div>For fund structures with Gulf sovereign co-investors (MGX, Mubadala, PIF) in US AI-adjacent positions: has the sovereign/commercial investment posture split documented this week been factored into the CFIUS assessment? Specifically, does the co-investor's continued commitment to Gulf AI buildout under active conflict conditions change the risk narrative for the US-side investment structure?<div class="dq-trace">CNBC Gulf AI stress test, 24 May 2026; MEI Iran war Gulf AI analysis, 24 May 2026</div></div></li>
+  </ul>
+  <div class="dq-cat">Operational</div>
+  <ul class="dq-list">
+    <li class="dq-item"><span class="dq-num">04</span><div>For Gulf-region data center assets: has the business continuity and connectivity plan been updated to address legally contested access to cable infrastructure as a distinct scenario from physical cable disruption? What is the RPO and RTO under each scenario?<div class="dq-trace">Iran sovereignty doctrine escalation; cable sovereignty legal framework</div></div></li>
+    <li class="dq-item"><span class="dq-num">05</span><div>For all data center assets underwritten before February 28, 2026: has the energy cost model been updated for current Brent and European gas prices? What is the IRR sensitivity across the hold period at current versus pre-conflict energy pricing?<div class="dq-trace">Iran war energy shock; no price normalisation post-ceasefire</div></div></li>
+    <li class="dq-item"><span class="dq-num">06</span><div>For assets pursuing captive power solutions: has the DOE reactor pilot programme pathway, under which AI data centers are designated critical defense facilities, been factored into permitting strategy? What is the current siting status and has DOE's expedited review authority been engaged?<div class="dq-trace">DOE nuclear EO one-year review, 23 May 2026; AI data center designation as critical defense facilities</div></div></li>
+  </ul>
+  <div class="dq-cat">Regulatory</div>
+  <ul class="dq-list">
+    <li class="dq-item"><span class="dq-num">07</span><div>Does the asset or its customers have material revenue dependency on supply chain relationships that the BIS 50% Rule, effective November 10, 2026, would affect? Has external export compliance counsel been engaged to complete the ownership-chain mapping required?<div class="dq-trace">BIS 50% Rule, November 10, 2026 enforcement date</div></div></li>
+    <li class="dq-item"><span class="dq-num">08</span><div>For US data center assets in Wisconsin, North Carolina, Texas, Virginia, or Ohio: has the full-cost-of-grid-service tariff scenario been modelled, and has the IRR impact been stress-tested against the Wisconsin We Energies precedent being replicated in the asset's operating state?<div class="dq-trace">US state power tariff reform; Wisconsin and North Carolina precedent</div></div></li>
+  </ul>
+  <div class="dq-cat">Capital</div>
+  <ul class="dq-list">
+    <li class="dq-item"><span class="dq-num">09</span><div>For positions using the I Squared / Cogent transaction as a market pricing reference ($4.2M/MW implied entry before conversion capex): has the conversion capex to liquid-cooled high-density specifications been independently estimated, and at what utilisation level does the repositioned asset generate returns competitive with lower-entry alternatives elsewhere in the pipeline?<div class="dq-trace">I Squared Capital / Cogent Fiber, 25 May 2026; ACG Insights PE Weekly, 28 May 2026</div></div></li>
+    <li class="dq-item"><span class="dq-num">10</span><div>For power-for-digital positions that include advanced nuclear in the investment thesis: what does the path from DOE-authorized test reactor criticality (July 4, 2026 target) to commercial-scale captive power offtake actually look like in timeline and capex, and which of the 11 DOE pilot programme participants has the most credible near-term commercial data center offtake plan?<div class="dq-trace">DOE Reactor Pilot Programme; Aalo Atomics data center adjacency plans; DOE one-year review, 23 May 2026</div></div></li>
+  </ul>
+</div>
+
+<!-- §14 STRATEGY ACTIONS -->
+<div class="section" id="strategy">
+  <div class="section-header"><span class="section-num">&sect;14</span><h2>Strategy Actions</h2></div>
+  <div class="horizon-label">Immediate &middot; 0 to 90 days</div>
+  <ul class="action-list">
+    <li class="action-item"><div class="action-dot"></div><div><strong>For fund structures with Gulf sovereign co-investors in US AI-adjacent assets, initiate a CFIUS posture review against the current conflict environment.</strong> The combination of the sovereign/commercial investment split documented this week, the drone strikes on commercial hyperscaler facilities, and the ongoing ceasefire uncertainty constitutes a materially different context from Q4 2025. Proactive review is more defensible than reactive response if CFIUS attention increases.</div></li>
+    <li class="action-item"><div class="action-dot"></div><div><strong>Commission legal assessment on Iran's cable sovereignty doctrine for any portfolio asset with Gulf or Red Sea corridor cable dependency.</strong> The risk framework for these assets needs a legal/sovereign analysis track alongside the existing kinetic track. The two scenarios are independent: each can materialise without the other, and the governance requirements differ.</div></li>
+    <li class="action-item"><div class="action-dot"></div><div><strong>Confirm BIS 50% Rule compliance programmes are engaged and underway.</strong> November 10 is five months away. The complexity of ownership-chain mapping for the expanded restricted party definition means external counsel needs to be working now, not in Q3.</div></li>
+  </ul>
+  <div class="horizon-label">Platform &middot; 3 to 12 months</div>
+  <ul class="action-list">
+    <li class="action-item"><div class="action-dot"></div><div><strong>For captive power strategies, engage with the DOE reactor pilot framework as an active siting and permitting pathway.</strong> The formal designation of AI data centers as critical defense facilities under EO 14301 creates an expedited review authority that did not exist two years ago. Value creation theses that include captive nuclear should be testing this pathway, not waiting for NRC commercial licensing timelines.</div></li>
+    <li class="action-item"><div class="action-dot"></div><div><strong>Add a Huawei Tau Law scenario to underwriting models for AI data center assets with holds beyond 2030.</strong> The specific question: what is the revenue impact if Chinese customers migrate to domestically supplied AI compute at near-parity performance between 2029 and 2031? This does not change near-term valuations. It does change what a responsible exit narrative needs to address at deal committee level.</div></li>
+  </ul>
+  <div class="horizon-label">Portfolio &middot; 12 to 24 months</div>
+  <ul class="action-list">
+    <li class="action-item"><div class="action-dot"></div><div><strong>Develop a framework for re-rating AI data center assets whose investment thesis implicitly relies on a durable US-China chip advantage.</strong> The Huawei Tau Law is not a 2026 event; it is a 2031 scenario that needs to be incorporated into the planning of positions being underwritten today for 5-7 year holds. The framework does not need to assume Huawei succeeds. It needs to account for the possibility.</div></li>
+    <li class="action-item"><div class="action-dot"></div><div><strong>Monitor the Gulf sovereign/commercial investment bifurcation as a leading indicator for CFIUS and exit market conditions.</strong> If the sovereign platforms (MGX, PIF/Humain, G42) maintain their AI buildout commitment through the conflict while commercial operators remain paused, the divergence will narrow exit optionality for assets requiring Gulf sovereign buyers and complicate CFIUS posture for assets with Gulf sovereign co-investors. The I Squared / Cogent transaction ($4.2M/MW entry, 9 US markets) provides a current reference point for domestic AI infrastructure pricing absent Gulf capital.</div></li>
+  </ul>
+</div>
+
+<!-- §15 WATCH LIST -->
+<div class="section" id="watchlist">
+  <div class="section-header"><span class="section-num">&sect;15</span><h2>Watch List</h2></div>
+  <table class="std-table">
+    <thead><tr><th style="width:190px">Item</th><th style="width:90px">Window</th><th>Signal to watch</th></tr></thead>
+    <tbody>
+      <tr><td class="td-strong">Huawei Tau Law validation</td><td style="color:var(--accent);font-size:12px;font-weight:600;">12-18 months</td><td>People's Daily amplification of the announcement indicates state backing. Watch for independent technical corroboration from outside China; semiconductor analysts (Bernstein, Omdia) have noted the claim needs testing in practice. A credible external validation would be a material signal for the medium-term export control thesis.</td></tr>
+      <tr><td class="td-strong">Iran Hormuz cable escalation</td><td style="color:var(--accent);font-size:12px;font-weight:600;">Ongoing</td><td>The transition from kinetic threat to sovereignty doctrine is the new tracking variable. Watch for: any formal UNCLOS or bilateral submission by Iran asserting cable transit jurisdiction; any operator receiving a formal fee demand; any confirmed cable damage in Gulf waters. Iran International and Submarine Networks remain the primary tracking sources.</td></tr>
+      <tr><td class="td-strong">DOE nuclear pilot criticality</td><td style="color:var(--accent);font-size:12px;font-weight:600;">36 days</td><td>July 4, 2026 deadline. DOE Secretary Wright has indicated one or two designs are most likely to meet the date. Aalo Atomics and Antares Nuclear are the most publicly advanced. First criticality event would represent the first commercial-pathway advanced reactor in the US operating outside NRC licensing, with direct implications for AI data center captive power timelines.</td></tr>
+      <tr><td class="td-strong">BIS 50% Rule enforcement</td><td style="color:var(--accent);font-size:12px;font-weight:600;">10 Nov 2026</td><td>Five months to enforcement. Watch for BIS guidance on enforcement priorities and the definition boundaries of the expanded restricted party scope. Any digital infrastructure operator with indirect PRC-linked counterparties needs counsel engaged in Q2 2026.</td></tr>
+      <tr><td class="td-strong">US state power tariff replication</td><td style="color:var(--accent);font-size:12px;font-weight:600;">Q2-Q3 2026</td><td>Wisconsin and North Carolina are the live legislative templates. Texas PUC, Virginia SCC, and Ohio PUC are the three venues that would change the national underwriting calculus if equivalent proceedings advance. A FERC statement addressing the grid cost allocation question at the federal level would be the most significant possible signal.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- §16 SOURCES -->
+<div class="section" id="sources">
+  <div class="section-header"><span class="section-num">&sect;16</span><h2>Sources</h2></div>
+  <div class="sources-grid">
+    <div class="source-tile">
+      <div class="source-tile-cat">Financial Press &amp; Market Data</div>
+      <ul class="source-link-list">
+        <li class="source-link-item" id="src-5"><span class="src-num">5</span><a href="https://www.businesswire.com/news/home/20260525403366/en/I-Squared-Capital-Launches-U.S.-AI-Inference-and-Edge-Colocation-Data-Center-Platform-With-%241BN-Commitment" target="_blank">I Squared Capital / Cogent Fiber press release</a><span class="source-link-date">&middot; 25 May 2026</span><a href="#cite-5a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item"><span class="src-num">10</span><a href="https://www.datacenterdynamics.com/en/news/i-squared-capital-buys-10-data-centers-from-cogent-aims-to-launch-new-us-based-operator/" target="_blank">Data Center Dynamics &mdash; I Squared / Cogent</a><span class="source-link-date">&middot; 26 May 2026</span></li>
+      </ul>
+    </div>
+    <div class="source-tile">
+      <div class="source-tile-cat">Industry &amp; Technology</div>
+      <ul class="source-link-list">
+        <li class="source-link-item" id="src-3"><span class="src-num">3</span><a href="https://www.scmp.com/tech/article/3354912/huaweis-new-chip-scaling-law-aims-sidestep-asml-chokepoint-hurdles-remain-analysts" target="_blank">SCMP &mdash; Huawei Tau Scaling Law announcement</a><span class="source-link-date">&middot; 26 May 2026</span><a href="#cite-3a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item" id="src-6"><span class="src-num">6</span><a href="https://www.scmp.com/tech/big-tech/article/3354938/another-deepseek-moment-huawei-milestone-alters-china-trajectory-chip-race-analysts" target="_blank">SCMP &mdash; Analyst reaction to Tau Law</a><span class="source-link-date">&middot; 27 May 2026</span><a href="#cite-6a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item"><span class="src-num">11</span><a href="https://capacityglobal.com/news/deepseek-v4-triggers-scramble/" target="_blank">Capacity Global &mdash; DeepSeek V4 / Huawei Ascend 950 demand</a><span class="source-link-date">&middot; Apr 2026</span></li>
+      </ul>
+    </div>
+    <div class="source-tile">
+      <div class="source-tile-cat">Regulatory &amp; Official</div>
+      <ul class="source-link-list">
+        <li class="source-link-item" id="src-4"><span class="src-num">4</span><a href="https://www.energy.gov/ne/articles/one-year-after-executive-orders-us-nuclear-energy-renaissance-full-swing" target="_blank">DOE &mdash; One year after nuclear executive orders</a><span class="source-link-date">&middot; 23 May 2026</span><a href="#cite-4a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item" id="src-9"><span class="src-num">9</span><a href="https://www.aalo.com/post/aalo-selected-by-doe-to-test-aalo-x-targeting-criticality-by-july-4th-2026" target="_blank">Aalo Atomics &mdash; Aalo-X criticality target and DC adjacency plan</a><span class="source-link-date">&middot; Aug 2025 (updated May 2026)</span><a href="#cite-9a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+      </ul>
+    </div>
+    <div class="source-tile">
+      <div class="source-tile-cat">Geopolitics &amp; OSINT</div>
+      <ul class="source-link-list">
+        <li class="source-link-item" id="src-15"><span class="src-num">15</span><a href="https://www.cnbc.com/2026/05/24/middle-east-war-testing-gulfs-ambitions-to-become-ai-hub.html" target="_blank">CNBC &mdash; Middle East war testing Gulf AI ambitions</a><span class="source-link-date">&middot; 24 May 2026</span><a href="#cite-15a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item" id="src-16"><span class="src-num">16</span><a href="https://mei.edu/publication/the-impact-of-the-iran-war-on-the-gulfs-grand-ai-plans/" target="_blank">MEI &mdash; Iran war impact on Gulf AI plans</a><span class="source-link-date">&middot; 24 May 2026</span><a href="#cite-16a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item" id="src-2"><span class="src-num">2</span><a href="https://www.cnn.com/2026/05/17/middleeast/iran-hormuz-undersea-cables-intl" target="_blank">CNN &mdash; Iran cable sovereignty and non-kinetic leverage</a><span class="source-link-date">&middot; 17 May 2026</span><a href="#cite-2a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item" id="src-8"><span class="src-num">8</span><a href="https://www.bearingdrift.com/2026/05/the-digital-strait-how-irans-hormuz.html" target="_blank">Bearingdrift &mdash; Iran Hormuz digital sovereignty analysis</a><span class="source-link-date">&middot; 27 May 2026</span></li>
+        <li class="source-link-item" id="src-7"><span class="src-num">7</span><a href="https://www.submarinenetworks.com/en/nv/insights/war-in-the-gulf-severs-the-world-s-digital-arteries" target="_blank">Submarine Networks &mdash; 2Africa Pearls force majeure</a><span class="source-link-date">&middot; Mar 2026</span><a href="#cite-7a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+      </ul>
+    </div>
+    <div class="source-tile">
+      <div class="source-tile-cat">PE &amp; Deal Intelligence</div>
+      <ul class="source-link-list">
+        <li class="source-link-item"><span class="src-num">12</span><a href="https://middlemarketgrowth.org/pe-weekly-data-centers-tech-enabled-services-continuation-funds/" target="_blank">ACG Insights &mdash; PE Weekly, data centers and tech services</a><span class="source-link-date">&middot; 28 May 2026</span></li>
+        <li class="source-link-item"><span class="src-num">13</span><a href="https://www.ropesgray.com/en/insights/viewpoints/102mvfl/data-center-investment-in-2026-ai-demand-power-constraints-and-private-equity" target="_blank">Ropes &amp; Gray &mdash; Data center PE investment 2026</a><span class="source-link-date">&middot; May 2026</span></li>
+      </ul>
+    </div>
+    <div class="source-tile">
+      <div class="source-tile-cat">Strategic Analysis</div>
+      <ul class="source-link-list">
+        <li class="source-link-item" id="src-1"><span class="src-num">1</span><a href="https://www.csis.org/programs/trump-xi-2026-summit" target="_blank">CSIS &mdash; Trump-Xi 2026 Summit analysis</a><span class="source-link-date">&middot; 20-21 May 2026</span><a href="#cite-1a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item"><span class="src-num">14</span><a href="https://www.csis.org/analysis/what-trump-xi-summit-revealed-and-left-unsaid-about-us-china-tech-competition" target="_blank">CSIS &mdash; Summit revealed, left unsaid on tech competition</a><span class="source-link-date">&middot; 20 May 2026</span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- §17 DISCLAIMER -->
+<div class="disclaimer">
+  <h3>About Commentarii</h3>
+  <p><em>Commentarii</em> is a weekly intelligence publication from C&#x0298;NSVLT&#x0298;R, providing senior-level geopolitical and market analysis for private equity investors active in TMT and digital infrastructure. Each issue draws on open-source intelligence from financial press, industry data providers, and geopolitical monitoring platforms, synthesised through an operating partner lens.</p>
+  <p>The analysis is intended for professional investors. It does not constitute investment advice. Views are those of the author and subject to change. <a href="https://www.consvltor.net" target="_blank">consvltor.net</a></p>
+  <p>Enquiries: <a href="mailto:hello@consvltor.net">hello@consvltor.net</a></p>
+</div>
+
+</body>
+</html>
