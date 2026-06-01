@@ -1,4 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.consvltor.net/</loc></url>
+
+  <!-- Main site -->
+  <url>
+    <loc>https://www.consvltor.net/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Commentarii index -->
+  <url>
+    <loc>https://www.consvltor.net/commentarii</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Commentarii issues -->
+  <url>
+    <loc>https://www.consvltor.net/commentarii/issues/20260512-commentarii-on-the-matter-of-field-notes.html</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.consvltor.net/commentarii/issues/20260515-commentarii-the-beijing-test.html</loc>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.consvltor.net/commentarii/issues/20260522-commentarii-the-toll-booth.html</loc>
+    <lastmod>2026-05-22</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.consvltor.net/commentarii/issues/20260529-commentarii-the-long-game.html</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>
