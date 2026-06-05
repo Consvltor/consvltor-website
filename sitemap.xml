@@ -17,12 +17,19 @@
 
   <!-- Commentarii issues — newest first -->
   <url>
-    <loc>https://www.consvltor.net/commentarii/issues/20260529-commentarii-the-long-game.html</loc>
-    <lastmod>2026-05-29</lastmod>
+    <loc>https://www.consvltor.net/commentarii/issues/20260604-commentarii-the-hundred-day-mark.html</loc>
+    <lastmod>2026-06-05</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
 
+  <url>
+    <loc>https://www.consvltor.net/commentarii/issues/20260529-commentarii-the-long-game.html</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
   <url>
     <loc>https://www.consvltor.net/commentarii/issues/20260522-commentarii-the-toll-booth.html</loc>
     <lastmod>2026-05-22</lastmod>
