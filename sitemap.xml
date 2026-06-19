@@ -15,8 +15,15 @@
     <priority>0.9</priority>
   </url>
 
-  <!-- Commentarii issues — newest first -->
-    <url>
+<!-- Commentarii issues — newest first -->
+  <url>
+    <loc>https://consvltor.net/commentarii/issues/20260619-commentarii-open-until-further-notice.html</loc>
+    <lastmod>2026-06-19</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
     <loc>https://consvltor.net/commentarii/issues/20260612-commentarii-closed-until-further-notice.html</loc>
     <lastmod>2026-06-12</lastmod>
     <changefreq>never</changefreq>
