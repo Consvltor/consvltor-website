@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Commentarii 015 &middot; The Sovereignty Stack &middot; 26 June 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --bg:#F5F0E6;--ink:#1C1814;--ink-mid:#4A4540;--ink-light:#8A837A;
+  --rule:#D0C8BC;--card-bg:#EDE8DE;--accent:#7A3020;
+  --amber:#7A5A1A;--green:#2A5036;--blue:#1A3C5A;
+}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;font-size:15px;line-height:1.75;-webkit-font-smoothing:antialiased;}
+
+.preamble-image{width:100%;line-height:0;overflow:hidden;}
+.preamble-image img{width:100%;height:320px;object-fit:cover;object-position:center;display:block;}
+
+.preamble-intro{max-width:860px;margin:0 auto;padding:32px 48px;display:grid;grid-template-columns:1fr 1fr;gap:40px;border-bottom:1px solid var(--rule);}
+.preamble-intro .col-left{font-family:'Times New Roman',Times,serif;font-style:italic;font-size:15px;color:var(--ink-mid);line-height:1.7;}
+.preamble-intro .col-left .pub-title{font-size:17px;font-weight:normal;display:block;margin-bottom:8px;color:var(--ink);}
+.preamble-intro .col-right{font-family:Arial,Helvetica,sans-serif;font-size:13px;color:var(--ink-mid);line-height:1.75;}
+
+.report-header{max-width:860px;margin:0 auto;padding:64px 48px 44px;}
+.header-meta{font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-light);margin-bottom:22px;display:flex;gap:28px;flex-wrap:wrap;}
+.rule-thick{border:none;border-top:2px solid var(--ink);margin-bottom:26px;}
+.report-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:46px;font-weight:500;line-height:1.08;color:var(--ink);margin-bottom:16px;max-width:640px;}
+.report-deck{font-size:15px;color:var(--ink-mid);line-height:1.7;max-width:660px;border-left:3px solid var(--accent);padding-left:18px;margin-bottom:36px;}
+
+.cover-grid{max-width:680px;margin:0 auto;border:1px solid var(--rule);}
+.cg-row{display:grid;gap:1px;background:var(--rule);}
+.cg-row-top{grid-template-columns:repeat(4,1fr);}
+.cg-row-bot{grid-template-columns:repeat(4,1fr);border-top:1px solid var(--rule);}
+.cg-card{background:var(--bg);padding:16px 14px;display:flex;flex-direction:column;justify-content:space-between;min-height:160px;text-decoration:none;color:inherit;transition:background 0.15s;border-bottom:1px solid var(--rule);}
+.cg-card:hover{background:var(--card-bg);}
+.cg-card-fixed{background:var(--card-bg);padding:16px 14px;min-height:160px;display:flex;flex-direction:column;justify-content:space-between;text-decoration:none;color:inherit;transition:background 0.15s;border-bottom:1px solid var(--rule);}
+.cg-card-fixed:hover{background:#E4DDD3;}
+.cg-cat{font-size:8px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-light);margin-bottom:6px;}
+.cg-theme{font-size:11px;color:var(--ink);line-height:1.4;margin-bottom:8px;flex:1;}
+.cg-stance{display:inline-block;font-size:8px;letter-spacing:0.08em;text-transform:uppercase;font-weight:600;padding:2px 6px;border-radius:2px;align-self:flex-start;}
+.stance-cau{background:#F0DDD8;color:#7A3020;}
+.stance-ele{background:#E8D0CC;color:#6A2018;}
+.stance-opp{background:#D8EAE0;color:#2A5036;}
+.cg-label{font-size:8px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-light);margin-bottom:5px;}
+.cg-big{font-family:'Cormorant Garamond',Georgia,serif;font-size:24px;font-weight:600;color:var(--ink);line-height:1;margin-bottom:5px;}
+.cg-sub{font-size:10px;color:var(--ink-mid);line-height:1.55;}
+.cg-stances-grid{display:grid;grid-template-columns:1fr 1fr;gap:3px 6px;margin-top:6px;}
+.cg-st{font-size:8.5px;font-weight:600;line-height:1.4;font-variant-emoji:text;}
+.cst-ow{color:#2A5036;}.cst-sel{color:#7A5A1A;}.cst-neu{color:#8A837A;}.cst-wtch{color:#1A3C5A;}
+.cg-subgrid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:1px;background:var(--rule);min-height:110px;border-bottom:1px solid var(--rule);}
+.cg-sub-card{background:var(--card-bg);padding:10px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;text-decoration:none;color:inherit;transition:background 0.15s;}
+.cg-sub-card:hover{background:#E4DDD3;}
+.cg-sub-name{font-size:8px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-mid);line-height:1.5;margin-top:4px;}
+.cg-sub-count{font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;font-weight:600;color:var(--ink);line-height:1;}
+
+.section{max-width:860px;margin:0 auto;padding:46px 48px;border-bottom:1px solid var(--rule);}
+.section-header{display:flex;align-items:baseline;gap:16px;margin-bottom:20px;}
+.section-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:13px;letter-spacing:0.06em;color:var(--ink-light);min-width:22px;}
+.section h2{font-family:'Cormorant Garamond',Georgia,serif;font-size:26px;font-weight:500;color:var(--ink);line-height:1.2;}
+.section-tag{margin-left:auto;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-light);border:1px solid var(--rule);padding:3px 9px;border-radius:2px;white-space:nowrap;}
+p{margin-bottom:1em;}p:last-child{margin-bottom:0;}strong{font-weight:600;}
+
+.data-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);margin:22px 0;}
+.data-card{background:var(--bg);padding:13px;}
+.dc-label{font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-light);margin-bottom:4px;}
+.dc-value{font-family:'Cormorant Garamond',Georgia,serif;font-size:25px;font-weight:600;color:var(--ink);line-height:1;margin-bottom:4px;}
+.dc-note{font-size:12px;color:var(--ink-mid);line-height:1.5;}
+
+.pull-quote{font-family:'Cormorant Garamond',Georgia,serif;font-size:18px;font-style:italic;font-weight:500;color:var(--ink-mid);border-left:3px solid var(--accent);padding:9px 17px;margin:22px 0;line-height:1.45;}
+
+.std-table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13px;}
+.std-table th{font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-light);border-bottom:1.5px solid var(--ink);padding:6px 10px 8px;text-align:left;}
+.std-table td{border-bottom:1px solid var(--rule);padding:10px;vertical-align:top;line-height:1.55;color:var(--ink-mid);}
+.std-table tr:last-child td{border-bottom:none;}
+.td-strong{font-weight:600;color:var(--ink);}
+.td-accent{font-family:'Cormorant Garamond',Georgia,serif;font-size:16px;font-weight:600;color:var(--accent);white-space:nowrap;}
+.td-light{color:var(--ink-light);font-size:12px;white-space:nowrap;}
+
+.badge{display:inline-block;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;padding:2px 7px;border-radius:2px;}
+.b-high{background:#F0DDD8;color:#7A3020;}.b-elev{background:#F5E8D8;color:#7A4A10;}
+.b-med{background:#F0E8D0;color:#7A5A1A;}.b-new{background:#E8D0CC;color:#6A2018;}
+.b-ow{background:#D8EAE0;color:#2A5036;}.b-sel{background:#F0E8D0;color:#7A5A1A;}
+.b-neu{background:#EAE4DA;color:#6A5A4A;}.b-wtch{background:#DAE4EE;color:#1A3C5A;}
+.b-deesc{background:#D8EAE0;color:#2A5036;}
+
+.hm-bar-wrap{background:#E8E2D6;border-radius:2px;height:7px;width:100%;overflow:hidden;margin-top:4px;}
+.hm-bar{height:7px;border-radius:2px;}
+.hm-score{font-family:'Cormorant Garamond',Georgia,serif;font-size:16px;font-weight:600;color:var(--ink);}
+.delta-up{color:var(--accent);font-size:10px;font-weight:600;}
+.delta-dn{color:#2A5036;font-size:10px;font-weight:600;}
+.delta-flat{color:var(--ink-light);font-size:10px;}
+
+.dq-cat{font-size:10px;letter-spacing:0.14em;text-transform:uppercase;font-weight:600;color:var(--ink-light);border-bottom:1px solid var(--rule);padding-bottom:5px;margin:22px 0 9px;}
+.dq-list{list-style:none;}
+.dq-item{padding:8px 0;border-bottom:1px solid var(--rule);font-size:14px;color:var(--ink-mid);line-height:1.6;display:flex;gap:12px;}
+.dq-item:last-child{border-bottom:none;}
+.dq-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:15px;font-weight:600;color:var(--ink-light);min-width:20px;padding-top:1px;}
+.dq-trace{font-size:11px;color:var(--ink-light);font-style:italic;margin-top:2px;}
+.horizon-label{font-size:10px;letter-spacing:0.16em;text-transform:uppercase;font-weight:600;color:var(--ink-light);border-bottom:1px solid var(--rule);padding-bottom:5px;margin:22px 0 10px;}
+.action-list{list-style:none;}
+.action-item{padding:8px 0;border-bottom:1px solid var(--rule);font-size:14px;color:var(--ink-mid);line-height:1.6;display:flex;gap:12px;}
+.action-item:last-child{border-bottom:none;}
+.action-dot{width:5px;height:5px;min-width:5px;border-radius:50%;background:var(--accent);margin-top:9px;}
+
+.sources-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);margin:14px 0;}
+.source-tile{background:var(--bg);padding:12px;}
+.source-tile-cat{font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-light);font-weight:600;border-bottom:1px solid var(--rule);padding-bottom:5px;margin-bottom:8px;}
+.source-link-list{list-style:none;}
+.source-link-item{padding:4px 0;border-bottom:1px solid var(--rule);font-size:12px;}
+.source-link-item:last-child{border-bottom:none;}
+.source-link-item a{color:var(--accent);text-decoration:none;font-weight:500;}
+.source-link-item a:hover{text-decoration:underline;}
+.source-link-date{font-size:10px;color:var(--ink-light);font-style:italic;margin-left:4px;}
+.fn-ref{color:var(--accent);text-decoration:none;font-size:10px;vertical-align:super;line-height:0;font-weight:600;font-variant-emoji:text;}
+.fn-ref:hover{text-decoration:underline;}
+.fn-back{color:var(--ink-light);text-decoration:none;font-size:10px;margin-left:5px;font-variant-emoji:text;}
+.fn-back:hover{color:var(--accent);}
+.src-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:13px;font-weight:600;color:var(--ink-light);margin-right:5px;}
+
+.disclaimer{max-width:860px;margin:0 auto;padding:36px 48px 52px;border-top:1px solid var(--rule);}
+.disclaimer h3{font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;font-weight:500;color:var(--ink);margin-bottom:16px;}
+.disclaimer p{font-size:14px;color:var(--ink-mid);line-height:1.7;margin-bottom:1em;}
+.disclaimer p:last-child{margin-bottom:0;}
+.disclaimer a{color:var(--accent);text-decoration:none;}
+.disclaimer a:hover{text-decoration:underline;}
+
+@media(max-width:760px){
+  .preamble-intro{grid-template-columns:1fr;padding:24px 20px;}
+  .report-header,.section,.disclaimer{padding-left:20px;padding-right:20px;}
+  .report-title{font-size:32px;}
+  .cg-row-top,.cg-row-bot{grid-template-columns:1fr 1fr;}
+  .data-cards,.sources-grid{grid-template-columns:1fr;}
+  .std-table th:nth-child(3),.std-table td:nth-child(3){display:none;}
+  .std-table{font-size:12px;}
+  .std-table td,.std-table th{padding:8px 6px;}
+  .td-accent{font-size:14px;}
+}
+</style>
+</head>
+<body>
+
+<!-- ELEMENT A -->
+<div class="preamble-image">
+  <img src="https://consvltor.net/assets/consvltor_cover.jpg" alt="Commentarii">
+</div>
+
+<!-- ELEMENT B -->
+<div class="preamble-intro">
+  <div class="col-left">
+    <span class="pub-title">Commentarii</span>
+    Field notes from infrastructure, markets, and the geopolitics of connectivity. Written after dark.
+  </div>
+  <div class="col-right">
+    Each entry is anchored to a place and a period. Some are retrospective: written now, from the distance of outcome. Others are current, drafted close to the events they describe. The standard of evidence is the same throughout: what the data and the experience actually support, no more.
+  </div>
+</div>
+
+<!-- HEADER -->
+<div class="report-header">
+  <div class="header-meta">
+    <span>Commentarii</span><span>Issue 015</span><span>26 June 2026</span>
+    <span>TMT &amp; Digital Infrastructure</span>
+  </div>
+  <hr class="rule-thick">
+  <h1 class="report-title">The Sovereignty Stack</h1>
+  <div class="report-deck">
+    <p>This week the Anthropic export directive moved from kill switch to legal battleground. Anthropic accused Alibaba of the largest known distillation attack on its models to date, 28.8 million exchanges through roughly 25,000 fraudulent accounts, while bipartisan congressional pressure mounts for the Commerce Department to publish the legal basis for a control it has never previously used. The trusted-partners carve-out floated at the G7 remains unbuilt.</p>
+    <p>In Brussels, the Cloud and AI Development Act's four-tier sovereignty framework is generating the sharpest industry pushback since the AI Act itself, with the Act's full applicability now six weeks away. In Hangzhou, DeepSeek formally closed a $7.4 billion first funding round at a valuation above $50 billion, state-backed and structurally positioned as the open-source alternative to the US frontier models that export controls are restricting.</p>
+    <p>In Switzerland, the Burgenstock talks concluded on 22 June with a formal roadmap, four technical working groups, and Iran's agreement to invite IAEA inspectors back. The 60-day negotiation clock is now running. For Gulf digital infrastructure, the question has shifted from whether the war-risk premium lifts to how quickly a credible diplomatic process translates into resumed investment decisions on the megaprojects that paused in April.</p>
+  </div>
+</div>
+
+<!-- SIGNAL CARDS -->
+<div class="cover-grid">
+  <div class="cg-row cg-row-top">
+    <a class="cg-card" href="#topic1"><div><div class="cg-cat">AI Export Controls</div><div class="cg-theme">Anthropic accuses Alibaba of 28.8m-exchange distillation attack via 25,000 fraudulent accounts; Congress demands legal basis for the 12 June directive; trusted-partners channel remains unbuilt</div></div><span class="cg-stance stance-ele">Elevated Risk</span></a>
+    <a class="cg-card" href="#topic2"><div><div class="cg-cat">EU Cloud Sovereignty</div><div class="cg-theme">CADA four-tier framework draws industry fire; EU AI Act full application 2 August; data-centre acceleration zones and sovereign-cloud procurement criteria now a deal variable for European assets</div></div><span class="cg-stance stance-cau">Caution</span></a>
+    <a class="cg-card" href="#topic3"><div><div class="cg-cat">China Open-Source AI</div><div class="cg-theme">DeepSeek closes $7.4bn first funding round at $50bn+ valuation; Tencent, CATL and China's national AI fund anchor the raise; Z.ai shares jump 30%+ as Chinese open-source demand accelerates post-ban</div></div><span class="cg-stance stance-cau">Caution</span></a>
+    <a class="cg-card" href="#topic4"><div><div class="cg-cat">Burgenstock: Roadmap</div><div class="cg-theme">21-22 June talks produce a 60-day roadmap, four working groups, IAEA inspector invitation and a Hormuz deconfliction channel; Gulf megaproject resumption timelines now the live investor question</div></div><span class="cg-stance stance-cau">Caution</span></a>
+  </div>
+  <div class="cg-row cg-row-bot">
+    <a class="cg-card-fixed" href="#dealflow"><div class="cg-label">Deal Flow</div><div class="cg-big">3 Transactions</div><div class="cg-sub">Qualcomm / Meta Dragonfly CPU &middot; Qualcomm / Modular $3.9bn &middot; SK Hynix Nasdaq ADR $29.4bn</div></a>
+    <a class="cg-card-fixed" href="#riskmatrix"><div class="cg-label">PE Risk Matrix</div><div class="cg-big">6 Active Vectors</div><div class="cg-sub">AI model-access controls &middot; EU sovereignty compliance &middot; Open-source substitution &middot; Gulf recovery &middot; CFIUS &middot; BIS 50% Rule</div></a>
+    <a class="cg-card-fixed" href="#stances"><div class="cg-label">Asset Class Stances</div><div class="cg-stances-grid"><span class="cg-st cst-sel">&#x25B6;&#xFE0E; Data Centres: Selective</span><span class="cg-st cst-wtch">&#x25BC;&#xFE0E; Subsea Cable: Watch</span><span class="cg-st cst-sel">&#x25B6;&#xFE0E; Fibre / Backbone: Selective</span><span class="cg-st cst-neu">&#x25BA;&#xFE0E; Towers / RAN: Neutral</span><span class="cg-st cst-wtch">&#x25BC;&#xFE0E; Satellite / LEO: Watch</span><span class="cg-st cst-ow">&#x25B2;&#xFE0E; Power for Digital: Overweight</span></div></a>
+    <div class="cg-subgrid"><a class="cg-sub-card" href="#underwriting"><div class="cg-sub-count">8</div><div class="cg-sub-name">Underwriting Variables</div></a><a class="cg-sub-card" href="#diligence"><div class="cg-sub-count">9</div><div class="cg-sub-name">Diligence Questions</div></a><a class="cg-sub-card" href="#strategy"><div class="cg-sub-count">6</div><div class="cg-sub-name">Strategy Actions</div></a><a class="cg-sub-card" href="#watchlist"><div class="cg-sub-count">5</div><div class="cg-sub-name">Watch List Items</div></a></div>
+  </div>
+</div>
+<div style="max-width:680px;margin:0 auto;padding:6px 2px 0;display:flex;gap:12px;flex-wrap:wrap;">
+  <span style="font-size:8px;color:#2A5036;font-weight:600;font-variant-emoji:text;">&#x25B2;&#xFE0E; Overweight</span>
+  <span style="font-size:8px;color:#7A5A1A;font-weight:600;font-variant-emoji:text;">&#x25B6;&#xFE0E; Selective</span>
+  <span style="font-size:8px;color:#8A837A;font-weight:600;font-variant-emoji:text;">&#x25BA;&#xFE0E; Neutral</span>
+  <span style="font-size:8px;color:#1A3C5A;font-weight:600;font-variant-emoji:text;">&#x25BC;&#xFE0E; Watch</span>
+</div>
+
+<!-- SINCE LAST WEEK -->
+<div class="section" id="sincelastweek" style="border-bottom:none;padding-bottom:8px;">
+  <p style="font-family:'Source Serif 4',Georgia,serif;font-size:14px;color:var(--ink-mid);line-height:1.75;border-left:3px solid var(--rule);padding-left:18px;">Since last week's <a href="issues/20260619-commentarii-open-until-further-notice.html" style="color:var(--accent);text-decoration:none;font-weight:500;">Open Until Further Notice</a>: the Burgenstock ceremony that issue 014 reported as cancelled did eventually take place, delayed to 21-22 June. The talks produced a formal roadmap and four working groups, and Iran agreed to invite IAEA inspectors back, firming up the 60-day negotiation clock the MoU had started. The AI kill-switch thread, which 014 framed as an unresolved standoff between Anthropic and the Commerce Department, gained a second act this week: Anthropic sent a letter to the Senate Banking Committee accusing Alibaba of the largest known distillation attack on its models, raising the stakes on both the legal and commercial dimensions of the export-control question at the same time.</p>
+</div>
+
+<!-- MACRO -->
+<div class="section" id="macro">
+  <div class="section-header"><span class="section-num">&sect;4</span><h2>Macro and Geopolitical Landscape</h2></div>
+  <div class="pull-quote">The word sovereignty appeared in four distinct registers this week: who controls which AI model, who controls which cloud stack, who controls which AI model tier in an open-source world, and who controls the Hormuz corridor and on what timeline. They are not the same question, but they share a structure.</div>
+  <p>The week's defining thread is a compression of the sovereignty question across the full TMT and digital infrastructure stack. At the model layer, the US government's June 12 export directive against Anthropic's Fable 5 and Mythos 5 acquired a new dimension when Anthropic's letter to the Senate Banking Committee, written on 10 June and reported publicly by CNBC on 24 June, accused Alibaba of running 28.8 million exchanges through roughly 25,000 fraudulent accounts, the largest known distillation attack on its models to date.<a href="#src-1" id="cite-1a" class="fn-ref"><sup>1</sup></a> The trusted-partners carve-out floated by Commerce Secretary Lutnick at the G7 remains a framework without implementation, and a bipartisan group in Congress has demanded the legal basis for the directive in writing. At the infrastructure layer, the European Commission's Cloud and AI Development Act proposal of 3 June moved into active pushback territory this week, with the CCIA warning that its four-tier sovereignty assurance levels would function as closed-market requirements dressed as policy thresholds, while the EU AI Act's full applicability on 2 August creates a forcing function independent of the CADA's legislative timetable.<a href="#src-2" id="cite-2a" class="fn-ref"><sup>2</sup></a></p>
+  <p>At the model-supply layer, DeepSeek's formal closure of a $7.4 billion first funding round at a valuation above $50 billion, confirmed by Capacity on 19 June, provides state-backed capitalisation for what is now the most credible open-source alternative to the US frontier models that the export directive restricts.<a href="#src-3" id="cite-3a" class="fn-ref"><sup>3</sup></a> In the Gulf, the Burgenstock talks of 21-22 June produced a roadmap, four technical working groups and Iran's agreement to invite IAEA inspectors back, converting the MoU of 17 June into a structured diplomatic process with a defined timeline.<a href="#src-4" id="cite-4a" class="fn-ref"><sup>4</sup></a> The macro read-through across all four is the same: jurisdiction is now a primary underwriting variable, not a background condition. Henry Farrell and Abraham Newman's framework of weaponised interdependence, developed in their 2019 <em>International Security</em> paper and extended in their 2023 book <em>Underground Empire</em>, offers a useful structural lens: states with authority over the central nodes of global networks can weaponise those positions by threatening to exclude others. This week's events are a clean application of that mechanism, now extended from financial networks and chip supply chains to the model-access layer itself.</p>
+  <div class="data-cards">
+    <div class="data-card"><div class="dc-label">Alibaba distillation attack</div><div class="dc-value">28.8m</div><div class="dc-note">Exchanges via ~25,000 fraudulent accounts, per Anthropic's Senate Banking Committee letter of 10 June, reported publicly by CNBC on 24 June. <a href="#src-1" class="fn-ref"><sup>1</sup></a></div></div>
+    <div class="data-card"><div class="dc-label">DeepSeek valuation</div><div class="dc-value">$50bn+</div><div class="dc-note">First funding round closed at $7.4bn, valuing DeepSeek above $50bn. Investors include Tencent, CATL, China's national AI fund. <a href="#src-3" class="fn-ref"><sup>3</sup></a></div></div>
+    <div class="data-card"><div class="dc-label">EU AI Act full application</div><div class="dc-value">2 Aug 2026</div><div class="dc-note">Six weeks from publication. General-purpose AI model rules already in effect since August 2025. High-risk system rules follow. <a href="#src-2" class="fn-ref"><sup>2</sup></a></div></div>
+  </div>
+</div>
+
+<!-- TOPIC 1: AI EXPORT CONTROLS -->
+<div class="section" id="topic1">
+  <div class="section-header"><span class="section-num">&sect;5</span><h2>AI Export Controls: The Distillation Accusation</h2></div>
+  <div class="pull-quote">Anthropic accused Alibaba of the largest known distillation attack on its models to date. The accusation arrived while the directive that prompted it remains legally contested and the trusted-partners channel remains unbuilt.</div>
+  <p>On 10 June, Anthropic sent a letter to the Senate Banking Committee, addressed to Senator Tim Scott and Senator Elizabeth Warren, accusing Alibaba and affiliated operators of running 28.8 million exchanges with its models using roughly 25,000 fraudulent accounts, carrying out what it described as the largest known distillation attack on its systems to date.<a href="#src-1" id="cite-1b" class="fn-ref"><sup>1</sup></a> The letter was reported publicly by CNBC on 24 June. The sequence matters: the letter predates the Commerce Department's June 12 export-control directive, which means Anthropic's distillation concerns were on record with Congress before BIS (the Bureau of Industry and Security, the Commerce Department unit that issued the directive) acted, not after. Bipartisan congressional pressure for the directive's legal basis has not produced a public response from BIS, and the Lawfare analysis of 15 June, described by legal observers as the sharpest read on the mechanism, concluded this is the first time export controls have been enforced against access to an AI model rather than against a chip or a model's weights, and that the statutory authority has never previously been used in this form.<a href="#src-5" id="cite-5a" class="fn-ref"><sup>5</sup></a></p>
+  <p>The investor read-through has two distinct components. The first is operational: any portfolio company outside the United States whose product or workflow depends on a US-hosted frontier model is carrying a continuity risk that has no precedent in prior procurement cycles. The Anthropic suspension showed that the gap between a BIS letter and a worldwide outage is measured in hours, not in regulatory cycles. The second is competitive: the distillation accusation against Alibaba, if substantiated, establishes that Chinese labs are systematically extracting capability from US frontier models through indirect access, which is precisely the dynamic the June 12 directive sought to block, and which simultaneously provides the political pressure that could make the trusted-partners channel harder to build quickly.</p>
+  <div class="data-cards">
+    <div class="data-card"><div class="dc-label">Distillation attack scale</div><div class="dc-value">28.8m</div><div class="dc-note">Exchanges attributed to Alibaba-affiliated operators via ~25,000 fraudulent accounts. Anthropic letter dated 10 June; reported by CNBC 24 June. <a href="#src-1" class="fn-ref"><sup>1</sup></a></div></div>
+    <div class="data-card"><div class="dc-label">Directive status</div><div class="dc-value">Contested</div><div class="dc-note">BIS has not published the legal basis. Bipartisan House group has demanded it in writing. Both parties working to resolve. <a href="#src-5" class="fn-ref"><sup>5</sup></a></div></div>
+    <div class="data-card"><div class="dc-label">Trusted-partners channel</div><div class="dc-value">Unbuilt</div><div class="dc-note">Floated by Lutnick at the G7; no implementing framework has been announced as of 26 June. <a href="#src-6" id="cite-6a" class="fn-ref"><sup>6</sup></a></div></div>
+  </div>
+</div>
+
+<!-- TOPIC 2: EU CLOUD SOVEREIGNTY -->
+<div class="section" id="topic2">
+  <div class="section-header"><span class="section-num">&sect;6</span><h2>EU Cloud Sovereignty: The CADA Pressure Test</h2></div>
+  <div class="pull-quote">The Cloud and AI Development Act's four sovereignty tiers are drawing the sharpest industry objection since the AI Act itself. With full AI Act applicability six weeks away, the compliance clock is not waiting for the legislative process.</div>
+  <p>The European Commission's Cloud and AI Development Act proposal, published 3 June as part of the broader tech sovereignty package, encountered structured industry pushback this week. The Computer and Communications Industry Association described the CADA's four-tier cloud sovereignty assurance framework as setting requirements that no major non-EU technology provider could meet by design, noting that Levels 3 and 4 are effectively closed-market requirements framed as security thresholds, and that Article 31 could extend the same obligations from the public sector to private enterprises.<a href="#src-7" id="cite-7a" class="fn-ref"><sup>7</sup></a> The CADA legislative timetable runs to Q4 2027 at the earliest under the joint roadmap agreed in April; the investor concern is not about the Act's passage but about the direction of travel it confirms. The Commission's stated aim is to triple EU data-centre capacity within five to seven years, with data-centre acceleration zones in each member state providing 12-month permit timelines, and a Union added-value criterion in public procurement weighted at up to 15 of 120 points in favour of providers with EU-based operations, supply chains and innovation.<a href="#src-8" id="cite-8a" class="fn-ref"><sup>8</sup></a></p>
+  <p>The forcing function that operates independently of the CADA timetable is the EU AI Act, whose full applicability arrives on 2 August 2026, six weeks from now. General-purpose AI model obligations under Articles 51 to 55 are already in effect from August 2025; the high-risk system rules covering digital infrastructure, energy and healthcare apply next. For European data-centre and cloud assets in any PE portfolio, the compliance posture question is not prospective; it is immediate. The structural opportunity reads as follows: operators demonstrating strong sovereign-cloud credentials and EU-compliant AI governance are better positioned for public-sector procurement, and for assets in France, Germany, the Nordics and the Iberian peninsula where the data-centre acceleration zone designations would apply, the permitting-timeline benefit is material in markets where grid interconnection can otherwise take four years.</p>
+  <div class="data-cards">
+    <div class="data-card"><div class="dc-label">CADA proposal date</div><div class="dc-value">3 Jun 2026</div><div class="dc-note">European Commission published the Cloud and AI Development Act proposal as part of the tech sovereignty package. <a href="#src-8" class="fn-ref"><sup>8</sup></a></div></div>
+    <div class="data-card"><div class="dc-label">EU data-centre capacity target</div><div class="dc-value">3x in 5-7 yrs</div><div class="dc-note">Commission target under CADA; data-centre acceleration zones to offer 12-month permit timelines per member state. <a href="#src-8" class="fn-ref"><sup>8</sup></a></div></div>
+    <div class="data-card"><div class="dc-label">AI Act full application</div><div class="dc-value">2 Aug 2026</div><div class="dc-note">High-risk system rules covering digital infrastructure, energy and healthcare join GPAI model obligations already in effect. <a href="#src-2" class="fn-ref"><sup>2</sup></a></div></div>
+  </div>
+</div>
+
+<!-- TOPIC 3: DEEPSEEK -->
+<div class="section" id="topic3">
+  <div class="section-header"><span class="section-num">&sect;7</span><h2>DeepSeek at $50bn: The Open-Source Counter-Move</h2></div>
+  <div class="pull-quote">DeepSeek closed a $7.4 billion first funding round this week. The timing was not coincidental: the US export directive that cut allied access to Anthropic's frontier models has accelerated demand for the open-source alternative that DeepSeek leads.</div>
+  <p>DeepSeek formally closed its first external funding round on or around 19 June, raising $7.4 billion in a structure that requires investors to place capital into a limited partnership managed by founder Liang Wenfeng, who retains absolute control; a five-year lockup applies to all investors except China's National Artificial Intelligence Industry Investment Fund, which invested directly and retains voting rights and lockup exemption.<a href="#src-3" id="cite-3b" class="fn-ref"><sup>3</sup></a> Tencent and CATL are among the investors. The round values DeepSeek above $50 billion, placing it among the largest AI company valuations globally on a first-round basis. The structural context makes the timing read as a policy response: the Anthropic export directive of 12 June cut foreign-national access to Fable 5 and Mythos 5 worldwide, and within days Z.ai shares jumped more than 30% following its release of a new open-source model that explicitly positioned itself as withdrawal-proof frontier intelligence.<a href="#src-9" id="cite-9a" class="fn-ref"><sup>9</sup></a> Chinese open-source models have rapidly expanded their share of global large language model usage, up from near zero in late 2024, and DeepSeek's V4 model, released in April, has been optimised for Huawei's Ascend 950 chips rather than Nvidia hardware.</p>
+  <p>The PE investor read-through operates at two levels. At the portfolio level, any asset whose product depends on US-hosted frontier model access now faces an accelerated substitution risk from the Chinese open-source tier that was not priced into most underwriting models before June. DeepSeek at $50 billion with state backing is not a research curiosity; it is an institutionally capitalised alternative with a deliberate cost structure and a regulatory-proof distribution model. At the sector level, the AI infrastructure underwriting question shifts: a data-centre positioned to serve open-source, inference-optimised workloads at competitive power cost may warrant a different demand assumption than one positioned for training-only US frontier model capacity, where the access layer itself is now subject to policy risk.</p>
+  <div class="data-cards">
+    <div class="data-card"><div class="dc-label">DeepSeek round size</div><div class="dc-value">$7.4bn</div><div class="dc-note">First external funding round, closed 16 June. Five-year lockup; Liang Wenfeng retains control via LP structure. <a href="#src-3" class="fn-ref"><sup>3</sup></a></div></div>
+    <div class="data-card"><div class="dc-label">Implied valuation</div><div class="dc-value">$50bn+</div><div class="dc-note">Investors include Tencent, CATL, China's National AI Industry Investment Fund. <a href="#src-3" class="fn-ref"><sup>3</sup></a></div></div>
+    <div class="data-card"><div class="dc-label">Chinese open-source LLM share</div><div class="dc-value">Rising fast</div><div class="dc-note">Share of global LLM usage growing rapidly from near zero in late 2024. DeepSeek, Qwen, MiniMax the leading platforms. Exact share disputed across analyst sources. <a href="#src-9" class="fn-ref"><sup>9</sup></a></div></div>
+  </div>
+</div>
+
+<!-- TOPIC 4: BURGENSTOCK -->
+<div class="section" id="topic4">
+  <div class="section-header"><span class="section-num">&sect;8</span><h2>Burgenstock: Roadmap, Not Resolution</h2></div>
+  <div class="pull-quote">The talks that were cancelled in Issue 014 did happen, a week later. They produced a formal roadmap and four working groups. For Gulf digital infrastructure, the question is now about timelines, not about whether the recovery begins.</div>
+  <p>The high-level negotiations between the United States and Iran, delayed from 19 June to 21-22 June at the Burgenstock resort after the Lebanon escalation that prevented the planned signing ceremony, concluded on the morning of Monday 22 June. Mediators Qatar and Pakistan announced a roadmap toward a final deal within 60 days, the creation of a direct communication mechanism to avoid incidents in the Strait of Hormuz, and the formation of four working groups covering nuclear monitoring, sanctions, reconstruction and deconfliction in Lebanon.<a href="#src-4" id="cite-4b" class="fn-ref"><sup>4</sup></a> Iran's parliamentary speaker Ghalibaf led the Iranian delegation alongside Foreign Minister Araghchi; Vice President Vance led for the United States. Iran agreed to invite International Atomic Energy Agency inspectors back into the country, which Vance described as a major milestone and the first step toward a permanent end to the nuclear programme. The narrative from Issue 014 can now be firmed: Iran's withdrawal from the original 19 June ceremony was driven by Lebanese escalation, not by US logistics, as reporting from Al Jazeera, CNBC and NPR has now made clear.</p>
+  <p>The Chatham House analysis published in the June 2026 edition of The World Today provides useful framing for the Gulf digital infrastructure implication. Its assessment of the March 2026 Iranian drone strikes on AWS data centres in the UAE and Bahrain treats those strikes as an inflection point in recognising digital infrastructure as a strategic wartime target, not as collateral damage. The implication for the recovery thesis is that the removal of the war-risk premium through the Burgenstock roadmap is a necessary but not sufficient condition for Gulf megaproject resumption; the security architecture of the paused assets also needs to reflect what February through June established about the threat model. The 60-day working-group process is the relevant planning horizon for paused pipeline decisions, including the Pure DC Abu Dhabi expansion and the broader Stargate Gulf configuration.</p>
+  <div class="data-cards">
+    <div class="data-card"><div class="dc-label">Burgenstock talks</div><div class="dc-value">21-22 Jun</div><div class="dc-note">18-hour session; Qatar and Pakistan confirmed a 60-day roadmap and immediate commencement of technical talks. <a href="#src-4" class="fn-ref"><sup>4</sup></a></div></div>
+    <div class="data-card"><div class="dc-label">Working groups formed</div><div class="dc-value">4</div><div class="dc-note">Nuclear monitoring, sanctions relief, Iran reconstruction, Lebanon deconfliction. Technical teams to begin immediately. <a href="#src-4" class="fn-ref"><sup>4</sup></a></div></div>
+    <div class="data-card"><div class="dc-label">IAEA inspectors</div><div class="dc-value">Invited back</div><div class="dc-note">Iran agreed to IAEA re-entry; Vance described it as the first step toward permanently ending the nuclear programme. <a href="#src-4" class="fn-ref"><sup>4</sup></a></div></div>
+  </div>
+</div>
+
+<!-- DEAL FLOW -->
+<div class="section" id="dealflow">
+  <div class="section-header"><span class="section-num">&sect;9</span><h2>Deal Flow</h2></div>
+  <table class="std-table">
+    <thead><tr><th style="width:185px">Parties</th><th style="width:82px">Value</th><th style="width:78px">Date</th><th>Description &amp; Source</th></tr></thead>
+    <tbody>
+      <tr><td class="td-strong">Qualcomm / Meta Platforms<br><span style="font-weight:400;font-size:12px;color:var(--ink-light)">Multi-generation CPU agreement; investor day, New York</span></td><td class="td-accent">N/D</td><td class="td-light">24 Jun 2026</td><td>Qualcomm unveiled the Dragonfly C1000 CPU at its investor day, naming Meta as anchor customer for a multi-generation server fleet agreement; the C1000, with 250+ Oryon cores at 5GHz+, is due in commercial production in 2028. Qualcomm guided to $15bn in data-centre revenue by fiscal 2029, raising its non-handset target to $40bn. Two additional unnamed hyperscalers have signed custom chip deals. Shares rose 15% in extended trading. The read-through: a credible non-Nvidia CPU stack with hyperscaler anchor commitment changes the hardware optionality assumption in AI infrastructure underwriting. <em>Bloomberg / CNBC / DCD.</em><a href="#src-10" id="cite-10a" class="fn-ref"><sup>10</sup></a></td></tr>
+      <tr><td class="td-strong">Qualcomm / Modular<br><span style="font-weight:400;font-size:12px;color:var(--ink-light)">AI software infrastructure acquisition</span></td><td class="td-accent">~$3.9bn</td><td class="td-light">24 Jun 2026</td><td>Qualcomm announced the acquisition of Modular, the AI compiler infrastructure company founded by Chris Lattner (LLVM, Swift), in an all-stock deal valued at roughly $3.9bn based on Qualcomm's pre-announcement share price. Modular's software enables AI workloads to run across heterogeneous chip architectures without re-engineering for each platform, positioning it as a CUDA alternative. Deal expected to close second half of 2026. The software-layer acquisition is what makes the Dragonfly hardware announcement commercially credible: a CPU with no developer ecosystem is a chip, not a platform. <em>Financial Times / WSJ.</em><a href="#src-11" id="cite-11a" class="fn-ref"><sup>11</sup></a></td></tr>
+      <tr><td class="td-strong">SK Hynix<br><span style="font-weight:400;font-size:12px;color:var(--ink-light)">Nasdaq ADR offering; Korea Exchange primary listing</span></td><td class="td-accent">$29.4bn</td><td class="td-light">24 Jun 2026</td><td>SK Hynix filed with the SEC and Korea FSS to raise up to 45.45 trillion won ($29.4bn) through American depositary receipts on Nasdaq, targeting a 10 July trading start. Proceeds earmarked entirely for the Yongin Y1 fab, the Cheongju P&T7 HBM packaging plant, and EUV scanner orders. At the top of its range, the largest ADR offering in history, surpassing Alibaba's 2014 debut. SK Hynix holds roughly 57% of the global HBM market; its shares rose 12% on announcement, passing Samsung as South Korea's most valuable listed company. For PE investors in AI data centres, this is the clearest capitalisation signal that HBM shortages are expected to persist well beyond 2026. <em>Bloomberg / Tom's Hardware / CNBC.</em><a href="#src-12" id="cite-12a" class="fn-ref"><sup>12</sup></a></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- PE RISK MATRIX -->
+<div class="section" id="riskmatrix">
+  <div class="section-header"><span class="section-num">&sect;10</span><h2>PE Risk Matrix</h2></div>
+  <table class="std-table">
+    <thead><tr><th style="width:180px">Risk Vector</th><th style="width:75px">Level</th><th>Investor Implication</th><th style="width:90px">Status</th></tr></thead>
+    <tbody>
+      <tr><td class="td-strong">AI Model-Access Controls</td><td><span class="badge b-high">High</span></td><td>The Alibaba distillation accusation (24 June) raises the political cost of building the trusted-partners channel, while the legal basis for the directive remains unpublished. Portfolio companies outside the US depending on US frontier model access should treat the continuity risk as structurally unresolved until a sanctioned channel exists.</td><td><span class="badge b-new">Escalating</span></td></tr>
+      <tr><td class="td-strong">EU Sovereignty Compliance</td><td><span class="badge b-elev">Elevated</span></td><td>The CADA four-tier framework is not yet law, but its direction is established, and the EU AI Act's full applicability on 2 August is immediate. European assets with non-EU cloud or AI dependencies face a procurement disadvantage in any public-sector tender from August onwards. The CADA acceleration-zone benefit requires tracking by market.</td><td><span class="badge b-new">Active</span></td></tr>
+      <tr><td class="td-strong">Open-Source Substitution Risk</td><td><span class="badge b-elev">Elevated</span></td><td>DeepSeek at $50bn with state backing is now a capitalised platform, not a research project. Any AI-grade data-centre or software asset underwritten on the assumption that US frontier model dependency is the permanent market structure should model a scenario where open-source Chinese alternatives capture a material workload share within 18-24 months.</td><td><span class="badge b-new">New vector</span></td></tr>
+      <tr><td class="td-strong">Gulf Digital Infrastructure Recovery</td><td><span class="badge b-elev">Elevated</span></td><td>The Burgenstock roadmap converts the MoU into a structured process, which is a positive step for Gulf megaproject resumption. The 60-day working-group timeline is the relevant planning horizon for paused pipeline decisions. The Chatham House framing of Gulf data centres as confirmed wartime targets argues for pricing in a security-hardening cost that pre-February underwriting did not include.</td><td><span class="badge b-deesc">Improving</span></td></tr>
+      <tr><td class="td-strong">CFIUS / Foreign Investment Review</td><td><span class="badge b-elev">Elevated</span></td><td>Stable elevated. The open-source substitution dynamic and the distillation accusation against Alibaba add a new dimension to CFIUS review for any asset with Chinese technology dependency in the supply chain or customer base, even where the primary investor is not Chinese.</td><td>Stable elevated</td></tr>
+      <tr><td class="td-strong">BIS 50% Rule Compliance</td><td><span class="badge b-med">Medium</span></td><td>Enforcement 10 November 2026; 19 weeks remain. The model-access precedent set by the June 12 directive and the Alibaba distillation letter both reinforce the direction of BIS enforcement. Operators with PRC-adjacent counterparties should have external counsel engaged before Q3 2026.</td><td>Deadline tracking</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ASSET CLASS STANCES -->
+<div class="section" id="stances">
+  <div class="section-header"><span class="section-num">&sect;11</span><h2>Asset Class Stances</h2></div>
+  <table class="std-table">
+    <thead><tr><th style="width:165px">Asset Class</th><th style="width:75px">Direction</th><th style="width:140px">Key Variable</th><th>Read-Through</th><th style="width:80px">Stance</th></tr></thead>
+    <tbody>
+      <tr><td class="td-strong">Data Centres (Hyperscale / AI)</td><td style="color:#7A5A1A;font-weight:600;">Mixed</td><td>Model-layer dependency and jurisdiction</td><td>Structural demand remains intact, but the model-access and open-source substitution developments this week introduce a new underwriting variable: which workload tier does the asset serve, and is that tier's demand profile immune to the US-China model bifurcation now under way? EU-based assets gain a structural tailwind from the CADA acceleration-zone framework. Non-EU, non-US assets in the middle tier warrant closer scrutiny.</td><td><span class="badge b-sel">Selective</span></td></tr>
+      <tr><td class="td-strong">Subsea Cable</td><td style="color:#7A5A1A;font-weight:600;">Stabilising</td><td>Burgenstock roadmap vs. Lebanon risk</td><td>The Burgenstock roadmap reduces the acute Gulf corridor risk that drove the downgrade in Issue 008. The 60-day working-group window is the relevant watch period before declaring a sustained recovery. Baltic and Atlantic routes are unaffected and remain separately investable. Active Watch posture remains appropriate until the deconfliction framework produces operational changes.</td><td><span class="badge b-wtch">&#x21C5; Active Watch</span></td></tr>
+      <tr><td class="td-strong">Fibre / Backbone</td><td style="color:#7A5A1A;font-weight:600;">Mixed</td><td>EU acceleration zones vs. UK overbuild</td><td>EU acceleration-zone framework is a positive permitting signal for European backbone build. UK altnet structural impairment unchanged. CADA sovereign-cloud procurement criteria could drive incremental backbone investment in corridors connecting EU data-centre zones to landing stations. Differentiate by geography.</td><td><span class="badge b-sel">Selective</span></td></tr>
+      <tr><td class="td-strong">Towers / RAN</td><td style="color:#8A837A;font-weight:600;">No change</td><td>Carrier spend</td><td>No new catalyst this week. Hold existing portfolios; do not underwrite new tower development on near-term densification assumptions.</td><td><span class="badge b-neu">Neutral</span></td></tr>
+      <tr><td class="td-strong">Satellite / LEO</td><td style="color:#7A5A1A;font-weight:600;">Mixed</td><td>Gulf demand signal easing</td><td>The Burgenstock roadmap reduces the acute cable-disruption demand signal for LEO that built during the conflict. Structural connectivity redundancy case remains, but the distress-premium component is easing. Regulatory licensing path in target markets must be clear before any commitment.</td><td><span class="badge b-wtch">Watch</span></td></tr>
+      <tr><td class="td-strong">Power for Digital</td><td style="color:#2A5036;font-weight:600;">Strengthening</td><td>EU acceleration zones; Gulf recovery</td><td>SoftBank's announced EUR 75bn France commitment (Choose France, May 2026) and the CADA data-centre acceleration-zone framework both reinforce captive and contracted power as the primary investment differentiator within the data-centre sector. Power availability, not capital, remains the binding constraint on AI infrastructure deployment. The asset class with the clearest structural tailwind across both European and Gulf recovery scenarios.</td><td><span class="badge b-ow">Overweight</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- UNDERWRITING VARIABLES -->
+<div class="section" id="underwriting">
+  <div class="section-header"><span class="section-num">&sect;12</span><h2>Underwriting Variables</h2><span class="section-tag">0-100 &middot; higher = greater risk</span></div>
+  <table class="std-table">
+    <thead><tr><th style="width:230px">Variable</th><th style="width:50px">Score</th><th style="width:120px">Level</th><th style="width:58px">Change</th><th>Driver this week</th></tr></thead>
+    <tbody>
+      <tr><td class="td-strong">Sovereign &amp; Jurisdictional Compliance</td><td><span class="hm-score">86</span></td><td><div class="hm-bar-wrap"><div class="hm-bar" style="width:86%;background:#7A3020;"></div></div><span style="font-size:10px;color:var(--ink-light);">High</span></td><td><span class="delta-up">+10</span></td><td style="font-size:13px;color:var(--ink-mid);">Alibaba distillation accusation raises political cost of the trusted-partners channel; EU CADA four-tier framework adds a second compliance dimension; BIS enforcement direction is broadening from hardware to model access.</td></tr>
+      <tr><td class="td-strong">Model-Layer Continuity Risk</td><td><span class="hm-score">82</span></td><td><div class="hm-bar-wrap"><div class="hm-bar" style="width:82%;background:#7A3020;"></div></div><span style="font-size:10px;color:var(--ink-light);">High</span></td><td><span class="delta-up">+8</span></td><td style="font-size:13px;color:var(--ink-mid);">New variable this week. The June 12 directive established that US frontier model access can be withdrawn by administrative letter; the distillation accusation makes a fast resolution politically harder. Any product depending on Fable 5 or Mythos 5 access carries unresolved continuity exposure.</td></tr>
+      <tr><td class="td-strong">Open-Source Substitution Risk</td><td><span class="hm-score">72</span></td><td><div class="hm-bar-wrap"><div class="hm-bar" style="width:72%;background:#8A4030;"></div></div><span style="font-size:10px;color:var(--ink-light);">Elevated</span></td><td><span class="delta-up">+12</span></td><td style="font-size:13px;color:var(--ink-mid);">New variable this week. DeepSeek at $50bn with state backing, combined with the Z.ai demand surge, represents institutionalised open-source competition for US frontier model workloads. Not yet priced into AI infrastructure demand assumptions for most 2025-2026 vintage underwriting.</td></tr>
+      <tr><td class="td-strong">Route &amp; Corridor Resilience</td><td><span class="hm-score">64</span></td><td><div class="hm-bar-wrap"><div class="hm-bar" style="width:64%;background:#9A5030;"></div></div><span style="font-size:10px;color:var(--ink-light);">Elevated</span></td><td><span class="delta-dn">-18</span></td><td style="font-size:13px;color:var(--ink-mid);">Burgenstock roadmap and deconfliction channel reduce the acute Gulf corridor risk materially. Lebanon thread and 60-day uncertainty prevent a return to pre-conflict levels. Largest single-week movement downward in this heatmap.</td></tr>
+      <tr><td class="td-strong">Power Access &amp; Energy Security</td><td><span class="hm-score">72</span></td><td><div class="hm-bar-wrap"><div class="hm-bar" style="width:72%;background:#8A4030;"></div></div><span style="font-size:10px;color:var(--ink-light);">Elevated</span></td><td><span class="delta-dn">-8</span></td><td style="font-size:13px;color:var(--ink-mid);">Brent has returned to pre-war levels following the MoU; EU gas easing in parallel. Fixed PPA coverage remains the underwriting requirement for new assets, but the acute energy-shock pressure that drove this variable to 85 in Issue 008 has partially unwound.</td></tr>
+      <tr><td class="td-strong">CFIUS &amp; Foreign Investment Review</td><td><span class="hm-score">72</span></td><td><div class="hm-bar-wrap"><div class="hm-bar" style="width:72%;background:#8A4030;"></div></div><span style="font-size:10px;color:var(--ink-light);">Elevated</span></td><td><span class="delta-up">+2</span></td><td style="font-size:13px;color:var(--ink-mid);">Alibaba distillation accusation adds a new dimension to Chinese technology dependency review, even for assets where the investor is not Chinese. The perimeter of CFIUS-relevant technology dependency is widening.</td></tr>
+      <tr><td class="td-strong">Hardware Supply-Chain Optionality</td><td><span class="hm-score">66</span></td><td><div class="hm-bar-wrap"><div class="hm-bar" style="width:66%;background:#9A5030;"></div></div><span style="font-size:10px;color:var(--ink-light);">Elevated</span></td><td><span class="delta-flat">&mdash;</span></td><td style="font-size:13px;color:var(--ink-mid);">Stable. DeepSeek's Huawei Ascend optimisation adds a new dimension to the hardware bifurcation: non-Nvidia supply chains are becoming investable at scale, not just a contingency. Direction of travel is toward greater optionality, not less.</td></tr>
+      <tr><td class="td-strong">Exit Narrative Under Geopolitical Scrutiny</td><td><span class="hm-score">70</span></td><td><div class="hm-bar-wrap"><div class="hm-bar" style="width:70%;background:#8A5030;"></div></div><span style="font-size:10px;color:var(--ink-light);">Elevated</span></td><td><span class="delta-flat">&mdash;</span></td><td style="font-size:13px;color:var(--ink-mid);">Stable elevated. Gulf sovereign exits improving alongside the Burgenstock roadmap. Chinese strategic exit remains effectively closed. The CADA Union added-value criterion may open a new preference signal for EU-oriented buyers, which could widen the viable exit buyer universe for European assets.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- DILIGENCE QUESTIONS -->
+<div class="section" id="diligence">
+  <div class="section-header"><span class="section-num">&sect;13</span><h2>Diligence Questions</h2><span class="section-tag">9 questions</span></div>
+
+  <div class="dq-cat">Model-Layer Dependency</div>
+  <ul class="dq-list">
+    <li class="dq-item"><span class="dq-num">01</span><div>For any asset whose product or tenant depends on Anthropic's Fable 5 or Mythos 5: what is the continuity plan if access remains suspended or is withdrawn again by directive? Has the architecture been assessed for graceful degradation, and has an alternative model been identified and tested at the required capability level?<div class="dq-trace">BIS export directive on Fable 5 / Mythos 5; Anthropic statement, June 2026</div></div></li>
+    <li class="dq-item"><span class="dq-num">02</span><div>Has the investment thesis modelled a scenario in which a material share of AI workloads currently served by US frontier models migrates to open-source Chinese alternatives within 18 to 24 months? What is the revenue impact if the workload mix at the asset shifts toward inference-optimised, open-weight models running on non-Nvidia hardware?<div class="dq-trace">DeepSeek $7.4bn round close, 16 June 2026; The Information / TechTimes, 16-17 June 2026</div></div></li>
+  </ul>
+
+  <div class="dq-cat">EU Regulatory Compliance</div>
+  <ul class="dq-list">
+    <li class="dq-item"><span class="dq-num">03</span><div>For European data-centre and cloud assets: has the operator's compliance posture been mapped against the EU AI Act's high-risk system rules ahead of the 2 August 2026 full-applicability date? Which of the asset's services or tenants fall within the high-risk categories covering digital infrastructure, energy and healthcare?<div class="dq-trace">EU AI Act full applicability, 2 August 2026; European Commission</div></div></li>
+    <li class="dq-item"><span class="dq-num">04</span><div>Does the asset's jurisdiction qualify for data-centre acceleration zone designation under the CADA framework, and has the operator mapped the permitting-timeline benefit against current grid interconnection timelines in that market? What is the IRR impact of a 12-month versus a four-year permitting timeline for the next phase of the development programme?<div class="dq-trace">EU Cloud and AI Development Act proposal, 3 June 2026; European Commission</div></div></li>
+    <li class="dq-item"><span class="dq-num">05</span><div>For assets targeting EU public-sector tenancy: how does the operator's current profile score against the CADA Union added-value procurement criterion, which weights EU-based operations, supply chains and innovation at up to 15 of 120 tender points? Is the operator positioned to compete for the public-sector demand the CADA is designed to redirect toward EU providers?<div class="dq-trace">EU CADA proposal, Article on Union added value; Wilson Sonsini analysis, June 2026</div></div></li>
+  </ul>
+
+  <div class="dq-cat">Gulf Recovery</div>
+  <ul class="dq-list">
+    <li class="dq-item"><span class="dq-num">06</span><div>For Gulf digital infrastructure assets that paused investment decisions during the conflict: does the resumption case assume a clean restoration of pre-February security conditions, or does it price in a security-hardening cost reflecting the Chatham House finding that Gulf AI campuses are now confirmed wartime targets with documented vulnerability to drone strikes?<div class="dq-trace">Burgenstock talks, 21-22 June 2026; Chatham House, June 2026</div></div></li>
+    <li class="dq-item"><span class="dq-num">07</span><div>Which of the four Burgenstock working groups (nuclear monitoring, sanctions relief, reconstruction, Lebanon deconfliction) carries the greatest binary risk for the asset's Gulf pipeline? A breakdown in the Lebanon deconfliction cell would be the most likely trigger for a return to hostilities within the 60-day window; has the investment decision timeline been aligned to the working-group milestones rather than to a fixed calendar date?<div class="dq-trace">Burgenstock outcome, Al Jazeera / CNBC / NPR, 22 June 2026</div></div></li>
+  </ul>
+
+  <div class="dq-cat">Export Controls and Supply Chain</div>
+  <ul class="dq-list">
+    <li class="dq-item"><span class="dq-num">08</span><div>Following Anthropic's accusation that Alibaba conducted 28.8 million distillation exchanges through fraudulent accounts, has the asset's technology vendor map been reviewed for any indirect Alibaba or Alibaba Cloud dependency that could come within scope of BIS enforcement action? The perimeter of controlled technology is moving from chips to software to model outputs; the supply-chain audit should reflect this.<div class="dq-trace">Anthropic Senate Banking Committee letter, 10 June 2026; reported by CNBC, 24 June 2026</div></div></li>
+    <li class="dq-item"><span class="dq-num">09</span><div>For any structure with BIS 50% Rule exposure: external counsel should be engaged before the end of Q3 2026, with 19 weeks to the 10 November enforcement date. Has the ownership-chain mapping been completed, and does it cover indirect PRC-linked counterparties through the full capital structure including co-investors, lenders and key vendors?<div class="dq-trace">BIS 50% Rule, enforcement 10 November 2026</div></div></li>
+  </ul>
+</div>
+
+<!-- STRATEGY ACTIONS -->
+<div class="section" id="strategy">
+  <div class="section-header"><span class="section-num">&sect;14</span><h2>Strategy Actions</h2></div>
+
+  <div class="horizon-label">Immediate &middot; 0 to 90 days</div>
+  <ul class="action-list">
+    <li class="action-item"><div class="action-dot"></div><div><strong>Map model-layer dependency across the portfolio before the trusted-partners channel is built.</strong> The Alibaba distillation accusation makes a rapid resolution of the Anthropic directive politically harder, not easier. Any asset with Fable 5 or Mythos 5 in its product stack could benefit from a dual-sourcing assessment now, while there is still time to implement an alternative before a second suspension. The alternative need not be a Chinese open-source model; it could be an older Anthropic model, a competing US provider, or an on-premise open-weight deployment.</div></li>
+    <li class="action-item"><div class="action-dot"></div><div><strong>Complete EU AI Act compliance mapping for European assets before 2 August.</strong> The high-risk system rules take effect in six weeks. For any European portfolio company or investee whose product touches digital infrastructure, energy management, healthcare data or law enforcement, an external review of compliance posture would be worth completing before the enforcement date rather than after it.</div></li>
+    <li class="action-item"><div class="action-dot"></div><div><strong>Engage BIS 50% Rule external counsel before the end of Q3 2026.</strong> Nineteen weeks remain to the 10 November enforcement date. The complexity of ownership-chain mapping for the full scope of PRC-adjacent counterparties requires time. Waiting until Q4 may not leave enough runway.</div></li>
+  </ul>
+
+  <div class="horizon-label">Platform &middot; 3 to 12 months</div>
+  <ul class="action-list">
+    <li class="action-item"><div class="action-dot"></div><div><strong>Model open-source workload substitution into AI infrastructure demand assumptions.</strong> DeepSeek at $50 billion with state backing and a five-year lockup structure is not a transitional phenomenon. A scenario in which Chinese open-source models capture 20 to 30 percent of the inference workloads currently underwritten as US-frontier-dependent would have material implications for data-centre utilisation assumptions. This scenario may warrant a sensitivity run in any AI infrastructure model where the demand thesis relies on workload mix assumptions that predate June 2026.</div></li>
+    <li class="action-item"><div class="action-dot"></div><div><strong>Review Gulf assets against a security-hardened resumption case, not a pre-February baseline.</strong> The Burgenstock roadmap is a genuine improvement, and the 60-day working-group process is the right timeline for assessing when paused pipeline decisions may be reviewed. The Chatham House framing should be integrated into physical security cost assumptions before any formal resumption of paused Gulf investment decisions: the assets that were struck in March were not incidental targets.</div></li>
+  </ul>
+
+  <div class="horizon-label">Portfolio &middot; 12 to 24 months</div>
+  <ul class="action-list">
+    <li class="action-item"><div class="action-dot"></div><div><strong>Assess CADA acceleration-zone eligibility for European data-centre development pipelines.</strong> The CADA legislative timetable runs to late 2027, but the direction of European data-centre policy is clear and consistent with the AI Act direction of travel. Operators able to demonstrate sovereign-cloud credentials, EU-based supply chains and AI Act compliance will be structurally better positioned for public-sector demand and potentially for the permitting-timeline benefit of acceleration-zone designation. Assets in France, Finland, Spain and the Nordic markets are most directly in scope of the announced investment wave.</div></li>
+  </ul>
+</div>
+
+<!-- WATCH LIST -->
+<div class="section" id="watchlist">
+  <div class="section-header"><span class="section-num">&sect;15</span><h2>Watch List</h2></div>
+  <table class="std-table">
+    <thead><tr><th style="width:190px">Item</th><th style="width:90px">Window</th><th>Signal to watch</th></tr></thead>
+    <tbody>
+      <tr><td class="td-strong">Anthropic directive resolution and trusted-partners channel</td><td style="color:var(--accent);font-size:12px;font-weight:600;">0-30 days</td><td>Both parties say they are working to resolve the suspension. The Alibaba distillation letter raises the political cost of a fast resolution. Watch for: BIS publishing the legal basis for the directive; Anthropic confirming Fable 5 and Mythos 5 are back online; Commerce announcing a trusted-partners framework with named qualifying countries. Any of these resolves or reshapes the model-access continuity risk this week introduced as a new underwriting variable.</td></tr>
+      <tr><td class="td-strong">Burgenstock 60-day working groups</td><td style="color:var(--accent);font-size:12px;font-weight:600;">0-60 days</td><td>Four working groups (nuclear, sanctions, reconstruction, Lebanon deconfliction) are now operational. The Lebanon deconfliction cell is the highest-risk thread: a breakdown here is the most plausible trigger for a return to hostilities within the window. Watch for weekly mediator statements from Qatar and Pakistan, and for any Israeli action in Lebanon that Iran characterises as an MoU violation. Gulf pipeline resumption decisions are unlikely before the working groups establish a track record of progress.</td></tr>
+      <tr><td class="td-strong">EU AI Act enforcement actions</td><td style="color:var(--accent);font-size:12px;font-weight:600;">2 Aug 2026</td><td>Full applicability of the EU AI Act for high-risk systems. Watch for: European AI Office and national market surveillance authorities publishing enforcement priorities; any large-scale AI system placed on the EU market that faces an early compliance challenge; GPAI model providers publishing required transparency documentation. The first enforcement action, whenever it comes, will set the tone for how the regulation interacts with digital infrastructure in practice.</td></tr>
+      <tr><td class="td-strong">DeepSeek V4 and Chinese open-source adoption curve</td><td style="color:var(--accent);font-size:12px;font-weight:600;">Ongoing</td><td>DeepSeek's V4 model, optimised for Huawei Ascend 950 chips, is now in preview. Watch for: enterprise adoption signals in Southeast Asia, the Middle East and Europe, where the Anthropic suspension created a demand opening; Alibaba's Qwen series response; any further US export control action targeting open-weight model weights directly. Chinese open-source LLM market share is the structural signal to track quarterly.</td></tr>
+      <tr><td class="td-strong">BIS 50% Rule enforcement</td><td style="color:var(--accent);font-size:12px;font-weight:600;">10 Nov 2026</td><td>Nineteen weeks to enforcement. Watch for BIS guidance on the expanded restricted-party definition and any enforcement communication that clarifies the scope of indirect PRC-linked counterparty coverage. The Alibaba distillation accusation suggests BIS is actively monitoring the perimeter of Chinese technology access; enforcement action before November 10 cannot be excluded.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- SOURCES -->
+<div class="section" id="sources">
+  <div class="section-header"><span class="section-num">&sect;16</span><h2>Sources</h2></div>
+  <div class="sources-grid">
+    <div class="source-tile">
+      <div class="source-tile-cat">Financial Press</div>
+      <ul class="source-link-list">
+        <li class="source-link-item" id="src-3"><span class="src-num">3</span><a href="https://capacityglobal.com/news/deepseek-funding-round-global-ai/" target="_blank">Capacity - DeepSeek $7.4bn funding round</a><span class="source-link-date">&middot; 19 Jun 2026</span><a href="#cite-3b" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item" id="src-10"><span class="src-num">10</span><a href="https://www.cnbc.com/2026/06/24/qualcomm-data-center-cpu-meta.html" target="_blank">CNBC - Qualcomm Dragonfly C1000 / Meta agreement</a><span class="source-link-date">&middot; 24 Jun 2026</span><a href="#cite-10a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item" id="src-11"><span class="src-num">11</span><a href="https://www.datacenterdynamics.com/en/news/qualcomm-unveils-three-new-data-center-solutions-including-qualcomm-dragonfly-c1000-cpu-set-to-be-deployed-by-meta/" target="_blank">Data Center Dynamics - Qualcomm Dragonfly / Modular acquisition</a><span class="source-link-date">&middot; 25 Jun 2026</span><a href="#cite-11a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item" id="src-12"><span class="src-num">12</span><a href="https://www.cnbc.com/2026/06/24/sk-hynix-nasdaq-adr-listing-south-korea.html" target="_blank">CNBC - SK Hynix $29.4bn Nasdaq ADR filing</a><span class="source-link-date">&middot; 24 Jun 2026</span><a href="#cite-12a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+      </ul>
+    </div>
+    <div class="source-tile">
+      <div class="source-tile-cat">Industry &amp; Market Data</div>
+      <ul class="source-link-list">
+        <li class="source-link-item" id="src-8"><span class="src-num">8</span><a href="https://www.insideglobaltech.com/2026/06/11/the-eu-cloud-and-ai-development-act-in-depth/" target="_blank">Inside Global Tech - CADA proposal in depth</a><span class="source-link-date">&middot; 11 Jun 2026</span><a href="#cite-8a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item" id="src-9"><span class="src-num">9</span><a href="https://fortune.com/2026/06/16/china-ai-deepseek-open-source-efficiency-global-expansion-strategy/" target="_blank">Fortune - China AI open-source global expansion</a><span class="source-link-date">&middot; 16 Jun 2026</span><a href="#cite-9a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+      </ul>
+    </div>
+    <div class="source-tile">
+      <div class="source-tile-cat">Regulatory &amp; Official</div>
+      <ul class="source-link-list">
+        <li class="source-link-item" id="src-2"><span class="src-num">2</span><a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" target="_blank">European Commission - AI Act applicability dates</a><span class="source-link-date">&middot; 17 Jun 2026</span><a href="#cite-2a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item" id="src-13"><span class="src-num">13</span><a href="https://commission.europa.eu/news-and-media/news/strengthening-europes-tech-sovereignty-2026-06-03_en" target="_blank">European Commission - Tech sovereignty package</a><span class="source-link-date">&middot; 3 Jun 2026</span></li>
+        <li class="source-link-item" id="src-7"><span class="src-num">7</span><a href="https://ccianet.org/news/2026/06/discriminatory-eu-cloud-and-ai-development-act-risks-severe-market-fragmentation/" target="_blank">CCIA Europe - CADA objection statement</a><span class="source-link-date">&middot; 3 Jun 2026</span><a href="#cite-7a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+      </ul>
+    </div>
+    <div class="source-tile">
+      <div class="source-tile-cat">Geopolitics &amp; OSINT</div>
+      <ul class="source-link-list">
+        <li class="source-link-item" id="src-4"><span class="src-num">4</span><a href="https://www.aljazeera.com/news/2026/6/22/us-iran-agree-on-roadmap-towards-final-deal-in-switzerland-talks" target="_blank">Al Jazeera - Burgenstock roadmap outcome</a><span class="source-link-date">&middot; 22 Jun 2026</span><a href="#cite-4b" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item"><span class="src-num">14</span><a href="https://www.cnbc.com/2026/06/22/us-iran-roadmap-final-deal-switzerland-talks-lebanon-deconfliction.html" target="_blank">CNBC - US-Iran Burgenstock deal terms</a><span class="source-link-date">&middot; 22 Jun 2026</span></li>
+        <li class="source-link-item"><span class="src-num">15</span><a href="https://www.chathamhouse.org/publications/the-world-today/2026-06/worlds-internet-infrastructure-under-threat-who-going-protect" target="_blank">Chatham House - Internet infrastructure under threat</a><span class="source-link-date">&middot; Jun 2026</span></li>
+      </ul>
+    </div>
+    <div class="source-tile">
+      <div class="source-tile-cat">Legal &amp; Policy Analysis</div>
+      <ul class="source-link-list">
+        <li class="source-link-item" id="src-5"><span class="src-num">5</span><a href="https://www.lawfaremedia.org/article/a-kill-switch-for-frontier-ai" target="_blank">Lawfare - Kill switch legal analysis</a><span class="source-link-date">&middot; 15 Jun 2026</span><a href="#cite-5a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item" id="src-6"><span class="src-num">6</span><a href="https://www.artificialintelligence-news.com/news/anthropic-export-controls-ai-sovereignty/" target="_blank">AI News - Anthropic export controls, AI sovereignty</a><span class="source-link-date">&middot; Jun 2026</span><a href="#cite-6a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item"><span class="src-num">16</span><a href="https://www.csis.org/analysis/department-commerce-restricted-access-anthropics-latest-models-what-comes-next" target="_blank">CSIS - Commerce restriction on Anthropic models</a><span class="source-link-date">&middot; Jun 2026</span></li>
+        <li class="source-link-item" style="color:var(--ink-light);font-style:italic;font-size:11px;padding-top:8px;border-top:1px solid var(--rule);margin-top:4px;">Doctrinal frame: Henry Farrell &amp; Abraham Newman, &ldquo;Weaponized Interdependence,&rdquo; <em>International Security</em> 44:1 (2019); <em>Underground Empire</em> (Henry Holt, 2023). Referenced in &sect;4 as analytical frame; not a primary source for any specific claim.</li>
+      </ul>
+    </div>
+    <div class="source-tile">
+      <div class="source-tile-cat">News &amp; Reporting</div>
+      <ul class="source-link-list">
+        <li class="source-link-item" id="src-1"><span class="src-num">1</span><a href="https://www.cnbc.com/2026/06/24/anthropic-alibaba-distillation-campaign.html" target="_blank">CNBC - Anthropic / Alibaba distillation letter</a><span class="source-link-date">&middot; 24 Jun 2026</span><a href="#cite-1b" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item"><span class="src-num">17</span><a href="https://www.nbcnews.com/tech/tech-news/anthropic-suspends-new-ai-models-fable-mythos-government-directive-rcna349901" target="_blank">NBC News - Anthropic suspends Fable 5 / Mythos 5</a><span class="source-link-date">&middot; Jun 2026</span></li>
+        <li class="source-link-item"><span class="src-num">18</span><a href="https://www.aljazeera.com/news/2026/6/19/us-export-ban-on-anthropics-ai-models-further-strains-alliances" target="_blank">Al Jazeera - US export ban strains alliances</a><span class="source-link-date">&middot; 19 Jun 2026</span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- DISCLAIMER -->
+<div class="disclaimer">
+  <h3>About Commentarii</h3>
+  <p><em>Commentarii</em> is a weekly intelligence publication from C&#x0298;NSVLT&#x0298;R, providing senior-level geopolitical and market analysis for private equity investors active in TMT and digital infrastructure. Each issue draws on open-source intelligence from financial press, industry data providers, and geopolitical monitoring platforms, synthesised through an operating partner lens.</p>
+  <p>The analysis is intended for professional investors. It does not constitute investment advice. Views are those of the author and subject to change. <a href="https://www.consvltor.net" target="_blank">consvltor.net</a></p>
+  <p>Enquiries: <a href="mailto:hello@consvltor.net">hello@consvltor.net</a></p>
+</div>
+
+</body>
+</html>
