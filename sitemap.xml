@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>  
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <!-- Main site -->
@@ -16,10 +16,17 @@
   </url>
 
 <!-- Commentarii issues — newest first -->
-  
+
+  <url>
+    <loc>https://consvltor.net/commentarii/issues/20260710-commentarii-a-tale-of-four-cities.html</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.8</priority>
+  </url>  
+
   <url>
     <loc>https://consvltor.net/commentarii/issues/20260703-commentarii-the-physical-layer.html</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-07-03</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>   
