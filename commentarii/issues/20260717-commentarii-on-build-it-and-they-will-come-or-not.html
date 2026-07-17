@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Commentarii 002 · On Build It and They Will Come, or Not · Oman · 2010</title>
+  <style>
+    :root {
+      --brown:        #5c2d00;
+      --brownMid:     #7a3d00;
+      --brownLight:   #a0601a;
+      --parchment:    #fdf8f0;
+      --parchmentAlt: #f5ede0;
+      --ink:          #2a1500;
+      --muted:        #7a5c3a;
+      --rule:         #c9a87a;
+      --editnote:     #b8394a;
+      --sans:         Arial, Helvetica, sans-serif;
+      --serif:        'Times New Roman', Times, serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--sans);
+      background: #fff;
+      color: var(--ink);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 2rem 5rem;
+    }
+
+    /* ── PREAMBLE INTRO ───────────────────────────────────── */
+    .preamble-intro {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 2.5rem;
+      align-items: start;
+      padding: 3rem 0 2.5rem;
+      border-bottom: 1px solid var(--rule);
+      margin-bottom: 3rem;
+    }
+
+    .preamble-intro .col-left {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .preamble-intro .col-left .pub-title {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 1.25rem;
+      font-weight: normal;
+      color: var(--brown);
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+
+    .preamble-intro .col-right {
+      font-family: var(--sans);
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    @media (max-width: 560px) {
+      .preamble-intro {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 2rem 0 1.75rem;
+      }
+    }
+
+    /* ── ENTRY HEADER ─────────────────────────────────────── */
+    .entry-meta {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--brownLight);
+      margin-bottom: 0.5rem;
+    }
+
+    .entry-title {
+      font-family: var(--serif);
+      font-size: 1.65rem;
+      font-weight: normal;
+      font-style: italic;
+      color: var(--brown);
+      line-height: 1.25;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    /* ── FIGURES ──────────────────────────────────────────── */
+    .map-figure {
+      margin: 0 0 2.25rem 0;
+      border: 1px solid var(--rule);
+      overflow: hidden;
+      background: var(--parchment);
+    }
+
+    .map-figure img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      object-position: center 35%;
+      display: block;
+    }
+
+    .map-figure img.error { display: none; }
+
+    .map-fallback {
+      display: none;
+      padding: 1.25rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      background: var(--parchmentAlt);
+      line-height: 1.6;
+    }
+
+    .map-figure img.error + .map-fallback { display: block; }
+
+    .map-caption {
+      padding: 0.45rem 0.75rem;
+      border-top: 1px solid var(--rule);
+      font-size: 0.7rem;
+      font-family: var(--sans);
+      color: var(--muted);
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      background: var(--parchment);
+    }
+
+    .map-caption em {
+      font-style: italic;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+
+    .inline-figure {
+      margin: 2rem 0 2.25rem 0;
+    }
+
+    .inline-figure img {
+      height: auto;
+      max-height: none;
+      object-fit: contain;
+      object-position: center center;
+      background: var(--parchment);
+    }
+
+    /* ── PROSE ────────────────────────────────────────────── */
+    .prose {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: var(--ink);
+    }
+
+    .prose p { margin-bottom: 1.25rem; }
+    .prose p:last-child { margin-bottom: 0; }
+    .prose p.kicker { color: var(--brown); }
+
+    .editor-note {
+      color: var(--editnote);
+      font-style: italic;
+      font-family: var(--sans);
+      font-size: 0.85rem;
+      border: 1px dashed var(--editnote);
+      padding: 0.15rem 0.5rem;
+      display: inline-block;
+    }
+
+    /* ── FOOTNOTE REFERENCES ──────────────────────────────── */
+    .fn-ref {
+      color: var(--brownLight);
+      text-decoration: none;
+    }
+
+    .fn-ref sup {
+      font-size: 0.65rem;
+      font-family: var(--sans);
+      vertical-align: super;
+      line-height: 0;
+    }
+
+    .fn-ref:hover { color: var(--brown); }
+
+    /* ── PRIMARY SOURCES ──────────────────────────────────── */
+    .sources-section {
+      margin-top: 3.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--rule);
+    }
+
+    .sources-label {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--brownLight);
+      margin-bottom: 1.25rem;
+    }
+
+    .sources-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .sources-list li {
+      display: grid;
+      grid-template-columns: 2.5rem 1fr;
+      gap: 0.75rem;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--parchmentAlt);
+      font-size: 0.82rem;
+      line-height: 1.65;
+      color: var(--muted);
+    }
+
+    .sources-list li:last-child { border-bottom: none; }
+
+    .src-num {
+      font-family: var(--sans);
+      font-size: 0.68rem;
+      color: var(--brownLight);
+      padding-top: 0.15rem;
+    }
+
+    .src-num a {
+      color: var(--brownLight);
+      text-decoration: none;
+    }
+
+    .src-num a:hover { color: var(--brown); }
+
+    .src-body { font-family: var(--sans); }
+
+    .src-body a {
+      color: var(--brown);
+      text-decoration: underline;
+      text-decoration-color: var(--rule);
+      text-underline-offset: 2px;
+    }
+
+    .src-body a:hover { text-decoration-color: var(--brownLight); }
+
+    .src-note {
+      display: block;
+      font-style: italic;
+      opacity: 0.75;
+      margin-top: 0.2rem;
+    }
+
+    /* ── ENTRY FOOTER ─────────────────────────────────────── */
+    .entry-footer {
+      margin-top: 3.5rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--rule);
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      opacity: 0.65;
+    }
+
+    .entry-footer .brand {
+      font-family: var(--serif);
+      font-style: normal;
+      text-transform: none;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- ── PREAMBLE INTRO ── -->
+  <div class="preamble-intro">
+
+    <div class="col-left">
+      <span class="pub-title">Commentarii</span>
+      Field notes from infrastructure, markets, and the geopolitics of connectivity. Written after dark.
+    </div>
+
+    <div class="col-right">
+      Each entry is anchored to a place and a period. Some are retrospective, written now from the distance of outcome. Others are current, drafted close to the events they describe. The standard of evidence is the same throughout: what the data and the experience actually support, no more.
+    </div>
+
+  </div>
+
+  <!-- ── ENTRY HEADER ── -->
+  <div class="entry-meta">Oman &nbsp;·&nbsp; 2010</div>
+  <h1 class="entry-title">On Build It and They Will Come, or Not</h1>
+
+  <!-- ── MAP FIGURE ── -->
+  <figure class="map-figure">
+    <img
+      src="https://consvltor.net/assets/MapOman.png"
+      alt="Arabia Felix. Detail from Abraham Ortelius, Turcici Imperii Descriptio, Theatrum Orbis Terrarum, c.1570."
+      onerror="this.classList.add('error')"
+    >
+    <div class="map-fallback">
+      Map unavailable. Confirm <code>MapOman.png</code> is present in <code>/assets/</code>.
+    </div>
+    <figcaption class="map-caption">
+      Abraham Ortelius &nbsp;·&nbsp;
+      <em>Turcici Imperii Descriptio</em>, detail: Arabia Felix
+      &nbsp;·&nbsp; Theatrum Orbis Terrarum &nbsp;·&nbsp; c.1570
+    </figcaption>
+  </figure>
+
+  <!-- ── PROSE: PART ONE ── -->
+  <div class="prose">
+
+    <p class="kicker">Omantel had built the network. In early 2010, five quarters into a subscriber plateau, the question was why nobody else<a href="#src-1" id="cite-1a" class="fn-ref"><sup>1</sup></a> was coming.</p>
+
+    <p>The Sultanate's incumbent had invested in MSAN equipment across the network, and ADSL broadband was available in most of the country: a service that existed, could be purchased, and in many cases already had been. What was not happening in 5 consecutive Q's was growth. New subscribers were not connecting, and existing subscribers were not moving up the speed tiers that would have put the installed capacity to productive use. The infrastructure was doing what infrastructure does when the go-to-market around it is not working: It was waiting.</p>
+
+    <p>I ended up leading the advisory engagement that followed, supporting Omantel from the consulting arm of the same equipment manufacturer that had provided the MSANs that apparently weren't needed anymore... which may sound to you like I was in a bit of a pickle.</p>
+
+    <p>The initial analysis required separating two problems that were easy to conflate: could the network connect more people, and could the proposition persuade the people already connected to use more of what they had. On one hand, the capacity question: A review of active and inactive accounts found that a significant number of sockets were physically plugged but attached to disconnected subscribers. This is how ADSL provisioning works: activating a connection requires every element of the chain to align before a subscriber can be billed; deactivating only requires cutting one link. The result was latent physical capacity distributed across the network that was not visible in the headline figures. The recommendation was to hold on further MSAN procurement until that capacity was properly understood and put to use. That didn't make my colleague in charge of selling equipment, particularly happy at the time.</p>
+
+    <p>On the other hand, the consumption question, which perhaps was the more consequential one. Connected subscribers were concentrated at the bottom of the speed tier range. Faster tiers existed and were not unreasonably priced, so availability was not the issue: what was missing was a reason for someone paying for the entry package to want the faster one. The go-to-market objective had been onboarding subscribers, and it worked well until a certain point, but the value proposition was not designed around driving adoption of speed. The use cases that would have justified a faster package, video, productive remote working, anything with latency sensitivity, were not in the mind of the customers. Most subscribers had no clear sense of what the extra speed would actually let them do. (Does it remind the reader, in a way, of 5G vs 4G+WiFi?)</p>
+
+    <p class="kicker">This distinction between technically available speed and actually consumed speed was the central finding of the engagement. The gap between them is not a network problem, but a commercial one.</p>
+
+    <p>The work over seven months covered the full go-to-market structure: market segmentation, product definition, package bundling, pricing analysis, competitor positioning, etc, etc. The financial modelling required particular care. Omantel was the incumbent with significant market power, and the TRA would scrutinise any package structure that could be read as exploiting that position. Regulatory constraint, for us the joint consultant/client team, shaped pricing creativity rather than eliminating it, as the team understood where the boundaries were.</p>
+
+    <p>The engagement had also included an operational readiness review: ensuring that sales, installations and provisioning could handle the volume of demand the new proposition was designed to generate. If the diagnosis was right, the bottleneck would shift from demand to delivery, and that had to be treated as a design constraint from the start, not an afterthought. On the competitive side, Nawras, Oman's second operator, had launched WiMAX residential broadband in July 2010, just as the engagement was beginning, claiming 54% household coverage and targeting 80% by 2011.<a href="#src-5" id="cite-5a" class="fn-ref"><sup>5</sup></a> The fixed wireless alternative was a genuine competitive variable. Being faster and more reliable than the challenger, at the moment customers were being asked to make a choice, was part of what the operational readiness work was preparing the client to deliver.</p>
+
+    <p>Anyway: my client was very bright and very brave with the pricing. He came up with a promo approach that bumped up the speed/experience for every client, to let them discover their own use cases (and of course marketing had to be too, quite educational, helping clients explore). It required some heavy modelling and simulations. But it's etched in my memory how my client's boss came out of the meeting with the CEO with a wide grin and the gesture of batting a ball out of the stadium (which I thought funny, since he was Swedish, and as far as I know they don't have a lot of sports involving bats). We were out of the pickle. The CEO announced, and the Times of Oman captured it, that the new plans went to market in January 2011.<a href="#src-2" id="cite-2a" class="fn-ref"><sup>2</sup></a><a href="#src-3" id="cite-3a" class="fn-ref"><sup>3</sup></a><a href="#src-4" id="cite-4a" class="fn-ref"><sup>4</sup></a> Local commentary at the time was blunt about it: relief that Omantel had finally moved, and no shortage of digs at Nawras for lagging behind.</p>
+
+  </div>
+
+  <!-- ── INLINE FIGURE: Ookla chart ── -->
+  <figure class="map-figure inline-figure">
+    <img
+      src="https://consvltor.net/assets/GoogleLabsOmanSpeeds.jpg"
+      alt="Average download speeds: Oman, Egypt, Côte d'Ivoire, World average, 2008–2013. Source: Google Labs / Ookla."
+      onerror="this.classList.add('error')"
+    >
+    <div class="map-fallback">
+      Chart unavailable. Confirm <code>GoogleLabsOmanSpeeds.jpg</code> is present in <code>/assets/</code>.
+    </div>
+    <figcaption class="map-caption">
+      Google Labs &nbsp;·&nbsp;
+      <em>Average download speeds: Oman, Egypt, Côte d'Ivoire, World</em>
+      &nbsp;·&nbsp; Source data: Ookla &nbsp;·&nbsp; 2008–2013
+    </figcaption>
+  </figure>
+
+  <!-- ── PROSE: PART TWO ── -->
+  <div class="prose">
+
+    <p>The outcome is in the chart. Within two quarters of the revised proposition launching, ADSL subscriber numbers grew 35%, after five consecutive flat quarters (from what my, by then, ex-team mates told me). I checked on Google Labs: the average download speed being consumed nationally had improved substantially over the same period. Google Labs, drawing on Ookla measurement data, recorded Oman's national average download speeds reaching approaching 4x their pre-engagement baseline by 2011.<a href="#src-6" id="cite-6a" class="fn-ref"><sup>6</sup></a> Nawras's WiMAX residential play did not flourish in that environment.</p>
+
+    <p>Omantel's willingness to act on the diagnosis was the enabling condition. The market was developing in any case. But the lever that was pulled sat on the Value Proposition / GTM side: change the proposition, change the behaviour, and the network already built delivers the outcome it was bought to produce. The capex was not the constraint. The go-to-market was. Omantel deployed substantially more MSANs not long after, once the decommissioning process itself had been corrected and the latent capacity properly accounted for (which made my equipment sales colleague very happy).</p>
+
+    <p>Shortly after, in 2012, Rohman and Bohlin published the study through Chalmers University and Arthur D. Little. It could be used to try to put a precise number on the implications of our project: doubling actual broadband speed contributes approximately 0.3 percentage points of GDP growth in OECD economies, with substantially larger effects in emerging markets.<a href="#src-7" id="cite-7a" class="fn-ref"><sup>7</sup></a> Even if Oman is not one of those economies, it is clear that the impact of broadband is structural, demonstrated at the level of an economy over years and across countries. And the main principle is simple: Infrastructure is necessary. Adoption is a condition sine qua non. The economic return on a network investment is realised when subscribers use the network, not when the cable is in the ground. Build it and they will come is not a go-to-market strategy. It is a wish.</p>
+
+    <p>I think it's safe to say that fifteen years later, that wish is being tested again, at considerably greater scale, in the UK altnet sector. Only now some of the altnets start treating take-up as a problem to be solved, rather than as a mere line to be projected in their sell-side CDDs. But that's perhaps for another Commentarii (or a one on one conversation).</p>
+
+    <p>There is a postscript to this engagement that has nothing to do with broadband. I fell in love with Oman: the scenery, the history, the pace, and above all: its people. The Omanis are among the warmest and most naturally generous I have encountered anywhere. I went back later with my wife and children on a road trip to trace what the Portuguese and Spanish left behind along the coast: the forts and watchtowers that mark 150 years of Iberian control of the sea routes to India, from the taking of Hormuz in 1507 to the final loss of Muscat in 1650. A 2017 paper in the <em>Revista de Estudios en Seguridad Internacional</em> maps them carefully, if you are inclined to follow the same trail.<a href="#src-8" id="cite-8a" class="fn-ref"><sup>8</sup></a></p>
+
+    <p class="kicker">Lastly, I invite you to enjoy the map at the top of this entry: ORMUS, upper right, is Hormuz. Moschetto is Muscat. Corfacam, Soar, Calayate, and many others you can try to guess if you've been in Arabia Felix... and look: the ship in the lower right corner is heading west, full of nutmeg from Indonesia, after passing through the Strait of Malacca. The same sea routes used to get spices now have fibre optic cable. The cargo is data. Also very valuable.</p>
+
+  </div>
+
+  <!-- ── PRIMARY SOURCES ── -->
+  <div class="sources-section">
+    <div class="sources-label">Primary Sources</div>
+    <ol class="sources-list">
+
+      <li id="src-1">
+        <span class="src-num"><a href="#cite-1a">↩ 1</a></span>
+        <span class="src-body">
+          Internet penetration rate, Oman, 2010: 35.8%.
+          <a href="https://geofactbook.com/fact/internet-penetration-rate/2010" target="_blank">Geo Factbook, Internet Penetration Rate (%) by Country, 2010</a>.
+        </span>
+      </li>
+
+      <li id="src-2">
+        <span class="src-num"><a href="#cite-2a">↩ 2</a></span>
+        <span class="src-body">
+          "Omantel rolls out new Internet packages."
+          <a href="http://www.muscatmutterings.com/2011/01/omantel-rolls-out-new-internet-packages.html" target="_blank">Muscat Mutterings, 25 January 2011</a>.
+        </span>
+      </li>
+
+      <li id="src-3">
+        <span class="src-num"><a href="#cite-3a">↩ 3</a></span>
+        <span class="src-body">
+          "Omantel launches new fixed broadband packages."
+          <a href="https://www.telecompaper.com/news/omantel-launches-new-fixed-broadband-packages--781081" target="_blank">Telecompaper, 26 January 2011</a>.
+        </span>
+      </li>
+
+      <li id="src-4">
+        <span class="src-num"><a href="#cite-4a">↩ 4</a></span>
+        <span class="src-body">
+          "Omantel unveils new fixed broadband plans."
+          <a href="https://www.pressreader.com/oman/times-of-oman/20110126/281960309211628" target="_blank">Times of Oman, 26 January 2011</a>.
+          <span class="src-note">Referenced for existence and date only; full text behind PressReader paywall and not independently verified.</span>
+        </span>
+      </li>
+
+      <li id="src-5">
+        <span class="src-num"><a href="#cite-5a">↩ 5</a></span>
+        <span class="src-body">
+          Dataxis Intelligence. "Nawras launches residential fixed line services in Oman."
+          <a href="https://www.prlog.org/10806139-nawras-launches-residential-fixed-line-services-in-oman.html" target="_blank">PRLog, 20 July 2010</a>.
+        </span>
+      </li>
+
+      <li id="src-6">
+        <span class="src-num"><a href="#cite-6a">↩ 6</a></span>
+        <span class="src-body">
+          Google Labs / Ookla. Average download speeds by country: Oman, Egypt, Côte d'Ivoire, World, 2008–2013. Data series via Ookla Net Index. First cited publicly by the author:
+          <a href="https://x.com/EduardoBayod" target="_blank">@EduardoBayod, X.com, 20 September 2021</a>.
+          <span class="src-note">[Confirm direct URL to post before publication. Google Labs broadband analytics discontinued.]</span>
+        </span>
+      </li>
+
+      <li id="src-7">
+        <span class="src-num"><a href="#cite-7a">↩ 7</a></span>
+        <span class="src-body">
+          Rohman, I.K. and Bohlin, E. (2012). "Does broadband speed really matter as a driver of economic growth? Investigating OECD countries."
+          <em>International Journal of Management and Network Economics</em>, Vol. 2, No. 4, pp. 336–356. Inderscience Enterprises. Chalmers University of Technology / Arthur D. Little.
+          Available via <a href="https://www.ssrn.com/abstract=2034284" target="_blank">SSRN (submitted April 2012)</a> and
+          <a href="https://www.inderscience.com/info/inarticle.php?artid=51888" target="_blank">Inderscience</a>.
+        </span>
+      </li>
+
+      <li id="src-8">
+        <span class="src-num"><a href="#cite-8a">↩ 8</a></span>
+        <span class="src-body">
+          Carrasco y Cifuentes, L.M. (2017). "Las Fortalezas Ibéricas en la Península Arábiga (1507–1650)."
+          <a href="https://seguridadinternacional.es/resi/html/las-fortalezas-ibericas-en-la-peninsula-arabiga-1507-1650/" target="_blank"><em>Revista de Estudios en Seguridad Internacional</em>, Vol. 3, No. 2, 2017, pp. 189–223</a>.
+        </span>
+      </li>
+
+    </ol>
+  </div>
+
+  <!-- ── ENTRY FOOTER ── -->
+  <div class="entry-footer">
+    <span><span class="brand">CʘNSVLTʘR</span> &nbsp;·&nbsp; Commentarii &nbsp;·&nbsp; 002</span>
+    <span>Oman &nbsp;·&nbsp; 2010</span>
+  </div>
+
+</div>
+</body>
+</html>
