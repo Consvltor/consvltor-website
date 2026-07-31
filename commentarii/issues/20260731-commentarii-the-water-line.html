@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Commentarii 019 · The Water Line · 31 July 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --bg:#F5F0E6;--ink:#1C1814;--ink-mid:#4A4540;--ink-light:#8A837A;
+  --rule:#D0C8BC;--card-bg:#EDE8DE;--accent:#7A3020;
+  --amber:#7A5A1A;--green:#2A5036;--blue:#1A3C5A;
+}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;font-size:15px;line-height:1.75;-webkit-font-smoothing:antialiased;}
+
+.preamble-image{width:100%;line-height:0;overflow:hidden;}
+.preamble-image img{width:100%;height:320px;object-fit:cover;object-position:center;display:block;}
+
+.preamble-intro{max-width:860px;margin:0 auto;padding:32px 48px;display:grid;grid-template-columns:1fr 1fr;gap:40px;border-bottom:1px solid var(--rule);}
+.preamble-intro .col-left{font-family:'Times New Roman',Times,serif;font-style:italic;font-size:15px;color:var(--ink-mid);line-height:1.7;}
+.preamble-intro .col-left .pub-title{font-size:17px;font-weight:normal;display:block;margin-bottom:8px;color:var(--ink);}
+.preamble-intro .col-right{font-family:Arial,Helvetica,sans-serif;font-size:13px;color:var(--ink-mid);line-height:1.75;}
+
+.report-header{max-width:860px;margin:0 auto;padding:64px 48px 44px;}
+.header-meta{font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-light);margin-bottom:22px;display:flex;gap:28px;flex-wrap:wrap;}
+.rule-thick{border:none;border-top:2px solid var(--ink);margin-bottom:26px;}
+.report-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:46px;font-weight:500;line-height:1.08;color:var(--ink);margin-bottom:16px;max-width:640px;}
+.report-deck{font-size:15px;color:var(--ink-mid);line-height:1.7;max-width:580px;border-left:3px solid var(--accent);padding-left:18px;margin-bottom:36px;}
+
+.cover-grid{max-width:680px;margin:0 auto;border:1px solid var(--rule);}
+.cg-row{display:grid;gap:1px;background:var(--rule);}
+.cg-row-top{grid-template-columns:repeat(4,1fr);}
+.cg-row-bot{grid-template-columns:repeat(4,1fr);border-top:1px solid var(--rule);}
+.cg-card{background:var(--bg);padding:16px 14px;display:flex;flex-direction:column;justify-content:space-between;min-height:160px;text-decoration:none;color:inherit;transition:background 0.15s;border-bottom:1px solid var(--rule);}
+.cg-card:hover{background:var(--card-bg);}
+.cg-card-fixed{background:var(--card-bg);padding:16px 14px;min-height:160px;display:flex;flex-direction:column;justify-content:space-between;text-decoration:none;color:inherit;transition:background 0.15s;border-bottom:1px solid var(--rule);}
+.cg-card-fixed:hover{background:#E4DDD3;}
+.cg-cat{font-size:8px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-light);margin-bottom:6px;}
+.cg-theme{font-size:11px;color:var(--ink);line-height:1.4;margin-bottom:8px;flex:1;}
+.cg-stance{display:inline-block;font-size:8px;letter-spacing:0.08em;text-transform:uppercase;font-weight:600;padding:2px 6px;border-radius:2px;align-self:flex-start;}
+.stance-cau{background:#F0DDD8;color:#7A3020;}
+.stance-ele{background:#E8D0CC;color:#6A2018;}
+.stance-opp{background:#D8EAE0;color:#2A5036;}
+.cg-label{font-size:8px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-light);margin-bottom:5px;}
+.cg-big{font-family:'Cormorant Garamond',Georgia,serif;font-size:24px;font-weight:600;color:var(--ink);line-height:1;margin-bottom:5px;}
+.cg-sub{font-size:10px;color:var(--ink-mid);line-height:1.55;}
+.cg-stances-grid{display:grid;grid-template-columns:1fr 1fr;gap:3px 6px;margin-top:6px;}
+.cg-st{font-size:8.5px;font-weight:600;line-height:1.4;font-variant-emoji:text;}
+.cst-ow{color:#2A5036;}.cst-sel{color:#7A5A1A;}.cst-neu{color:#8A837A;}.cst-wtch{color:#1A3C5A;}
+.cg-subgrid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:1px;background:var(--rule);min-height:110px;border-bottom:1px solid var(--rule);}
+.cg-sub-card{background:var(--card-bg);padding:10px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;text-decoration:none;color:inherit;transition:background 0.15s;}
+.cg-sub-card:hover{background:#E4DDD3;}
+.cg-sub-name{font-size:8px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-mid);line-height:1.5;margin-top:4px;}
+.cg-sub-count{font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;font-weight:600;color:var(--ink);line-height:1;}
+
+.section{max-width:860px;margin:0 auto;padding:46px 48px;border-bottom:1px solid var(--rule);}
+.section-header{display:flex;align-items:baseline;gap:16px;margin-bottom:20px;}
+.section-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:13px;letter-spacing:0.06em;color:var(--ink-light);min-width:22px;}
+.section h2{font-family:'Cormorant Garamond',Georgia,serif;font-size:26px;font-weight:500;color:var(--ink);line-height:1.2;}
+.section-tag{margin-left:auto;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-light);border:1px solid var(--rule);padding:3px 9px;border-radius:2px;white-space:nowrap;}
+p{margin-bottom:1em;}p:last-child{margin-bottom:0;}strong{font-weight:600;}
+
+.data-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);margin:22px 0;}
+.data-card{background:var(--bg);padding:13px;}
+.dc-label{font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-light);margin-bottom:4px;}
+.dc-value{font-family:'Cormorant Garamond',Georgia,serif;font-size:25px;font-weight:600;color:var(--ink);line-height:1;margin-bottom:4px;}
+.dc-note{font-size:12px;color:var(--ink-mid);line-height:1.5;}
+
+.pull-quote{font-family:'Cormorant Garamond',Georgia,serif;font-size:18px;font-style:italic;font-weight:500;color:var(--ink-mid);border-left:3px solid var(--accent);padding:9px 17px;margin:22px 0;line-height:1.45;}
+
+.std-table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13px;}
+.std-table th{font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-light);border-bottom:1.5px solid var(--ink);padding:6px 10px 8px;text-align:left;}
+.std-table td{border-bottom:1px solid var(--rule);padding:10px;vertical-align:top;line-height:1.55;color:var(--ink-mid);}
+.std-table tr:last-child td{border-bottom:none;}
+.td-strong{font-weight:600;color:var(--ink);}
+.td-accent{font-family:'Cormorant Garamond',Georgia,serif;font-size:16px;font-weight:600;color:var(--accent);white-space:nowrap;}
+.td-light{color:var(--ink-light);font-size:12px;white-space:nowrap;}
+
+.badge{display:inline-block;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;padding:2px 7px;border-radius:2px;}
+.b-high{background:#F0DDD8;color:#7A3020;}.b-elev{background:#F5E8D8;color:#7A4A10;}
+.b-med{background:#F0E8D0;color:#7A5A1A;}.b-new{background:#E8D0CC;color:#6A2018;}
+.b-ow{background:#D8EAE0;color:#2A5036;}.b-sel{background:#F0E8D0;color:#7A5A1A;}
+.b-neu{background:#EAE4DA;color:#6A5A4A;}.b-wtch{background:#DAE4EE;color:#1A3C5A;}
+
+.hm-bar-wrap{background:#E8E2D6;border-radius:2px;height:7px;width:100%;overflow:hidden;margin-top:4px;}
+.hm-bar{height:7px;border-radius:2px;}
+.hm-score{font-family:'Cormorant Garamond',Georgia,serif;font-size:16px;font-weight:600;color:var(--ink);}
+.delta-up{color:var(--accent);font-size:10px;font-weight:600;}.delta-flat{color:var(--ink-light);font-size:10px;}
+
+.dq-cat{font-size:10px;letter-spacing:0.14em;text-transform:uppercase;font-weight:600;color:var(--ink-light);border-bottom:1px solid var(--rule);padding-bottom:5px;margin:22px 0 9px;}
+.dq-list{list-style:none;}
+.dq-item{padding:8px 0;border-bottom:1px solid var(--rule);font-size:14px;color:var(--ink-mid);line-height:1.6;display:flex;gap:12px;}
+.dq-item:last-child{border-bottom:none;}
+.dq-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:15px;font-weight:600;color:var(--ink-light);min-width:20px;padding-top:1px;}
+.dq-trace{font-size:11px;color:var(--ink-light);font-style:italic;margin-top:2px;}
+.horizon-label{font-size:10px;letter-spacing:0.16em;text-transform:uppercase;font-weight:600;color:var(--ink-light);border-bottom:1px solid var(--rule);padding-bottom:5px;margin:22px 0 10px;}
+.action-list{list-style:none;}
+.action-item{padding:8px 0;border-bottom:1px solid var(--rule);font-size:14px;color:var(--ink-mid);line-height:1.6;display:flex;gap:12px;}
+.action-item:last-child{border-bottom:none;}
+.action-dot{width:5px;height:5px;min-width:5px;border-radius:50%;background:var(--accent);margin-top:9px;}
+
+.sources-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);margin:14px 0;}
+.source-tile{background:var(--bg);padding:12px;}
+.source-tile-cat{font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-light);font-weight:600;border-bottom:1px solid var(--rule);padding-bottom:5px;margin-bottom:8px;}
+.source-link-list{list-style:none;}
+.source-link-item{padding:4px 0;border-bottom:1px solid var(--rule);font-size:12px;}
+.source-link-item:last-child{border-bottom:none;}
+.source-link-item a{color:var(--accent);text-decoration:none;font-weight:500;}
+.source-link-item a:hover{text-decoration:underline;}
+.source-link-date{font-size:10px;color:var(--ink-light);font-style:italic;margin-left:4px;}
+.fn-ref{color:var(--accent);text-decoration:none;font-size:10px;vertical-align:super;line-height:0;font-weight:600;font-variant-emoji:text;}
+.fn-ref:hover{text-decoration:underline;}
+.fn-back{color:var(--ink-light);text-decoration:none;font-size:10px;margin-left:5px;font-variant-emoji:text;}
+.fn-back:hover{color:var(--accent);}
+.src-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:13px;font-weight:600;color:var(--ink-light);margin-right:5px;}
+
+.disclaimer{max-width:860px;margin:0 auto;padding:36px 48px 52px;border-top:1px solid var(--rule);}
+.disclaimer h3{font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;font-weight:500;color:var(--ink);margin-bottom:16px;}
+.disclaimer p{font-size:14px;color:var(--ink-mid);line-height:1.7;margin-bottom:1em;}
+.disclaimer p:last-child{margin-bottom:0;}
+.disclaimer a{color:var(--accent);text-decoration:none;}
+.disclaimer a:hover{text-decoration:underline;}
+
+@media(max-width:760px){
+  .preamble-intro{grid-template-columns:1fr;padding:24px 20px;}
+  .report-header,.section,.disclaimer{padding-left:20px;padding-right:20px;}
+  .report-title{font-size:32px;}
+  .cg-row-top,.cg-row-bot{grid-template-columns:1fr 1fr;}
+  .data-cards,.sources-grid{grid-template-columns:1fr;}
+  .std-table th:nth-child(3),.std-table td:nth-child(3){display:none;}
+  .std-table{font-size:12px;}
+  .std-table td,.std-table th{padding:8px 6px;}
+  .td-accent{font-size:14px;}
+}
+</style>
+</head>
+<body>
+
+<div class="preamble-image">
+  <img src="https://consvltor.net/assets/consvltor_cover.jpg" alt="Commentarii">
+</div>
+
+<div class="preamble-intro">
+  <div class="col-left">
+    <span class="pub-title">Commentarii</span>
+    Field notes from infrastructure, markets, and the geopolitics of connectivity. Written after dark.
+  </div>
+  <div class="col-right">
+    Each entry is anchored to a place and a period. Some are retrospective: written now, from the distance of outcome. Others are current, drafted close to the events they describe. The standard of evidence is the same throughout: what the data and the experience actually support, no more.
+  </div>
+</div>
+
+<div class="report-header">
+  <div class="header-meta">
+    <span>Commentarii</span><span>Issue 019</span><span>31 July 2026</span>
+    <span>TMT &amp; Digital Infrastructure</span>
+  </div>
+  <hr class="rule-thick">
+  <h1 class="report-title">The Water Line</h1>
+  <p class="report-deck">Saudi Arabia's last working export corridor took a direct hit this week. Houthi missiles and drones struck Aramco's Jizan refinery and the Yanbu terminal on 25 July, and Brent crossed $100 a barrel for the first time since the Iran war began. Three further developments, a coordinated cyberattack on more than thirty Minnesota water systems, a second consecutive day of Chinese water-cannon strikes at Scarborough Shoal, and a Wisconsin utility's reassurance to shareholders over an unresolved data-centre collateral dispute, read as four separate tests of the same underwriting question: how much does it cost to defend infrastructure against pressure that costs almost nothing to apply?</p>
+</div>
+
+<div class="cover-grid">
+  <div class="cg-row cg-row-top">
+    <a class="cg-card" href="#topic1"><div><div class="cg-cat">Gulf Energy Corridor</div><div class="cg-theme">Houthi strikes on Aramco's Jizan refinery and Yanbu export terminal; Saudi Arabia's last functioning crude corridor under direct attack; China arms Iran with MANPADS</div></div><span class="cg-stance stance-ele">Elevated Risk</span></a>
+    <a class="cg-card" href="#topic2"><div><div class="cg-cat">Critical Infrastructure Cyber</div><div class="cg-theme">Coordinated OT attack on 30+ Minnesota water systems; ties to an active CISA advisory on Iranian-affiliated PLC exploitation</div></div><span class="cg-stance stance-ele">Elevated Risk</span></a>
+    <a class="cg-card" href="#topic3"><div><div class="cg-cat">Indo-Pacific Maritime Coercion</div><div class="cg-theme">Second Thomas Shoal baton clash; Scarborough Shoal water cannon strikes; allied maritime drills conclude</div></div><span class="cg-stance stance-ele">Elevated Risk</span></a>
+    <a class="cg-card" href="#topic4"><div><div class="cg-cat">US Power &amp; Data Centre Regulation</div><div class="cg-theme">We Energies tells shareholders the Oracle collateral dispute won't affect Port Washington's timeline, even as the Wisconsin regulator's credit-rating requirement and the underlying litigation remain unresolved</div></div><span class="cg-stance stance-cau">Caution</span></a>
+  </div>
+  <div class="cg-row cg-row-bot">
+    <a class="cg-card-fixed" href="#dealflow"><div class="cg-label">Deal Flow</div><div class="cg-big">4 Transactions</div><div class="cg-sub">Aligned Data Centers &middot; Nvidia / OpenAI &middot; Verizon / Google &middot; IonQ / SkyWater</div></a>
+    <a class="cg-card-fixed" href="#riskmatrix"><div class="cg-label">PE Risk Matrix</div><div class="cg-big">6 Active Vectors</div><div class="cg-sub">Gulf corridor risk &middot; Critical infra cyber &middot; Maritime coercion &middot; Power tariff precedent &middot; BIS 50% Rule &middot; Supply-chain sovereignty</div></a>
+    <a class="cg-card-fixed" href="#stances"><div class="cg-label">Asset Class Stances</div><div class="cg-stances-grid"><span class="cg-st cst-sel">&#x25B6;&#xFE0E; Data Centres: Selective</span><span class="cg-st cst-wtch">&#x21C5;&#xFE0E; Subsea Cable: Active Watch</span><span class="cg-st cst-sel">&#x25B6;&#xFE0E; Fibre / Backbone: Selective</span><span class="cg-st cst-neu">&#x25BA;&#xFE0E; Towers / RAN: Neutral</span><span class="cg-st cst-wtch">&#x25BC;&#xFE0E; Satellite / LEO: Watch</span><span class="cg-st cst-ow">&#x25B2;&#xFE0E; Power for Digital: Overweight</span></div></a>
+    <div class="cg-subgrid"><a class="cg-sub-card" href="#underwriting"><div class="cg-sub-count">8</div><div class="cg-sub-name">Underwriting Variables</div></a><a class="cg-sub-card" href="#diligence"><div class="cg-sub-count">9</div><div class="cg-sub-name">Diligence Questions</div></a><a class="cg-sub-card" href="#strategy"><div class="cg-sub-count">6</div><div class="cg-sub-name">Strategy Actions</div></a><a class="cg-sub-card" href="#watchlist"><div class="cg-sub-count">5</div><div class="cg-sub-name">Watch List Items</div></a></div>
+  </div>
+</div>
+<div style="max-width:680px;margin:0 auto;padding:6px 2px 0;display:flex;gap:12px;flex-wrap:wrap;">
+  <span style="font-size:8px;color:#2A5036;font-weight:600;font-variant-emoji:text;">&#x25B2;&#xFE0E; Overweight</span>
+  <span style="font-size:8px;color:#7A5A1A;font-weight:600;font-variant-emoji:text;">&#x25B6;&#xFE0E; Selective</span>
+  <span style="font-size:8px;color:#8A837A;font-weight:600;font-variant-emoji:text;">&#x25BA;&#xFE0E; Neutral</span>
+  <span style="font-size:8px;color:#1A3C5A;font-weight:600;font-variant-emoji:text;">&#x25BC;&#xFE0E; Watch</span>
+  <span style="font-size:8px;color:#1A3C5A;font-weight:600;font-variant-emoji:text;">&#x21C5;&#xFE0E; Active Watch</span>
+</div>
+
+<div class="section" id="macro">
+  <div class="section-header"><span class="section-num">&sect;4</span><h2>Macro and Geopolitical Landscape</h2></div>
+  <div class="pull-quote">A $60-70 million missile shipment, a probe of unpatched water infrastructure, and a water cannon fired twice in two days: the cost of attack keeps falling further behind the cost of defence.</div>
+  <p>Houthi missiles and drones struck Saudi Aramco's Jizan refinery and Yanbu export terminal on 25 July. Minnesota water utilities absorbed a coordinated probe of unpatched operational technology on 26 and 27 July. China's coast guard fired water cannon at Philippine vessels near Scarborough Shoal on 23 and 24 July. A Wisconsin utility told shareholders on 29 July that it already holds the collateral a state regulator has required since April, regardless of how the underlying dispute resolves. Four separate tests of the same underwriting question: a reported $60-70 million shipment of Chinese-made shoulder-fired missiles would put at risk the aircraft flying the low-altitude patrols that protect a corridor now carrying the large majority of Saudi Arabia's seaborne crude exports, and the same gap between what it costs to attack and what it costs to defend runs through the Minnesota and Scarborough Shoal tiles as well.</p>
+  <p>The fourth test, Wisconsin, has nothing to do with water and belongs to a different logic: US state-level regulators continuing to set the terms under which AI-grade data centre demand connects to the grid. That three of the four tiles happen to touch water, Jizan's refinery, Minnesota's utilities, Scarborough Shoal's water cannon, is a coincidence of subject matter and the reason for this issue's title, nothing more.</p>
+  <div class="data-cards">
+    <div class="data-card"><div class="dc-label">Brent crude, intraday high this week</div><div class="dc-value">$101</div><div class="dc-note">First crossing of $100 since the Iran war began; roughly $28 higher over three weeks. <a href="#src-1" class="fn-ref"><sup>1</sup></a></div></div>
+    <div class="data-card"><div class="dc-label">Minnesota water systems targeted</div><div class="dc-value">30+</div><div class="dc-note">Coordinated OT attack, 26-27 July; no ransom demand identified. <a href="#src-6" class="fn-ref"><sup>6</sup></a></div></div>
+    <div class="data-card"><div class="dc-label">Yanbu share of Saudi seaborne exports</div><div class="dc-value">~78-92%</div><div class="dc-note">Since Hormuz's effective closure; now under direct attack. <a href="#src-1" class="fn-ref"><sup>1</sup></a></div></div>
+  </div>
+</div>
+
+<div class="section" id="topic1">
+  <div class="section-header"><span class="section-num">&sect;5</span><h2>The Second Corridor</h2></div>
+  <div class="pull-quote">Saudi Arabia spent five months rerouting crude away from a blocked Strait of Hormuz. On 25 July, the route it rerouted to came under direct attack.</div>
+  <p>Yemen's Houthi movement struck Saudi Aramco's Jizan refinery and the Yanbu export terminal on 25 July, in what its military spokesman Yahya Saree described as retaliation for Saudi strikes on Hodeidah and Kamaran Island.<a href="#src-1" id="cite-1a" class="fn-ref"><sup>1</sup></a> NASA's FIRMS satellite system detected a substantial thermal anomaly at Jizan at approximately 01:17 UTC, and the refinery, which processes 400,000 barrels of crude daily, was subsequently shut down, with repairs targeted for around 15 August according to a consultancy note cited by regional press.<a href="#src-2" id="cite-2a" class="fn-ref"><sup>2</sup></a> It is the first direct Houthi strike on Saudi oil infrastructure in four years.</p>
+  <p>Yanbu's significance goes beyond the refinery complex. Since Iran's effective closure of the Strait of Hormuz earlier this year, Saudi Arabia has pushed crude westward through the 1,200-mile East-West Pipeline to Red Sea terminals, reaching a record throughput of 7 million barrels per day in March. Shipping data cited by AFP put Yanbu's share of Saudi seaborne crude exports at 92% in June and 78% so far in July, effectively Saudi Arabia's last functioning export corridor.<a href="#src-1" class="fn-ref"><sup>1</sup></a> Brent crude broke back above $100 a barrel in early trading following the strikes, having already touched $101 intraday on 23 July, a roughly $28 rise over three weeks that UBS has described as a broader tightening of the oil market.<a href="#src-2" class="fn-ref"><sup>2</sup></a></p>
+  <p>The Jizan and Yanbu strikes followed a naval blockade the Houthis declared against Saudi shipping in mid-July and missile and drone strikes claimed against two Saudi tankers, the Encelia and the Layla, on 22 July; the Saudi Press Agency confirmed the Encelia had been hit, with all crew reported safe.<a href="#src-3" id="cite-3a" class="fn-ref"><sup>3</sup></a> The Institute for the Study of War reported at least seven vessels had diverted away from the Bab el-Mandeb Strait as of 23 July, and the US President said the same day that the US would hold Iran responsible for further Houthi attacks, following what CNBC reported as a twelfth consecutive night of US strikes on Iran.<a href="#src-4" id="cite-4a" class="fn-ref"><sup>4</sup></a></p>
+  <p>A closing development complicates the underwriting question further. Reuters reported on 29 July, citing three sources familiar with the matter, that Iran is expected to receive within weeks a first shipment from a contract for up to 400 Chinese-made man-portable air-defence systems, QW-12 and FN-16 models, valued at $60-70 million and signed via a Hong Kong-based intermediary, Zhongqing Baoshang International Investment, with deliveries planned initially via Urumqi in western China and transit through Pakistan.<a href="#src-5" id="cite-5a" class="fn-ref"><sup>5</sup></a> China's Foreign Ministry called the report "completely groundless," and Pakistan's military public affairs office denied any involvement; the claim rests on anonymous sourcing and should be weighted accordingly.<a href="#src-5" class="fn-ref"><sup>5</sup></a> If the shipment proceeds, it would put at risk the US A-10 and Apache aircraft that have used low-altitude patrols to keep Hormuz partially open, and make those patrols too dangerous to continue at the current tempo.<a href="#src-19" id="cite-19a" class="fn-ref"><sup>19</sup></a> Investors with exposure to Gulf energy costs, insurance premia on cargo transiting either corridor, or digital infrastructure assets dependent on Gulf power pricing now face a dual-chokepoint scenario, with both principal export routes exposed at once.</p>
+</div>
+
+<div class="section" id="topic2">
+  <div class="section-header"><span class="section-num">&sect;6</span><h2>The Probe</h2></div>
+  <div class="pull-quote">No ransom demand. No service interruption. Officials read it as reconnaissance, which may be the more concerning explanation.</div>
+  <p>A coordinated cyberattack targeted operational technology at more than 30 Minnesota community water systems on 26 and 27 July, Minnesota IT Services confirmed in a statement on 28 July that activated the state's cybersecurity incident response capabilities.<a href="#src-6" id="cite-6a" class="fn-ref"><sup>6</sup></a> Four municipalities disclosed impacts: in Braham, the water treatment plant was briefly taken offline and computerised controls disabled before public works crews restored manual operation; in Plymouth, cellular communications at two elevated water towers and several wastewater lift stations were disrupted; South St Paul and Maple Plain both reported affected automated controls, with Maple Plain declaring a local state of emergency. No ransom demand was identified, and the Minnesota Department of Health said it was not aware of any municipality asking residents to change their water use.<a href="#src-6" class="fn-ref"><sup>6</sup></a></p>
+  <p>The FBI confirmed on 30 July that it was actively engaged with victims, and the investigation continues alongside the Minnesota Bureau of Criminal Apprehension.<a href="#src-7" id="cite-7a" class="fn-ref"><sup>7</sup></a> Officials have suggested, preliminarily, that the pattern resembles incidents previously attributed to Iran-aligned actors; a state IT spokesperson told Reuters that the timing, access methods, and targeted infrastructure share characteristics with other coordinated incidents federal partners have observed, while stressing that no formal attribution has been made.<a href="#src-7" class="fn-ref"><sup>7</sup></a> The incident sits inside an active CISA advisory, AA26-097A, on Iranian-affiliated exploitation of programmable logic controllers across US critical infrastructure, updated on 22 July to expand its scope beyond Rockwell Automation devices to include Schneider Electric and Siemens equipment, and to document project file exfiltration for the first time.<a href="#src-8" id="cite-8a" class="fn-ref"><sup>8</sup></a></p>
+  <p>The read-through for digital infrastructure operators is direct. Schneider Electric and Siemens controllers are common in the operational technology layer of hyperscale and colocation facilities: cooling systems, power management, building automation. The same probing logic that targeted thirty small water operators with thin security budgets applies wherever OT has historically received less investment than the IT layer sitting above it.</p>
+</div>
+
+<div class="section" id="topic3">
+  <div class="section-header"><span class="section-num">&sect;7</span><h2>Two Days Running</h2></div>
+  <div class="pull-quote">A baton clash, a water cannon fired two days running, and a five-day allied drill, inside a single week.</div>
+  <p>Confrontation returned to two flashpoints in the South China Sea this week, an update to the thread Issue 018 carried rather than a new geography. At Second Thomas Shoal on 20 July, the Philippine military said a China Coast Guard vessel dispatched a smaller boat toward the grounded BRP Sierra Madre outpost, and video showed an exchange of blows with wooden batons and oars; two Philippine servicemen were injured and evacuated. Beijing accused Manila of attempting to ram a Chinese patrol boat.<a href="#src-9" id="cite-9a" class="fn-ref"><sup>9</sup></a></p>
+  <p>On 23 and 24 July, the China Coast Guard used water cannon against Philippine vessels near Scarborough Shoal on consecutive days. On the second occasion, a Chinese vessel came within roughly seven metres of the Philippine fisheries ship BRP Datu Paduhinog, which the Philippine Coast Guard said created a serious risk of collision; Philippine officials additionally reported that the vessel experienced a temporary disruption to its satellite connectivity during the encounter, with the cause unconfirmed.<a href="#src-10" id="cite-10a" class="fn-ref"><sup>10</sup></a> China's Coast Guard said it had imposed "control measures" against Philippine vessels it accused of illegally gathering near the shoal, describing its own actions as "standard, professional and lawful."<a href="#src-9" class="fn-ref"><sup>9</sup></a></p>
+  <p>The confrontations bracketed a five-day joint maritime exercise, the 17th Multilateral Maritime Cooperative Activity, that the Philippines concluded with the United States and Japan on 25 July, involving warships, coast guard vessels, and aircraft aimed at improving interoperability.<a href="#src-11" id="cite-11a" class="fn-ref"><sup>11</sup></a> The week also marked the tenth anniversary of the 2016 arbitral ruling rejecting China's nine-dash line claim, which Beijing continues to reject; both governments said this week they remain committed to completing a regional Code of Conduct by year end.<a href="#src-11" class="fn-ref"><sup>11</sup></a> The satellite disruption detail is the one genuinely new TMT-adjacent data point in this thread; it would warrant a firmer tile on its own merits if independent confirmation of deliberate interference emerges, but stands as a footnote until then.</p>
+</div>
+
+<div class="section" id="topic4">
+  <div class="section-header"><span class="section-num">&sect;8</span><h2>The Collateral Line</h2></div>
+  <div class="pull-quote">The regulator's refusal to reconsider was already two weeks old. On 29 July, We Energies told shareholders it doesn't matter: the collateral is already in hand.</div>
+  <p>WEC Energy Group, We Energies' parent, told shareholders on its second-quarter earnings call on Wednesday, 29 July, that Oracle's ongoing dispute with Wisconsin regulators over data centre collateral requirements poses no threat to the timeline for the Port Washington campus. An executive said that even if Oracle's credit rating falls further, "we already have all the collateral we need." Wisconsin Watch reported the comments the following day.<a href="#src-12" id="cite-12a" class="fn-ref"><sup>12</sup></a></p>
+  <p>The underlying dispute predates this week. Wisconsin's Public Service Commission voted in April to require data centre developers below an A-/A3 credit rating threshold to post collateral covering new power infrastructure built on their behalf. We Energies, Vantage Data Centers and Cloverleaf Infrastructure petitioned the Commission on 10 June to loosen that requirement; the Commission did not take the petition up at its meeting on 9 July, and it was denied by operation of law the following day, 10 July.<a href="#src-18" id="cite-18a" class="fn-ref"><sup>18</sup></a> Oracle's credit rating was separately cut to BBB- by S&amp;P on 9 July, placing it below the exemption threshold, and Oracle had already filed suit on 19 June in Ozaukee County Circuit Court, arguing the requirement could cost more than $100 million annually and require up to $7 billion in collateral for the roughly one-gigawatt campus built to support its Stargate partnership with OpenAI. That litigation continues.<a href="#src-18" class="fn-ref"><sup>18</sup></a></p>
+  <p>We Energies' public confidence reflects the utility's own risk position. The credit-rating threshold remains in force, the litigation remains unresolved, and other developers without Oracle's balance sheet or a utility parent willing to vouch for them would face the requirement as written.</p>
+  <p>This remains a distinct and, for underwriting purposes, more consequential test than the cost-allocation tariffs Wisconsin and North Carolina introduced earlier in 2026 and that Commentarii has tracked since Issue 008. Those tariffs govern who pays for grid infrastructure; this dispute governs who can access grid connection at all without posting collateral tied to a credit rating most AI-infrastructure-heavy technology companies do not currently hold.</p>
+</div>
+
+<div class="section" id="dealflow">
+  <div class="section-header"><span class="section-num">&sect;9</span><h2>Deal Flow</h2></div>
+  <table class="std-table">
+    <thead><tr><th style="width:185px">Parties</th><th style="width:82px">Value</th><th style="width:78px">Date</th><th>Description &amp; Source</th></tr></thead>
+    <tbody>
+      <tr><td class="td-strong">Aligned Data Centers<br><span style="font-weight:400;font-size:12px;color:var(--ink-light)">Asset-backed securitization</span></td><td class="td-accent">$1.18bn</td><td class="td-light">28 Jul 2026</td><td>First ABS issuance since 2023, upsized approximately 30% from a $905m initial target on strong institutional demand. Distinct new financing on the platform Issue 018 covered via its $40bn acquisition by AIP, MGX and BlackRock GIP. <em>GlobeNewswire.</em><a href="#src-13" id="cite-13a" class="fn-ref"><sup>13</sup></a></td></tr>
+      <tr><td class="td-strong">Nvidia / OpenAI / SB Energy<br><span style="font-weight:400;font-size:12px;color:var(--ink-light)">10GW Ohio campus, in talks</span></td><td class="td-accent">Up to $250bn</td><td class="td-light">26-27 Jul 2026</td><td>Reported financing guarantee to back OpenAI's lease of a SoftBank-developed 10GW campus in southern Ohio, sited on decommissioned federal uranium-enrichment land; total project cost reportedly exceeds $500bn. Negotiations at an early stage per sourcing; could collapse or change terms. <em>WSJ via Bloomberg, Quartz.</em><a href="#src-14" id="cite-14a" class="fn-ref"><sup>14</sup></a></td></tr>
+      <tr><td class="td-strong">Verizon / Google<br><span style="font-weight:400;font-size:12px;color:var(--ink-light)">Dark fiber agreement</span></td><td class="td-accent">$1bn</td><td class="td-light">24 Jul 2026</td><td>Disclosed by Verizon's CEO on its Q2 2026 earnings call. Illustrates legacy telecom backbone capacity being repurposed to carry distributed AI compute traffic. <em>Verizon Q2 earnings call.</em><a href="#src-15" id="cite-15a" class="fn-ref"><sup>15</sup></a></td></tr>
+      <tr><td class="td-strong">IonQ / SkyWater Technology<br><span style="font-weight:400;font-size:12px;color:var(--ink-light)">Quantum-chip vertical integration</span></td><td class="td-accent">$1.8bn</td><td class="td-light">Closing 31 Jul 2026</td><td>Final regulatory approval cleared 28 July; deal expected to close today. Makes IonQ the only trapped-ion quantum hardware maker with a fully domestic, Pentagon-accredited chip foundry, ending reliance on Germany's Infineon for trap chips. First announced January 2026. SkyWater is headquartered in Bloomington, Minnesota, a detail worth noting rather than reading into: a semiconductor fab's water dependency and a municipal water utility's cyberattack share a state and a week, nothing more. <em>IonQ, Tech Times.</em><a href="#src-16" id="cite-16a" class="fn-ref"><sup>16</sup></a></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section" id="riskmatrix">
+  <div class="section-header"><span class="section-num">&sect;10</span><h2>PE Risk Matrix</h2></div>
+  <table class="std-table">
+    <thead><tr><th style="width:180px">Risk Vector</th><th style="width:75px">Level</th><th>Investor Implication</th><th style="width:90px">Status</th></tr></thead>
+    <tbody>
+      <tr><td class="td-strong">Gulf Energy Corridor Risk</td><td><span class="badge b-high">High</span></td><td>Both Saudi export routes, Hormuz and the Yanbu/Red Sea alternative, now face direct attack risk simultaneously. Power cost and insurance assumptions for Gulf-adjacent digital infrastructure warrant a full-cost scenario before close.</td><td><span class="badge b-new">Escalated</span></td></tr>
+      <tr><td class="td-strong">Critical Infrastructure Cyber Exposure</td><td><span class="badge b-high">High</span></td><td>Minnesota's water OT attack sits inside an active, expanding CISA advisory now covering Schneider Electric and Siemens controllers common in data centre cooling and power management. OT security posture across the portfolio warrants direct verification, distinct from IT-layer audits.</td><td><span class="badge b-new">New</span></td></tr>
+      <tr><td class="td-strong">Indo-Pacific Maritime Coercion</td><td><span class="badge b-elev">Elevated</span></td><td>Frequency and physicality of South China Sea confrontations increased this week. Continues to affect risk pricing for regional subsea and satellite assets.</td><td>Escalated</td></tr>
+      <tr><td class="td-strong">US Power Tariff / Collateral Precedent</td><td><span class="badge b-elev">Elevated</span></td><td>The credit-rating-linked collateral requirement Wisconsin set in April remains in force and unresolved in court. We Energies' 29 July reassurance to shareholders reflects the utility's own risk position; the underlying rule is unchanged. Applicable wherever counterparties fall below the investment-grade thresholds regulators are setting.</td><td>Unresolved</td></tr>
+      <tr><td class="td-strong">BIS 50% Rule Compliance</td><td><span class="badge b-med">Medium</span></td><td>Enforcement 10 November 2026. Just over three months remain. Operators with PRC-adjacent supply chains or counterparties need compliance programmes finalised well before the deadline.</td><td>Deadline tracking</td></tr>
+      <tr><td class="td-strong">Compute Supply-Chain Sovereignty</td><td><span class="badge b-med">Medium</span></td><td>IonQ's absorption of SkyWater is an early example of vertical integration for supply-chain control extending from chips into quantum hardware. Worth tracking as a template other compute-adjacent platforms may pursue against foreign-fab dependency.</td><td>Emerging</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section" id="stances">
+  <div class="section-header"><span class="section-num">&sect;11</span><h2>Asset Class Stances</h2></div>
+  <table class="std-table">
+    <thead><tr><th style="width:165px">Asset Class</th><th style="width:75px">Direction</th><th style="width:140px">Key Variable</th><th>Read-Through</th><th style="width:80px">Stance</th></tr></thead>
+    <tbody>
+      <tr><td class="td-strong">Data Centres (Hyperscale / AI)</td><td style="color:#7A5A1A;font-weight:600;">Mixed</td><td>Collateral / credit-rating terms</td><td>Deal flow remains active (Aligned, Nvidia/OpenAI talks), but Wisconsin's credit-rating-linked collateral requirement is a genuine underwriting differentiator alongside power cost structuring. Counterparty credit rating now matters as much as power procurement.</td><td><span class="badge b-sel">Selective</span></td></tr>
+      <tr><td class="td-strong">Subsea Cable</td><td style="color:#6A2018;font-weight:600;">Weakening</td><td>Gulf / Red Sea corridor risk</td><td>Direct strikes on Saudi export infrastructure compound existing Red Sea and Hormuz corridor risk. Conditions continue to deteriorate; a distressed-entry thesis may eventually form for long-hold investors, pending conflict resolution.</td><td><span class="badge b-wtch">&#x21C5; Active Watch</span></td></tr>
+      <tr><td class="td-strong">Fibre / Backbone</td><td style="color:#2A5036;font-weight:600;">Strengthening</td><td>AI traffic repurposing</td><td>The Verizon/Google dark fiber deal is a clean example of legacy backbone capacity being redirected to distributed AI compute traffic. Differentiate by which operators hold spare capacity investors can underwrite against this demand.</td><td><span class="badge b-sel">Selective</span></td></tr>
+      <tr><td class="td-strong">Towers / RAN</td><td style="color:#8A837A;font-weight:600;">No change</td><td>Carrier spend</td><td>No new catalyst this week. Hold existing portfolios; no basis for new development underwriting on near-term densification assumptions.</td><td><span class="badge b-neu">Neutral</span></td></tr>
+      <tr><td class="td-strong">Satellite / LEO</td><td style="color:#7A5A1A;font-weight:600;">Mixed</td><td>South China Sea comms disruption</td><td>An unconfirmed satellite connectivity disruption during this week's Scarborough Shoal encounter is worth tracking but not yet actionable. If deliberate interference is confirmed, this stance would likely tighten.</td><td><span class="badge b-wtch">Watch</span></td></tr>
+      <tr><td class="td-strong">Power for Digital</td><td style="color:#2A5036;font-weight:600;">Strengthening</td><td>State regulatory hardening</td><td>Wisconsin's collateral requirement and the Gulf energy shock both reinforce the same thesis: captive-generation and fixed-price power assets carry a widening advantage over grid-dependent, credit-exposed alternatives.</td><td><span class="badge b-ow">Overweight</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section" id="underwriting">
+  <div class="section-header"><span class="section-num">&sect;12</span><h2>Underwriting Variables</h2><span class="section-tag">0-100 &middot; higher = greater risk</span></div>
+  <table class="std-table">
+    <thead><tr><th style="width:230px">Variable</th><th style="width:50px">Score</th><th style="width:120px">Level</th><th style="width:58px">Change</th><th>Driver this week</th></tr></thead>
+    <tbody>
+      <tr><td class="td-strong">Power Access &amp; Energy Security</td><td><span class="hm-score">83</span></td><td><div class="hm-bar-wrap"><div class="hm-bar" style="width:83%;background:#7A3020;"></div></div><span style="font-size:10px;color:var(--ink-light);">High</span></td><td><span class="delta-up">+3</span></td><td style="font-size:13px;color:var(--ink-mid);">Jizan/Yanbu strikes and Brent's return above $100 compound existing Gulf energy cost pressure. Wisconsin's unresolved collateral requirement remains a second, US-specific channel of power-access risk.</td></tr>
+      <tr><td class="td-strong">Route &amp; Corridor Resilience</td><td><span class="hm-score">88</span></td><td><div class="hm-bar-wrap"><div class="hm-bar" style="width:88%;background:#7A3020;"></div></div><span style="font-size:10px;color:var(--ink-light);">High</span></td><td><span class="delta-up">+6</span></td><td style="font-size:13px;color:var(--ink-mid);">Direct strikes on Yanbu mean both principal Saudi export corridors are now under active threat simultaneously, a materially worse position than the single-corridor risk tracked in prior issues.</td></tr>
+      <tr><td class="td-strong">Cyber Posture vs. State-Linked Threats</td><td><span class="hm-score">80</span></td><td><div class="hm-bar-wrap"><div class="hm-bar" style="width:80%;background:#7A3020;"></div></div><span style="font-size:10px;color:var(--ink-light);">High</span></td><td><span class="delta-up">+6</span></td><td style="font-size:13px;color:var(--ink-mid);">Minnesota's water OT attack, and the CISA advisory expansion to Schneider Electric and Siemens controllers, is the sharpest single-week movement in this variable since the OSTP distillation warning.</td></tr>
+      <tr><td class="td-strong">Sovereign &amp; Security Compliance</td><td><span class="hm-score">75</span></td><td><div class="hm-bar-wrap"><div class="hm-bar" style="width:75%;background:#8A4030;"></div></div><span style="font-size:10px;color:var(--ink-light);">High</span></td><td><span class="delta-flat">&mdash;</span></td><td style="font-size:13px;color:var(--ink-mid);">Stable at an elevated level. China-Iran arms flows, if confirmed, would compound existing sanctions and compliance exposure for counterparties in the region.</td></tr>
+      <tr><td class="td-strong">CFIUS &amp; Foreign Investment Review</td><td><span class="hm-score">70</span></td><td><div class="hm-bar-wrap"><div class="hm-bar" style="width:70%;background:#8A5030;"></div></div><span style="font-size:10px;color:var(--ink-light);">Elevated</span></td><td><span class="delta-flat">&mdash;</span></td><td style="font-size:13px;color:var(--ink-mid);">Stable elevated. No new catalyst this week beyond the continuing overlay of Gulf sovereign capital relationships onto an active conflict environment.</td></tr>
+      <tr><td class="td-strong">Hardware Supply-Chain Optionality</td><td><span class="hm-score">64</span></td><td><div class="hm-bar-wrap"><div class="hm-bar" style="width:64%;background:#9A5030;"></div></div><span style="font-size:10px;color:var(--ink-light);">Elevated</span></td><td><span class="delta-flat">&mdash;</span></td><td style="font-size:13px;color:var(--ink-mid);">IonQ's SkyWater acquisition reduces the company's own foreign-fab dependency even as it narrows industry-wide optionality by concentrating quantum-grade fabrication further.</td></tr>
+      <tr><td class="td-strong">Permitting &amp; Regulatory Timeline</td><td><span class="hm-score">62</span></td><td><div class="hm-bar-wrap"><div class="hm-bar" style="width:62%;background:#9A6030;"></div></div><span style="font-size:10px;color:var(--ink-light);">Elevated</span></td><td><span class="delta-flat">&mdash;</span></td><td style="font-size:13px;color:var(--ink-mid);">No new regulatory movement this week; Wisconsin's collateral requirement was denied a reopening in mid-July and remains under litigation. We Energies' 29 July shareholder comments reflect market confidence; the underlying rule is unchanged.</td></tr>
+      <tr><td class="td-strong">Exit Narrative Under Geopolitical Scrutiny</td><td><span class="hm-score">70</span></td><td><div class="hm-bar-wrap"><div class="hm-bar" style="width:70%;background:#8A5030;"></div></div><span style="font-size:10px;color:var(--ink-light);">Elevated</span></td><td><span class="delta-flat">&mdash;</span></td><td style="font-size:13px;color:var(--ink-mid);">Stable elevated. Gulf and Indo-Pacific tensions continue to narrow the pool of buyers comfortable with geopolitically exposed digital infrastructure assets.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section" id="diligence">
+  <div class="section-header"><span class="section-num">&sect;13</span><h2>Diligence Questions</h2><span class="section-tag">9 questions</span></div>
+  <div class="dq-cat">Commercial</div>
+  <ul class="dq-list">
+    <li class="dq-item"><span class="dq-num">01</span><div>For any AI-grade data centre customer below an A-/A3 credit rating: does the underwriting model reflect Wisconsin's collateral requirement as written, rather than the parent utility's public confidence that it holds sufficient collateral regardless? Is a similar posture plausible in other large-load states?<div class="dq-trace">We Energies shareholder comments &ndash; Wisconsin Watch, 30 July 2026; underlying PSC decision, 10 July 2026</div></div></li>
+    <li class="dq-item"><span class="dq-num">02</span><div>For assets with revenue dependent on Saudi crude logistics or Gulf energy pricing: has the model been updated to treat simultaneous risk across both the Hormuz and Yanbu corridors, given Yanbu can no longer be assumed a mitigant?<div class="dq-trace">Jizan/Yanbu strikes &ndash; Türkiye Today, 25 &amp; 28 July 2026</div></div></li>
+    <li class="dq-item"><span class="dq-num">03</span><div>For fibre and backbone assets: what proportion of spare capacity could realistically be repurposed for distributed AI compute traffic on Verizon/Google-type terms, and over what timeline?<div class="dq-trace">Verizon / Google dark fiber deal &ndash; Verizon Q2 2026 earnings call, 24 July 2026</div></div></li>
+  </ul>
+  <div class="dq-cat">Operational</div>
+  <ul class="dq-list">
+    <li class="dq-item"><span class="dq-num">04</span><div>For any digital infrastructure asset using Schneider Electric or Siemens programmable logic controllers in its OT layer: has an independent security assessment been conducted since the 22 July CISA advisory expansion, and how does it compare to the exposure profile the Minnesota attack revealed in a comparably under-resourced operator?<div class="dq-trace">CISA Advisory AA26-097A update &ndash; Tenable, 22 &amp; 28 July 2026</div></div></li>
+    <li class="dq-item"><span class="dq-num">05</span><div>For Gulf-region digital infrastructure assets: has physical and cyber security posture been reassessed since the direct strikes on Aramco infrastructure, and does the operator's business continuity plan assume a single-corridor or dual-corridor disruption scenario?<div class="dq-trace">Jizan/Yanbu strikes &ndash; Türkiye Today, 25 July 2026</div></div></li>
+    <li class="dq-item"><span class="dq-num">06</span><div>For quantum or advanced-compute hardware positions: what is the current foreign-fab dependency in the supply chain, and does the IonQ/SkyWater model of vertical acquisition represent a realistic option for this asset, or only for the largest platforms?<div class="dq-trace">IonQ / SkyWater Technology &ndash; IonQ press release, 28 July 2026</div></div></li>
+  </ul>
+  <div class="dq-cat">Regulatory</div>
+  <ul class="dq-list">
+    <li class="dq-item"><span class="dq-num">07</span><div>Does the ownership chain include any entity within scope of the BIS 50% Rule effective 10 November 2026? Has external export compliance counsel been engaged given just over three months remain?<div class="dq-trace">BIS 50% Rule &ndash; carried from prior issues</div></div></li>
+    <li class="dq-item"><span class="dq-num">08</span><div>For assets in South China Sea-adjacent jurisdictions with satellite-dependent operations: is there a documented incident-response protocol for connectivity disruption of unconfirmed origin, and how quickly could deliberate interference be distinguished from routine outage?<div class="dq-trace">Scarborough Shoal encounter &ndash; Al Jazeera, CNN, 24 July 2026</div></div></li>
+  </ul>
+  <div class="dq-cat">Capital</div>
+  <ul class="dq-list">
+    <li class="dq-item"><span class="dq-num">09</span><div>For financing structures reliant on OpenAI or Nvidia guarantee mechanisms similar to the reported Ohio arrangement: what happens to the underwriting thesis if the guarantee terms shift or the deal does not close, given sourcing describes negotiations as early-stage?<div class="dq-trace">Nvidia / OpenAI Ohio financing &ndash; Bloomberg via Quartz, 27 July 2026</div></div></li>
+  </ul>
+</div>
+
+<div class="section" id="strategy">
+  <div class="section-header"><span class="section-num">&sect;14</span><h2>Strategy Actions</h2></div>
+  <div class="horizon-label">Immediate &middot; 0 to 90 days</div>
+  <ul class="action-list">
+    <li class="action-item"><div class="action-dot"></div><div><strong>Reassess Gulf energy and corridor risk assumptions across the portfolio.</strong> With Yanbu now under direct attack alongside Hormuz, models built before the Yanbu strikes would benefit from revision to reflect co-exposed risk across both corridors, ahead of the next valuation event.</div></li>
+    <li class="action-item"><div class="action-dot"></div><div><strong>Commission an OT security review for any digital infrastructure asset using Schneider Electric or Siemens controllers.</strong> The Minnesota incident demonstrates the exposure profile of under-resourced operators; portfolio companies with comparable OT vintage may share it.</div></li>
+    <li class="action-item"><div class="action-dot"></div><div><strong>Map counterparty credit ratings against Wisconsin's A-/A3 collateral threshold for any pipeline data centre financing.</strong> Treat this as a precedent other state regulators are likely to cite in their own large-load tariff proceedings.</div></li>
+  </ul>
+  <div class="horizon-label">Platform &middot; 3 to 12 months</div>
+  <ul class="action-list">
+    <li class="action-item"><div class="action-dot"></div><div><strong>Consider whether vertical acquisition of supply-chain-critical suppliers, on the IonQ/SkyWater model, is relevant to platform strategy in compute-adjacent hardware categories.</strong> May not be replicable at smaller scale, but worth assessing where foreign-fab dependency is a recognised risk.</div></li>
+    <li class="action-item"><div class="action-dot"></div><div><strong>Commission BIS 50% Rule compliance mapping before Q3 2026 if not already complete.</strong> Just over three months remain to the 10 November enforcement date.</div></li>
+  </ul>
+  <div class="horizon-label">Portfolio &middot; 12 to 24 months</div>
+  <ul class="action-list">
+    <li class="action-item"><div class="action-dot"></div><div><strong>Continue favouring captive-generation and fixed-price power assets over grid-dependent, credit-exposed alternatives.</strong> Both the Gulf energy shock and Wisconsin's collateral hardening point the same direction; the durability premium for insulated assets appears likely to widen further.</div></li>
+  </ul>
+</div>
+
+<div class="section" id="watchlist">
+  <div class="section-header"><span class="section-num">&sect;15</span><h2>Watch List</h2></div>
+  <table class="std-table">
+    <thead><tr><th style="width:190px">Item</th><th style="width:90px">Window</th><th>Signal to watch</th></tr></thead>
+    <tbody>
+      <tr><td class="td-strong">Gulf dual-corridor escalation</td><td style="color:var(--accent);font-size:12px;font-weight:600;">Ongoing</td><td>Watch for confirmed damage assessments at Jizan and Yanbu, any further direct strikes on Saudi export infrastructure, and confirmation or denial of the reported China-Iran MANPADS shipment.</td></tr>
+      <tr><td class="td-strong">Minnesota attribution</td><td style="color:var(--accent);font-size:12px;font-weight:600;">Weeks</td><td>Watch for formal attribution from CISA, the FBI, or Minnesota authorities, and for whether the same pattern replicates in another US state or a European operator with comparable OT vintage.</td></tr>
+      <tr><td class="td-strong">South China Sea satellite disruption</td><td style="color:var(--accent);font-size:12px;font-weight:600;">Weeks</td><td>Watch for independent confirmation of whether the Scarborough Shoal connectivity disruption was deliberate interference or incidental; this would materially change the Satellite/LEO stance if confirmed.</td></tr>
+      <tr><td class="td-strong">Wisconsin litigation, Ozaukee County</td><td style="color:var(--accent);font-size:12px;font-weight:600;">Months</td><td>Watch for the court's ruling on Oracle's petition and for whether other state regulators cite Wisconsin's posture in their own large-load tariff proceedings.</td></tr>
+      <tr><td class="td-strong">BIS 50% Rule enforcement</td><td style="color:var(--accent);font-size:12px;font-weight:600;">10 Nov 2026</td><td>Just over three months to compliance readiness. Watch for BIS guidance on the expanded restricted party definition.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section" id="sources">
+  <div class="section-header"><span class="section-num">&sect;16</span><h2>Sources</h2></div>
+  <div class="sources-grid">
+    <div class="source-tile">
+      <div class="source-tile-cat">Financial Press</div>
+      <ul class="source-link-list">
+        <li class="source-link-item" id="src-4"><span class="src-num">4</span><a href="https://www.cnbc.com/2026/07/23/iran-war-us-trump-houthis-red-sea-oil.html" target="_blank">CNBC &ndash; Trump on Houthi Red Sea attacks</a><span class="source-link-date">&middot; 23 Jul 2026</span><a href="#cite-4a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item" id="src-12"><span class="src-num">12</span><a href="https://wisconsinwatch.org/2026/07/wisconsin-we-energies-oracle-dispute-port-washington-data-center-on-schedule-legal-challenge-credit-rating/" target="_blank">Wisconsin Watch &ndash; We Energies shareholder comments</a><span class="source-link-date">&middot; 30 Jul 2026</span><a href="#cite-12a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item" id="src-14"><span class="src-num">14</span><a href="https://qz.com/nvidia-openai-ohio-data-center-financing-072726" target="_blank">Quartz, citing WSJ / Bloomberg &ndash; Nvidia / OpenAI Ohio financing</a><span class="source-link-date">&middot; 27 Jul 2026</span><a href="#cite-14a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+      </ul>
+    </div>
+    <div class="source-tile">
+      <div class="source-tile-cat">Industry &amp; Market Data</div>
+      <ul class="source-link-list">
+        <li class="source-link-item" id="src-13"><span class="src-num">13</span><a href="https://www.globenewswire.com/news-release/2026/07/28/3334210/0/en/aligned-data-centers-completes-1-18-billion-securitization-financing.html" target="_blank">GlobeNewswire &ndash; Aligned Data Centers $1.18bn ABS</a><span class="source-link-date">&middot; 28 Jul 2026</span><a href="#cite-13a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item" id="src-15"><span class="src-num">15</span><a href="https://www.submarinenetworks.com/en/nv/insights/verizon-google-dark-fiber-deal" target="_blank">Submarine Networks &ndash; Verizon / Google dark fiber</a><span class="source-link-date">&middot; 24 Jul 2026</span><a href="#cite-15a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item" id="src-16"><span class="src-num">16</span><a href="https://www.techtimes.com/articles/322085/20260729/ionq-clears-last-regulatory-hurdle-skywater-closes-friday-ending-foreign-chip-dependency.htm" target="_blank">Tech Times &ndash; IonQ / SkyWater closing</a><span class="source-link-date">&middot; 29 Jul 2026</span><a href="#cite-16a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item" id="src-19"><span class="src-num">19</span><a href="https://militarymachine.com/apache-helicopter-cost" target="_blank">Military Machine &ndash; cost comparison: Poland's 2024 deal for 96 AH-64E Apaches priced at roughly $104m per helicopter fully equipped, A-10 Thunderbolt II original unit cost ~$18m, vs. an estimated $150,000-175,000 per QW-12/FN-16 MANPADS in the reported shipment</a><span class="source-link-date">&middot; figures as reported 2026</span><a href="#cite-19a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+      </ul>
+    </div>
+    <div class="source-tile">
+      <div class="source-tile-cat">Regulatory &amp; Official</div>
+      <ul class="source-link-list">
+        <li class="source-link-item" id="src-6"><span class="src-num">6</span><a href="https://mn.gov/mnit/media/blog/?id=38-761869" target="_blank">Minnesota IT Services &ndash; official statement</a><span class="source-link-date">&middot; 28 Jul 2026</span><a href="#cite-6a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item" id="src-8"><span class="src-num">8</span><a href="https://www.tenable.com/blog/coordinated-cyberattack-on-minnesota-water-utilities-what-you-need-to-know" target="_blank">Tenable &ndash; CISA Advisory AA26-097A summary</a><span class="source-link-date">&middot; 22 &amp; 28 Jul 2026</span><a href="#cite-8a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item" id="src-17"><span class="src-num">17</span><a href="https://www.ionq.com/news/ionq-receives-regulatory-approval-to-complete-acquisition-of-skywater-technology" target="_blank">IonQ &ndash; regulatory approval press release</a><span class="source-link-date">&middot; 28 Jul 2026</span></li>
+        <li class="source-link-item" id="src-18"><span class="src-num">18</span><a href="https://milwaukeecourier.com/news/2026/07/10/wisconsin-regulators-refuse-to-loosen-data-center-credit-rules-setting-up-oracle-court-fight" target="_blank">Milwaukee Courier &ndash; PSC declines to reopen, background</a><span class="source-link-date">&middot; 10 Jul 2026</span><a href="#cite-18a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+      </ul>
+    </div>
+    <div class="source-tile">
+      <div class="source-tile-cat">Geopolitics &amp; OSINT</div>
+      <ul class="source-link-list">
+        <li class="source-link-item" id="src-1"><span class="src-num">1</span><a href="https://www.turkiyetoday.com/region/aramco-refinery-in-jazan-burns-after-houthi-missile-and-drone-strike-3224596" target="_blank">Türkiye Today &ndash; Jizan / Yanbu strikes</a><span class="source-link-date">&middot; 25 Jul 2026</span><a href="#cite-1a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item" id="src-2"><span class="src-num">2</span><a href="https://www.turkiyetoday.com/business/saudi-aramco-shuts-jazan-refinery-after-houthi-attack-3224842" target="_blank">Türkiye Today &ndash; Jazan refinery shutdown</a><span class="source-link-date">&middot; 28 Jul 2026</span><a href="#cite-2a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item" id="src-3"><span class="src-num">3</span><a href="https://www.aljazeera.com/news/2026/7/28/yemens-houthis-claim-missile-attack-on-saudi-arabia-oil-tanker" target="_blank">Al Jazeera &ndash; Houthi tanker attack claims</a><span class="source-link-date">&middot; 28 Jul 2026</span><a href="#cite-3a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item" id="src-5"><span class="src-num">5</span><a href="https://www.iranintl.com/en/202607297610" target="_blank">Reuters via Iran International &ndash; China MANPADS shipment</a><span class="source-link-date">&middot; 29 Jul 2026</span><a href="#cite-5a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item" id="src-7"><span class="src-num">7</span><a href="https://www.aljazeera.com/news/2026/7/30/us-authorities-probe-cyberattack-on-water-systems-in-minnesota" target="_blank">Al Jazeera &ndash; Minnesota cyberattack investigation</a><span class="source-link-date">&middot; 30 Jul 2026</span><a href="#cite-7a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item" id="src-9"><span class="src-num">9</span><a href="https://www.aljazeera.com/news/2026/7/24/philippines-accuses-china-of-using-water-cannon-on-vessels-for-second-day" target="_blank">Al Jazeera &ndash; Philippines water cannon, second day</a><span class="source-link-date">&middot; 24 Jul 2026</span><a href="#cite-9a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item" id="src-10"><span class="src-num">10</span><a href="https://www.cnn.com/2026/07/24/asia/china-philippines-south-china-sea-scarborough-intl-hnk" target="_blank">CNN &ndash; Scarborough Shoal water cannon</a><span class="source-link-date">&middot; 24 Jul 2026</span><a href="#cite-10a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item" id="src-11"><span class="src-num">11</span><a href="https://appliedgeopolitics.com/blog/south-china-sea-philippines-clash" target="_blank">Applied Geopolitics &ndash; South China Sea drills conclude</a><span class="source-link-date">&middot; 25 Jul 2026</span><a href="#cite-11a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+      </ul>
+    </div>
+    <div class="source-tile">
+      <div class="source-tile-cat">PE &amp; Deal Intelligence</div>
+      <ul class="source-link-list"><li class="source-link-item" style="color:var(--ink-light);font-style:italic;">No direct citations this issue</li></ul>
+    </div>
+    <div class="source-tile">
+      <div class="source-tile-cat">Market Data &amp; Signals</div>
+      <ul class="source-link-list"><li class="source-link-item" style="color:var(--ink-light);font-style:italic;">No direct citations this issue</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="disclaimer">
+  <h3>About Commentarii</h3>
+  <p><em>Commentarii</em> is a weekly intelligence publication from CʘNSVLTʘR, providing senior-level geopolitical and market analysis for private equity investors active in TMT and digital infrastructure. Each issue draws on open-source intelligence from financial press, industry data providers, and geopolitical monitoring platforms, synthesised through an operating partner lens.</p>
+  <p>The analysis is intended for professional investors. It does not constitute investment advice. Views are those of the author and subject to change. <a href="https://www.consvltor.net" target="_blank">consvltor.net</a></p>
+  <p>Enquiries: <a href="mailto:hello@consvltor.net">hello@consvltor.net</a></p>
+</div>
+
+</body>
+</html>
