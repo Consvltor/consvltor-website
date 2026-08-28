@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Commentarii 021 · The Provisional Order · 28 August 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --bg:#F5F0E6;--ink:#1C1814;--ink-mid:#4A4540;--ink-light:#8A837A;
+  --rule:#D0C8BC;--card-bg:#EDE8DE;--accent:#7A3020;
+  --amber:#7A5A1A;--green:#2A5036;--blue:#1A3C5A;
+}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;font-size:15px;line-height:1.75;-webkit-font-smoothing:antialiased;}
+
+.preamble-image{width:100%;line-height:0;overflow:hidden;}
+.preamble-image img{width:100%;height:320px;object-fit:cover;object-position:center;display:block;}
+
+.preamble-intro{max-width:860px;margin:0 auto;padding:32px 48px;display:grid;grid-template-columns:1fr 1fr;gap:40px;border-bottom:1px solid var(--rule);}
+.preamble-intro .col-left{font-family:'Times New Roman',Times,serif;font-style:italic;font-size:15px;color:var(--ink-mid);line-height:1.7;}
+.preamble-intro .col-left .pub-title{font-size:17px;font-weight:normal;display:block;margin-bottom:8px;color:var(--ink);}
+.preamble-intro .col-right{font-family:Arial,Helvetica,sans-serif;font-size:13px;color:var(--ink-mid);line-height:1.75;}
+
+.report-header{max-width:860px;margin:0 auto;padding:64px 48px 44px;}
+.header-meta{font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-light);margin-bottom:22px;display:flex;gap:28px;flex-wrap:wrap;}
+.rule-thick{border:none;border-top:2px solid var(--ink);margin-bottom:26px;}
+.report-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:46px;font-weight:500;line-height:1.08;color:var(--ink);margin-bottom:16px;max-width:640px;}
+.report-deck{font-size:15px;color:var(--ink-mid);line-height:1.7;max-width:580px;border-left:3px solid var(--accent);padding-left:18px;margin-bottom:36px;}
+
+.cover-grid{max-width:680px;margin:0 auto;border:1px solid var(--rule);}
+.cg-row{display:grid;gap:1px;background:var(--rule);}
+.cg-row-top{grid-template-columns:repeat(4,1fr);}
+.cg-row-bot{grid-template-columns:repeat(4,1fr);border-top:1px solid var(--rule);}
+.cg-card{background:var(--bg);padding:16px 14px;display:flex;flex-direction:column;justify-content:space-between;min-height:160px;text-decoration:none;color:inherit;transition:background 0.15s;border-bottom:1px solid var(--rule);}
+.cg-card:hover{background:var(--card-bg);}
+.cg-card-fixed{background:var(--card-bg);padding:16px 14px;min-height:160px;display:flex;flex-direction:column;justify-content:space-between;text-decoration:none;color:inherit;transition:background 0.15s;border-bottom:1px solid var(--rule);}
+.cg-card-fixed:hover{background:#E4DDD3;}
+.cg-cat{font-size:8px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-light);margin-bottom:6px;}
+.cg-theme{font-size:11px;color:var(--ink);line-height:1.4;margin-bottom:8px;flex:1;}
+.cg-stance{display:inline-block;font-size:8px;letter-spacing:0.08em;text-transform:uppercase;font-weight:600;padding:2px 6px;border-radius:2px;align-self:flex-start;}
+.stance-cau{background:#F0DDD8;color:#7A3020;}
+.stance-ele{background:#E8D0CC;color:#6A2018;}
+.stance-opp{background:#D8EAE0;color:#2A5036;}
+.cg-label{font-size:8px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-light);margin-bottom:5px;}
+.cg-big{font-family:'Cormorant Garamond',Georgia,serif;font-size:24px;font-weight:600;color:var(--ink);line-height:1;margin-bottom:5px;}
+.cg-sub{font-size:10px;color:var(--ink-mid);line-height:1.55;}
+.cg-stances-grid{display:grid;grid-template-columns:1fr 1fr;gap:3px 6px;margin-top:6px;}
+.cg-st{font-size:8.5px;font-weight:600;line-height:1.4;font-variant-emoji:text;}
+.cst-ow{color:#2A5036;}.cst-sel{color:#7A5A1A;}.cst-neu{color:#8A837A;}.cst-wtch{color:#1A3C5A;}
+.cg-subgrid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:1px;background:var(--rule);min-height:110px;border-bottom:1px solid var(--rule);}
+.cg-sub-card{background:var(--card-bg);padding:10px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;text-decoration:none;color:inherit;transition:background 0.15s;}
+.cg-sub-card:hover{background:#E4DDD3;}
+.cg-sub-name{font-size:8px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-mid);line-height:1.5;margin-top:4px;}
+.cg-sub-count{font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;font-weight:600;color:var(--ink);line-height:1;}
+
+.section{max-width:860px;margin:0 auto;padding:46px 48px;border-bottom:1px solid var(--rule);}
+.section-header{display:flex;align-items:baseline;gap:16px;margin-bottom:20px;}
+.section-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:13px;letter-spacing:0.06em;color:var(--ink-light);min-width:22px;}
+.section h2{font-family:'Cormorant Garamond',Georgia,serif;font-size:26px;font-weight:500;color:var(--ink);line-height:1.2;}
+.section-tag{margin-left:auto;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-light);border:1px solid var(--rule);padding:3px 9px;border-radius:2px;white-space:nowrap;}
+p{margin-bottom:1em;}p:last-child{margin-bottom:0;}strong{font-weight:600;}
+
+.data-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);margin:22px 0;}
+.data-card{background:var(--bg);padding:13px;}
+.dc-label{font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-light);margin-bottom:4px;}
+.dc-value{font-family:'Cormorant Garamond',Georgia,serif;font-size:25px;font-weight:600;color:var(--ink);line-height:1;margin-bottom:4px;}
+.dc-note{font-size:12px;color:var(--ink-mid);line-height:1.5;}
+
+.pull-quote{font-family:'Cormorant Garamond',Georgia,serif;font-size:18px;font-style:italic;font-weight:500;color:var(--ink-mid);border-left:3px solid var(--accent);padding:9px 17px;margin:22px 0;line-height:1.45;}
+
+.std-table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13px;}
+.std-table th{font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-light);border-bottom:1.5px solid var(--ink);padding:6px 10px 8px;text-align:left;}
+.std-table td{border-bottom:1px solid var(--rule);padding:10px;vertical-align:top;line-height:1.55;color:var(--ink-mid);}
+.std-table tr:last-child td{border-bottom:none;}
+.td-strong{font-weight:600;color:var(--ink);}
+.td-accent{font-family:'Cormorant Garamond',Georgia,serif;font-size:16px;font-weight:600;color:var(--accent);white-space:nowrap;}
+.td-light{color:var(--ink-light);font-size:12px;white-space:nowrap;}
+
+.badge{display:inline-block;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;padding:2px 7px;border-radius:2px;}
+.b-high{background:#F0DDD8;color:#7A3020;}.b-elev{background:#F5E8D8;color:#7A4A10;}
+.b-med{background:#F0E8D0;color:#7A5A1A;}.b-new{background:#E8D0CC;color:#6A2018;}
+.b-ow{background:#D8EAE0;color:#2A5036;}.b-sel{background:#F0E8D0;color:#7A5A1A;}
+.b-neu{background:#EAE4DA;color:#6A5A4A;}.b-wtch{background:#DAE4EE;color:#1A3C5A;}
+
+.hm-bar-wrap{background:#E8E2D6;border-radius:2px;height:7px;width:100%;overflow:hidden;margin-top:4px;}
+.hm-bar{height:7px;border-radius:2px;}
+.hm-score{font-family:'Cormorant Garamond',Georgia,serif;font-size:16px;font-weight:600;color:var(--ink);}
+.delta-up{color:var(--accent);font-size:10px;font-weight:600;}.delta-flat{color:var(--ink-light);font-size:10px;}
+
+.dq-cat{font-size:10px;letter-spacing:0.14em;text-transform:uppercase;font-weight:600;color:var(--ink-light);border-bottom:1px solid var(--rule);padding-bottom:5px;margin:22px 0 9px;}
+.dq-list{list-style:none;}
+.dq-item{padding:8px 0;border-bottom:1px solid var(--rule);font-size:14px;color:var(--ink-mid);line-height:1.6;display:flex;gap:12px;}
+.dq-item:last-child{border-bottom:none;}
+.dq-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:15px;font-weight:600;color:var(--ink-light);min-width:20px;padding-top:1px;}
+.dq-trace{font-size:11px;color:var(--ink-light);font-style:italic;margin-top:2px;}
+.horizon-label{font-size:10px;letter-spacing:0.16em;text-transform:uppercase;font-weight:600;color:var(--ink-light);border-bottom:1px solid var(--rule);padding-bottom:5px;margin:22px 0 10px;}
+.action-list{list-style:none;}
+.action-item{padding:8px 0;border-bottom:1px solid var(--rule);font-size:14px;color:var(--ink-mid);line-height:1.6;display:flex;gap:12px;}
+.action-item:last-child{border-bottom:none;}
+.action-dot{width:5px;height:5px;min-width:5px;border-radius:50%;background:var(--accent);margin-top:9px;}
+
+.sources-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:auto;gap:1px;background:var(--rule);border:1px solid var(--rule);margin:14px 0;}
+.source-tile{background:var(--bg);padding:12px;}
+.source-tile-wide{grid-column:span 2;}
+.source-tile-cat{font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-light);font-weight:600;border-bottom:1px solid var(--rule);padding-bottom:5px;margin-bottom:8px;}
+.source-link-list{list-style:none;}
+.source-link-item{padding:4px 0;border-bottom:1px solid var(--rule);font-size:12px;}
+.source-link-item:last-child{border-bottom:none;}
+.source-link-item a{color:var(--accent);text-decoration:none;font-weight:500;}
+.source-link-item a:hover{text-decoration:underline;}
+.source-link-date{font-size:10px;color:var(--ink-light);font-style:italic;margin-left:4px;}
+.fn-ref{color:var(--accent);text-decoration:none;font-size:10px;vertical-align:super;line-height:0;font-weight:600;font-variant-emoji:text;}
+.fn-ref:hover{text-decoration:underline;}
+.fn-back{color:var(--ink-light);text-decoration:none;font-size:10px;margin-left:5px;font-variant-emoji:text;}
+.fn-back:hover{color:var(--accent);}
+.src-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:13px;font-weight:600;color:var(--ink-light);margin-right:5px;}
+
+.disclaimer{max-width:860px;margin:0 auto;padding:36px 48px 52px;border-top:1px solid var(--rule);}
+.disclaimer h3{font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;font-weight:500;color:var(--ink);margin-bottom:16px;}
+.disclaimer p{font-size:14px;color:var(--ink-mid);line-height:1.7;margin-bottom:1em;}
+.disclaimer p:last-child{margin-bottom:0;}
+.disclaimer a{color:var(--accent);text-decoration:none;}
+.disclaimer a:hover{text-decoration:underline;}
+
+@media(max-width:760px){
+  .preamble-intro{grid-template-columns:1fr;padding:24px 20px;}
+  .report-header,.section,.disclaimer{padding-left:20px;padding-right:20px;}
+  .report-title{font-size:32px;}
+  .cg-row-top,.cg-row-bot{grid-template-columns:1fr 1fr;}
+  .data-cards,.sources-grid{grid-template-columns:1fr;}
+  .source-tile-wide{grid-column:span 1;}
+  .std-table th:nth-child(3),.std-table td:nth-child(3){display:none;}
+  .std-table{font-size:12px;}
+  .std-table td,.std-table th{padding:8px 6px;}
+  .td-accent{font-size:14px;}
+}
+</style>
+</head>
+<body>
+
+<div class="preamble-image">
+  <img src="https://consvltor.net/assets/consvltor_cover.jpg" alt="Commentarii">
+</div>
+
+<div class="preamble-intro">
+  <div class="col-left">
+    <span class="pub-title">Commentarii</span>
+    Field notes from infrastructure, markets, and the geopolitics of connectivity. Written after dark.
+  </div>
+  <div class="col-right">
+    Each entry is anchored to a place and a period. Some are retrospective: written now, from the distance of outcome. Others are current, drafted close to the events they describe. The standard of evidence is the same throughout: what the data and the experience actually support, no more.
+  </div>
+</div>
+
+<div class="report-header">
+  <div class="header-meta">
+    <span>Commentarii</span><span>Issue 021</span><span>28 August 2026</span>
+    <span>TMT &amp; Digital Infrastructure</span>
+  </div>
+  <hr class="rule-thick">
+  <h1 class="report-title">The Provisional Order</h1>
+  <p class="report-deck">Four arrangements took shape this week without yet becoming settled fact. Israeli forces re-entered southern Syria days after a US-brokered understanding to halt strikes, shelling a border hill for a second consecutive night and advancing into the Yarmouk Basin. The breach arrived alongside Damascus's most concrete step toward statehood to date: the Syrian Democratic Forces completed their dissolution into the national army, Turkey's Kurdistan Workers' Party moved in parallel, and Washington lifted Syria's 46-year terrorism designation, all as foreign telecoms capital continues arriving at real scale. Iran and Oman say they have agreed how to split the Strait of Hormuz's waters and revenues and have outlined interim shipping lanes, though Tehran maintains the strait will not reopen until Washington meets conditions it has not signalled readiness to accept. And Spain's government opened public consultation on a draft decree that would require data centres over 1MW to match 80% of consumption with new renewable generation on an hourly basis rather than an annual balance, a shift that changes what a renewable-powered site actually requires of its generation and storage stack.</p>
+</div>
+
+<div class="cover-grid">
+  <div class="cg-row cg-row-top">
+    <a class="cg-card" href="#topic1"><div><div class="cg-cat">Israel-Turkey-Syria Friction</div><div class="cg-theme">Israeli forces re-enter southern Syria days after a US-brokered understanding to halt strikes; shelling continues for a second night running</div></div><span class="cg-stance stance-ele">Elevated Risk</span></a>
+    <a class="cg-card" href="#topic2"><div><div class="cg-cat">Syria's State-Building Wager</div><div class="cg-theme">SDF and PKK both move to disband as Washington delists Syria and foreign telecoms capital keeps arriving at real scale</div></div><span class="cg-stance stance-opp">Opportunity, Contested</span></a>
+    <a class="cg-card" href="#topic3"><div><div class="cg-cat">Hormuz Revenue Mechanics</div><div class="cg-theme">Iran and Oman say they have agreed how to split the strait's waters and revenue; reopening still depends on terms Washington has not accepted</div></div><span class="cg-stance stance-cau">Caution</span></a>
+    <a class="cg-card" href="#topic4"><div><div class="cg-cat">Spain's Data Centre Decree</div><div class="cg-theme">Draft rule would require 80% of consumption matched to new renewables hour by hour, not netted annually, or lose grid connection rights</div></div><span class="cg-stance stance-cau">Caution</span></a>
+  </div>
+  <div class="cg-row cg-row-bot">
+    <a class="cg-card-fixed" href="#dealflow"><div class="cg-label">Deal Flow</div><div class="cg-big">5 Transactions</div><div class="cg-sub">Nvidia (x2) &middot; CVC DIF/Aurora Towers &middot; Astrum Space &middot; TTM/Epiq</div></a>
+    <a class="cg-card-fixed" href="#riskmatrix"><div class="cg-label">PE Risk Matrix</div><div class="cg-big">6 Active Vectors</div><div class="cg-sub">Levant security &middot; Syria transition &middot; Gulf corridor mechanics &middot; EU digital sovereignty &middot; Baltic coercion &middot; BIS 50% Rule</div></a>
+    <a class="cg-card-fixed" href="#stances"><div class="cg-label">Asset Class Stances</div><div class="cg-stances-grid"><span class="cg-st cst-sel">&#x25B6;&#xFE0E; Data Centres: Selective</span><span class="cg-st cst-wtch">&#x21C5;&#xFE0E; Subsea Cable: Active Watch</span><span class="cg-st cst-sel">&#x25B6;&#xFE0E; Fibre / Backbone: Selective</span><span class="cg-st cst-sel">&#x25B6;&#xFE0E; Towers / RAN: Selective</span><span class="cg-st cst-wtch">&#x25BC;&#xFE0E; Satellite / LEO: Watch</span><span class="cg-st cst-ow">&#x25B2;&#xFE0E; Power for Digital: Overweight</span></div></a>
+    <div class="cg-subgrid"><a class="cg-sub-card" href="#underwriting"><div class="cg-sub-count">8</div><div class="cg-sub-name">Underwriting Variables</div></a><a class="cg-sub-card" href="#diligence"><div class="cg-sub-count">9</div><div class="cg-sub-name">Diligence Questions</div></a><a class="cg-sub-card" href="#strategy"><div class="cg-sub-count">6</div><div class="cg-sub-name">Strategy Actions</div></a><a class="cg-sub-card" href="#watchlist"><div class="cg-sub-count">7</div><div class="cg-sub-name">Watch List Items</div></a></div>
+  </div>
+</div>
+<div style="max-width:680px;margin:0 auto;padding:6px 2px 0;display:flex;gap:12px;flex-wrap:wrap;">
+  <span style="font-size:8px;color:#2A5036;font-weight:600;font-variant-emoji:text;">&#x25B2;&#xFE0E; Overweight</span>
+  <span style="font-size:8px;color:#7A5A1A;font-weight:600;font-variant-emoji:text;">&#x25B6;&#xFE0E; Selective</span>
+  <span style="font-size:8px;color:#8A837A;font-weight:600;font-variant-emoji:text;">&#x25BA;&#xFE0E; Neutral</span>
+  <span style="font-size:8px;color:#1A3C5A;font-weight:600;font-variant-emoji:text;">&#x25BC;&#xFE0E; Watch</span>
+  <span style="font-size:8px;color:#1A3C5A;font-weight:600;font-variant-emoji:text;">&#x21C5;&#xFE0E; Active Watch</span>
+</div>
+
+<!-- SINCE LAST ISSUE -->
+<div style="max-width:680px;margin:0 auto;padding:28px 0 0;">
+  <p style="font-family:'Source Serif 4',Georgia,serif;font-size:14px;color:var(--ink-mid);line-height:1.75;border-left:3px solid var(--rule);padding-left:18px;"><em>Since last week's <a href="20260821-commentarii-the-declaration-gap.html" target="_blank" style="color:var(--accent);text-decoration:none;font-weight:500;">The Declaration Gap</a></em>, two tracked threads moved. One, the Public Utility Commission of Texas (PUCT) that has granted the Electric Reliability Council of Texas's (ERCOT) good-cause exceptions but still has no new Batch Zero completion date, so the freeze continues.<a href="#src-1" id="cite-1a" class="fn-ref"><sup>1</sup></a> The second, in the Baltic, where Russia repositioned two Northern Fleet warships near Fehmarn around the same time as Putin's threat. The shadow-fleet interdiction activity that provoked it has since shifted to the Channel and Mediterranean, and neither side has acted further since.<a href="#src-2" id="cite-2a" class="fn-ref"><sup>2</sup></a></p>
+</div>
+
+<div class="section" id="macro">
+  <div class="section-header"><span class="section-num">&sect;4</span><h2>Macro and Geopolitical Landscape</h2></div>
+  <div class="pull-quote">A ceasefire understanding breaks within days of being reached. A militia dissolves itself into a state already drawing serious capital. A strait's revenue is split before its waters reopen. A government drafts a renewable standard before the market it governs can meet it.</div>
+  <p>Two of this week's four situations rest on genuinely well-evidenced bets; the other two rest on paper that has not yet been tested against reality, and the distinction matters for how each should be read. In Syria, a US-brokered understanding to halt Israeli strikes and return forces toward the 1974 Golan armistice line held for roughly four days before Israeli units re-entered Syrian territory, shelling a border hill for a second consecutive night and advancing into the Yarmouk Basin.<a href="#src-3" id="cite-3a" class="fn-ref"><sup>3</sup></a> That is the one live risk sitting inside an otherwise well-supported story: Damascus's terrorism delisting and the Kurdish militia's dissolution into the national army landed the same week as continued incursion, but they landed alongside serious Gulf capital already committed, Kuwaiti and Saudi telecoms operators who ran competitive tenders rather than symbolic pledges, and that combination of policy normalisation and vetted private capital gives Syria a stronger base case than either fact would on its own.<a href="#src-4" id="cite-4a" class="fn-ref"><sup>4</sup></a></p>
+  <p>The Gulf and Spain tiles sit differently, and deserve a more sceptical read. Iran's Revolutionary Guard says Tehran and Muscat have settled how to divide the Strait of Hormuz's waters and toll revenue and have mapped interim shipping lanes, but Iran maintains the strait itself stays closed until Washington meets separate conditions from June's memorandum that it has not signalled willingness to accept, and the two countries' own foreign ministries were notably more cautious a day earlier, calling the arrangement an "interim framework" without confirming fees at all.<a href="#src-5" id="cite-5a" class="fn-ref"><sup>5</sup></a><a href="#src-6" class="fn-ref"><sup>6</sup></a> Spain's draft data-centre decree is the more speculative of the four by design: a government proposal, not yet finalised, requiring an 80% hourly-matched renewable standard well ahead of the generation and storage buildout the market would need to actually clear it, the kind of measure that photographs well as policy before it has been tested as infrastructure.<a href="#src-7" id="cite-7a" class="fn-ref"><sup>7</sup></a></p>
+  <div class="data-cards">
+    <div class="data-card"><div class="dc-label">Years Syria held US terrorism designation</div><div class="dc-value">46</div><div class="dc-note">Rescinded 24 Aug 2026 after 45-day congressional review. <a href="#src-4" class="fn-ref"><sup>4</sup></a></div></div>
+    <div class="data-card"><div class="dc-label">Days to negotiate permanent Hormuz lanes</div><div class="dc-value">60</div><div class="dc-note">Interim shipping lanes agreed 26 Aug; permanent routes still open. <a href="#src-8" class="fn-ref"><sup>8</sup></a></div></div>
+    <div class="data-card"><div class="dc-label">Spain data centre renewable requirement</div><div class="dc-value">80%</div><div class="dc-note">Hourly-matched, not annually netted; &gt;1MW sites. <a href="#src-7" class="fn-ref"><sup>7</sup></a></div></div>
+  </div>
+</div>
+
+<div class="section" id="topic1">
+  <div class="section-header"><span class="section-num">&sect;5</span><h2>The Amman Breach</h2></div>
+  <div class="pull-quote">Israel's Mossad chief met Syria's foreign minister to talk down the Abu al-Duhur strike. Days later, Israeli forces were shelling Syrian territory for a second night running.</div>
+  <p>Israel struck Syria's Abu al-Duhur airbase in Idlib overnight on 17 and 18 August, saying it acted to pre-empt a Turkish military presence at the site; Turkey's defence ministry has since denied any Turkish delegation was there before or during the strike.<a href="#src-9" id="cite-9a" class="fn-ref"><sup>9</sup></a> Israeli Mossad chief Roman Gofman met Syrian foreign minister Asaad al-Shibani in the days that followed, and a separate US-brokered meeting in Amman discussed halting Israeli attacks on Syria and returning Israeli forces to the 1974 disengagement line adjacent to the occupied Golan Heights.<a href="#src-3" class="fn-ref"><sup>3</sup></a> The diplomatic track held only briefly. Israeli forces entered the Syrian village of Turnejeh and shelled the outskirts of Beit Jinn around 27 August, the first such breach since the Amman meeting; a regional security source told The National that even as the two sides talk, Israel is simultaneously increasing military activity in the same territories it says it does not want.<a href="#src-3" class="fn-ref"><sup>3</sup></a></p>
+  <p>By 28 August, Israeli forces had shelled a Syrian hill roughly 10 kilometres from the border for a second consecutive night and advanced into the village of Jamla in the Yarmouk Basin, in Daraa's countryside; separately, Israeli forces fired shells near Jabata al-Khashab in Quneitra and entered further villages in southern Syria the same day.<a href="#src-10" id="cite-10a" class="fn-ref"><sup>10</sup></a><a href="#src-11" id="cite-11a" class="fn-ref"><sup>11</sup></a> Israeli defence minister Israel Katz visited forces stationed in Syria during the same window.<a href="#src-3" class="fn-ref"><sup>3</sup></a> None of this is occurring in a vacuum: it runs in parallel with Syria's own political consolidation, tracked in the tile below, and the mismatch between the two, a state formally being welcomed back into the international system while its territory remains subject to active incursion, is itself the underwriting-relevant fact for anyone assessing Syria-linked infrastructure exposure this quarter.</p>
+</div>
+
+<div class="section" id="topic2">
+  <div class="section-header"><span class="section-num">&sect;6</span><h2>The Damascus Wager, Contested</h2></div>
+  <div class="pull-quote">Six months ago Syria's main Kurdish militia controlled a third of the country. This week it voted itself out of existence, and Washington took Syria off a terrorism list it had carried for 46 years.</div>
+  <p>The Syrian Democratic Forces, the Kurdish-led militia that once held vast territory across northern Syria and led the ground fight against ISIS, formally dissolved this week under an integration agreement reached with President Ahmed al-Sharaa's government months earlier.<a href="#src-12" id="cite-12a" class="fn-ref"><sup>12</sup></a> Al-Sharaa appointed SDF commander Mazloum Abdi as a presidential adviser on 28 August, and Syrian officials say SDF leaders, including Abdi and Ilham Ahmad, will hold state positions, with Kurdish language entering the national curriculum.<a href="#src-10" class="fn-ref"><sup>10</sup></a><a href="#src-12" class="fn-ref"><sup>12</sup></a> Across the border, Turkey's Kurdistan Workers' Party (PKK) has moved in parallel toward its own disbandment, a broader shift away from militancy among the region's principal Kurdish armed groups. Separately, and on the same week's timeline, the US State Department formally rescinded Syria's designation as a State Sponsor of Terrorism on 24 August, a label it had carried since 1979, following the mandatory 45-day congressional review period Trump triggered on 8 July; the department also delisted Hay'at Tahrir al-Sham as a Specially Designated Global Terrorist.<a href="#src-4" class="fn-ref"><sup>4</sup></a></p>
+  <p>Capital had already started arriving ahead of this week's political milestones, and the shape of it is worth noting: competitive tenders and multi-year revenue commitments, the kind of due diligence Gulf allocators typically run before they commit real money. Kuwait's Zain Group won a 25-year licence in June, after a competitive tender, to operate Syria's second mobile network, taking over the former MTN Syria business and pledging a further $800 million over the next decade for 5G and network modernisation, on top of the initial $747 million.<a href="#src-13" id="cite-13a" class="fn-ref"><sup>13</sup></a> Saudi Arabia's stc Group separately committed roughly $800 million in February, also after a competitive process, for the SilkLink project, a planned 4,500-kilometre fibre backbone with data centres and an international submarine cable landing station at Tartus, positioning Syria as a transit hub between Europe and Asia.<a href="#src-14" id="cite-14a" class="fn-ref"><sup>14</sup></a> Their timing alongside the delisting and the SDF's dissolution reads as a considered wager on where the state is heading, backed by operators with a track record of walking away from bad ones. The variable that could still undercut it sits in Tile 1: continued Israeli incursion is the live risk to watch, and it will settle whether this wager pays off long before the commercial terms of either deal do.</p>
+</div>
+
+<div class="section" id="topic3">
+  <div class="section-header"><span class="section-num">&sect;7</span><h2>Revenue Before Reopening</h2></div>
+  <div class="pull-quote">Iran and Oman say they have agreed how to split a strait that still is not open.</div>
+  <p>Iran's Islamic Revolutionary Guard Corps said on 26 August that Tehran and Muscat had reached agreement on how to divide the Strait of Hormuz's waters and the revenue generated from shipping through it. IRGC spokesman Hossein Mohebbi said the two sides had "reached results that are acceptable to both sides," while adding that "the US is obstructing this process, causing progress to be delayed."<a href="#src-5" class="fn-ref"><sup>5</sup></a> That claim goes further than the joint statement the two countries' foreign ministries issued the day before, which described discussion of an "interim framework" for resuming ship transits but stopped short of announcing a final deal or mentioning fees at all, a gap between military and diplomatic framing worth treating as a live hedge rather than a settled fact.<a href="#src-6" id="cite-6a" class="fn-ref"><sup>6</sup></a> Iranian deputy foreign minister Kazem Gharibabadi provided the operational detail: inbound traffic into the Gulf would travel entirely through Iranian territorial waters, while outbound traffic would use a lane crossing both Iranian and Omani waters. The current lanes are described as temporary, with the next 60 days set aside for the two countries to negotiate permanent shipping routes.<a href="#src-8" id="cite-8a" class="fn-ref"><sup>8</sup></a></p>
+  <p>None of this amounts to the strait reopening. Iranian officials have repeatedly said normalised traffic depends on Washington complying with the terms of the memorandum of understanding signed in June, including lifting sanctions and the naval blockade on Iranian ports and unfreezing Iranian assets abroad, conditions the US has not signalled readiness to meet.<a href="#src-5" class="fn-ref"><sup>5</sup></a> The 60-day interim deal that lapsed earlier this month suffered repeated breaches from early on, as the US and Iran clashed over control of the waterway.<a href="#src-6" class="fn-ref"><sup>6</sup></a> For Gulf-adjacent digital infrastructure exposure tracked since Issue 020, the corridor risk itself hasn't gone away; what changed this week is that the parties have moved from disputing control outright to disputing the terms of a shared arrangement, and underwriting models should reflect that narrower, still-unresolved dispute rather than the broader standoff from earlier issues.</p>
+</div>
+
+<div class="section" id="topic4">
+  <div class="section-header"><span class="section-num">&sect;8</span><h2>The Hourly Standard</h2></div>
+  <div class="pull-quote">Spain wants data centres to prove their renewable power hour by hour, not once a year, and the buildout that requires is larger than the annual-balance approach it replaces.</div>
+  <p>Spain's Council of Ministers agreed on 25 August to fast-track a draft royal decree setting sustainability, resilience and digital-sovereignty requirements for data centres above 1MW, developed jointly by the ministries for Ecological Transition, Economy and Digital Transformation. The headline requirement is that from a set date, at least 80% of a facility's electricity consumption must come from new renewable generation matched on an hourly basis, a considerably stricter standard than the annual netting of renewable certificates against total consumption that has been the norm.<a href="#src-7" class="fn-ref"><sup>7</sup></a> The draft also folds in digital-sovereignty conditions: the entity operating a facility and controlling its data must be subject to EU law, data and metadata processed at the site must stay within EU territory, and operators must demonstrate effective control over third-country access, backed by a formal compliance declaration. Non-compliant sites above 1MW risk losing their grid connection and access rights outright. The measure responds to a mandate set out in March's Real Decreto 7/2026, part of the government's response to the Middle East crisis, and is open to public consultation until 4 September.<a href="#src-7" class="fn-ref"><sup>7</sup></a></p>
+  <p>What an 80% hourly-matched standard actually requires in physical build has been modelled independently by Joaquín Coronado Galdos, co-founder of Digital Five Investment, in a LinkedIn analysis that works through the underlying arithmetic.<a href="#src-15" id="cite-15a" class="fn-ref"><sup>15</sup></a> Coronado's simulation, run across a full year of hourly generation for a constant 1MW load, finds that clearing an 80% hourly-matched threshold requires roughly 3MWp of solar paired with 2.4MW/9.6MWh of battery storage plus 1MW of wind, a buildout well beyond the load itself in raw capacity terms, with meaningful curtailment built in during spring and summer middays. It is one analyst's model, built on synthetic generation profiles calibrated to peninsular Spain, not an industry-verified standard, but it is a useful order-of-magnitude check for anyone assuming the 80% figure translates into a proportionate capacity build: on this modelling, it does not.</p>
+</div>
+
+<div class="section" id="dealflow">
+  <div class="section-header"><span class="section-num">&sect;9</span><h2>Deal Flow</h2></div>
+  <table class="std-table">
+    <thead><tr><th style="width:185px">Parties</th><th style="width:82px">Value</th><th style="width:78px">Date</th><th>Description &amp; Source</th></tr></thead>
+    <tbody>
+      <tr><td class="td-strong">Nvidia / SB Energy<br><span style="font-weight:400;font-size:12px;color:var(--ink-light)">PORTS-Pike campus, Pike County, Ohio</span></td><td class="td-accent">$1.5bn</td><td class="td-light">17 Aug 2026</td><td>Nvidia takes an equity stake in SoftBank- and OpenAI-backed SB Energy and becomes the exclusive AI-compute infrastructure provider at the site, securing land, power and shell (LPS) capacity for a campus scaling from an initial 4.25GW to 8GW. <em>NVIDIA Newsroom, SEC 8-K.</em><a href="#src-16" id="cite-16a" class="fn-ref"><sup>16</sup></a> Separately, Engineering News-Record reports Nvidia may spend as much as $105bn securing that LPS capacity over the life of the campus, a trade-press estimate not confirmed in Nvidia's own release. <em>ENR.</em><a href="#src-17" id="cite-17a" class="fn-ref"><sup>17</sup></a></td></tr>
+      <tr><td class="td-strong">Nvidia / Cloverleaf Infrastructure<br><span style="font-weight:400;font-size:12px;color:var(--ink-light)">Utility-to-data centre site development</span></td><td class="td-accent">Undisclosed<span style="font-size:11px;color:var(--ink-light);"> (est. several hundred $m)</span></td><td class="td-light">21 Aug 2026</td><td>Nvidia partners with and invests in Cloverleaf, which brokers power sourcing and site development between utilities and data centre developers, extending Nvidia's reach further into physical infrastructure financing beyond chip supply. <em>TechCrunch.</em><a href="#src-18" id="cite-18a" class="fn-ref"><sup>18</sup></a></td></tr>
+      <tr><td class="td-strong">CVC DIF (Aurora Towers) / American Tower<br><span style="font-weight:400;font-size:12px;color:var(--ink-light)">Canadian wireless tower portfolio, 255 sites</span></td><td class="td-accent">Undisclosed</td><td class="td-light">27 Aug 2026</td><td>Aurora Towers, CVC DIF's Canadian tower platform built from last year's SBA Communications carve-out, agrees to acquire American Tower's 255-site Canadian business, roughly doubling Aurora's footprint to more than 650 sites with minimal portfolio overlap. Closing expected Q4 2026. <em>CVC press release.</em><a href="#src-19" id="cite-19a" class="fn-ref"><sup>19</sup></a></td></tr>
+      <tr><td class="td-strong">Astrum Space / Black Spade Acquisition III<br><span style="font-weight:400;font-size:12px;color:var(--ink-light)">Satellite-to-device business combination, NYSE</span></td><td class="td-accent">~$1bn equity value</td><td class="td-light">27 Aug 2026</td><td>Singapore-based Astrum, holder of 25MHz of L-band spectrum and rights to the 105&deg;E GEO orbital position, agrees to go public via business combination with Black Spade Acquisition III, a special purpose acquisition company (SPAC), targeting a wholesale satellite-to-device broadcast network for Asia-Pacific. Close expected by year-end. <em>SEC 8-K.</em><a href="#src-20" id="cite-20a" class="fn-ref"><sup>20</sup></a></td></tr>
+      <tr><td class="td-strong">TTM Technologies / Epiq Design Solutions<br><span style="font-weight:400;font-size:12px;color:var(--ink-light)">Software-defined radio, RF, space compute</span></td><td class="td-accent">$1.1bn</td><td class="td-light">17 Aug 2026</td><td>All-cash acquisition of Veritas Capital-backed Epiq, a provider of open-architecture software-defined radios and radiation-tolerant space compute hardware for signals intelligence and electronic warfare, extending TTM's advanced-electronics and interconnect stack into higher-value defence and space applications. <em>SEC 8-K.</em><a href="#src-21" id="cite-21a" class="fn-ref"><sup>21</sup></a></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section" id="riskmatrix">
+  <div class="section-header"><span class="section-num">&sect;10</span><h2>PE Risk Matrix</h2></div>
+  <table class="std-table">
+    <thead><tr><th style="width:180px">Risk Vector</th><th style="width:75px">Level</th><th>Investor Implication</th><th style="width:90px">Status</th></tr></thead>
+    <tbody>
+      <tr><td class="td-strong">Levant Security &amp; Territorial Control</td><td><span class="badge b-high">High</span></td><td>A US-brokered understanding to halt Israeli strikes on Syria broke within days; incursions and shelling continue as of 28 August. Any Syria-adjacent asset needs its security-risk assumptions dated to this week, not to the delisting alone.</td><td><span class="badge b-new">Escalated</span></td></tr>
+      <tr><td class="td-strong">Syria Political Transition &amp; Investment Risk</td><td><span class="badge b-elev">Elevated</span></td><td>SST delisting, SDF dissolution and continued telecoms capital commitments (Zain, stc) are genuine positive signals, but they sit alongside active Israeli incursion in the same country. Treat as a distinct, two-sided variable rather than folding it into either the security or the opportunity read alone.</td><td><span class="badge b-new">New</span></td></tr>
+      <tr><td class="td-strong">Gulf Corridor Mechanics</td><td><span class="badge b-elev">Elevated</span></td><td>Iran and Oman have moved from disputing control of Hormuz to negotiating shared terms, a real shift, but reopening remains conditioned on US concessions not yet offered. Underwriting models should mark it as negotiated but still closed, given how far the IRGC's framing runs ahead of the two governments' own joint statement.</td><td>Evolving</td></tr>
+      <tr><td class="td-strong">EU Digital Sovereignty &amp; Regulatory Compliance</td><td><span class="badge b-med">Medium</span></td><td>Spain's draft decree, if enacted as written, would require an hourly-matched renewable stack well beyond what current annual-balance planning assumes for any site above 1MW, plus EU-only data control. Portfolio companies with Spanish pipeline exposure should model the 80% hourly threshold now, ahead of the 4 September consultation close.</td><td><span class="badge b-new">New</span></td></tr>
+      <tr><td class="td-strong">Baltic / North Sea Maritime Coercion</td><td><span class="badge b-elev">Elevated</span></td><td>Putin's "symmetrical response" threat remains untested more than two weeks on, and the shadow-fleet interdiction activity that provoked it has moved away from the Baltic toward the Channel and Mediterranean. The early-August warship repositioning near Fehmarn has not been followed by further action. Read as a live but currently stalled threat rather than an active escalation.</td><td>Stalled</td></tr>
+      <tr><td class="td-strong">Bureau of Industry and Security (BIS) 50% Rule Compliance</td><td><span class="badge b-med">Medium</span></td><td>Enforcement 10 November 2026. Under eleven weeks remain. Operators with PRC-adjacent supply chains or counterparties need compliance programmes finalised well before the deadline.</td><td>Deadline tracking</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section" id="stances">
+  <div class="section-header"><span class="section-num">&sect;11</span><h2>Asset Class Stances</h2></div>
+  <table class="std-table">
+    <thead><tr><th style="width:165px">Asset Class</th><th style="width:75px">Direction</th><th style="width:140px">Key Variable</th><th>Read-Through</th><th style="width:80px">Stance</th></tr></thead>
+    <tbody>
+      <tr><td class="td-strong">Data Centres (Hyperscale / AI)</td><td style="color:#7A5A1A;font-weight:600;">Mixed</td><td>Regulatory compliance stack</td><td>Deal flow continues at scale (Nvidia/SB Energy), but Spain's draft decree signals where EU jurisdictions may be heading on renewable-matching and data-sovereignty requirements. Differentiate pipeline by jurisdiction's regulatory trajectory, not just power availability.</td><td><span class="badge b-sel">Selective</span></td></tr>
+      <tr><td class="td-strong">Subsea Cable</td><td style="color:#6A2018;font-weight:600;">Weakening</td><td>Baltic naval posture</td><td>Russia's early-August redeployment of two Northern Fleet warships near Fehmarn has not been followed by further movement, and the interdiction activity that prompted Putin's threat has since shifted toward the Channel and Mediterranean. No change to the underlying multi-year thesis on GPS-spoofing and shadow-fleet friction, but this particular thread looks stalled for now rather than actively worsening.</td><td><span class="badge b-wtch">&#x21C5; Active Watch</span></td></tr>
+      <tr><td class="td-strong">Fibre / Backbone</td><td style="color:#7A5A1A;font-weight:600;">Mixed</td><td>Syria reconstruction build-out</td><td>Zain's Syrian mobile licence and stc's SilkLink fibre backbone represent real committed capital into a market whose security backdrop remains actively contested this issue. Track separately from Levant security risk rather than assuming either resolves the other.</td><td><span class="badge b-sel">Selective</span></td></tr>
+      <tr><td class="td-strong">Towers / RAN</td><td style="color:#2A5036;font-weight:600;">Strengthening</td><td>Sponsor-backed platform consolidation</td><td>CVC DIF's Aurora Towers roughly doubling its Canadian footprint via the American Tower carve-out is the clearest tower-sector portfolio-rotation signal in recent issues, evidence that independent towerco platforms continue attracting sponsor capital even as attention concentrates on data centres and AI compute.</td><td><span class="badge b-sel">Selective</span></td></tr>
+      <tr><td class="td-strong">Satellite / LEO</td><td style="color:#7A5A1A;font-weight:600;">Mixed</td><td>Spectrum-and-orbit financing access</td><td>Astrum Space's SPAC listing is a live test of whether spectrum-and-orbital-rights-led connectivity platforms can access public capital on reasonable terms. Regulatory market access, device compatibility and launch execution remain the open diligence questions.</td><td><span class="badge b-wtch">Watch</span></td></tr>
+      <tr><td class="td-strong">Power for Digital</td><td style="color:#2A5036;font-weight:600;">Strengthening</td><td>Captive generation vs. compliance-driven build</td><td>Spain's hourly-matching requirement adds a second, distinct driver toward captive and firmed renewable generation, alongside the existing queue-bypass thesis from Texas. Assets that can already demonstrate hourly matching gain a widening compliance premium in any jurisdiction that follows Spain's approach.</td><td><span class="badge b-ow">Overweight</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section" id="underwriting">
+  <div class="section-header"><span class="section-num">&sect;12</span><h2>Underwriting Variables</h2><span class="section-tag">0-100 &middot; higher = greater risk</span></div>
+  <table class="std-table">
+    <thead><tr><th style="width:230px">Variable</th><th style="width:50px">Score</th><th style="width:120px">Level</th><th style="width:58px">Change</th><th>Driver this week</th></tr></thead>
+    <tbody>
+      <tr><td class="td-strong">Route &amp; Corridor Resilience</td><td><span class="hm-score">84</span></td><td><div class="hm-bar-wrap"><div class="hm-bar" style="width:84%;background:#7A3020;"></div></div><span style="font-size:10px;color:var(--ink-light);">High</span></td><td><span class="delta-flat">&#8722;2</span></td><td style="font-size:13px;color:var(--ink-mid);">Hormuz risk shifts from open dispute to negotiated-but-unresolved, a modest easing, offset by the Amman breach reopening active Levant corridor risk; the early-August Baltic naval repositioning has not escalated further.</td></tr>
+      <tr><td class="td-strong">Permitting &amp; Regulatory Timeline</td><td><span class="hm-score">80</span></td><td><div class="hm-bar-wrap"><div class="hm-bar" style="width:80%;background:#7A3020;"></div></div><span style="font-size:10px;color:var(--ink-light);">High</span></td><td><span class="delta-up">+2</span></td><td style="font-size:13px;color:var(--ink-mid);">Texas's audit continues with no completion date despite the good-cause exceptions granted. Spain's draft decree adds a second, EU-side regulatory-timeline pressure point with a hard 4 September consultation deadline.</td></tr>
+      <tr><td class="td-strong">Power Access &amp; Energy Security</td><td><span class="hm-score">80</span></td><td><div class="hm-bar-wrap"><div class="hm-bar" style="width:80%;background:#7A3020;"></div></div><span style="font-size:10px;color:var(--ink-light);">High</span></td><td><span class="delta-flat">&mdash;</span></td><td style="font-size:13px;color:var(--ink-mid);">Stable at an already elevated level. Spain's hourly-matching requirement, if enacted, will raise the effective cost and complexity of power procurement for new Spanish sites, but this remains a draft under consultation.</td></tr>
+      <tr><td class="td-strong">Sovereign &amp; Security Compliance</td><td><span class="hm-score">83</span></td><td><div class="hm-bar-wrap"><div class="hm-bar" style="width:83%;background:#7A3020;"></div></div><span style="font-size:10px;color:var(--ink-light);">High</span></td><td><span class="delta-up">+3</span></td><td style="font-size:13px;color:var(--ink-mid);">Spain's draft decree adds explicit EU-operator and data-residency requirements on top of the existing BIS and offshore-access compliance overlay, widening the sovereign-compliance variable beyond its prior China-adjacent framing.</td></tr>
+      <tr><td class="td-strong">Cyber Posture vs. State-Linked Threats</td><td><span class="hm-score">72</span></td><td><div class="hm-bar-wrap"><div class="hm-bar" style="width:72%;background:#8A4030;"></div></div><span style="font-size:10px;color:var(--ink-light);">Elevated</span></td><td><span class="delta-flat">&mdash;</span></td><td style="font-size:13px;color:var(--ink-mid);">Stable elevated. No new state-linked cyber incident this issue distinct from the Baltic naval-posture pattern already reflected in Route &amp; Corridor.</td></tr>
+      <tr><td class="td-strong">Committee on Foreign Investment in the United States (CFIUS) &amp; Foreign Investment Review</td><td><span class="hm-score">70</span></td><td><div class="hm-bar-wrap"><div class="hm-bar" style="width:70%;background:#8A4030;"></div></div><span style="font-size:10px;color:var(--ink-light);">Elevated</span></td><td><span class="delta-flat">&#8722;2</span></td><td style="font-size:13px;color:var(--ink-mid);">Syria's SST delisting modestly widens the field of structurally reviewable Levant-adjacent capital relationships toward normalisation, offset by continued Gulf sovereign-capital exposure to an unresolved corridor dispute.</td></tr>
+      <tr><td class="td-strong">Hardware Supply-Chain Optionality</td><td><span class="hm-score">60</span></td><td><div class="hm-bar-wrap"><div class="hm-bar" style="width:60%;background:#9A5030;"></div></div><span style="font-size:10px;color:var(--ink-light);">Elevated</span></td><td><span class="delta-flat">&#8722;2</span></td><td style="font-size:13px;color:var(--ink-mid);">This issue's deal flow, TTM/Epiq, CVC DIF/Aurora, Astrum, marginally broadens hardware and infrastructure-platform optionality beyond the compute-only concentration of recent issues.</td></tr>
+      <tr><td class="td-strong">Exit Narrative Under Geopolitical Scrutiny</td><td><span class="hm-score">70</span></td><td><div class="hm-bar-wrap"><div class="hm-bar" style="width:70%;background:#8A4030;"></div></div><span style="font-size:10px;color:var(--ink-light);">Elevated</span></td><td><span class="delta-flat">&#8722;2</span></td><td style="font-size:13px;color:var(--ink-mid);">Astrum's successful SPAC pricing and Aurora's tower carve-out suggest buyer and public-market appetite for geopolitically adjacent digital infrastructure has not narrowed further this issue, a modest easing from prior weeks.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section" id="diligence">
+  <div class="section-header"><span class="section-num">&sect;13</span><h2>Diligence Questions</h2><span class="section-tag">9 questions</span></div>
+  <div class="dq-cat">Commercial</div>
+  <ul class="dq-list">
+    <li class="dq-item"><span class="dq-num">01</span><div>For any Syria-linked telecoms or fibre position (Zain, stc SilkLink, or adjacent): does the commercial model assume the security backdrop implied by the SST delisting, or does it reflect the active Israeli incursions reported this week?<div class="dq-trace">Amman breach, Israeli incursions &ndash; The National, Haaretz, 27-28 Aug 2026</div></div></li>
+    <li class="dq-item"><span class="dq-num">02</span><div>For any Spanish data centre pipeline asset above 1MW: has the underwriting model been re-run against an 80% hourly-matched renewable requirement, or does it still assume annual netting of renewable certificates?<div class="dq-trace">Spain draft royal decree &ndash; El Espa&ntilde;ol, El Economista, 25-27 Aug 2026</div></div></li>
+    <li class="dq-item"><span class="dq-num">03</span><div>For Gulf-adjacent shipping, insurance or corridor-dependent revenue: does the model distinguish between the Strait of Hormuz being negotiated and the Strait of Hormuz being open, given this week's IRGC claim is more advanced than the two governments' own joint statement?<div class="dq-trace">Iran-Oman Hormuz revenue sharing &ndash; Bloomberg, 26 Aug 2026; joint FM statement, 25 Aug 2026</div></div></li>
+  </ul>
+  <div class="dq-cat">Operational</div>
+  <ul class="dq-list">
+    <li class="dq-item"><span class="dq-num">04</span><div>For any Texas ERCOT-dependent asset: has ERCOT published a revised Batch Zero study-completion date following the PUCT's 20 August good-cause exception approval, and does financing documentation still reference the original 9 April 2027 target?<div class="dq-trace">PUCT good-cause exceptions approved &ndash; Utility Dive, 21 Aug 2026</div></div></li>
+    <li class="dq-item"><span class="dq-num">05</span><div>For subsea cable or offshore infrastructure work in the Baltic or North Sea: has the operator's contingency planning been updated to reflect Russia's early-August redeployment of Northern Fleet vessels into the region, even though Putin's "symmetrical response" threat has gone untested and the interdiction activity that provoked it has since moved elsewhere?<div class="dq-trace">Admiral Levchenko, Admiral Kasatonov redeployment &ndash; Baltic Sea Security Tracker, 13-18 Aug 2026</div></div></li>
+    <li class="dq-item"><span class="dq-num">06</span><div>For tower or RAN platform positions in markets with an active sponsor-backed consolidator: what is the current bid landscape, and does it resemble the CVC DIF/Aurora pattern of carve-out acquisition from a global towerco into an independent regional platform?<div class="dq-trace">CVC DIF/Aurora Towers acquisition of American Tower Canada &ndash; CVC press release, 27 Aug 2026</div></div></li>
+  </ul>
+  <div class="dq-cat">Regulatory</div>
+  <ul class="dq-list">
+    <li class="dq-item"><span class="dq-num">07</span><div>Does the ownership chain include any entity within scope of the BIS 50% Rule effective 10 November 2026? Has external export compliance counsel been engaged given under eleven weeks remain?<div class="dq-trace">BIS 50% Rule &ndash; carried from prior issues</div></div></li>
+    <li class="dq-item"><span class="dq-num">08</span><div>For any EU data centre position, not only Spain: does current planning anticipate similar hourly-matching or data-sovereignty requirements emerging in other member states, given Spain's decree responds to a mandate set in a broader March policy package?<div class="dq-trace">Real Decreto 7/2026 mandate &ndash; El Economista, 26 Aug 2026</div></div></li>
+  </ul>
+  <div class="dq-cat">Capital</div>
+  <ul class="dq-list">
+    <li class="dq-item"><span class="dq-num">09</span><div>For fund structures with Gulf sovereign co-investors or Syria-adjacent capital commitments: does current CFIUS or equivalent review posture reflect this week's SST delisting and the still-unresolved Hormuz corridor dispute, or does it rest on an assessment predating both?<div class="dq-trace">Syria SST delisting; Hormuz revenue sharing &ndash; State Department, 24 Aug 2026; Bloomberg, 26 Aug 2026</div></div></li>
+  </ul>
+</div>
+
+<div class="section" id="strategy">
+  <div class="section-header"><span class="section-num">&sect;14</span><h2>Strategy Actions</h2></div>
+  <div class="horizon-label">Immediate &middot; 0 to 90 days</div>
+  <ul class="action-list">
+    <li class="action-item"><div class="action-dot"></div><div><strong>Re-run Spanish data centre pipeline economics against an 80% hourly-matched renewable requirement ahead of the 4 September consultation close.</strong> The generation and storage buildout an hourly standard requires goes well beyond what an annual-balance approach assumes; sites underwritten on the old assumption may need revised capex before term sheets go out.</div></li>
+    <li class="action-item"><div class="action-dot"></div><div><strong>Review Baltic and North Sea subsea contingency planning against the early-August Northern Fleet redeployment near Fehmarn.</strong> The posture shift hasn't escalated further and the interdiction activity behind it has moved to the Channel and Mediterranean, but the warships are still there and worth a current risk read rather than an outdated one.</div></li>
+    <li class="action-item"><div class="action-dot"></div><div><strong>Separate security-risk and opportunity-signal tracking for Syria-adjacent positions rather than netting them into a single view.</strong> The SST delisting and continued Israeli incursions are both real and both current; treating one as having resolved the other risks mispricing either direction.</div></li>
+  </ul>
+  <div class="horizon-label">Platform &middot; 3 to 12 months</div>
+  <ul class="action-list">
+    <li class="action-item"><div class="action-dot"></div><div><strong>Commission BIS 50% Rule compliance mapping now if not already complete.</strong> Under eleven weeks remain to the 10 November enforcement date.</div></li>
+    <li class="action-item"><div class="action-dot"></div><div><strong>Benchmark tower and RAN platform opportunities against the CVC DIF/Aurora carve-out model.</strong> Sponsor-backed independent platforms continue attracting global towerco divestitures even as capital attention concentrates on data centres.</div></li>
+  </ul>
+  <div class="horizon-label">Portfolio &middot; 12 to 24 months</div>
+  <ul class="action-list">
+    <li class="action-item"><div class="action-dot"></div><div><strong>Continue favouring captive-generation and hourly-matchable power assets over grid-dependent alternatives.</strong> Spain's draft decree adds a compliance-driven rationale alongside the existing Texas queue-bypass thesis; the durability premium for firmed, matchable generation looks likely to widen further as more jurisdictions move toward hourly standards.</div></li>
+  </ul>
+</div>
+
+<div class="section" id="watchlist">
+  <div class="section-header"><span class="section-num">&sect;15</span><h2>Watch List</h2></div>
+  <table class="std-table">
+    <thead><tr><th style="width:190px">Item</th><th style="width:90px">Window</th><th>Signal to watch</th></tr></thead>
+    <tbody>
+      <tr><td class="td-strong">Israel-Syria security channel</td><td style="color:var(--accent);font-size:12px;font-weight:600;">Days-weeks</td><td>Watch for whether the Amman-brokered understanding is revived after this week's breach, or whether Israeli incursions into southern Syria continue at the current pace.</td></tr>
+      <tr><td class="td-strong">Syria SDF/army integration</td><td style="color:var(--accent);font-size:12px;font-weight:600;">Weeks-months</td><td>Watch for concrete integration steps, unit mergers, chain-of-command changes, following this week's political dissolution announcement, as distinct from the announcement itself.</td></tr>
+      <tr><td class="td-strong">Hormuz permanent lane negotiation</td><td style="color:var(--accent);font-size:12px;font-weight:600;">~60 days</td><td>Watch for progress on permanent shipping routes within the window Iran and Oman set, and for any sign Washington is moving toward the conditions Iran has attached to reopening.</td></tr>
+      <tr><td class="td-strong">ERCOT Batch Zero revised timeline</td><td style="color:var(--accent);font-size:12px;font-weight:600;">Weeks</td><td>Watch for ERCOT's first public estimate of a new study-completion date now that the PUCT has granted good-cause exceptions.</td></tr>
+      <tr><td class="td-strong">Spain data centre decree, final text</td><td style="color:var(--accent);font-size:12px;font-weight:600;">To 4 Sept 2026</td><td>Watch for industry submissions during consultation and whether the 80% hourly-matching threshold survives in the final published rule.</td></tr>
+      <tr><td class="td-strong">Baltic naval posture</td><td style="color:var(--accent);font-size:12px;font-weight:600;">Weeks</td><td>Watch for further Russian fleet movements in the Baltic, or a first test of Putin's "symmetrical response" threat against a European-flagged vessel.</td></tr>
+      <tr><td class="td-strong">BIS 50% Rule enforcement</td><td style="color:var(--accent);font-size:12px;font-weight:600;">10 Nov 2026</td><td>Under eleven weeks to compliance readiness. Watch for BIS guidance on the expanded restricted party definition.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section" id="sources">
+  <div class="section-header"><span class="section-num">&sect;16</span><h2>Sources</h2></div>
+  <div class="sources-grid">
+    <div class="source-tile">
+      <div class="source-tile-cat">Financial Press</div>
+      <ul class="source-link-list">
+        <li class="source-link-item" id="src-5"><span class="src-num">5</span><a href="https://www.bloomberg.com/news/articles/2026-08-26/iran-oman-agree-to-share-strait-of-hormuz-revenue-irgc-says" target="_blank">Bloomberg &ndash; Iran, Oman Hormuz revenue-sharing</a><span class="source-link-date">&middot; 26 Aug 2026</span><a href="#cite-5a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item" id="src-6"><span class="src-num">6</span><a href="https://www.newstribune.com/news/2026/aug/27/iran-oman-agree-to-share-strait-of-hormuz-revenue/" target="_blank">Jefferson City News-Tribune (Bloomberg wire) &ndash; joint FM statement caveat</a><span class="source-link-date">&middot; 27 Aug 2026</span><a href="#cite-6a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+      </ul>
+    </div>
+    <div class="source-tile">
+      <div class="source-tile-cat">Industry &amp; Market Data</div>
+      <ul class="source-link-list">
+        <li class="source-link-item" id="src-16"><span class="src-num">16</span><a href="https://nvidianews.nvidia.com/news/nvidia-guarantees-sb-energy-s-ports-pike-technology-campus-in-ohio-to-exclusively-host-nvidia-ai-compute" target="_blank">NVIDIA Newsroom &ndash; SB Energy investment</a><span class="source-link-date">&middot; 17 Aug 2026</span><a href="#cite-16a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item" id="src-17"><span class="src-num">17</span><a href="https://www.enr.com/articles/63525-nvidia-partners-with-sb-energy-on-10-gw-ai-data-center-complex-in-ohio" target="_blank">Engineering News-Record &ndash; Nvidia LPS spend estimate</a><span class="source-link-date">&middot; 21 Aug 2026</span><a href="#cite-17a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item" id="src-19"><span class="src-num">19</span><a href="https://www.cvc.com/media/news/2026/cvc-dif-s-aurora-towers-to-acquire-american-tower-corporation-s-canadian-wireless-tower-portfolio/" target="_blank">CVC &ndash; Aurora Towers/American Tower Canada</a><span class="source-link-date">&middot; 27 Aug 2026</span><a href="#cite-19a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item" id="src-13"><span class="src-num">13</span><a href="https://zain.com/en/press-release/zain-syria" target="_blank">Zain Group &ndash; Syria telecom licence</a><span class="source-link-date">&middot; 30 Jun 2026</span><a href="#cite-13a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item" id="src-14"><span class="src-num">14</span><a href="https://www.datacenterdynamics.com/en/news/stc-group-wins-bid-to-run-syrias-silklink-telecoms-infrastructure/" target="_blank">Data Center Dynamics &ndash; stc SilkLink project</a><span class="source-link-date">&middot; 7 May 2026</span><a href="#cite-14a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+      </ul>
+    </div>
+    <div class="source-tile">
+      <div class="source-tile-cat">Regulatory &amp; Official</div>
+      <ul class="source-link-list">
+        <li class="source-link-item" id="src-4"><span class="src-num">4</span><a href="https://www.state.gov/releases/office-of-the-spokesperson/2026/08/rescission-of-syrias-designation-as-a-state-sponsor-of-terrorism/" target="_blank">US Department of State &ndash; Syria SST rescission</a><span class="source-link-date">&middot; 24 Aug 2026</span><a href="#cite-4a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item" id="src-7"><span class="src-num">7</span><a href="https://www.elespanol.com/invertia/disruptores/politica-digital/espana/20260827/sostenibilidad-resiliencia-soberania-gobierno-eleva-requisitos-operar-centros-datos-espana/1003744364385_0.html" target="_blank">El Espa&ntilde;ol &ndash; Spain data centre royal decree</a><span class="source-link-date">&middot; 27 Aug 2026</span><a href="#cite-7a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item" id="src-21"><span class="src-num">21</span><a href="https://investors.ttm.com/news-events/press-releases/detail/412/ttm-technologies-inc-continues-global-growth-strategy" target="_blank">TTM Technologies &ndash; Epiq Solutions acquisition (SEC 8-K)</a><span class="source-link-date">&middot; 17 Aug 2026</span><a href="#cite-21a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item" id="src-1"><span class="src-num">1</span><a href="https://www.utilitydive.com/news/ercot-texas-puc-data-center-audit/828472/" target="_blank">Utility Dive &ndash; PUCT good-cause exceptions approved</a><span class="source-link-date">&middot; 21 Aug 2026</span><a href="#cite-1a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+      </ul>
+    </div>
+    <div class="source-tile source-tile-wide">
+      <div class="source-tile-cat">Geopolitics &amp; OSINT</div>
+      <ul class="source-link-list">
+        <li class="source-link-item" id="src-10"><span class="src-num">10</span><a href="https://www.timesofisrael.com/liveblog-august-28-2026/" target="_blank">Times of Israel &ndash; Abdi appointment, SDF/Israel-Syria live coverage</a><span class="source-link-date">&middot; 28 Aug 2026</span><a href="#cite-10a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item" id="src-3"><span class="src-num">3</span><a href="https://www.thenationalnews.com/news/mena/2026/08/27/syria-israel-golan/" target="_blank">The National &ndash; Israel strikes Syria despite diplomacy</a><span class="source-link-date">&middot; 27 Aug 2026</span><a href="#cite-3a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item" id="src-9"><span class="src-num">9</span><a href="https://www.longwarjournal.org/archives/2026/08/israel-strikes-military-airbase-in-syria-while-warning-turkey.php" target="_blank">FDD Long War Journal &ndash; Abu al-Duhur strike, Turkey tension</a><span class="source-link-date">&middot; 21 Aug 2026</span><a href="#cite-9a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item" id="src-11"><span class="src-num">11</span><a href="https://www.haaretz.com/israel-news/israel-security/2026-08-28/ty-article-live/reports-israeli-forces-enter-villages-in-southern-syria-fire-two-shells/000001a0-4607-d6dd-a1ad-e667f0750000" target="_blank">Haaretz &ndash; Israeli forces enter southern Syria villages</a><span class="source-link-date">&middot; 28 Aug 2026</span><a href="#cite-11a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item" id="src-12"><span class="src-num">12</span><a href="https://syria.liveuamap.com/" target="_blank">Syria Liveuamap &ndash; SDF dissolution, Turkish MOD denial</a><span class="source-link-date">&middot; 26-28 Aug 2026</span><a href="#cite-12a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item" id="src-8"><span class="src-num">8</span><a href="https://news.antiwar.com/2026/08/26/iran-oman-reach-strait-of-hormuz-revenue-sharing-deal/" target="_blank">Antiwar.com &ndash; Gharibabadi on Hormuz shipping lanes</a><span class="source-link-date">&middot; 26 Aug 2026</span><a href="#cite-8a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item" id="src-2"><span class="src-num">2</span><a href="https://www.panopoints.com/articles/russia-kasatonov-frigate-baltic-sea-fehmarn-shadow-fleet-deployment-aug-17-2026/" target="_blank">PanoPoints &ndash; Russian warship redeployment, Baltic</a><span class="source-link-date">&middot; 13-17 Aug 2026</span><a href="#cite-2a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+      </ul>
+    </div>
+    <div class="source-tile">
+      <div class="source-tile-cat">Market Data &amp; Signals</div>
+      <ul class="source-link-list">
+        <li class="source-link-item" id="src-20"><span class="src-num">20</span><a href="https://www.sec.gov/Archives/edgar/data/0002087087/000110465926102032/tm2624075d1_ex99-1.htm" target="_blank">SEC EDGAR &ndash; Astrum Space/Black Spade business combination</a><span class="source-link-date">&middot; 27 Aug 2026</span><a href="#cite-20a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item" id="src-18"><span class="src-num">18</span><a href="https://techcrunch.com/2026/08/21/nvidia-partners-with-data-center-developer-cloverleaf/" target="_blank">TechCrunch &ndash; Nvidia/Cloverleaf Infrastructure</a><span class="source-link-date">&middot; 21 Aug 2026</span><a href="#cite-18a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+        <li class="source-link-item" id="src-15"><span class="src-num">15</span><a href="https://lnkd.in/p/ecY2vpvx" target="_blank">Joaqu&iacute;n Coronado Galdos, Co-founder, Digital Five Investment &ndash; LinkedIn</a><span class="source-link-date">&middot; Aug 2026</span><a href="#cite-15a" class="fn-back">&#x21A9;&#xFE0E;</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="disclaimer">
+  <h3>About Commentarii</h3>
+  <p><em>Commentarii</em> is a weekly intelligence publication from CʘNSVLTʘR, providing senior-level geopolitical and market analysis for private equity investors active in TMT and digital infrastructure. Each issue draws on open-source intelligence from financial press, industry data providers, and geopolitical monitoring platforms, synthesised through an operating partner lens.</p>
+  <p>The analysis is intended for professional investors. It does not constitute investment advice. Views are those of the author and subject to change. <a href="https://www.consvltor.net" target="_blank">consvltor.net</a></p>
+  <p>Enquiries: <a href="mailto:hello@consvltor.net">hello@consvltor.net</a></p>
+</div>
+
+</body>
+</html>
