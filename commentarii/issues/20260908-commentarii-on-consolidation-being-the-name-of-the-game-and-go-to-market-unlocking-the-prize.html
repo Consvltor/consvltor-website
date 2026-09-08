@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Commentarii 007 · On Consolidation Being the Name of the Game, and Go-to-Market Unlocking the Prize · United Kingdom · 2016 to 2026</title>
+  <style>
+    :root {
+      --brown:        #5c2d00;
+      --brownMid:     #7a3d00;
+      --brownLight:   #a0601a;
+      --parchment:    #fdf8f0;
+      --parchmentAlt: #f5ede0;
+      --ink:          #2a1500;
+      --muted:        #7a5c3a;
+      --rule:         #c9a87a;
+      --editnote:     #b8394a;
+      --sans:         Arial, Helvetica, sans-serif;
+      --serif:        'Times New Roman', Times, serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--sans);
+      background: #fff;
+      color: var(--ink);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 2rem 5rem;
+    }
+
+    /* ── PREAMBLE INTRO ───────────────────────────────────── */
+    .preamble-intro {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 2.5rem;
+      align-items: start;
+      padding: 3rem 0 2.5rem;
+      border-bottom: 1px solid var(--rule);
+      margin-bottom: 3rem;
+    }
+
+    .preamble-intro .col-left {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .preamble-intro .col-left .pub-title {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 1.25rem;
+      font-weight: normal;
+      color: var(--brown);
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+
+    .preamble-intro .col-right {
+      font-family: var(--sans);
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    @media (max-width: 560px) {
+      .preamble-intro {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 2rem 0 1.75rem;
+      }
+    }
+
+    /* ── ENTRY HEADER ─────────────────────────────────────── */
+    .entry-meta {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--brownLight);
+      margin-bottom: 0.5rem;
+    }
+
+    .entry-title {
+      font-family: var(--serif);
+      font-size: 1.65rem;
+      font-weight: normal;
+      font-style: italic;
+      color: var(--brown);
+      line-height: 1.25;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    /* ── FIGURES ──────────────────────────────────────────── */
+    .map-figure {
+      margin: 0 0 2.25rem 0;
+      border: 1px solid var(--rule);
+      overflow: hidden;
+      background: var(--parchment);
+    }
+
+    .map-figure img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      object-position: center 5%;
+      display: block;
+    }
+
+    .map-figure img.error { display: none; }
+
+    .map-fallback {
+      display: none;
+      padding: 1.25rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      background: var(--parchmentAlt);
+      line-height: 1.6;
+    }
+
+    .map-figure img.error + .map-fallback { display: block; }
+
+    .map-caption {
+      padding: 0.45rem 0.75rem;
+      border-top: 1px solid var(--rule);
+      font-size: 0.7rem;
+      font-family: var(--sans);
+      color: var(--muted);
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      background: var(--parchment);
+    }
+
+    .map-caption em {
+      font-style: italic;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+
+    .inline-figure {
+      margin: 2rem 0 2.25rem 0;
+    }
+
+    .inline-figure img {
+      height: auto;
+      max-height: none;
+      object-fit: contain;
+      object-position: center center;
+      background: var(--parchment);
+    }
+
+    /* ── PROSE ────────────────────────────────────────────── */
+    .prose {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: var(--ink);
+    }
+
+    .prose p { margin-bottom: 1.25rem; }
+    .prose p:last-child { margin-bottom: 0; }
+    .prose p.kicker { color: var(--brown); }
+
+    .editor-note {
+      color: var(--editnote);
+      font-style: italic;
+      font-family: var(--sans);
+      font-size: 0.85rem;
+      border: 1px dashed var(--editnote);
+      padding: 0.15rem 0.5rem;
+      display: inline-block;
+    }
+
+    /* ── FOOTNOTE REFERENCES ──────────────────────────────── */
+    .fn-ref {
+      color: var(--brownLight);
+      text-decoration: none;
+    }
+
+    .fn-ref sup {
+      font-size: 0.65rem;
+      font-family: var(--sans);
+      vertical-align: super;
+      line-height: 0;
+    }
+
+    .fn-ref:hover { color: var(--brown); }
+
+    /* ── PRIMARY SOURCES ──────────────────────────────────── */
+    .sources-section {
+      margin-top: 3.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--rule);
+    }
+
+    .sources-label {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--brownLight);
+      margin-bottom: 1.25rem;
+    }
+
+    .sources-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .sources-list li {
+      display: grid;
+      grid-template-columns: 2.5rem 1fr;
+      gap: 0.75rem;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--parchmentAlt);
+      font-size: 0.82rem;
+      line-height: 1.65;
+      color: var(--muted);
+    }
+
+    .sources-list li:last-child { border-bottom: none; }
+
+    .src-num {
+      font-family: var(--sans);
+      font-size: 0.68rem;
+      color: var(--brownLight);
+      padding-top: 0.15rem;
+    }
+
+    .src-num a {
+      color: var(--brownLight);
+      text-decoration: none;
+    }
+
+    .src-num a:hover { color: var(--brown); }
+
+    .src-body { font-family: var(--sans); }
+
+    .src-body a {
+      color: var(--brown);
+      text-decoration: underline;
+      text-decoration-color: var(--rule);
+      text-underline-offset: 2px;
+    }
+
+    .src-body a:hover { text-decoration-color: var(--brownLight); }
+
+    .src-note {
+      display: block;
+      font-style: italic;
+      opacity: 0.75;
+      margin-top: 0.2rem;
+    }
+
+    /* ── ENTRY FOOTER ─────────────────────────────────────── */
+    .entry-footer {
+      margin-top: 3.5rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--rule);
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      opacity: 0.65;
+    }
+
+    .entry-footer .brand {
+      font-family: var(--serif);
+      font-style: normal;
+      text-transform: none;
+    }
+  </style>
+
+</head>
+<body>
+<div class="container">
+
+  <!-- ── PREAMBLE INTRO ── -->
+  <div class="preamble-intro">
+
+    <div class="col-left">
+      <span class="pub-title">Commentarii</span>
+      Field notes from infrastructure, markets, and the geopolitics of connectivity. Written after dark.
+    </div>
+
+    <div class="col-right">
+      Each entry is anchored to a place and a period. Some are retrospective, written now from the distance of outcome. Others are current, drafted close to the events they describe. The standard of evidence is the same throughout: what the data and the experience actually support, no more.
+    </div>
+
+  </div>
+
+  <!-- ── ENTRY HEADER ── -->
+  <div class="entry-meta">United Kingdom &nbsp;·&nbsp; 2016 to 2026</div>
+  <h1 class="entry-title">On Consolidation Being the Name of the Game, and Go-to-Market Unlocking the Prize</h1>
+
+  <!-- ── MAP FIGURE ── -->
+  <figure class="map-figure">
+    <img
+      src="https://consvltor.net/assets/MapBritain.jpg"
+      alt="Angliae, Scotiae, et Hiberniae, sive Britannicar: Insularum Descriptio. Abraham Ortelius, Theatrum Orbis Terrarum, Antwerp, 1570. Oriented with west at the top and north to the right."
+      onerror="this.classList.add('error')"
+    >
+    <div class="map-fallback">
+      Map unavailable. Confirm <code>MapBritain.jpg</code> is present in <code>/assets/</code>.
+    </div>
+    <figcaption class="map-caption">
+      Abraham Ortelius &nbsp;·&nbsp;
+      <em>Angliae, Scotiae, et Hiberniae, sive Britannicar: Insularum Descriptio</em>
+      &nbsp;·&nbsp; Theatrum Orbis Terrarum, Antwerp &nbsp;·&nbsp; 1570
+    </figcaption>
+  </figure>
+
+  <!-- ── PROSE: PART ONE ── -->
+  <div class="prose">
+
+    <p class="kicker">UK altnets (alternative network operators, alternative meaning that they are neither Openreach, BT's legally separate access division, nor its principal rival Virgin Media O2) have deployed fibre to pass 19.7 million UK premises. At the start of this year only 3.5 million of those premises were actually using it.<a href="#src-1" id="cite-1a" class="fn-ref"><sup>1</sup></a></p>
+
+    <p>That is an average take-up of 18%, up from 16% the year before. The footprint itself, meaning the number of homes passed, grew 20% over the same period. Openreach, meanwhile, reported 9.4 million premises connected against a footprint of 23.4 million, a take-up rate of 40% in the quarter to June 2026, with broadband ARPU up 7% to £17.70.<a href="#src-2" id="cite-2a" class="fn-ref"><sup>2</sup></a> The comparison flatters the incumbent, which is migrating customers it already had rather than winning them one door at a time. It is nonetheless the comparison investors are making, because the return is serviced out of connections, not on whether or not the customer was hard to win.</p>
+
+    <p>I arrived in the UK in 2016. The concept of altnets was not new then. Ofcom's infrastructure report had counted more than a dozen of them as early as 2012, and Gigaclear, Hyperoptic, CityFibre and B4RN all date from 2010 or 2011. What they did not have was scale. INCA, the Independent Networks Co-operative Association, and Point Topic ran their first survey of the sector, which put the entire altnet footprint at close to a million premises at the end of 2017,<a href="#src-3" id="cite-3a" class="fn-ref"><sup>3</sup></a> and almost every broadband line in the country still ran over copper for at least part of its length. I have since worked in a few of the altnets mentioned here, and on fibre elsewhere in Europe and further afield. Everything that follows, though, comes from published material: INCA and Point Topic, Ofcom, company results, the trade press, and the analysts who cover the sector regularly. And my analysis, of course.</p>
+
+    <p>Ofcom's most recent update puts full fibre in front of 24.9 million homes, 82% of the country's 30.5 million, as of January 2026, carrying 12.4 million live connections across residential and commercial premises. That is 47% of the premises that can get it.<a href="#src-4" id="cite-4a" class="fn-ref"><sup>4</sup></a> The catch-up against the rest of Europe has been real. In September 2022 the FTTH Council Europe put UK coverage at 42% of households against 87.4% in Spain, with Germany on 23.6% and France on 76.7%.<a href="#src-5" id="cite-5a" class="fn-ref"><sup>5</sup></a> Four years later the UK is at 82% and the gap on coverage has largely closed. On the Council's September 2023 figures Spain led Europe on take-up at 85.8% of homes passed, and the UK ranked thirty-second of thirty-nine at just under 30%.<a href="#src-6" id="cite-6a" class="fn-ref"><sup>6</sup></a> Ten years took the UK coverage question most of the way to finished and left the take-up question open.</p>
+
+    <p>The average, as usual, gives an inaccurate picture, and the interesting numbers sit at both sides of it. Community Fibre grew its base 26% to 429,000 customers and reached just under 32% penetration. Fibrus reported 28% for 2025. CityFibre passed 20% across its consumer footprint and set itself above 30% by the end of this year.<a href="#src-7" id="cite-7a" class="fn-ref"><sup>7</sup></a> The operators at the top of that range are running at roughly twice the 18% sector average on networks built under the same interest rates, the same wayleave regime and the same Openreach duct pricing as everybody else.</p>
+
+    <p>Operators above 30% take-up are approaching the range at which many CDD cases begin to look credible, subject of course to density, ARPU, acquisition cost, network maturity and the capital structure. They tend to have little overbuild from competitors, and they tend to sell something a household can recognise as different from what it already has. Both of those are commercial attributes rather than merely network ones.</p>
+
+    <p>Overbuild means two or more operators passing the same premises. Each of them incurs the full cost of passing a home: the wayleaves, the civil works, the ducting and the fibre itself, and incurs it before anybody has signed up to anything, while the revenue that eventually has to service that cost is divided between them. A plan underwritten on 35% or 40% penetration in an area the operator expected to hold alone reads very differently once a rival has passed the same doors and much of the street is already served over Openreach, or any other wholesale competitor, by BT or Sky, or any other retailer, to be honest. An operator in that position can stop spending on customer acquisition, though the investment to build the thing stays exactly where it was. What remains is a sale at a discount to book, a restructuring that hands the equity (and debt) to someone else, and/or absorption into a larger network. The pattern reaches further than the cities. In Ofcom's Area 3, the harder-to-reach rural third of the country that the market was not supposed to contest, INCA and Point Topic report notable overbuild between altnet and Openreach networks, with Openreach covering 4.4 million premises, 45%, and altnets projected to reach roughly 4.5 million, 46%, by the end of 2025.<a href="#src-8" id="cite-8a" class="fn-ref"><sup>8</sup></a> Intelligens Consulting put the national figure at an average of 2.44 fibre networks per household by late 2025, with operator take-up ranging from 4% to nearly 50%.<a href="#src-9" id="cite-9a" class="fn-ref"><sup>9</sup></a></p>
+
+    <p>Some of the consequences: Gigaclear's lenders formalised control of the business in April, after attempts to sell it failed, taking a substantial haircut on 612,000 premises and 170,000 customers.<a href="#src-10" id="cite-10a" class="fn-ref"><sup>10</sup></a> Airband, backed by more than £200m from Aberdeen, opened a formal sale process in July across a footprint of 440,000 premises carrying 30,000 customers.<a href="#src-11" id="cite-11a" class="fn-ref"><sup>11</sup></a> HMRC filed a winding-up petition against Fusion Fibre on 29 July.<a href="#src-12" id="cite-12a" class="fn-ref"><sup>12</sup></a> On 17 August, INPP declined to commit further capital to toob and transferred its equity to the debt holders for a de minimis amount, writing down £24.1m and retaining £2.6m ranking alongside senior debt.<a href="#src-13" id="cite-13a" class="fn-ref"><sup>13</sup></a> Toob's own accounts to December 2024 show revenue of £14m against total liabilities of £299m, which is what a build financed against a projected customer base looks like when the customers arrive more slowly than the interest accrues. The equity has gone first in most of these, written down or handed across for nominal consideration, and in Gigaclear's case the lenders took a substantial haircut behind it.</p>
+
+    <p>Consolidation is the answer currently being proposed, and the largest test of it is sitting with the regulator. The Competition and Markets Authority referred nexfibre's £2bn acquisition of Substantial, the parent of Netomnia, Brsk and YouFibre, straight to Phase 2 on 1 July under its fast-track procedure at the parties' own request, with a statutory deadline of 15 December 2026.<a href="#src-14" id="cite-14a" class="fn-ref"><sup>14</sup></a> CityFibre has argued to the CMA that the deal would substantially lessen competition, pointing to the overlap between the two footprints, and that the more likely counterfactual is CityFibre acquiring Netomnia itself; Sky raised concerns, Grain and Hyperoptic did not oppose, and BT addressed the regulatory framework rather than the transaction.<a href="#src-15" id="cite-15a" class="fn-ref"><sup>15</sup></a></p>
+
+    <p>Consolidation is the name of the game, and rightly so. It potentially removes future duplicate build, it strips out parallel back-office cost, it puts scale behind a wholesale proposition that subscale operators cannot credibly offer, and it offers investors and lenders alike a route out through somebody else's balance sheet. It is also considerably harder to underwrite than the headline synergy case suggests. The diligence has to separate the footprint that genuinely extends reach from the footprint that merely duplicates it, establish what share of the acquired base sits on the target's own network as against wholesale lines resold from someone else, and work out whether the connections curve in the model represents switching that has already occurred or switching still to be won. Those questions are answerable, though the work involved is substantial and the answers move the price.</p>
+
+    <p>Consolidation still leaves the harder half untouched, because none of it gives a household a reason to switch. A merger moves passings from one owner to another, and the price is struck per passing, though a passing earns nothing until somebody signs up. The prize sits on the other side of that boundary: segmentation, proposition design, pricing and bundling, migration mechanics, and the operational readiness to install and provision at the volume a working proposition generates. That is a different discipline from integration, and it tends to be resourced as an afterthought by teams who have spent years thinking about build rates.</p>
+
+    <p>Now, just a few hours before Connected Britain opens at the ExCeL, we see Fibrus publish results to the end of March 2026 and launch a television service. It passed 471,800 premises, carried 155,000 customers and reached penetration of just over 31% against 27.9% a year earlier, on revenue up 53% to £45m, gross profit up from £16.7m to £29.4m, EBITDA of £7.3m against £1.5m, a net loss narrowing to £44m and capex down to £93.6m.<a href="#src-16" id="cite-16a" class="fn-ref"><sup>16</sup></a> The television service is £7.99 a month on Netgem's PLEIO platform, carrying Freely and a hundred-odd live channels over the broadband line, pitched in part at households with poor aerial reception.<a href="#src-17" id="cite-17a" class="fn-ref"><sup>17</sup></a></p>
+
+    <p>Capex has fallen while penetration has risen, and the investment Fibrus chose to announce this year is a proposition rather than more footprint. An operator running at 31% in rural Northern Ireland and Cumbria, subsidised in part through Project Stratum and Project Gigabit, has concluded that the next increment of value sits in giving the existing footprint another reason to buy. That is a go-to-market decision, taken by an operator with one of the least overbuilt footprints in the sector and take-up among the highest in its peer set.</p>
+
+    <p>A smaller case makes the point more sharply, and I should declare that I am both a customer and a bit of a volunteer, or at least a very close observer, if not an insider. Broadband for Surrey Hills is a community benefit society founded in 2017, after a local resident saw what B4RN had done in rural Lancashire and Barry Forde handed over the blueprints for nothing. It has laid roughly 250km of fibre from Albury out to Peaslake, Wonersh, Shamley Green and Winterfold, routed through private land and gardens rather than the road network, dug largely by volunteers, and it serves around 600 premises at symmetrical speeds averaging 940Mb, with village halls, churches and schools connected free.<a href="#src-18" id="cite-18a" class="fn-ref"><sup>18</sup></a> Its take-up is high for a structural reason: it does not build until the households along the route have agreed to be connected. That is a luxury a community benefit society enjoys and a leveraged operator with a build schedule does not, but it is the same principle the sector is now paying to relearn.</p>
+
+    <p>The second entry in these <em>Commentarii</em>, <a href="20260717-commentarii-on-build-it-and-they-will-come-or-not.html">On Build It and They Will Come, or Not</a>, sets out an engagement in Muscat in 2010 where the incumbent had built the network and the subscribers had stopped arriving.<a href="#src-19" id="cite-19a" class="fn-ref"><sup>19</sup></a> The diagnosis there was that the installed capacity was sound and the proposition was the constraint, and the seven months that followed went on segmentation, product definition, bundling, pricing under a regulator watching for abuse of significant market power, and an operational readiness review to make sure the provisioning chain could absorb the demand a corrected proposition would create. Subscriber numbers grew 35% within two quarters of launch, after five flat ones, without further capex on the network itself. Readers who want the detail will find it there rather than repeated here.</p>
+
+    <p>The UK version of the same finding is arriving at national scale and with a great deal more debt attached. The analysts have been saying it plainly for a while; Iqbal Singh Bedi at Intelligens describes a market that has never been bigger or more fragile, and puts commercial differentiation, partnering and rethinking the go-to-market ahead of build in the order of survival.<a href="#src-20" id="cite-20a" class="fn-ref"><sup>20</sup></a> For anyone underwriting in this sector between now and December, investor or lender, two questions would sit at the top of the list. The first is how much of the target's footprint survives contact with the acquirer's own build, which is diligence work and can be settled before signing. The second is what proportion of those premises will be paying customers in thirty-six months, and on the strength of what offer. That second question decides the return, and it cannot be settled in a data room, because it is answered after completion by people who have done the work before.</p>
+
+    <p class="kicker">A note on the map. Ortelius compiled it in Antwerp for the Theatrum Orbis Terrarum, after Mercator's wall map of 1564, having surveyed none of it himself; he assembled the atlas from other men's work and said so, crediting eighty-seven authors by name. The orientation came from Mercator as well, so west sits at the top, north lies to the right, and the reader looks at Britain and Ireland edge-on from somewhere off the Dutch coast. Tolkien later used a similar disorientation in Thrór's map, with east placed at the top in the manner he ascribed to dwarves. Four and a half centuries later the islands are being mapped again by operators working outward from the places the centre found uneconomic, financed out of Amsterdam, Paris, Toronto and Abu Dhabi, which is much the same arrangement in a different engraving.</p>
+
+  </div>
+
+  <!-- ── PRIMARY SOURCES ── -->
+  <div class="sources-section">
+    <div class="sources-label">Primary Sources</div>
+    <ol class="sources-list">
+
+      <li id="src-1">
+        <span class="src-num"><a href="#cite-1a">↩ 1</a></span>
+        <span class="src-body">
+          INCA and Point Topic. "State of the Altnets 2026."
+          <a href="https://inca.coop/state-of-the-altnets-2026/" target="_blank">Independent Networks Co-operative Association, published 11 March 2026</a>.
+          Coverage 19.7m premises, 3.5m live connections, 18% average take-up, £3.2bn of new funding in 2025. See also
+          <a href="https://www.ispreview.co.uk/index.php/2026/03/inca-alternative-uk-full-fibre-networks-cover-19-7-million-premises.html" target="_blank">ISPreview, 11 March 2026</a>.
+        </span>
+      </li>
+
+      <li id="src-2">
+        <span class="src-num"><a href="#cite-2a">↩ 2</a></span>
+        <span class="src-body">
+          BT Group Q1 trading update to 30 June 2026. Openreach FTTP footprint 23.4m, 9.4m premises connected, take-up 40%, broadband ARPU £17.70.
+          <a href="https://www.ispreview.co.uk/index.php/2026/07/bt-update-openreach-lose-192k-uk-broadband-lines-as-fttp-covers-23-4m.html" target="_blank">ISPreview, 23 July 2026</a>.
+        </span>
+      </li>
+
+      <li id="src-3">
+        <span class="src-num"><a href="#cite-3a">↩ 3</a></span>
+        <span class="src-body">
+          "Alternative FTTP networks reaching nearly one million UK premises, says INCA."
+          <a href="https://www.fibre-systems.com/news/alternative-fttp-networks-reaching-nearly-one-million-uk-premises-says-inca" target="_blank">Fibre Systems, 12 April 2018</a>,
+          reporting the first INCA and Point Topic altnet metrics survey, covering end-2017 and early 2018.
+        </span>
+      </li>
+
+      <li id="src-4">
+        <span class="src-num"><a href="#cite-4a">↩ 4</a></span>
+        <span class="src-body">
+          "Connected Nations update: Spring 2026."
+          <a href="https://www.ofcom.org.uk/phones-and-broadband/coverage-and-speeds/connected-nations-update-spring-2026" target="_blank">Ofcom, published 13 May 2026</a>.
+          Full fibre available to 24.9m UK residential premises (82% of 30.5m homes) as of January 2026, carrying 12.4m connections across all premises, 47% of those with access.
+        </span>
+      </li>
+
+      <li id="src-5">
+        <span class="src-num"><a href="#cite-5a">↩ 5</a></span>
+        <span class="src-body">
+          "Comparing fibre optic networks: Spain versus the rest of Europe."
+          <a href="https://www.lyntia.com/en/news/fibre-optic-spain-vs-europe/" target="_blank">Lyntia, 24 November 2023</a>,
+          reporting FTTH Council Europe Market Panorama household coverage as at September 2022: Spain 87.4%, France 76.7%, Italy 55.5%, UK 42%, Germany 23.6%.
+        </span>
+      </li>
+
+      <li id="src-6">
+        <span class="src-num"><a href="#cite-6a">↩ 6</a></span>
+        <span class="src-body">
+          "UK surpasses rest of Europe in fibre growth but coverage still lags."
+          <a href="https://www.telecoms.com/fibre/uk-surpasses-rest-of-europe-in-fibre-growth-but-coverage-still-lags" target="_blank">Telecoms.com, 21 March 2024</a>,
+          reporting the FTTH Council Europe Market Panorama for September 2023. Take-up measured as subscribers over homes passed. On Telef&oacute;nica's copper switch-off, see
+          <a href="https://insights.opensignal.com/reports/2025/10/spain/fixed-broadband-experience" target="_blank">Opensignal, Spain Fixed Broadband Experience Report, October 2025</a>.
+        </span>
+      </li>
+
+      <li id="src-7">
+        <span class="src-num"><a href="#cite-7a">↩ 7</a></span>
+        <span class="src-body">
+          "Altnets 'force to be reckoned with' in UK broadband."
+          <a href="https://www.computerweekly.com/news/366639950/Altnets-force-to-be-reckoned-with-in-UK-broadband" target="_blank">Computer Weekly, 13 March 2026</a>.
+          Reporting Community Fibre at 429,000 customers and just under 32% take-up, Fibrus at 28% for 2025, CityFibre above 20% and targeting 30% by end-2026.
+        </span>
+      </li>
+
+      <li id="src-8">
+        <span class="src-num"><a href="#cite-8a">↩ 8</a></span>
+        <span class="src-body">
+          "UK Altnets: Delivering Affordable, High-Speed Connectivity."
+          <a href="https://inca.coop/wp-content/uploads/2025/04/INCA-Point-Topic-April-25-2.pdf" target="_blank">INCA and Point Topic, April 2025</a>.
+          On Area 3, the report notes notable overbuild between altnet and Openreach full fibre networks, with Openreach at 4.4m premises (45%) and altnets projected to reach around 4.5m (46%) by end-2025.
+        </span>
+      </li>
+
+      <li id="src-9">
+        <span class="src-num"><a href="#cite-9a">↩ 9</a></span>
+        <span class="src-body">
+          "Altnet sector moving from 'expansion to survival'."
+          <a href="https://www.commsbusiness.co.uk/content/news/altnet-sector-moving-from-expansion-to-survival" target="_blank">Comms Business, 8 December 2025</a>,
+          reporting Intelligens Consulting's State of the UK Fibre Market 2025: an average of 2.44 fibre networks per household, take-up ranging from 4% to almost 50%, and sector investment of £21.3bn.
+        </span>
+      </li>
+
+      <li id="src-10">
+        <span class="src-num"><a href="#cite-10a">↩ 10</a></span>
+        <span class="src-body">
+          "Lenders Take Control of Rural UK Full Fibre Broadband ISP Gigaclear."
+          <a href="https://www.ispreview.co.uk/index.php/2026/04/lenders-take-control-of-rural-uk-full-fibre-broadband-isp-gigaclear.html" target="_blank">ISPreview, 9 April 2026</a>.
+        </span>
+      </li>
+
+      <li id="src-11">
+        <span class="src-num"><a href="#cite-11a">↩ 11</a></span>
+        <span class="src-body">
+          "Rural Broadband Altnet ISP Airband Prepares Sale of UK Business."
+          <a href="https://www.ispreview.co.uk/index.php/2026/07/rural-broadband-altnet-isp-airband-prepares-sale-of-uk-business.html" target="_blank">ISPreview, 8 July 2026</a>.
+          Subsequent reporting in August 2026 indicated Aberdeen had agreed to hand control to the company's lenders.
+        </span>
+      </li>
+
+      <li id="src-12">
+        <span class="src-num"><a href="#cite-12a">↩ 12</a></span>
+        <span class="src-body">
+          "Broadband Altnet Fusion Fibre Hit by Winding Up Petition from UK HMRC."
+          <a href="https://www.ispreview.co.uk/index.php/2026/08/broadband-altnet-fusion-fibre-hit-by-winding-up-petition-from-uk-hmrc.html" target="_blank">ISPreview, 4 August 2026</a>.
+          Petition filed 29 July 2026.
+        </span>
+      </li>
+
+      <li id="src-13">
+        <span class="src-num"><a href="#cite-13a">↩ 13</a></span>
+        <span class="src-body">
+          "Investor INPP Declines Further Funding for UK Altnet Broadband ISP Toob."
+          <a href="https://www.ispreview.co.uk/index.php/2026/08/investor-inpp-declines-further-funding-for-uk-altnet-broadband-isp-toob.html" target="_blank">ISPreview, 17 August 2026</a>,
+          reproducing the International Public Partnerships statement of the same date.
+        </span>
+      </li>
+
+      <li id="src-14">
+        <span class="src-num"><a href="#cite-14a">↩ 14</a></span>
+        <span class="src-body">
+          "nexfibre / Substantial merger inquiry."
+          <a href="https://www.gov.uk/cma-cases/nexfibre-slash-substantial-merger-inquiry" target="_blank">Competition and Markets Authority case page, referral published 1 July 2026</a>.
+          Statutory deadline 15 December 2026.
+        </span>
+      </li>
+
+      <li id="src-15">
+        <span class="src-num"><a href="#cite-15a">↩ 15</a></span>
+        <span class="src-body">
+          "Industry challenges £2bn Netomnia-nexfibre deal."
+          <a href="https://www.fibreprovider.net/news/industry-challenges-ps2bn-netomnia-nexfibre-deal" target="_blank">Fibre Provider, 6 August 2026</a>,
+          summarising responses to the CMA's Areas of Focus document from BT, CityFibre, Grain Connect, Hyperoptic and Sky.
+        </span>
+      </li>
+
+      <li id="src-16">
+        <span class="src-num"><a href="#cite-16a">↩ 16</a></span>
+        <span class="src-body">
+          "Fibrus launch UK pay TV service as broadband network covers 472,000 premises."
+          <a href="https://www.ispreview.co.uk/index.php/2026/09/fibrus-launch-uk-pay-tv-service-as-broadband-network-covers-472000-premises.html" target="_blank">ISPreview, 8 September 2026</a>.
+          Results summary to 31 March 2026; full statutory accounts not yet published at time of writing.
+        </span>
+      </li>
+
+      <li id="src-17">
+        <span class="src-num"><a href="#cite-17a">↩ 17</a></span>
+        <span class="src-body">
+          "Belfast-based broadband provider Fibrus launch new pay TV service."
+          <a href="https://www.irishnews.com/news/business/belfast-based-broadband-provider-fibrus-launch-new-pay-tv-service-6HDADFSISZDNFKFAGTW6ZZENJ4/" target="_blank">The Irish News, 8 September 2026</a>.
+        </span>
+      </li>
+
+      <li id="src-18">
+        <span class="src-num"><a href="#cite-18a">↩ 18</a></span>
+        <span class="src-body">
+          "Surrey Hills residents build their own super-fast broadband network."
+          <a href="https://www.altonherald.com/news/surrey-hills-residents-build-their-own-super-fast-broadband-network-805123" target="_blank">Alton Herald / SWNS, 21 June 2025</a>.
+          See also <a href="https://b4sh.org.uk/" target="_blank">B4SH (Broadband for Surrey Hills Ltd)</a>, a community benefit society registered with the FCA.
+        </span>
+      </li>
+
+      <li id="src-19">
+        <span class="src-num"><a href="#cite-19a">↩ 19</a></span>
+        <span class="src-body">
+          <em>Commentarii</em> 002, "On Build It and They Will Come, or Not."
+          <a href="20260717-commentarii-on-build-it-and-they-will-come-or-not.html">Oman, 2010</a>.
+        </span>
+      </li>
+
+      <li id="src-20">
+        <span class="src-num"><a href="#cite-20a">↩ 20</a></span>
+        <span class="src-body">
+          "State of the UK Fibre Market 2025: Growth, Slowdown and a Sector at a Crossroads."
+          <a href="https://www.intelligensconsulting.com/post/state-of-the-uk-fibre-market-2025-growth-slowdown-and-a-sector-at-a-crossroads" target="_blank">Intelligens Consulting, 3 December 2025</a>.
+          Quotations from managing partner Iqbal Singh Bedi as reported in
+          <a href="https://www.commsbusiness.co.uk/content/news/altnet-sector-moving-from-expansion-to-survival" target="_blank">Comms Business, 8 December 2025</a>.
+        </span>
+      </li>
+
+    </ol>
+  </div>
+
+  <!-- ── ENTRY FOOTER ── -->
+  <div class="entry-footer">
+    <span><span class="brand">CʘNSVLTʘR</span> &nbsp;·&nbsp; Commentarii &nbsp;·&nbsp; 007</span>
+    <span>United Kingdom &nbsp;·&nbsp; 2016 to 2026</span>
+  </div>
+
+</div>
+</body>
+</html>
