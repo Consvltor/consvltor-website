@@ -16,7 +16,14 @@
   </url>
 
 <!-- Commentarii issues — newest first -->
-  
+
+  <url>
+    <loc>https://consvltor.net/commentarii/issues/20260925-commentarii-supply-lines.html</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <url>
     <loc>https://consvltor.net/commentarii/issues/20260918-commentarii-beyond-the-safeguards.html</loc>
     <lastmod>2026-09-18</lastmod>
