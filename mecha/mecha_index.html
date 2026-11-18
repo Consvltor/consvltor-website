@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- google tag for analytics without needing cookies (same as commentarii/index.html) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J80SMH836N"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-J80SMH836N', {
+    'client_storage': 'none',
+    'anonymize_ip': true
+  });
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mechas · AI agents built around key people · CʘNSVLTʘR</title>
+<meta name="description" content="Mechas: AI agent kits designed around key individuals at private equity funds, portfolio companies and their advisers, with the person in control. From CONSVLTOR.">
+<link rel="canonical" href="https://consvltor.net/mecha/mecha_index.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://consvltor.net/mecha/mecha_index.html">
+<meta property="og:title" content="Mechas · CONSVLTOR">
+<meta property="og:description" content="AI agent kits designed around key individuals in private equity, with the person in control.">
+<meta property="og:image" content="https://consvltor.net/assets/consvltor_cover.jpg">
+<meta property="og:site_name" content="CONSVLTOR">
+<link rel="icon" type="image/png" href="https://consvltor.net/assets/Cfavicon.png">
+<link rel="apple-touch-icon" href="https://consvltor.net/assets/Cfavicon.png">
+<style>
+
+/* ═══════════════════════════════════════════════════════════
+   §1  CONSVLTOR.NET — verbatim variables, reset, base
+═══════════════════════════════════════════════════════════ */
+:root {
+  --brown:         #5c2d00;
+  --brown-mid:     #7a3d00;
+  --brown-light:   #a0601a;
+  --parchment:     #fdf8f0;
+  --parchment-alt: #f5ede0;
+  --ink:           #2a1500;
+  --muted:         #7a5c3a;
+  --rule:          #c9a87a;
+  --font-serif:    'Times New Roman', Times, serif;
+  --font-sans:     Arial, Helvetica, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-sans);
+  background: #fff;
+  color: var(--ink);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+a { color: var(--brown); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ═══════════════════════════════════════════════════════════
+   §2  HEADER / NAV — verbatim from consvltor.net
+═══════════════════════════════════════════════════════════ */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: #fff;
+  border-bottom: 1px solid var(--rule);
+}
+
+.nav {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0.85rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-family: var(--font-serif);
+  font-size: 1.55rem;
+  font-weight: normal;
+  letter-spacing: 0.1em;
+  color: var(--brown);
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.logo:hover { text-decoration: none; }
+
+.logo-mark,
+.callout .logo-mark,
+em .logo-mark { font-style: normal; font-family: var(--font-serif); }
+
+.nav-links { display: flex; gap: 1.5rem; margin-left: 3rem; }
+
+.nav-links a {
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.nav-links a:hover { color: var(--brown); text-decoration: none; }
+.nav-links a.active { color: #7A3020; }
+
+/* ═══════════════════════════════════════════════════════════
+   §3  SHARED LAYOUT
+═══════════════════════════════════════════════════════════ */
+.container { max-width: 1040px; margin: 0 auto; padding: 0 1.5rem; }
+
+section {
+  padding: 4rem 0;
+  border-top: 1px solid var(--rule);
+  scroll-margin-top: 4rem;
+}
+
+.section-grid {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 3.5rem;
+  align-items: start;
+}
+
+.section-label {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  color: var(--brown);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.section-sub { font-size: 0.85rem; color: var(--muted); line-height: 1.65; }
+
+.section-body p { margin-bottom: 1rem; max-width: 640px; }
+.section-body p:last-child { margin-bottom: 0; }
+
+/* ═══════════════════════════════════════════════════════════
+   §4  HERO
+═══════════════════════════════════════════════════════════ */
+.hero { padding: 4.5rem 0 3.5rem; }
+
+.hero-kicker {
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-family: var(--font-serif);
+  font-weight: normal;
+  font-size: 2.5rem;
+  line-height: 1.15;
+  color: var(--brown);
+  max-width: 720px;
+  margin-bottom: 1.25rem;
+}
+
+.hero-body { font-size: 1.05rem; color: var(--ink); max-width: 640px; }
+
+/* ═══════════════════════════════════════════════════════════
+   §5  CARDS
+═══════════════════════════════════════════════════════════ */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+  margin: 1.5rem 0;
+  max-width: 700px;
+}
+
+.card { background: var(--parchment); padding: 1.25rem 1.4rem; }
+
+.card h3 {
+  font-family: var(--font-serif);
+  font-weight: normal;
+  font-size: 1.15rem;
+  color: var(--brown);
+  margin-bottom: 0.4rem;
+}
+
+.card p { font-size: 0.9rem; color: var(--ink); margin-bottom: 0; }
+
+.card-tag {
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.35rem;
+}
+
+.callout {
+  background: var(--parchment);
+  border-left: 3px solid var(--brown-light);
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+  max-width: 640px;
+  font-size: 0.92rem;
+}
+
+.btn {
+  display: inline-block;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.7rem 1.4rem;
+  border: 1px solid var(--brown);
+}
+.btn-primary { background: var(--brown); color: #fff; }
+.btn-primary:hover { background: var(--brown-mid); text-decoration: none; }
+
+/* ═══════════════════════════════════════════════════════════
+   §6  FOOTER — verbatim from consvltor.net
+═══════════════════════════════════════════════════════════ */
+footer { border-top: 1px solid var(--rule); padding: 1.75rem 0; }
+
+.footer-inner {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-logo {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: normal;
+  color: var(--brown);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.footer-privacy,
+.footer-copy {
+  font-size: 0.68rem;
+  color: var(--muted);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.privacy-trigger {
+  position: relative;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-style: dotted;
+}
+
+.privacy-tooltip {
+  display: none;
+  position: absolute;
+  bottom: 1.6rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 320px;
+  background: var(--parchment);
+  border: 1px solid var(--rule);
+  padding: 0.85rem 1rem;
+  font-size: 0.78rem;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+  text-transform: none;
+  line-height: 1.6;
+  z-index: 100;
+}
+
+.privacy-trigger:hover .privacy-tooltip,
+.privacy-trigger:focus .privacy-tooltip { display: block; }
+
+/* ═══════════════════════════════════════════════════════════
+   §7  HAMBURGER / MOBILE — verbatim from consvltor.net
+═══════════════════════════════════════════════════════════ */
+@media (max-width: 800px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0; right: 0;
+    background: #fff;
+    border-bottom: 1px solid var(--rule);
+    flex-direction: column;
+    gap: 0;
+    margin-left: 0;
+    padding: 0.5rem 0;
+  }
+
+  .nav-links.open { display: flex; }
+
+  .nav-links a {
+    padding: 0.65rem 1.5rem;
+    border-bottom: 1px solid var(--parchment-alt);
+  }
+
+  .nav-links a:last-child { border-bottom: none; }
+
+  .nav-hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+    background: none;
+    border: none;
+  }
+
+  .nav-hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--brown);
+  }
+
+  .section-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .cards { grid-template-columns: 1fr; }
+  h1 { font-size: 2rem; }
+  .footer-inner { flex-direction: column; gap: 0.75rem; text-align: center; }
+}
+
+@media (min-width: 801px) {
+  .nav-hamburger { display: none; }
+}
+
+</style>
+</head>
+<body>
+
+<!-- NAV — as consvltor.net, with Mechas added and marked active -->
+<header>
+  <div class="nav">
+    <a href="https://consvltor.net" class="logo">
+      <span class="logo-mark">C&#x0298;NSVLT&#x0298;R</span>
+    </a>
+    <button class="nav-hamburger" id="nav-toggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links" id="nav-links">
+      <a href="https://consvltor.net/#why"       onclick="closeNav()">Why</a>
+      <a href="https://consvltor.net/#who"       onclick="closeNav()">Who</a>
+      <a href="https://consvltor.net/#what"      onclick="closeNav()">What</a>
+      <a href="https://consvltor.net/#how"       onclick="closeNav()">How</a>
+      <a href="https://consvltor.net/#etymology" onclick="closeNav()">Etymology</a>
+      <a href="https://consvltor.net/mecha/mecha_index.html" class="active" onclick="closeNav()">Mechas</a>
+      <a href="https://consvltor.net/commentarii" onclick="closeNav()">Commentarii</a>
+      <a href="https://consvltor.net/#contact"   onclick="closeNav()">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- HERO -->
+  <section class="hero" style="border-top:none;">
+    <div class="hero-kicker">Mechas</div>
+    <h1>AI agents built around the people who carry the deal.</h1>
+    <p class="hero-body"><span class="logo-mark">C&#x0298;NSVLT&#x0298;R</span> designs sets of AI agents around one key person: a deal lead, a head of finance, a commercial director, a general counsel. The person stays in control. The agents do the work that can be handed over, and the person works directly with them on the work that cannot.</p>
+  </section>
+
+  <!-- WHY -->
+  <section id="why">
+    <div class="section-grid">
+      <div>
+        <div class="section-label">Why</div>
+        <div class="section-sub">Why not automate the role</div>
+      </div>
+      <div class="section-body">
+        <p>Full automation of complex work has been tried many times and has not held up. Leonardo drew a mechanical knight around 1495. Nothing suggests it was built or that it worked. The armour that did work was plate: it did not replace the knight, it made him stronger.</p>
+        <p>Current AI agents are in the same position. They handle some tasks reliably and others not at all, and which is which keeps shifting. Work that carries accountability, depends on unwritten context, or sets its own objectives still needs a person inside the loop. We expect that to stay true as the models improve.</p>
+        <p>The name comes from mecha fiction: a machine with a pilot inside. The pilot reviews some of its output at checkpoints and works with it in real time on the rest.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT -->
+  <section id="what">
+    <div class="section-grid">
+      <div>
+        <div class="section-label">What</div>
+        <div class="section-sub">What we build</div>
+      </div>
+      <div class="section-body">
+        <p>Each kit is designed for one role and one person. It sits behind a single control layer, the cockpit, from which the pilot runs the agents, sees what they are doing and steps in when needed.</p>
+        <div class="cards">
+          <div class="card">
+            <div class="card-tag">First step</div>
+            <h3>Exoskeleton</h3>
+            <p>One or two agents on the tasks that slow a person down most. Light to set up and quick to learn.</p>
+          </div>
+          <div class="card">
+            <div class="card-tag">Full kit</div>
+            <h3>Mecha</h3>
+            <p>A full set of agents under one cockpit, tuned to the role, including the heavier tasks that need closer supervision.</p>
+          </div>
+        </div>
+        <p>Later, kits for several people on the same team can share context. When a pilot leaves, the successor takes over the kit and its history instead of starting from nothing.</p>
+        <p>We build on existing platforms, and write only what the role needs on top of them. The part we are selling is the design: which tasks go to agents, which stay with the person, and how the two are kept aligned.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW -->
+  <section id="how">
+    <div class="section-grid">
+      <div>
+        <div class="section-label">How</div>
+        <div class="section-sub">How we work with you</div>
+      </div>
+      <div class="section-body">
+        <p><strong>Design.</strong> We map the role with the person who holds it and decide what goes to agents, what stays with the pilot and what needs a checkpoint.</p>
+        <p><strong>Customise.</strong> We adapt agents we have already built to your tools, documents and way of working.</p>
+        <p><strong>Maintain.</strong> We adjust the kit as the work changes and as the models change, and we add agents when a new need appears.</p>
+        <p>This is for private equity funds, their portfolio companies, and the lawyers and M&amp;A advisers who work with them.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATUS -->
+  <section id="status">
+    <div class="section-grid">
+      <div>
+        <div class="section-label">Status</div>
+        <div class="section-sub">Where this stands today</div>
+      </div>
+      <div class="section-body">
+        <!-- TO CONFIRM before publishing: wording of the status line -->
+        <p>We are building the first mechas on our own work and are looking for design partners to build the first kits with.</p>
+        <div class="callout">If you hold a role where a good set of agents would change your week, we would like to hear about it, even if you are not sure it would work.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-grid">
+      <div>
+        <div class="section-label">Contact</div>
+        <div class="section-sub">A direct channel</div>
+      </div>
+      <div class="section-body">
+        <p>Write to us with a sentence or two about the role and what takes up your time.</p>
+        <a class="btn btn-primary" href="mailto:hello@consvltor.net?subject=Mechas%20enquiry">Send a message</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo"><span class="logo-mark">C&#x0298;NSVLT&#x0298;R</span></div>
+    <div class="footer-privacy">
+      <span class="privacy-trigger" tabindex="0">Privacy
+        <span class="privacy-tooltip"><em>No cookies. No trackers. No small print.</em><br><br>We are not collecting your data. If you want to talk, you know where to find us.</span>
+      </span>
+    </div>
+    <div class="footer-copy">AMDG &nbsp;&middot;&nbsp; &copy; MMXXVI</div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('nav-toggle').addEventListener('click', function () {
+  document.getElementById('nav-links').classList.toggle('open');
+});
+function closeNav() {
+  document.getElementById('nav-links').classList.remove('open');
+}
+</script>
+
+</body>
+</html>
